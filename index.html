@@ -330,51 +330,22 @@
     </header>
 
     <!-- Franja de Autoridad (Margen Equilibrado) -->
-    <section
-        class="my-8 py-8 bg-brand-blue/5 backdrop-blur-md border-y border-white/5 overflow-hidden relative z-20 group cursor-default">
-
-        <!-- Bordes con gradiente sutil -->
-        <div
-            class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-brand-orange/30 to-transparent">
-        </div>
-        <div
-            class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-brand-orange/30 to-transparent">
-        </div>
-
-        <div class="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
+    <section class="my-6 md:my-10 py-4 bg-brand-dark/50 border-y border-white/5 overflow-hidden relative z-20">
+        <div class="flex whitespace-nowrap animate-marquee">
             <div
-                class="flex gap-24 items-center text-gray-300 text-lg md:text-xl uppercase tracking-[0.2em] px-8 font-light">
-
-                <span class="flex items-center gap-4 transition-colors hover:text-white">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-brand-orange"></i>
-                    + Eficiencia Operativa
-                </span>
-
-                <span class="flex items-center gap-4 transition-colors hover:text-white">
-                    <i data-lucide="zap" class="w-5 h-5 text-brand-orange"></i>
-                    + Conversión Web
-                </span>
-
-                <span class="flex items-center gap-4 transition-colors hover:text-white">
-                    <i data-lucide="shield-check" class="w-5 h-5 text-brand-orange"></i>
-                    100% Cumplimiento Legal
-                </span>
-
-                <!-- Repetición para efecto infinito -->
-                <span class="flex items-center gap-4 transition-colors hover:text-white">
-                    <i data-lucide="check-circle" class="w-5 h-5 text-brand-orange"></i>
-                    + Eficiencia Operativa
-                </span>
-
-                <span class="flex items-center gap-4 transition-colors hover:text-white">
-                    <i data-lucide="zap" class="w-5 h-5 text-brand-orange"></i>
-                    + Conversión Web
-                </span>
-
-                <span class="flex items-center gap-4 transition-colors hover:text-white">
-                    <i data-lucide="shield-check" class="w-5 h-5 text-brand-orange"></i>
-                    100% Cumplimiento Legal
-                </span>
+                class="flex gap-20 items-center text-gray-400 font-bold text-sm md:text-base uppercase tracking-[0.2em] px-8">
+                <span class="flex items-center gap-3"><i data-lucide="check-circle"
+                        class="w-4 h-4 text-brand-orange"></i> + Eficiencia Operativa</span>
+                <span class="flex items-center gap-3"><i data-lucide="zap" class="w-4 h-4 text-brand-orange"></i> +
+                    Conversión Web</span>
+                <span class="flex items-center gap-3"><i data-lucide="shield-check"
+                        class="w-4 h-4 text-brand-orange"></i> 100% Cumplimiento Legal</span>
+                <span class="flex items-center gap-3"><i data-lucide="check-circle"
+                        class="w-4 h-4 text-brand-orange"></i> + Eficiencia Operativa</span>
+                <span class="flex items-center gap-3"><i data-lucide="zap" class="w-4 h-4 text-brand-orange"></i> +
+                    Conversión Web</span>
+                <span class="flex items-center gap-3"><i data-lucide="shield-check"
+                        class="w-4 h-4 text-brand-orange"></i> 100% Cumplimiento Legal</span>
             </div>
         </div>
     </section>
@@ -402,6 +373,7 @@
                 <!-- Servicio 1 -->
                 <article
                     class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full bg-brand-orange/5 border-brand-orange/20 relative overflow-hidden">
+                    <!-- Decoración interna -->
                     <div class="absolute -right-10 -top-10 w-32 aspect-square bg-brand-orange/10 rounded-full blur-2xl">
                     </div>
 
@@ -608,7 +580,7 @@
                     </p>
 
                     <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
-                        class="relative z-10 group/btn inline-flex items-center justify-center gap-3 bg-brand-orange text-white font-bold text-sm tracking-widest uppercase px-8 py-4 rounded-full shadow-[0_0_20px_rgba(255,122,72,0.4)] hover:shadow-[0_0_40px_rgba(255,122,72,0.6)] hover:scale-105 transition-all duration-300">
+                        class="relative z-10 group/btn inline-flex items-center justify-center gap-3 bg-brand-orange text-white font-bold text-sm tracking-widest uppercase px-8 py-4 rounded-full shadow-[0_0_20px_rgba(255,122,72,0.4)] hover:shadow-[0_0_40px_rgba(255,122,72,0.6)] hover:scale-105 transition-all duration-300 whitespace-nowrap">
                         RESERVAR CITA AHORA <i data-lucide="arrow-up-right"
                             class="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"></i>
                     </a>
@@ -618,9 +590,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="pt-8 pb-0 bg-brand-darkest relative z-10 border-t border-white/10">
+    <footer class="pt-8 pb-2 bg-brand-darkest relative z-10 border-t border-white/10">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-4">
                 <div class="flex gap-4">
                     <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
                         class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i
@@ -636,7 +608,7 @@
                     <a href="#" class="hover:text-brand-orange transition-colors">Política de Cookies</a>
                 </div>
             </div>
-            <div class="border-t border-white/5 py-3 text-center">
+            <div class="border-t border-white/5 pt-3 pb-1 text-center">
                 <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest">&copy; 2025 Porvenir Agencia
                     Digital. Todos los derechos reservados.</p>
             </div>
@@ -726,6 +698,7 @@
                 } else if (consent === 'declined') {
                     // Nada
                 } else {
+                    // Mostrar banner
                     banner.classList.remove('hidden');
                 }
 

@@ -11,6 +11,9 @@
         content="Automatización IA, Chatbots WhatsApp, Diseño Web, UX UI, Accesibilidad, SEO SEM, Agencia Digital Ciudad Real, Consultoría Tecnológica">
     <meta name="author" content="Teresa Rodríguez de Dios">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon_porvenir_agencia_digital_diseno_web_ia_ux_accesibilidad.png">
+
     <!-- Google Fonts: Montserrat (Única fuente) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +44,17 @@
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
+                    },
+                    container: {
+                        center: true,
+                        padding: '1.5rem',
+                        screens: {
+                            sm: '640px',
+                            md: '768px',
+                            lg: '1024px',
+                            xl: '1280px',
+                            '2xl': '1536px', // AUMENTADO PARA MÁS ANCHURA (Solo Carrusel lo usará si necesario, resto normal)
+                        },
                     },
                     animation: {
                         'spin-slow': 'spin 30s linear infinite',
@@ -329,23 +343,25 @@
 
     </header>
 
-    <!-- Franja de Autoridad (Margen Equilibrado) -->
-    <section class="my-6 md:my-10 py-4 bg-brand-dark/50 border-y border-white/5 overflow-hidden relative z-20">
-        <div class="flex whitespace-nowrap animate-marquee">
+    <!-- Franja de Autoridad (Carrusel Ancho) -->
+    <!-- Ajustado py-10 para más anchura visual, mantenido my-6 md:my-10 para distancia -->
+    <section
+        class="my-6 md:my-10 py-10 bg-brand-dark/50 border-y border-white/5 overflow-hidden relative z-20 group cursor-default">
+        <div class="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
             <div
-                class="flex gap-20 items-center text-gray-400 font-bold text-sm md:text-base uppercase tracking-[0.2em] px-8">
+                class="flex gap-20 items-center text-gray-400 font-bold text-lg md:text-xl uppercase tracking-[0.2em] px-8 font-light">
                 <span class="flex items-center gap-3"><i data-lucide="check-circle"
-                        class="w-4 h-4 text-brand-orange"></i> + Eficiencia Operativa</span>
-                <span class="flex items-center gap-3"><i data-lucide="zap" class="w-4 h-4 text-brand-orange"></i> +
+                        class="w-5 h-5 text-brand-orange"></i> + Eficiencia Operativa</span>
+                <span class="flex items-center gap-3"><i data-lucide="zap" class="w-5 h-5 text-brand-orange"></i> +
                     Conversión Web</span>
                 <span class="flex items-center gap-3"><i data-lucide="shield-check"
-                        class="w-4 h-4 text-brand-orange"></i> 100% Cumplimiento Legal</span>
+                        class="w-5 h-5 text-brand-orange"></i> 100% Cumplimiento Legal</span>
                 <span class="flex items-center gap-3"><i data-lucide="check-circle"
-                        class="w-4 h-4 text-brand-orange"></i> + Eficiencia Operativa</span>
-                <span class="flex items-center gap-3"><i data-lucide="zap" class="w-4 h-4 text-brand-orange"></i> +
+                        class="w-5 h-5 text-brand-orange"></i> + Eficiencia Operativa</span>
+                <span class="flex items-center gap-3"><i data-lucide="zap" class="w-5 h-5 text-brand-orange"></i> +
                     Conversión Web</span>
                 <span class="flex items-center gap-3"><i data-lucide="shield-check"
-                        class="w-4 h-4 text-brand-orange"></i> 100% Cumplimiento Legal</span>
+                        class="w-5 h-5 text-brand-orange"></i> 100% Cumplimiento Legal</span>
             </div>
         </div>
     </section>
@@ -592,7 +608,7 @@
     <!-- Footer -->
     <footer class="pt-8 pb-2 bg-brand-darkest relative z-10 border-t border-white/10">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
                 <div class="flex gap-4">
                     <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
                         class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i

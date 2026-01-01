@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CAMBIO SEO: Alineado con la estrategia de "Ingeniería" -->
+
+    <!-- TITULO Y METADATOS SINCRONIZADOS CON ESTRATEGIA "INGENIERÍA" -->
     <title>Porvenir | Agencia de Ingeniería, Diseño Web & IA</title>
     <meta name="description"
         content="Agencia de Ingeniería de Software especializada en Automatización con IA, Diseño Web a medida y Accesibilidad. Transformamos negocios con tecnología que vende.">
@@ -212,7 +213,7 @@
         </button>
     </nav>
 
-    <!-- Menú Móvil -->
+    <!-- Menú Móvil (CORREGIDO: Añadido item Agencia) -->
     <div id="mobile-menu"
         class="fixed inset-0 bg-brand-darkest z-40 flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
         <button class="absolute top-6 right-6 text-white" onclick="toggleMenu()">
@@ -220,6 +221,8 @@
         </button>
         <a href="#inicio" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold">Inicio</a>
         <a href="#servicios" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold">Servicios</a>
+        <!-- ÍTEM AÑADIDO: Agencia -->
+        <a href="#agencia" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold">Agencia</a>
         <a href="#contacto" onclick="toggleMenu()" class="text-2xl font-bold text-brand-orange">Contactar</a>
     </div>
 
@@ -570,18 +573,33 @@
         </div>
     </section>
 
-    <!-- Footer (Rutas actualizadas a pages/) -->
+    <!-- Footer (Rutas actualizadas a pages/ y Logo TEXTO) -->
     <footer class="pt-8 pb-2 bg-brand-darkest relative z-10 border-t border-white/10">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
-                <div class="flex gap-4">
-                    <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
-                        class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i
-                            data-lucide="linkedin" class="w-4 h-4"></i></a>
-                    <a href="https://www.instagram.com/porvenir_agencia/" target="_blank"
-                        class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i
-                            data-lucide="instagram" class="w-4 h-4"></i></a>
+                <!-- REDES SOCIALES Y LOGO (Texto) -->
+                <div class="flex flex-col md:flex-row gap-6 items-center">
+                    <!-- LOGO TEXTO AÑADIDO -->
+                    <a href="#"
+                        class="text-lg font-bold tracking-widest flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity text-white">
+                        <span class="relative flex h-2 w-2 mr-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
+                        </span>
+                        PORVENIR
+                    </a>
+
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i
+                                data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="https://www.instagram.com/porvenir_agencia/" target="_blank"
+                            class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i
+                                data-lucide="instagram" class="w-4 h-4"></i></a>
+                    </div>
                 </div>
+
                 <div
                     class="flex flex-wrap justify-center gap-6 text-xs text-gray-500 font-bold uppercase tracking-widest">
                     <a href="pages/aviso-legal.html" class="hover:text-brand-orange transition-colors">Aviso Legal</a>

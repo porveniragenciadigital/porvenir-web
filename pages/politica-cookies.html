@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth cursor-none">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies | Porvenir Agencia Digital</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="favicon_porvenir_agencia_digital_diseno_web_ia_ux_accesibilidad.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { brand: { darkest: '#051024', orange: '#ff7a48' } }, fontFamily: { sans: ['Montserrat', 'sans-serif'] } } } }</script>
+    <style>
+        body {
+            background-color: #051024;
+            color: #EBEFF5;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #ff7a48;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 122, 72, 0.5);
+        }
+
+        /* Tabla Cookies */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+
+        th,
+        td {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            text-align: left;
+            color: #9ca3af;
+        }
+
+        th {
+            background-color: rgba(255, 122, 72, 0.1);
+            color: #ff7a48;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="antialiased relative selection:bg-brand-orange selection:text-white">
+
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <nav
+        class="fixed w-full z-50 py-6 px-8 flex justify-between items-center bg-brand-darkest/80 backdrop-blur-md border-b border-white/5 h-20">
+        <a href="index.html" class="text-xl font-bold tracking-widest flex items-center gap-1">
+            <span class="relative flex h-3 w-3 mr-2"><span
+                    class="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span></span> PORVENIR
+        </a>
+        <a href="index.html"
+            class="text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2"><i
+                data-lucide="arrow-left" class="w-4 h-4"></i> Volver</a>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6 relative z-10">
+        <div class="container mx-auto max-w-4xl">
+            <div class="glass-card p-8 md:p-16 rounded-3xl">
+                <h1 class="text-3xl md:text-5xl font-bold mb-2">Política de Cookies</h1>
+                <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-10">Uso de tecnologías de
+                    rastreo</p>
+
+                <p class="mb-4 text-gray-400">Esta web utiliza cookies propias y de terceros para conseguir que la
+                    navegación sea funcional y para analizar el tráfico.</p>
+
+                <h2 class="text-xl font-bold text-brand-orange mt-8 mb-4">Cookies que utilizamos</h2>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Proveedor</th>
+                                <th>Finalidad</th>
+                                <th>Duración</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>_ga, _ga_XXXX</td>
+                                <td>Google Analytics</td>
+                                <td>Analítica (Mide visitas anónimas)</td>
+                                <td>2 años</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 class="text-xl font-bold text-brand-orange mt-8 mb-4">¿Cómo desactivarlas?</h2>
+                <p class="mb-4 text-gray-400">Puede usted permitir, bloquear o eliminar las cookies instaladas en su
+                    equipo mediante la configuración de las opciones de su navegador (Chrome, Firefox, Safari, Edge).
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 bg-brand-darkest border-t border-white/10 text-center">
+        <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest">&copy; 2025 Porvenir Agencia Digital.
+        </p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const cd = document.getElementById('cursor-dot'), co = document.getElementById('cursor-outline');
+        window.addEventListener('mousemove', e => { cd.style.left = e.clientX + 'px'; cd.style.top = e.clientY + 'px'; co.animate({ left: e.clientX + 'px', top: e.clientY + 'px' }, { duration: 500, fill: "forwards" }); });
+    </script>
+</body>
+
+</html>

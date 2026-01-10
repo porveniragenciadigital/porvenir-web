@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth cursor-none">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta no encontrada | Porvenir</title>
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            darkest: '#051024',
+                            orange: '#ff7a48',
+                        }
+                    },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'] },
+                    animation: { 'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #051024;
+            color: #EBEFF5;
+            overflow: hidden;
+        }
+
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #ff7a48;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 122, 72, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        body:has(a:hover) .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 122, 72, 0.1);
+            border-color: #ff7a48;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col h-screen relative items-center justify-center">
+
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <main class="relative z-10 text-center px-6 max-w-2xl">
+
+        <div class="flex justify-center mb-8">
+            <div class="p-6 rounded-full border border-white/5 bg-white/5 animate-pulse-slow">
+                <i data-lucide="unlink" class="w-12 h-12 text-brand-orange opacity-80"></i>
+            </div>
+        </div>
+
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            Conexión Interrumpida
+        </h1>
+
+        <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-10">
+            La URL que intentas solicitar no existe en nuestro servidor o ha cambiado de coordenadas.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <a href="index.html"
+                class="group relative px-8 py-4 bg-brand-orange text-white overflow-hidden rounded-full shadow-[0_0_20px_rgba(255,122,72,0.4)] hover:shadow-[0_0_40px_rgba(255,122,72,0.6)] transition-all duration-300">
+                <span class="relative z-10 font-bold text-xs tracking-widest uppercase flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al Inicio
+                </span>
+            </a>
+
+            <a href="mailto:teresa.rodriguez@porveniragenciadigital.com"
+                class="text-gray-400 hover:text-white text-xs font-bold tracking-widest uppercase transition-colors border-b border-transparent hover:border-brand-orange pb-1">
+                Reportar incidencia
+            </a>
+        </div>
+    </main>
+
+    <div class="absolute bottom-10 w-full text-center border-t border-white/5 pt-6">
+        <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest">Código de estado: 404_NOT_FOUND</p>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            cursorDot.style.left = `${e.clientX}px`; cursorDot.style.top = `${e.clientY}px`;
+            cursorOutline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
+        });
+
+        // Analytics
+        const GA_ID = 'G-97DY09F2P2';
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(script);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+    </script>
+</body>
+
+</html>

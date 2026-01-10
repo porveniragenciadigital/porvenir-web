@@ -6,14 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Porvenir | Ingeniería, Diseño Web, IA & Accesibilidad</title>
-
+    
     <meta name="description"
-        content="Agencia de Ingeniería de Software. Especialistas en Diseño Web a medida, Automatización con IA y Accesibilidad (WCAG). Tecnología estratégica que vende.">
-
+        content="Agencia de Ingeniería de Software líder en Ciudad Real. Transformamos negocios mediante Automatización con IA, Diseño Web estratégico y Auditoría de Accesibilidad (WCAG).">
+    
     <meta name="keywords"
-        content="Ingeniería Software, Agencia IA, Diseño Web Ciudad Real, Accesibilidad Web, Chatbots, Desarrollo Web a medida, Consultoría Tecnológica, UX/UI, Automatización">
-
+        content="Ingeniería de Software, Agencia IA, Diseño Web Ciudad Real, Accesibilidad Web WCAG, Chatbots IA, Desarrollo Web a medida, Consultoría Tecnológica, UX/UI, Automatización de procesos">
+    
     <meta name="author" content="Teresa Rodríguez de Dios">
+    
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.porveniragenciadigital.com/">
+
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Porvenir | Ingeniería, Diseño Web e Inteligencia Artificial">
+    <meta property="og:description" content="Ingeniería de Software y Estrategia Digital. Especialistas en Webs de alto rendimiento, Chatbots con IA y Accesibilidad.">
+    <meta property="og:url" content="https://www.porveniragenciadigital.com/">
+    <meta property="og:site_name" content="Porvenir Agencia Digital">
+    <meta property="og:image" content="https://www.porveniragenciadigital.com/assets/img/og-social-share.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Porvenir | Ingeniería y Diseño Web con IA">
+    <meta name="twitter:description" content="Agencia de Ingeniería de Software. Automatización, Diseño y Accesibilidad.">
+    <meta name="twitter:image" content="https://www.porveniragenciadigital.com/assets/img/og-social-share.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Porvenir Agencia Digital",
+      "image": "https://www.porveniragenciadigital.com/assets/img/logo.png",
+      "@id": "https://www.porveniragenciadigital.com/#website",
+      "url": "https://www.porveniragenciadigital.com/",
+      "telephone": "", 
+      "email": "teresa.rodriguez@porveniragenciadigital.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad Real",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.9848,
+        "longitude": -3.9274
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Teresa Rodríguez de Dios",
+        "jobTitle": "Ingeniera de Software & Experta en UX"
+      },
+      "description": "Agencia de Ingeniería de Software especializada en Automatización con IA, Diseño Web a medida y Accesibilidad.",
+      "sameAs": [
+        "https://www.linkedin.com/in/teresa-rodríguez-de-dios",
+        "https://www.instagram.com/porvenir_agencia/"
+      ],
+      "knowsAbout": ["Ingeniería de Software", "Inteligencia Artificial", "Diseño Web", "Accesibilidad WCAG", "SEO"]
+    }
+    </script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
@@ -82,96 +133,48 @@
 
         #neural-canvas {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.3;
-            pointer-events: none;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; opacity: 0.3; pointer-events: none;
         }
 
         .system-void-mask {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 800px;
-            height: 800px;
+            width: 700px; height: 700px;
             background: radial-gradient(circle, #051024 25%, rgba(5, 16, 36, 0.9) 60%, transparent 75%);
-            z-index: 1;
-            pointer-events: none;
+            z-index: 1; pointer-events: none;
         }
 
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #051024; }
+        ::-webkit-scrollbar-thumb { background: #103778; border-radius: 3px; }
 
-        ::-webkit-scrollbar-track {
-            background: #051024;
+        .cursor-dot, .cursor-outline {
+            position: fixed; top: 0; left: 0; transform: translate(-50%, -50%);
+            border-radius: 50%; z-index: 9999; pointer-events: none;
         }
-
-        ::-webkit-scrollbar-thumb {
-            background: #103778;
-            border-radius: 3px;
-        }
-
-        .cursor-dot,
+        .cursor-dot { width: 8px; height: 8px; background-color: #ff7a48; }
         .cursor-outline {
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 9999;
-            pointer-events: none;
-        }
-
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #ff7a48;
-        }
-
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255, 122, 72, 0.5);
+            width: 40px; height: 40px; border: 1px solid rgba(255, 122, 72, 0.5);
             transition: width 0.2s, height 0.2s, background-color 0.2s;
         }
-
-        body:has(a:hover) .cursor-outline,
-        body:has(button:hover) .cursor-outline {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(255, 122, 72, 0.1);
-            border-color: #ff7a48;
+        body:has(a:hover) .cursor-outline, body:has(button:hover) .cursor-outline {
+            width: 60px; height: 60px; background-color: rgba(255, 122, 72, 0.1); border-color: #ff7a48;
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s ease;
         }
-
         .glass-card:hover {
-            border-color: #ff7a48;
-            transform: translateY(-5px);
-            background: rgba(255, 122, 72, 0.05);
-            box-shadow: 0 10px 30px -10px rgba(255, 122, 72, 0.1);
+            border-color: #ff7a48; transform: translateY(-5px);
+            background: rgba(255, 122, 72, 0.05); box-shadow: 0 10px 30px -10px rgba(255, 122, 72, 0.1);
         }
-
         .fade-in-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 
@@ -180,18 +183,15 @@
     <div class="cursor-dot" id="cursor-dot"></div>
     <div class="cursor-outline" id="cursor-outline"></div>
 
-    <nav
-        class="fixed w-full z-50 py-6 px-8 flex justify-between items-center bg-brand-darkest/80 backdrop-blur-md border-b border-white/5 h-20 md:h-24 transition-all">
+    <nav class="fixed w-full z-50 py-6 px-8 flex justify-between items-center bg-brand-darkest/80 backdrop-blur-md border-b border-white/5 h-20 md:h-24 transition-all">
         <a href="#" class="text-xl font-bold tracking-widest flex items-center gap-1 relative z-50 h-full">
             <span class="relative flex h-3 w-3 mr-2">
-                <span
-                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
             </span>
             PORVENIR
         </a>
-        <div
-            class="hidden md:flex items-center gap-10 text-xs font-bold tracking-[0.15em] uppercase text-gray-400 h-full">
+        <div class="hidden md:flex items-center gap-10 text-xs font-bold tracking-[0.15em] uppercase text-gray-400 h-full">
             <a href="#inicio" class="hover:text-brand-orange transition-colors">Inicio</a>
             <a href="#servicios" class="hover:text-brand-orange transition-colors">Servicios</a>
             <a href="#agencia" class="hover:text-brand-orange transition-colors">Agencia</a>
@@ -223,53 +223,28 @@
         <div class="absolute inset-0 flex items-center justify-center md:hidden pointer-events-none opacity-40 z-0">
             <div class="relative w-[350px] h-[350px] aspect-square transform scale-110">
                 <div class="absolute w-full h-full border border-white/20 rounded-full animate-spin-slow"></div>
-                <div
-                    class="absolute w-[80%] h-[80%] top-[10%] left-[10%] border-2 border-dashed border-brand-orange/40 rounded-full animate-spin-reverse">
-                </div>
-                <div
-                    class="absolute w-[60%] h-[60%] top-[20%] left-[20%] border border-white/10 rounded-full animate-spin-slower">
-                </div>
-                <div
-                    class="absolute w-[40%] h-[40%] top-[30%] left-[30%] bg-brand-orange/10 rounded-full blur-2xl animate-pulse-glow">
-                </div>
-
-                <div class="absolute inset-0 animate-[spin_30s_linear_infinite] rounded-full pointer-events-none">
-                    <div
-                        class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-brand-orange rounded-full shadow-[0_0_15px_#ff7a48]">
-                    </div>
-                </div>
-
-                <div
-                    class="absolute inset-[10%] animate-[spin_25s_linear_infinite_reverse] rounded-full pointer-events-none">
-                    <div
-                        class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2 h-2 bg-white rounded-full shadow-[0_0_10px_white]">
-                    </div>
-                </div>
+                <div class="absolute w-[80%] h-[80%] top-[10%] left-[10%] border-2 border-dashed border-brand-orange/40 rounded-full animate-spin-reverse"></div>
+                <div class="absolute w-[60%] h-[60%] top-[20%] left-[20%] border border-white/10 rounded-full animate-spin-slower"></div>
+                <div class="absolute w-[40%] h-[40%] top-[30%] left-[30%] bg-brand-orange/10 rounded-full blur-2xl animate-pulse-glow"></div>
             </div>
         </div>
 
-        <div
-            class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center px-6 h-full relative z-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center px-6 h-full relative z-10">
 
-            <div
-                class="relative z-20 flex flex-col justify-center items-center md:items-start text-center md:text-left fade-in-up order-1">
-                <p
-                    class="text-brand-orange text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase mb-4 md:mb-6 inline-flex items-center gap-2 md:gap-3 border border-brand-orange/30 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-brand-darkest/50 backdrop-blur-sm whitespace-nowrap">
+            <div class="relative z-20 flex flex-col justify-center items-center md:items-start text-center md:text-left fade-in-up order-1">
+                <p class="text-brand-orange text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase mb-4 md:mb-6 inline-flex items-center gap-2 md:gap-3 border border-brand-orange/30 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-brand-darkest/50 backdrop-blur-sm whitespace-nowrap">
                     <span class="w-1.5 h-1.5 md:w-2 md:h-2 bg-brand-orange rounded-full animate-pulse"></span>
                     Disponible para proyectos
                 </p>
                 <h1 class="text-3xl md:text-5xl lg:text-7xl leading-tight mb-6 md:mb-8 tracking-tight relative z-20">
-                    <span class="font-light text-white block tracking-wide text-2xl md:text-4xl lg:text-5xl">INGENIERÍA,
-                        DISEÑO</span>
+                    <span class="font-light text-white block tracking-wide text-2xl md:text-4xl lg:text-5xl">INGENIERÍA, DISEÑO</span>
                     <span class="font-bold text-white block">& IA</span>
                 </h1>
-                <p
-                    class="text-gray-400 text-sm md:text-lg leading-relaxed mb-8 md:mb-10 font-light max-w-lg relative z-20">
+                <p class="text-gray-400 text-sm md:text-lg leading-relaxed mb-8 md:mb-10 font-light max-w-lg relative z-20">
                     Tecnología que escala negocios. Unimos <strong>automatización</strong>, <strong>diseño web</strong>
                     de alto impacto y <strong>accesibilidad</strong> para crear activos digitales rentables.
                 </p>
-                <div
-                    class="flex flex-wrap items-center justify-center md:justify-start gap-6 w-full sm:w-auto relative z-20">
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-6 w-full sm:w-auto relative z-20">
                     <div class="flex items-center gap-4 md:gap-6">
                         <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
                             class="text-gray-400 hover:text-brand-orange transition-all transform hover:scale-110 p-2 border border-white/10 rounded-full hover:border-brand-orange hover:bg-brand-orange/10">
@@ -282,15 +257,11 @@
                     </div>
                     <a href="#contacto"
                         class="group relative px-8 py-4 md:py-5 bg-brand-orange text-white overflow-hidden rounded-full shadow-[0_0_20px_rgba(255,122,72,0.4)] hover:shadow-[0_0_40px_rgba(255,122,72,0.6)] transition-all duration-300 w-full sm:w-auto text-center">
-                        <span
-                            class="relative z-10 font-bold text-xs md:text-sm tracking-widest uppercase flex items-center justify-center gap-3 whitespace-nowrap">
+                        <span class="relative z-10 font-bold text-xs md:text-sm tracking-widest uppercase flex items-center justify-center gap-3 whitespace-nowrap">
                             AUDITAR MI PROYECTO AHORA
                         </span>
-                        <div
-                            class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
-                        </div>
-                        <span
-                            class="absolute inset-0 z-10 flex items-center justify-center gap-3 font-bold text-xs md:text-sm tracking-widest uppercase text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                        <div class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                        <span class="absolute inset-0 z-10 flex items-center justify-center gap-3 font-bold text-xs md:text-sm tracking-widest uppercase text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                             AUDITAR MI PROYECTO AHORA
                         </span>
                     </a>
@@ -298,18 +269,14 @@
             </div>
 
             <div class="hidden md:flex relative h-full items-center justify-center pointer-events-none z-10 order-2">
-                <div
-                    class="relative w-[600px] lg:w-[650px] aspect-square flex items-center justify-center transform translate-x-10 lg:translate-x-0 transition-transform duration-500">
-
+                <div class="relative w-[600px] lg:w-[650px] aspect-square flex items-center justify-center transform translate-x-10 lg:translate-x-0 transition-transform duration-500">
+                    
                     <div class="absolute z-20 flex flex-col items-center justify-center w-full h-full">
                         <div class="relative flex items-center justify-center">
                             <div class="absolute inset-0 bg-brand-orange/30 blur-xl rounded-full animate-pulse"></div>
-                            <i data-lucide="brain-circuit"
-                                class="w-16 h-16 text-brand-orange relative z-10 opacity-90"></i>
+                            <i data-lucide="brain-circuit" class="w-16 h-16 text-brand-orange relative z-10 opacity-90"></i>
                         </div>
-                        <div
-                            class="absolute w-[140px] h-[140px] rounded-full border border-brand-orange/40 animate-pulse-glow">
-                        </div>
+                        <div class="absolute w-[140px] h-[140px] rounded-full border border-brand-orange/40 animate-pulse-glow"></div>
                     </div>
 
                     <div class="absolute inset-[36%] rounded-full"></div>
@@ -317,48 +284,38 @@
                     <div class="absolute inset-[18%] rounded-full border border-brand-orange/40 border-dashed"></div>
                     <div class="absolute inset-[5%] rounded-full border border-white/10"></div>
 
-                    <div
-                        class="absolute inset-[36%] animate-[spin_20s_linear_infinite] rounded-full pointer-events-none">
+                    <div class="absolute inset-[36%] animate-[spin_20s_linear_infinite] rounded-full pointer-events-none">
                         <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                             <div class="animate-[spin_20s_linear_infinite_reverse] flex items-center gap-3">
                                 <div class="w-3 h-3 bg-brand-orange rounded-full shadow-[0_0_15px_#ff7a48]"></div>
-                                <span
-                                    class="text-brand-orange text-[10px] font-bold tracking-widest uppercase bg-brand-darkest/80 px-2 py-1 rounded backdrop-blur-sm whitespace-nowrap">IA</span>
+                                <span class="text-brand-orange text-[10px] font-bold tracking-widest uppercase bg-brand-darkest/80 px-2 py-1 rounded backdrop-blur-sm whitespace-nowrap">IA</span>
                             </div>
                         </div>
                     </div>
 
-                    <div
-                        class="absolute inset-[30%] animate-[spin_30s_linear_infinite] rounded-full pointer-events-none">
+                    <div class="absolute inset-[30%] animate-[spin_30s_linear_infinite] rounded-full pointer-events-none">
                         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
                             <div class="animate-[spin_30s_linear_infinite_reverse] flex items-center gap-3">
                                 <div class="w-2 h-2 bg-white rounded-full shadow-[0_0_10px_white]"></div>
-                                <span
-                                    class="text-white text-[10px] font-bold tracking-widest uppercase bg-brand-darkest/80 px-2 py-1 rounded backdrop-blur-sm whitespace-nowrap">Diseño</span>
+                                <span class="text-white text-[10px] font-bold tracking-widest uppercase bg-brand-darkest/80 px-2 py-1 rounded backdrop-blur-sm whitespace-nowrap">Diseño</span>
                             </div>
                         </div>
                     </div>
 
-                    <div
-                        class="absolute inset-[18%] animate-[spin_40s_linear_infinite] rounded-full pointer-events-none">
+                    <div class="absolute inset-[18%] animate-[spin_40s_linear_infinite] rounded-full pointer-events-none">
                         <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
                             <div class="animate-[spin_40s_linear_infinite_reverse] flex items-center gap-3">
                                 <div class="w-3 h-3 bg-brand-orange rounded-full shadow-[0_0_15px_#ff7a48]"></div>
-                                <span
-                                    class="text-brand-orange text-[10px] font-bold tracking-widest uppercase bg-brand-darkest/80 px-2 py-1 rounded backdrop-blur-sm whitespace-nowrap">Ingeniería</span>
+                                <span class="text-brand-orange text-[10px] font-bold tracking-widest uppercase bg-brand-darkest/80 px-2 py-1 rounded backdrop-blur-sm whitespace-nowrap">Ingeniería</span>
                             </div>
                         </div>
                     </div>
 
-                    <div
-                        class="absolute inset-[5%] animate-[spin_50s_linear_infinite] rounded-full pointer-events-none">
+                    <div class="absolute inset-[5%] animate-[spin_50s_linear_infinite] rounded-full pointer-events-none">
                         <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
                             <div class="animate-[spin_50s_linear_infinite_reverse] flex items-center gap-3">
-                                <div
-                                    class="w-2 h-2 bg-brand-light/80 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]">
-                                </div>
-                                <span
-                                    class="text-brand-light/80 text-[10px] font-bold tracking-widest uppercase bg-brand-darkest/80 px-2 py-1 rounded backdrop-blur-sm whitespace-nowrap">Accesibilidad</span>
+                                <div class="w-2 h-2 bg-brand-light/80 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
+                                <span class="text-brand-light/80 text-[10px] font-bold tracking-widest uppercase bg-brand-darkest/80 px-2 py-1 rounded backdrop-blur-sm whitespace-nowrap">Accesibilidad</span>
                             </div>
                         </div>
                     </div>
@@ -368,200 +325,120 @@
         </div>
     </header>
 
-    <section
-        class="my-6 md:my-10 py-10 bg-brand-dark/50 border-y border-white/5 overflow-hidden relative z-20 group cursor-default">
+    <section class="my-6 md:my-10 py-10 bg-brand-dark/50 border-y border-white/5 overflow-hidden relative z-20 group cursor-default">
         <div class="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
-            <div
-                class="flex gap-20 items-center text-gray-400 font-bold text-lg md:text-xl uppercase tracking-[0.2em] px-8 font-light">
-                <span class="flex items-center gap-3"><i data-lucide="check-circle"
-                        class="w-10 h-10 text-brand-orange"></i> + Eficiencia Operativa</span>
-                <span class="flex items-center gap-3"><i data-lucide="zap" class="w-10 h-10 text-brand-orange"></i> +
-                    Conversión Web</span>
-                <span class="flex items-center gap-3"><i data-lucide="shield-check"
-                        class="w-10 h-10 text-brand-orange"></i> 100% Cumplimiento Legal</span>
-                <span class="flex items-center gap-3"><i data-lucide="check-circle"
-                        class="w-10 h-10 text-brand-orange"></i> + Eficiencia Operativa</span>
-                <span class="flex items-center gap-3"><i data-lucide="zap" class="w-10 h-10 text-brand-orange"></i> +
-                    Conversión Web</span>
-                <span class="flex items-center gap-3"><i data-lucide="shield-check"
-                        class="w-10 h-10 text-brand-orange"></i> 100% Cumplimiento Legal</span>
+            <div class="flex gap-20 items-center text-gray-400 font-bold text-lg md:text-xl uppercase tracking-[0.2em] px-8 font-light">
+                <span class="flex items-center gap-3"><i data-lucide="check-circle" class="w-10 h-10 text-brand-orange"></i> + Eficiencia Operativa</span>
+                <span class="flex items-center gap-3"><i data-lucide="zap" class="w-10 h-10 text-brand-orange"></i> + Conversión Web</span>
+                <span class="flex items-center gap-3"><i data-lucide="shield-check" class="w-10 h-10 text-brand-orange"></i> 100% Cumplimiento Legal</span>
+                <span class="flex items-center gap-3"><i data-lucide="check-circle" class="w-10 h-10 text-brand-orange"></i> + Eficiencia Operativa</span>
+                <span class="flex items-center gap-3"><i data-lucide="zap" class="w-10 h-10 text-brand-orange"></i> + Conversión Web</span>
+                <span class="flex items-center gap-3"><i data-lucide="shield-check" class="w-10 h-10 text-brand-orange"></i> 100% Cumplimiento Legal</span>
             </div>
         </div>
     </section>
 
     <section id="servicios" class="pt-10 pb-16 md:pt-20 md:pb-32 px-6 md:px-12 relative z-10 overflow-hidden">
-        <div
-            class="absolute bottom-0 right-0 w-[300px] aspect-square border-2 border-dashed border-brand-orange/10 rounded-full animate-spin-reverse pointer-events-none translate-x-1/3 translate-y-1/3">
-        </div>
+        <div class="absolute bottom-0 right-0 w-[300px] aspect-square border-2 border-dashed border-brand-orange/10 rounded-full animate-spin-reverse pointer-events-none translate-x-1/3 translate-y-1/3"></div>
         <div class="container mx-auto">
             <div class="mb-20 fade-in-up text-center md:text-left">
-                <span class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Nuestros
-                    Servicios</span>
+                <span class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Nuestros Servicios</span>
                 <h2 class="text-3xl md:text-5xl font-bold">Soluciones Digitales 360º</h2>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article
-                    class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full bg-brand-orange/5 border-brand-orange/20 relative overflow-hidden">
-                    <div class="absolute -right-10 -top-10 w-32 aspect-square bg-brand-orange/10 rounded-full blur-2xl">
-                    </div>
-                    <div
-                        class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange mb-6">
-                        <i data-lucide="bot" class="w-8 h-8"></i></div>
+                <article class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full bg-brand-orange/5 border-brand-orange/20 relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 w-32 aspect-square bg-brand-orange/10 rounded-full blur-2xl"></div>
+                    <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange mb-6"><i data-lucide="bot" class="w-8 h-8"></i></div>
                     <h3 class="text-xl font-bold mb-2">Automatización & Chatbots IA</h3>
-                    <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Tu negocio abierto
-                        24/7</p>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Implementamos chatbots inteligentes a medida y
-                        agentes de voz con IA que conversan de forma natural.</p>
+                    <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Tu negocio abierto 24/7</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Implementamos chatbots inteligentes a medida y agentes de voz con IA que conversan de forma natural.</p>
                     <ul class="text-sm text-gray-400 space-y-3 mb-8 flex-grow">
-                        <li class="flex items-start gap-2"><i data-lucide="check"
-                                class="w-4 h-4 text-brand-orange mt-1"></i> Omnicanalidad Real (WhatsApp, Web)</li>
-                        <li class="flex items-start gap-2"><i data-lucide="check"
-                                class="w-4 h-4 text-brand-orange mt-1"></i> Atención Ininterrumpida</li>
-                        <li class="flex items-start gap-2"><i data-lucide="check"
-                                class="w-4 h-4 text-brand-orange mt-1"></i> Gestión Inteligente de Leads</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1"></i> Omnicanalidad Real (WhatsApp, Web)</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1"></i> Atención Ininterrumpida</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1"></i> Gestión Inteligente de Leads</li>
                     </ul>
-                    <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
-                        class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group mt-auto">Ver
-                        demo de Chatbot <i data-lucide="arrow-right"
-                            class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
+                    <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank" class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group mt-auto">Ver demo de Chatbot <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
                 </article>
-                <article
-                    class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full relative overflow-hidden">
-                    <div class="absolute -left-10 -bottom-10 w-32 aspect-square bg-brand-blue/20 rounded-full blur-2xl">
-                    </div>
-                    <div
-                        class="w-14 h-14 bg-brand-blue/30 rounded-full flex items-center justify-center text-brand-orange mb-6">
-                        <i data-lucide="layout" class="w-8 h-8"></i></div>
+                <article class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full relative overflow-hidden">
+                    <div class="absolute -left-10 -bottom-10 w-32 aspect-square bg-brand-blue/20 rounded-full blur-2xl"></div>
+                    <div class="w-14 h-14 bg-brand-blue/30 rounded-full flex items-center justify-center text-brand-orange mb-6"><i data-lucide="layout" class="w-8 h-8"></i></div>
                     <h3 class="text-xl font-bold mb-2">Diseño Web & Conversión</h3>
                     <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Estética + Ventas</p>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">No usamos plantillas lentas; creamos páginas
-                        web a medida que cargan en tiempo récord y retienen al usuario.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">No usamos plantillas lentas; creamos páginas web a medida que cargan en tiempo récord y retienen al usuario.</p>
                     <ul class="text-sm text-gray-400 space-y-3 mb-8 flex-grow">
-                        <li class="flex items-start gap-2"><i data-lucide="check"
-                                class="w-4 h-4 text-brand-orange mt-1"></i> Mobile First & SEO Técnico</li>
-                        <li class="flex items-start gap-2"><i data-lucide="check"
-                                class="w-4 h-4 text-brand-orange mt-1"></i> Diseños modernos y premium</li>
-                        <li class="flex items-start gap-2"><i data-lucide="check"
-                                class="w-4 h-4 text-brand-orange mt-1"></i> Máxima Conversión</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1"></i> Mobile First & SEO Técnico</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1"></i> Diseños modernos y premium</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1"></i> Máxima Conversión</li>
                     </ul>
-                    <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
-                        class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group mt-auto">Quiero
-                        renovar mi web <i data-lucide="arrow-right"
-                            class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
+                    <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank" class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group mt-auto">Quiero renovar mi web <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
                 </article>
-                <article
-                    class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full relative overflow-hidden">
-                    <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 aspect-square border border-white/5 rounded-full animate-spin-slow pointer-events-none">
-                    </div>
-                    <div
-                        class="w-14 h-14 bg-brand-blue/30 rounded-full flex items-center justify-center text-brand-orange mb-6">
-                        <i data-lucide="accessibility" class="w-8 h-8"></i></div>
+                <article class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full relative overflow-hidden">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 aspect-square border border-white/5 rounded-full animate-spin-slow pointer-events-none"></div>
+                    <div class="w-14 h-14 bg-brand-blue/30 rounded-full flex items-center justify-center text-brand-orange mb-6"><i data-lucide="accessibility" class="w-8 h-8"></i></div>
                     <h3 class="text-xl font-bold mb-2">UX & Accesibilidad</h3>
-                    <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Cumplimiento & Empatía
-                    </p>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Evita sanciones y democratiza tu tecnología.
-                        Te ayudamos a cumplir la normativa vigente (WCAG 2.1).</p>
+                    <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Cumplimiento & Empatía</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Evita sanciones y democratiza tu tecnología. Te ayudamos a cumplir la normativa vigente (WCAG 2.1).</p>
                     <ul class="text-sm text-gray-400 space-y-3 mb-8 flex-grow">
-                        <li class="flex items-start gap-2"><i data-lucide="check"
-                                class="w-4 h-4 text-brand-orange mt-1"></i> Auditorías de Accesibilidad</li>
-                        <li class="flex items-start gap-2"><i data-lucide="check"
-                                class="w-4 h-4 text-brand-orange mt-1"></i> Evaluaciones Heurísticas</li>
-                        <li class="flex items-start gap-2"><i data-lucide="check"
-                                class="w-4 h-4 text-brand-orange mt-1"></i> Diseño Inclusivo</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1"></i> Auditorías de Accesibilidad</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1"></i> Evaluaciones Heurísticas</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1"></i> Diseño Inclusivo</li>
                     </ul>
-                    <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
-                        class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group mt-auto">Solicitar
-                        auditoría UX <i data-lucide="arrow-right"
-                            class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
+                    <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank" class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group mt-auto">Solicitar auditoría UX <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
                 </article>
             </div>
         </div>
     </section>
 
     <section id="agencia" class="py-16 md:py-32 px-6 md:px-12 relative z-10 bg-brand-dark/30 overflow-hidden">
-        <div
-            class="absolute top-1/2 left-0 w-[400px] aspect-square border-2 border-white/5 rounded-full animate-spin-slow pointer-events-none -translate-x-1/2">
-        </div>
-        <div
-            class="absolute bottom-10 right-10 w-[100px] aspect-square bg-brand-orange/10 rounded-full blur-3xl pointer-events-none">
-        </div>
+        <div class="absolute top-1/2 left-0 w-[400px] aspect-square border-2 border-white/5 rounded-full animate-spin-slow pointer-events-none -translate-x-1/2"></div>
+        <div class="absolute bottom-10 right-10 w-[100px] aspect-square bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="container mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div class="fade-in-up relative order-2 md:order-1">
                 <div class="relative w-full max-w-[320px] aspect-square md:max-w-[500px] mx-auto group">
-                    <div
-                        class="absolute inset-0 border-2 border-dashed border-brand-orange/30 rounded-full animate-spin-slow group-hover:border-brand-orange transition-colors">
-                    </div>
+                    <div class="absolute inset-0 border-2 border-dashed border-brand-orange/30 rounded-full animate-spin-slow group-hover:border-brand-orange transition-colors"></div>
                     <div class="relative w-full h-full rounded-full overflow-hidden border border-white/10">
-                        <img src="assets/img/inteligencia_artificial_teresa_rodriguez_de_dios.jpg"
-                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                            alt="Teresa Rodríguez de Dios"
-                            onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800'">
+                        <img src="assets/img/inteligencia_artificial_teresa_rodriguez_de_dios.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Teresa Rodríguez de Dios - Ingeniera de Software" onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800'">
                     </div>
                 </div>
             </div>
             <div class="fade-in-up order-1 md:order-2">
-                <span class="text-brand-orange font-bold text-xs tracking-[0.2em] uppercase block mb-6">Sobre
-                    Porvenir</span>
+                <span class="text-brand-orange font-bold text-xs tracking-[0.2em] uppercase block mb-6">Sobre Porvenir</span>
                 <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Estrategia, Tecnología & Diseño</h2>
                 <div class="space-y-6 text-gray-400 text-lg font-medium leading-relaxed">
-                    <p>Soy <strong>Teresa Rodríguez de Dios</strong>, Ingeniera de Software y Máster en UX. Me apasiona
-                        la tecnología, pero sólo cuando sirve para mejorar la vida de quienes la usan, no para
-                        complicarla.</p>
-                    <p>Entiendo mi trabajo como un <strong>puente entre tus objetivos de negocio y la
-                            tecnología</strong>. Analizo qué necesita realmente tu empresa para crecer y lo construyo
-                        combinando una <strong>ingeniería sólida</strong> con una <strong>experiencia de usuario
-                            impecable</strong>.</p>
-                    <p>Con esa visión nace <strong>Porvenir</strong>. Mi misión es <strong>integrar la Inteligencia
-                            Artificial y el diseño estratégico</strong> en tu día a día para que tu empresa sea más
-                        eficiente y competitiva.</p>
+                    <p>Soy <strong>Teresa Rodríguez de Dios</strong>, Ingeniera de Software y Máster en UX. Me apasiona la tecnología, pero sólo cuando sirve para mejorar la vida de quienes la usan, no para complicarla.</p>
+                    <p>Entiendo mi trabajo como un <strong>puente entre tus objetivos de negocio y la tecnología</strong>. Analizo qué necesita realmente tu empresa para crecer y lo construyo combinando una <strong>ingeniería sólida</strong> con una <strong>experiencia de usuario impecable</strong>.</p>
+                    <p>Con esa visión nace <strong>Porvenir</strong>. Mi misión es <strong>integrar la Inteligencia Artificial y el diseño estratégico</strong> en tu día a día para que tu empresa sea más eficiente y competitiva.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contacto" class="py-16 md:py-32 px-6 md:px-12 relative z-10 border-t border-white/5 overflow-hidden">
-        <div
-            class="absolute right-0 bottom-0 w-[500px] aspect-square bg-brand-orange/5 rounded-full blur-[100px] pointer-events-none">
-        </div>
-        <div
-            class="absolute top-0 left-20 w-[250px] aspect-square border border-brand-orange/20 rounded-full animate-pulse-glow pointer-events-none">
-        </div>
+        <div class="absolute right-0 bottom-0 w-[500px] aspect-square bg-brand-orange/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute top-0 left-20 w-[250px] aspect-square border border-brand-orange/20 rounded-full animate-pulse-glow pointer-events-none"></div>
         <div class="container mx-auto">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="fade-in-up">
-                    <span
-                        class="text-brand-orange font-bold text-xs tracking-[0.2em] uppercase block mb-6">Contacto</span>
+                    <span class="text-brand-orange font-bold text-xs tracking-[0.2em] uppercase block mb-6">Contacto</span>
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Hablamos de tu proyecto?</h2>
-                    <p class="text-gray-400 mb-10 text-lg font-medium">Cuéntame tu reto. Analizaremos si necesitas
-                        automatizar procesos, renovar tu imagen o auditar tu accesibilidad. Sin compromisos, solo
-                        estrategia.</p>
+                    <p class="text-gray-400 mb-10 text-lg font-medium">Cuéntame tu reto. Analizaremos si necesitas automatizar procesos, renovar tu imagen o auditar tu accesibilidad. Sin compromisos, solo estrategia.</p>
                     <div class="space-y-6">
-                        <a href="mailto:teresa.rodriguez@porveniragenciadigital.com"
-                            class="text-lg text-white font-bold hover:text-brand-orange transition-colors flex items-center gap-4 break-all">
-                            <i data-lucide="mail" class="w-6 h-6 text-brand-orange flex-shrink-0"></i>
-                            teresa.rodriguez@porveniragenciadigital.com
+                        <a href="mailto:teresa.rodriguez@porveniragenciadigital.com" class="text-lg text-white font-bold hover:text-brand-orange transition-colors flex items-center gap-4 break-all">
+                            <i data-lucide="mail" class="w-6 h-6 text-brand-orange flex-shrink-0"></i> teresa.rodriguez@porveniragenciadigital.com
                         </a>
                         <p class="text-lg text-white font-bold flex items-center gap-4">
-                            <i data-lucide="map-pin" class="w-6 h-6 text-brand-orange flex-shrink-0"></i> Ciudad Real,
-                            España (Servicio Global)
+                            <i data-lucide="map-pin" class="w-6 h-6 text-brand-orange flex-shrink-0"></i> Ciudad Real, España (Servicio Global)
                         </p>
                     </div>
                 </div>
-                <div
-                    class="fade-in-up bg-white/5 backdrop-blur-sm p-6 md:p-10 rounded-3xl border border-white/5 relative group overflow-hidden text-center flex flex-col items-center justify-center min-h-[300px]">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    </div>
-                    <div
-                        class="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange mb-6 relative z-10 animate-pulse-glow">
+                <div class="fade-in-up bg-white/5 backdrop-blur-sm p-6 md:p-10 rounded-3xl border border-white/5 relative group overflow-hidden text-center flex flex-col items-center justify-center min-h-[300px]">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange mb-6 relative z-10 animate-pulse-glow">
                         <i data-lucide="calendar-check" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 relative z-10">Agenda tu consultoría gratuita</h3>
-                    <p class="text-gray-400 text-sm mb-8 max-w-sm relative z-10">Selecciona el horario que mejor se
-                        adapte a ti en mi calendario. 30 minutos para transformar tu negocio.</p>
-                    <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
-                        class="relative z-10 group/btn inline-flex items-center justify-center gap-3 bg-brand-orange text-white font-bold text-xs md:text-sm tracking-widest uppercase px-6 md:px-8 py-4 rounded-full shadow-[0_0_20px_rgba(255,122,72,0.4)] hover:shadow-[0_0_40px_rgba(255,122,72,0.6)] hover:scale-105 transition-all duration-300 whitespace-nowrap max-w-full">
+                    <p class="text-gray-400 text-sm mb-8 max-w-sm relative z-10">Selecciona el horario que mejor se adapte a ti en mi calendario. 30 minutos para transformar tu negocio.</p>
+                    <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank" class="relative z-10 group/btn inline-flex items-center justify-center gap-3 bg-brand-orange text-white font-bold text-xs md:text-sm tracking-widest uppercase px-6 md:px-8 py-4 rounded-full shadow-[0_0_20px_rgba(255,122,72,0.4)] hover:shadow-[0_0_40px_rgba(255,122,72,0.6)] hover:scale-105 transition-all duration-300 whitespace-nowrap max-w-full">
                         RESERVAR CITA AHORA
                     </a>
                 </div>
@@ -573,36 +450,26 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
                 <div class="flex flex-col md:flex-row gap-6 items-center">
-                    <a href="#"
-                        class="text-lg font-bold tracking-widest flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity text-white">
+                    <a href="#" class="text-lg font-bold tracking-widest flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity text-white">
                         <span class="relative flex h-2 w-2 mr-2">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
                         </span>
                         PORVENIR
                     </a>
                     <div class="flex gap-4">
-                        <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
-                            class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i
-                                data-lucide="linkedin" class="w-4 h-4"></i></a>
-                        <a href="https://www.instagram.com/porvenir_agencia/" target="_blank"
-                            class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i
-                                data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank" class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="https://www.instagram.com/porvenir_agencia/" target="_blank" class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i data-lucide="instagram" class="w-4 h-4"></i></a>
                     </div>
                 </div>
-                <div
-                    class="flex flex-wrap justify-center gap-6 text-xs text-gray-500 font-bold uppercase tracking-widest">
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-500 font-bold uppercase tracking-widest">
                     <a href="pages/aviso-legal.html" class="hover:text-brand-orange transition-colors">Aviso Legal</a>
-                    <a href="pages/politica-privacidad.html" class="hover:text-brand-orange transition-colors">Política
-                        de Privacidad</a>
-                    <a href="pages/politica-cookies.html" class="hover:text-brand-orange transition-colors">Política de
-                        Cookies</a>
+                    <a href="pages/politica-privacidad.html" class="hover:text-brand-orange transition-colors">Política de Privacidad</a>
+                    <a href="pages/politica-cookies.html" class="hover:text-brand-orange transition-colors">Política de Cookies</a>
                 </div>
             </div>
             <div class="border-t border-white/5 pt-3 pb-1 text-center">
-                <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Porvenir Agencia
-                    Digital. Todos los derechos reservados.</p>
+                <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Porvenir Agencia Digital. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -656,7 +523,7 @@
         document.head.appendChild(script);
 
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', GA_ID);
         console.log("Analytics cargado directamente.");
@@ -697,7 +564,7 @@
 
                 let dx = mouseX - this.x;
                 let dy = mouseY - this.y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
+                let distance = Math.sqrt(dx*dx + dy*dy);
                 if (distance < 100) {
                     this.x -= dx * 0.01;
                     this.y -= dy * 0.01;
@@ -718,7 +585,7 @@
                 let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
                 let directionX = (Math.random() * 0.4) - 0.2;
                 let directionY = (Math.random() * 0.4) - 0.2;
-                let color = '#ff7a48';
+                let color = '#ff7a48'; 
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
             }
         }
@@ -729,7 +596,7 @@
                 for (let b = a; b < particlesArray.length; b++) {
                     let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
                         + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                    if (distance < (canvas.width/7) * (canvas.height/7)) {
                         opacityValue = 1 - (distance / 20000);
                         ctx.strokeStyle = 'rgba(255, 122, 72,' + opacityValue + ')';
                         ctx.lineWidth = 1;
@@ -751,9 +618,9 @@
             connectParticles();
         }
 
-        if (window.innerWidth > 450) {
-            initParticles();
-            animateNeuralNetwork();
+        if(window.innerWidth > 450) {
+             initParticles();
+             animateNeuralNetwork();
         }
     </script>
 </body>

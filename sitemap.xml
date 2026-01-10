@@ -2,8 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.porveniragenciadigital.com/</loc>
-    <lastmod>2025-12-23</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/aviso-legal.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/politica-privacidad.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/politica-cookies.html</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
   </url>
 </urlset>

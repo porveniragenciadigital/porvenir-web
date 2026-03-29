@@ -8,5 +8,5 @@ Web oficial corporativa de **Porvenir Agencia Digital**. Unimos Ingeniería de S
 * **🎓 Formación & Talleres IA:** Capacitación in-company 100% práctica sobre Inteligencia Artificial aplicada a la productividad real, atención al cliente y ventas.
 
 ## 👩‍💻 Autora & Fundadora
-**Teresa Rodríguez de Dios** *Ingeniera de Software & Máster en UX* 📍 Ciudad Real, España (Servicio Global)  
+**Teresa Rodríguez de Dios**. *Ingeniera de Software & Máster en UX* 📍 Ciudad Real, España (Servicio Global)  
 🔗 [Perfil de LinkedIn](https://www.linkedin.com/in/teresa-rodríguez-de-dios) | 🌐 [Web Oficial](https://www.porveniragenciadigital.com/)

@@ -336,12 +336,26 @@
                     class="flex flex-wrap items-center justify-center md:justify-start gap-6 w-full sm:w-auto relative z-20">
                     <div class="flex items-center gap-4 md:gap-6">
                         <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
+                            aria-label="LinkedIn"
                             class="text-gray-400 hover:text-brand-orange transition-all transform hover:scale-110 p-2 border border-white/10 rounded-full hover:border-brand-orange hover:bg-brand-orange/10">
-                            <i data-lucide="linkedin" class="w-5 h-5 md:w-6 md:h-6"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="w-5 h-5 md:w-6 md:h-6">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect width="4" height="12" x="2" y="9" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
                         </a>
-                        <a href="https://www.instagram.com/porvenir_agencia/" target="_blank"
+                        <a href="https://www.instagram.com/porvenir_agencia/" target="_blank" aria-label="Instagram"
                             class="text-gray-400 hover:text-brand-orange transition-all transform hover:scale-110 p-2 border border-white/10 rounded-full hover:border-brand-orange hover:bg-brand-orange/10">
-                            <i data-lucide="instagram" class="w-5 h-5 md:w-6 md:h-6"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="w-5 h-5 md:w-6 md:h-6">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
                         </a>
                     </div>
                     <a href="#contacto"
@@ -355,7 +369,7 @@
                         </div>
                         <span
                             class="absolute inset-0 z-10 flex items-center justify-center gap-3 font-bold text-xs md:text-sm tracking-widest uppercase text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                            AUTOMATIZAR MI NEGOCIO
+                            AUDITAR MI PROYECTO AHORA
                         </span>
                     </a>
                 </div>
@@ -469,7 +483,9 @@
                     Servicios</span>
                 <h2 class="text-3xl md:text-5xl font-bold">Servicios de Automatización e IA</h2>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
                 <article
                     class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full bg-brand-orange/5 border-brand-orange/20 relative overflow-hidden">
                     <div class="absolute -right-10 -top-10 w-32 aspect-square bg-brand-orange/10 rounded-full blur-2xl">
@@ -496,6 +512,7 @@
                         demo de Chatbot <i data-lucide="arrow-right"
                             class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
                 </article>
+
                 <article
                     class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full relative overflow-hidden">
                     <div class="absolute -left-10 -bottom-10 w-32 aspect-square bg-brand-blue/20 rounded-full blur-2xl">
@@ -521,6 +538,7 @@
                         renovar mi web <i data-lucide="arrow-right"
                             class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
                 </article>
+
                 <article
                     class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full relative overflow-hidden">
                     <div
@@ -548,6 +566,35 @@
                         auditoría UX <i data-lucide="arrow-right"
                             class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
                 </article>
+
+                <article
+                    class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full relative overflow-hidden">
+                    <div
+                        class="absolute -right-10 -bottom-10 w-32 aspect-square bg-brand-orange/20 rounded-full blur-2xl">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange mb-6">
+                        <i data-lucide="graduation-cap" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Formación & Talleres IA</h3>
+                    <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Capacita a tu equipo
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Formaciones prácticas y a medida sobre
+                        Inteligencia Artificial y digitalización para impulsar la productividad real de tu negocio.</p>
+                    <ul class="text-sm text-gray-400 space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-brand-orange mt-1"></i> Casos de uso reales aplicados</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-brand-orange mt-1"></i> Talleres In-Company 100% prácticos</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check"
+                                class="w-4 h-4 text-brand-orange mt-1"></i> IA para Atención al Cliente y Ventas</li>
+                    </ul>
+                    <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
+                        class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group mt-auto">Solicitar
+                        formación <i data-lucide="arrow-right"
+                            class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
+                </article>
+
             </div>
         </div>
     </section>
@@ -657,11 +704,28 @@
                     </a>
                     <div class="flex gap-4">
                         <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
-                            class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i
-                                data-lucide="linkedin" class="w-4 h-4"></i></a>
+                            aria-label="LinkedIn de Teresa"
+                            class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="w-4 h-4">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect width="4" height="12" x="2" y="9" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
                         <a href="https://www.instagram.com/porvenir_agencia/" target="_blank"
-                            class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all"><i
-                                data-lucide="instagram" class="w-4 h-4"></i></a>
+                            aria-label="Instagram de Porvenir"
+                            class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="w-4 h-4">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div

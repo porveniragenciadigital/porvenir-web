@@ -7,20 +7,6 @@ Web oficial corporativa de **Porvenir Agencia Digital**. Unimos Ingeniería de S
 * **♿ UX & Accesibilidad:** Auditorías bajo la estricta normativa WCAG 2.1, evaluaciones heurísticas y diseño inclusivo para cumplir la ley y democratizar la tecnología.
 * **🎓 Formación & Talleres IA:** Capacitación in-company 100% práctica sobre Inteligencia Artificial aplicada a la productividad real, atención al cliente y ventas.
 
-## ✨ Características Técnicas Destacadas
-* **Animaciones Dinámicas (Sin dependencias pesadas):** * Fondo interactivo de "Red Neuronal" programado en **JavaScript puro (Canvas API)** que reacciona al movimiento del ratón.
-  * Sistema orbital (Hero Section) animado nativamente con `keyframes` y optimizado con lógica responsive estricta (Móvil, Tablet estático, Desktop animado).
-* **SEO Local & Avanzado:** Implementación de Microdatos / Schema.org (`JSON-LD`) para `ProfessionalService`, optimización de Open Graph y Twitter Cards.
-* **Accesibilidad & UI:** Iconografía SVG limpia e insertada nativamente (inmune a AdBlockers), etiquetas `aria-label` y un cursor personalizado que mejora la experiencia visual (Dark/Tech Mode).
-* **Performance:** Estructura de código limpia, sin pop-ups bloqueantes y carga inmediata de herramientas analíticas.
-
-## 💻 Stack Tecnológico
-* HTML5 Semántico / CSS3
-* JavaScript Vanilla (ES6+ / Canvas API)
-* **Tailwind CSS** (Utility-first framework para estilos y responsive design)
-* **Lucide Icons** (Iconografía vectorial SVG)
-* Integración nativa con Google Analytics (`gtag.js`)
-
 ## 👩‍💻 Autora & Fundadora
 **Teresa Rodríguez de Dios** *Ingeniera de Software & Máster en UX* 📍 Ciudad Real, España (Servicio Global)  
 🔗 [Perfil de LinkedIn](https://www.linkedin.com/in/teresa-rodríguez-de-dios) | 🌐 [Web Oficial](https://www.porveniragenciadigital.com/)

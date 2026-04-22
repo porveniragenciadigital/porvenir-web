@@ -1,0 +1,26 @@
+# Porvenir Agencia Digital
+
+> Software Engineering and UX Design agency specialized in AI Automation and High-Conversion Web Development.
+
+## Overview
+Porvenir Agencia Digital, based in Ciudad Real (Spain), bridges the gap between complex Software Engineering and human-centric UX Design. Led by Teresa Rodríguez de Dios (Software Engineer & UX Expert), the agency focuses on business efficiency through AI and strategic digital presence.
+
+## Core Services
+- **AI Automation & Chatbots:** Development of intelligent B2B/B2C agents using LLMs for 24/7 customer support and sales automation via WhatsApp and Web.
+- **High-Conversion Web Design:** Bespoke, high-performance websites optimized for SEO and conversion, built with engineering rigour.
+- **UX & Accessibility Audits:** Technical evaluations and implementation of WCAG 2.1 compliance to avoid legal risks and improve inclusive usability.
+- **AI Training for Companies:** In-company workshops focused on practical AI implementation to increase team productivity.
+
+## Key Technical Differentiators
+- **Engineering Foundation:** Projects are approached from a software engineering perspective (performance, scalability, clean code), not just aesthetic design.
+- **UX-First Strategy:** Every technical solution is validated through User Experience principles.
+- **AI Ethics & Compliance:** Specialized in EU AI Act alignment and data governance.
+
+## Key Personnel
+- **Teresa Rodríguez de Dios:** Founder, Software Engineer, and UX Expert.
+
+## Contact & Location
+- **Main Location:** Ciudad Real, Spain.
+- **Serving:** Madrid, Seville, Toledo, Malaga, and International clients.
+- **Website:** https://www.porveniragenciadigital.com/
+- **Email:** teresa.rodriguez@porveniragenciadigital.com

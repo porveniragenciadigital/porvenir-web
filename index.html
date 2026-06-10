@@ -201,6 +201,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all .4s ease;
+            will-change: transform;
         }
 
         .glass-card:hover {
@@ -787,12 +788,12 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 fade-in-up">
 
                         <!-- OrientaIA -->
-                        <article class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                        <article class="glass-card rounded-3xl flex flex-col group">
                             <div
-                                class="relative h-52 bg-gradient-to-br from-[#0a0f1e] to-[#1a1040] overflow-hidden flex-shrink-0">
+                                class="relative h-52 bg-gradient-to-br from-[#0a0f1e] to-[#1a1040] flex-shrink-0 [clip-path:inset(0_round_24px_24px_0_0)]">
                                 <img src="assets/img/proyecto-orientaia.png"
                                     alt="Web de OrientaIA — diseño oscuro estilo space-corporate con animaciones de partículas"
-                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                                    class="w-full h-full object-cover object-top transition-[filter] duration-700 group-hover:brightness-110"
                                     onerror="this.style.display='none'">
                                 <div class="absolute inset-0 bg-gradient-to-t from-brand-darkest/80 to-transparent">
                                 </div>
@@ -839,12 +840,12 @@
                         </article>
 
                         <!-- Legalex -->
-                        <article class="glass-card rounded-3xl overflow-hidden flex flex-col group">
+                        <article class="glass-card rounded-3xl flex flex-col group">
                             <div
-                                class="relative h-52 bg-gradient-to-br from-[#1a150f] to-[#2a2015] overflow-hidden flex-shrink-0 [transform:translateZ(0)]">
+                                class="relative h-52 bg-gradient-to-br from-[#1a150f] to-[#2a2015] flex-shrink-0 [clip-path:inset(0_round_24px_24px_0_0)]">
                                 <img src="assets/img/proyecto-legalex.png"
                                     alt="Web de Legalex — diseño cálido con tonos beige y turquesa para despacho de abogacía"
-                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                                    class="w-full h-full object-cover object-top transition-[filter] duration-700 group-hover:brightness-110"
                                     onerror="this.style.display='none'">
                                 <div class="absolute inset-0 bg-gradient-to-t from-brand-darkest/80 to-transparent">
                                 </div>
@@ -861,7 +862,7 @@
                             </div>
                             <div class="p-8 flex flex-col flex-grow">
                                 <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Legalex ·
-                                    Abogacía y Mediación · Manzanares</p>
+                                    Abogacía y Mediación</p>
                                 <h3 class="text-xl font-bold text-white mb-3">Web a medida para despacho de abogacía y
                                     mediación</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Legalex no quería una
@@ -896,7 +897,7 @@
                             <div class="p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
                                 <div class="flex flex-col flex-1">
                                     <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Porvenir
-                                        Agencia Digital · Ciudad Real</p>
+                                        Agencia Digital</p>
                                     <div class="flex gap-2 flex-wrap mb-4 mt-3">
                                         <span
                                             class="text-[10px] font-bold uppercase tracking-widest bg-brand-orange/20 text-brand-orange border border-brand-orange/30 px-3 py-1 rounded-full">UI/UX</span>

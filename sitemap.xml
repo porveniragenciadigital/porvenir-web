@@ -6,4 +6,22 @@
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
   </url>
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/aviso-legal.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/politica-privacidad.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/politica-cookies.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

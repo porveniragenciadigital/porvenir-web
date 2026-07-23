@@ -8,12 +8,33 @@
     <meta name="robots" content="noindex, follow">
     <link rel="icon" type="image/png" href="favicon_porvenir_agencia_digital_diseno_web_ia_ux_accesibilidad.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
-        tailwind.config = { theme: { extend: { colors: { brand: { darkest: '#051024', orange: '#ff7a48' } }, fontFamily: { sans: ['Montserrat', 'sans-serif'] } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            darkest: '#051024',
+                            dark: '#0a1d3d',
+                            blue: '#103778',
+                            orange: '#ff7a48',
+                            light: '#EBEFF5',
+                            border: 'rgba(255, 255, 255, 0.08)'
+                        }
+                    },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'] },
+                    animation: { 'spin-slow': 'spin 30s linear infinite' }
+                }
+            }
+        }
     </script>
+
     <style>
         body {
             background-color: #051024;
@@ -21,43 +42,86 @@
             overflow-x: hidden;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #051024; }
+        ::-webkit-scrollbar-thumb { background: #103778; border-radius: 3px; }
 
-        /* Cursor Personalizado */
+        /* CURSOR */
         .cursor-dot,
         .cursor-outline {
             position: fixed;
+            top: 0;
+            left: 0;
             transform: translate(-50%, -50%);
             border-radius: 50%;
-            pointer-events: none;
             z-index: 9999;
+            pointer-events: none;
         }
 
         .cursor-dot {
             width: 8px;
             height: 8px;
-            background: #ff7a48;
+            background-color: #ff7a48;
         }
 
         .cursor-outline {
             width: 40px;
             height: 40px;
             border: 1px solid rgba(255, 122, 72, 0.5);
+            transition: all 0.2s;
         }
 
-        /* Estilos generales de texto */
-        p,
-        li {
+        body:has(a:hover) .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 122, 72, 0.1);
+            border-color: #ff7a48;
+        }
+
+        /* GLASS CARD */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* LIGHT THEME */
+        body.light { background-color: #ffffff !important; color: #051024 !important; }
+        body.light .glass-card { background: #f5f7fa !important; border-color: #d1d9e6 !important; }
+        body.light #main-nav { background-color: rgba(255,255,255,.96) !important; border-bottom-color: #d1d9e6 !important; }
+        body.light .text-gray-400 { color: #525966 !important; }
+        body.light .legal-content p,
+        body.light .legal-content ul { color: #525966 !important; }
+        body.light footer { background-color: #f5f7fa !important; border-top-color: #e2e8f0 !important; }
+        body.light footer p { color: #9ca3af !important; }
+        body.light #theme-icon-sun { display: none; }
+        body.light #theme-icon-moon { display: block; }
+        body:not(.light) #theme-icon-sun { display: block; }
+        body:not(.light) #theme-icon-moon { display: none; }
+
+        /* Estilos Texto Legal */
+        .legal-content h2 {
+            color: #ff7a48;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content p {
             color: #9ca3af;
             margin-bottom: 1rem;
             line-height: 1.7;
         }
 
-        strong {
+        .legal-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content strong {
             color: white;
         }
     </style>
@@ -68,59 +132,74 @@
     <div class="cursor-dot" id="cursor-dot"></div>
     <div class="cursor-outline" id="cursor-outline"></div>
 
-    <nav
-        class="fixed w-full z-50 py-6 px-8 flex justify-between items-center bg-brand-darkest/80 backdrop-blur-md border-b border-white/5 h-20">
-        <a href="index.html" class="text-xl font-bold tracking-widest flex items-center gap-1">
-            <span class="relative flex h-3 w-3 mr-2"><span
-                    class="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span></span> PORVENIR
+    <nav id="main-nav" class="fixed w-full z-50 px-6 md:px-8 bg-brand-darkest/90 backdrop-blur-md border-b border-white/5 h-20 flex items-center justify-between transition-all">
+        <a href="../" class="text-xl font-bold tracking-widest flex items-center gap-2">
+            <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-orange"></span>
+            </span>
+            PORVENIR
         </a>
-        <a href="index.html" class="text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2"><i data-lucide="arrow-left" class="w-4 h-4"></i> Volver</a>
+        <div class="flex items-center gap-3">
+            <button id="lang-btn" onclick="toggleLang()" class="text-xs font-bold tracking-[0.15em] uppercase text-gray-400 hover:text-brand-orange transition-colors">EN</button>
+            <button onclick="toggleTheme()" class="flex items-center justify-center w-8 h-8 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Cambiar tema">
+                <svg id="theme-icon-sun" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button onclick="goBack()" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-orange transition-colors flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                Volver
+            </button>
+        </div>
     </nav>
 
-    <main class="pt-32 pb-20 px-6 relative z-10">
+    <main class="pt-32 pb-20 px-6 md:px-12 relative z-10 min-h-screen flex flex-col justify-center">
+        <div class="absolute top-20 right-0 w-[300px] aspect-square bg-brand-orange/5 rounded-full blur-[80px] pointer-events-none"></div>
+
         <div class="container mx-auto max-w-4xl">
-            <div class="glass-card p-8 md:p-16 rounded-3xl">
+            <div class="glass-card p-8 md:p-16 rounded-3xl relative overflow-hidden fade-in-up">
+
                 <h1 class="text-3xl md:text-5xl font-bold mb-2">Política de Privacidad</h1>
-                <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-10">Protección de Datos
-                    (RGPD)</p>
+                <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-10">Protección de Datos (RGPD)</p>
 
-                <p>En <strong>Porvenir Agencia Digital</strong> nos comprometemos a proteger tu privacidad. Esta
-                    política detalla cómo tratamos tus datos personales.</p>
+                <div class="legal-content">
+                    <p>En <strong>Porvenir Agencia Digital</strong> nos comprometemos a proteger tu privacidad. Esta política detalla cómo tratamos tus datos personales.</p>
 
-                <h2 class="text-xl font-bold text-brand-orange mt-8 mb-4">1. Responsable del Tratamiento</h2>
-                <p><strong>Titular:</strong> Teresa Rodríguez de Dios (05735443-W)<br>
-                    <strong>Email:</strong> teresa.rodriguez@porveniragenciadigital.com
-                </p>
+                    <h2>1. Responsable del Tratamiento</h2>
+                    <p><strong>Titular:</strong> Teresa Rodríguez de Dios (05735443-W)<br>
+                        <strong>Email:</strong> teresa.rodriguez@porveniragenciadigital.com
+                    </p>
 
-                <h2 class="text-xl font-bold text-brand-orange mt-8 mb-4">2. Finalidad y Legitimación</h2>
-                <p>Tratamos tus datos para gestionar las consultas enviadas a través de la web y agendar citas. La base
-                    legal es tu <strong>consentimiento expreso</strong> al contactar con nosotros.</p>
+                    <h2>2. Finalidad y Legitimación</h2>
+                    <p>Tratamos tus datos para gestionar las consultas enviadas a través de la web y agendar citas. La base legal es tu <strong>consentimiento expreso</strong> al contactar con nosotros.</p>
 
-                <h2 class="text-xl font-bold text-brand-orange mt-8 mb-4">3. Destinatarios (Herramientas de Terceros)
-                </h2>
-                <p>Para prestar nuestros servicios utilizamos herramientas seguras:</p>
-                <ul class="list-disc pl-5 text-gray-400 mb-4">
-                    <li><strong>GitHub Pages:</strong> Hosting de la web.</li>
-                    <li><strong>Google Analytics 4:</strong> Análisis de tráfico (datos anonimizados).</li>
-                    <li><strong>Calendly:</strong> Gestión de agenda para reuniones.</li>
-                </ul>
+                    <h2>3. Destinatarios (Herramientas de Terceros)</h2>
+                    <p>Para prestar nuestros servicios utilizamos herramientas seguras:</p>
+                    <ul>
+                        <li><strong>GitHub Pages:</strong> Hosting de la web.</li>
+                        <li><strong>Google Analytics 4:</strong> Análisis de tráfico (datos anonimizados).</li>
+                        <li><strong>Calendly:</strong> Gestión de agenda para reuniones.</li>
+                    </ul>
 
-                <h2 class="text-xl font-bold text-brand-orange mt-8 mb-4">4. Tus Derechos</h2>
-                <p>Puedes ejercer tus derechos de acceso, rectificación, supresión y oposición enviando un email a
-                    nuestra dirección de contacto.</p>
+                    <h2>4. Tus Derechos</h2>
+                    <p>Puedes ejercer tus derechos de acceso, rectificación, supresión y oposición enviando un email a nuestra dirección de contacto.</p>
+                </div>
             </div>
         </div>
     </main>
 
     <footer class="py-8 bg-brand-darkest border-t border-white/10 text-center">
-        <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest">&copy; 2025 Porvenir Agencia Digital.
-        </p>
+        <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Porvenir Agencia Digital &middot; Ciudad Real, España. Todos los derechos reservados.</p>
     </footer>
 
     <script>
         lucide.createIcons();
         const cd = document.getElementById('cursor-dot'), co = document.getElementById('cursor-outline');
         window.addEventListener('mousemove', e => { cd.style.left = e.clientX + 'px'; cd.style.top = e.clientY + 'px'; co.animate({ left: e.clientX + 'px', top: e.clientY + 'px' }, { duration: 500, fill: "forwards" }); });
+        function goBack() { if (history.length > 1) { history.back(); } else { window.location.href = '../'; } }
+        function toggleTheme() { document.body.classList.toggle('light'); localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark'); }
+        function toggleLang() { const b = document.getElementById('lang-btn'); b.textContent = b.textContent.trim() === 'EN' ? 'ES' : 'EN'; }
+        if (localStorage.getItem('theme') === 'light') { document.body.classList.add('light'); }
     </script>
 </body>
 

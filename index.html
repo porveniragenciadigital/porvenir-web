@@ -4,28 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porvenir | Agencia de IA, Diseño Web y Apps Móviles en Ciudad Real</title>
+    <title>Diseño y Desarrollo Web en Ciudad Real | Porvenir Agencia Digital</title>
     <meta name="google-site-verification" content="HW2_04Sd6fpEU8F_lsHFuPmZsWkm0PLn8t2_IIEwe10" />
     <meta name="description"
-        content="Agencia IA y diseño web en Ciudad Real. Agentes telefónicos, apps móviles, chatbots y automatización. Ingeniera de Software + UX · Consultoría gratuita.">
+        content="Empresa de diseño y desarrollo web en Ciudad Real. Páginas web que convierten visitas en clientes, apps móviles iOS/Android y automatización con IA. Ingeniera de Software · Consulta gratuita.">
     <meta name="keywords"
         content="agencia IA Ciudad Real, diseño web Ciudad Real, automatización con inteligencia artificial, landing pages alta conversión, chatbot IA WhatsApp empresas, agente telefónico IA, centralita inteligente IA, agente voz empresa, voice agent IA, Ley 10/2025 atención clientela, desarrollo aplicaciones móviles Ciudad Real, app móvil iOS Android empresa, aplicación móvil con IA, chatbot ManyChat, automatización Make Integromat, Zoho CRM integración, agencia digital Castilla La Mancha, diseño web Sevilla, ingeniería de software, UX UI España, accesibilidad WCAG España, formación IA empresas">
     <meta name="author" content="Teresa Rodríguez de Dios">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://www.porveniragenciadigital.com/">
+    <link rel="alternate" hreflang="es" href="https://www.porveniragenciadigital.com/">
+    <link rel="alternate" hreflang="en" href="https://www.porveniragenciadigital.com/">
+    <link rel="alternate" hreflang="x-default" href="https://www.porveniragenciadigital.com/">
 
     <meta property="og:locale" content="es_ES">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Porvenir | Agencia IA, Apps Móviles y Diseño Web en Ciudad Real">
+    <meta property="og:title" content="Diseño y Desarrollo Web en Ciudad Real | Porvenir Agencia Digital">
     <meta property="og:description"
-        content="Diseño web a medida, IA & automatización (chatbots, agentes de voz, flujos) y apps móviles iOS/Android. Ingeniera de Software + UX · Ciudad Real · Consultoría gratuita.">
+        content="Empresa de diseño y desarrollo web en Ciudad Real. Páginas web que convierten, IA & automatización y apps móviles iOS/Android. Ingeniera de Software + UX · Consulta gratuita.">
     <meta property="og:url" content="https://www.porveniragenciadigital.com/">
     <meta property="og:site_name" content="Porvenir Agencia Digital">
     <meta property="og:image" content="https://www.porveniragenciadigital.com/assets/img/og-social-share.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Porvenir | Agencia IA, Apps Móviles y Diseño Web en Ciudad Real">
+    <meta name="twitter:title" content="Diseño y Desarrollo Web en Ciudad Real | Porvenir Agencia Digital">
     <meta name="twitter:description"
-        content="Diseño web, IA & automatización y apps móviles. Ingeniería de Software + UX desde Ciudad Real. Consultoría gratuita.">
+        content="Empresa de diseño y desarrollo web en Ciudad Real. Páginas web que convierten, IA & automatización y apps móviles. Ingeniería de Software + UX · Consulta gratuita.">
     <meta name="twitter:image" content="https://www.porveniragenciadigital.com/assets/img/og-social-share.jpg">
 
     <script
@@ -212,6 +215,198 @@
         .faq-icon {
             transition: transform .3s ease;
         }
+
+        /* THEME ICONS */
+        body:not(.light) #theme-icon-sun,
+        body:not(.light) #theme-icon-sun-m  { display:block; }
+        body:not(.light) #theme-icon-moon,
+        body:not(.light) #theme-icon-moon-m { display:none; }
+        body.light #theme-icon-sun,
+        body.light #theme-icon-sun-m  { display:none; }
+        body.light #theme-icon-moon,
+        body.light #theme-icon-moon-m { display:block; }
+
+        /* ══════════════════════════════════════════
+           TEMA CLARO — paleta #FFFFFF / #051024 / #ff7a48 / #0593A2
+           Distribución: blanco=fondo, navy=texto, naranja=CTA+acento primario, teal=acento secundario+iconos
+           ══════════════════════════════════════════ */
+        body.light {
+            background-color: #ffffff !important;
+            color: #051024 !important;
+        }
+
+        /* ── Navegación ── */
+        body.light nav[aria-label="Navegación principal"],
+        body.light #mobile-menu {
+            background-color: rgba(255,255,255,.97) !important;
+            border-color: #e8ecf2 !important;
+        }
+
+        /* ── Tarjetas: blanco + sombra suave (sin gris) ── */
+        body.light .glass-card {
+            background: #ffffff !important;
+            border-color: #e8ecf2 !important;
+            box-shadow: 0 2px 16px rgba(5,16,36,.07) !important;
+        }
+        body.light .glass-card:hover {
+            background: #ffffff !important;
+            border-color: #ff7a48 !important;
+            box-shadow: 0 8px 28px rgba(255,122,72,.13) !important;
+        }
+
+        /* ── Tipografía ── */
+        body.light .text-gray-400 { color: #4b5563 !important; }
+        body.light .text-gray-500 { color: #6b7280 !important; }
+        body.light .text-gray-600 { color: #4b5563 !important; }
+        body.light .text-gray-200 { color: #374151 !important; }
+        body.light .text-gray-300 { color: #374151 !important; }
+        body.light .text-white    { color: #051024 !important; }
+        body.light h1, body.light h2, body.light h3 { color: #051024 !important; }
+
+        /* ── Bordes ── */
+        body.light .border-white\/5  { border-color: #e8ecf2 !important; }
+        body.light .border-white\/10 { border-color: #e0e4ee !important; }
+
+        /* ── Fondos: elementos bg-brand-darkest → blanco en modo claro ── */
+        body.light .bg-brand-darkest { background-color: #ffffff !important; }
+        body.light .bg-white\/5      { background-color: #f8f9fc !important; }
+        body.light .bg-white\/10     { background-color: #f0f2f7 !important; }
+
+        /* ── Secciones bg-brand-dark/* → blanco puro ── */
+        body.light .bg-brand-dark\/20,
+        body.light .bg-brand-dark\/30 { background-color: #ffffff !important; }
+
+        /* ── Hero: gradiente cálido + eliminación de máscara oscura ── */
+        body.light header#inicio {
+            background: linear-gradient(160deg, #f8f9fc 0%, #fff8f5 55%, #f0f7f8 100%) !important;
+        }
+        body.light .hero-radial-mask { display: none !important; }
+        body.light #neural-canvas { opacity: 0.05; filter: hue-rotate(180deg) saturate(0.3); }
+
+        /* ── Floating cards del hero ── */
+        body.light .hero-float-card {
+            background-color: rgba(255,255,255,.95) !important;
+            border-color: #e2e8f0 !important;
+            box-shadow: 0 4px 24px rgba(5,16,36,.08) !important;
+        }
+        body.light .hero-float-card .text-gray-200  { color: #374151 !important; }
+        body.light .hero-float-card .text-gray-400  { color: #4b5563 !important; }
+        body.light .hero-float-card .text-gray-500  { color: #6b7280 !important; }
+        body.light .hero-float-card .border-white\/10 { border-color: #e2e8f0 !important; }
+        body.light .hero-float-card .border-white\/5  { border-color: #eef0f5 !important; }
+        body.light .hero-float-card .bg-white\/10 { background-color: #f0f2f7 !important; }
+
+        /* ── Acento naranja #ff7a48 (CTAs, highlights) ── */
+        body.light .bg-brand-orange          { background-color: #ff7a48 !important; }
+        body.light .hover\:bg-brand-orange:hover { background-color: #ff7a48 !important; }
+        body.light .hover\:bg-brand-orange\/80:hover { background-color: #d9663a !important; }
+        body.light .bg-brand-orange\/5       { background-color: rgba(255,122,72,.06) !important; }
+        body.light .bg-brand-orange\/10      { background-color: rgba(255,122,72,.1) !important; }
+        body.light .bg-brand-orange\/15      { background-color: rgba(255,122,72,.12) !important; }
+        body.light .bg-brand-orange\/20      { background-color: rgba(255,122,72,.15) !important; }
+        body.light .text-brand-orange        { color: #ff7a48 !important; }
+        body.light .hover\:text-brand-orange:hover { color: #ff7a48 !important; }
+        body.light .hover\:text-white:hover { color: #ffffff !important; }
+        body.light .border-brand-orange\/50  { border-color: rgba(255,122,72,.5) !important; }
+        body.light .border-brand-orange\/40  { border-color: rgba(255,122,72,.4) !important; }
+        body.light .border-brand-orange\/30  { border-color: rgba(255,122,72,.3) !important; }
+        body.light .border-brand-orange\/20  { border-color: rgba(255,122,72,.2) !important; }
+        body.light .shadow-\[0_8px_20px_-8px_rgba\(255\,122\,72\,0\.5\)\] {
+            box-shadow: 0 8px 20px -8px rgba(255,122,72,.5) !important;
+        }
+
+        /* ── Acento teal #0593A2 (iconos, badges, dot de estado) ── */
+        body.light .text-green-400  { color: #0593A2 !important; }
+        body.light .bg-green-400    { background-color: #0593A2 !important; }
+        body.light .border-green-400 { border-color: #0593A2 !important; }
+
+        /* Pills de empresas (en subpáginas) */
+        body.light .company-pill { border-color: #c9d1e0 !important; color: #051024 !important; }
+
+        /* ── Sección Ley: tinte naranja muy suave (por sus propias clases) ── */
+        /* bg-brand-orange/5 ya cubierto arriba → color tenue naranja ✓ */
+        /* border-brand-orange/20 ya cubierto arriba ✓ */
+
+        /* ── Footer: versión clara ── */
+        body.light footer.bg-brand-darkest {
+            background-color: #f4f7fb !important;
+            border-color: #e0e6f0 !important;
+        }
+        body.light footer .text-white  { color: #051024 !important; }
+        body.light footer .text-gray-400 { color: #4b5563 !important; }
+        body.light footer .text-gray-500 { color: #6b7280 !important; }
+        body.light footer .text-gray-600 { color: #6b7280 !important; }
+        body.light footer .border-white\/10 { border-color: #d1d9e8 !important; }
+        body.light footer .border-white\/5  { border-color: #dce3ef !important; }
+        body.light footer .hover\:text-brand-orange:hover { color: #ff7a48 !important; }
+
+        /* ── Ticker bar: fondo turquesa en modo claro ── */
+        body.light #ticker-section { background-color: rgba(5,147,162,.12) !important; border-color: rgba(5,147,162,.25) !important; }
+        body.light #ticker-section .text-gray-400 { color: #051024 !important; }
+
+        /* ── Iconos servicios 1 y 3: círculo turquesa ── */
+        body.light #servicios .bg-brand-blue\/30 { background-color: rgba(5,147,162,.15) !important; }
+        body.light #servicios .bg-brand-blue\/30.text-brand-orange { color: #0593A2 !important; }
+
+        /* ── Servicios: grid 2×2 (override CSS compilado) ── */
+        @media (min-width: 640px) {
+            .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+        }
+
+        /* ── Nav dropdown ── */
+        .nav-dropdown { opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s ease; }
+        .services-trigger:hover .nav-dropdown,
+        .services-trigger:focus-within .nav-dropdown { opacity: 1; visibility: visible; }
+        .nav-dropdown a { text-transform: none !important; letter-spacing: 0 !important; font-size: .875rem !important; }
+        body.light .nav-dropdown > div {
+            background-color: #ffffff !important;
+            border-color: #e8ecf2 !important;
+            box-shadow: 0 8px 32px rgba(5,16,36,.12) !important;
+        }
+        body.light .nav-dropdown a { color: #374151 !important; }
+        body.light .nav-dropdown a:hover { color: #ff7a48 !important; background-color: rgba(255,122,72,.06) !important; }
+
+        /* ── Elementos UI varios ── */
+        body.light #sticky-cta { background-color: rgba(255,255,255,.97) !important; border-color: #e8ecf2 !important; }
+        body.light input, body.light textarea, body.light select {
+            background-color: #f5f7fa !important;
+            border-color: #d1d9e6 !important;
+            color: #051024 !important;
+        }
+        body.light input::placeholder, body.light textarea::placeholder { color: #9ca3af !important; }
+        body.light select option { background-color: #ffffff; color: #051024; }
+
+        /* ── Hero: clases específicas para modo claro ── */
+        body.light .hero-h1-text { color: #051024 !important; }
+        body.light .hero-gradient-text {
+            background-image: linear-gradient(to right, #051024, #0593A2) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            color: transparent !important;
+        }
+        body.light .hero-paragraph { color: #374151 !important; }
+        body.light .hero-paragraph strong { color: #051024 !important; }
+        body.light .hero-social-btn {
+            background-color: rgba(5,16,36,.07) !important;
+            border-color: #d1d9e6 !important;
+            color: #051024 !important;
+        }
+        body.light .hero-social-btn:hover { color: #ff7a48 !important; }
+
+        /* ── Sección testimonios ── */
+        body.light #testimonios { background-color: rgba(5,147,162,.07) !important; }
+        body.light #testimonios h2 { color: #051024 !important; }
+        body.light #testimonios blockquote p { color: #374151 !important; }
+        body.light #testimonios .text-gray-300 { color: #374151 !important; }
+        body.light #testimonios .text-gray-400 { color: #4b5563 !important; }
+        body.light #testimonios .text-gray-500 { color: #6b7280 !important; }
+        body.light #testimonios .text-white { color: #051024 !important; }
+        body.light #testimonios .bg-brand-blue\/40 { background-color: rgba(5,147,162,.15) !important; }
+        body.light #testimonios .bg-white\/5 { background-color: rgba(255,255,255,.8) !important; }
+        body.light #testimonios .glass-card { background: #ffffff !important; }
+        body.light #testimonios footer { background-color: transparent !important; border-color: #e8ecf2 !important; }
+        body.light #testimonios footer .text-white { color: #051024 !important; }
+        body.light #testimonios footer .text-gray-400 { color: #4b5563 !important; }
     </style>
 </head>
 
@@ -226,46 +421,81 @@
     </a>
 
     <nav aria-label="Navegación principal"
-        class="fixed w-full z-50 py-6 px-8 flex justify-between items-center bg-brand-darkest/80 backdrop-blur-md border-b border-white/5 h-20 md:h-24 transition-all">
-        <a href="#" class="text-xl font-bold tracking-widest flex items-center gap-1 relative z-50 h-full"
+        class="fixed w-full z-50 px-6 md:px-8 bg-brand-darkest/80 backdrop-blur-md border-b border-white/5 h-20 md:h-24 flex items-center transition-all">
+        <!-- Logo -->
+        <a href="#" class="text-xl font-bold tracking-widest flex items-center gap-1 relative z-50"
             aria-label="Porvenir Agencia Digital — Ir al inicio">
             <span class="relative flex h-3 w-3 mr-2" aria-hidden="true">
-                <span
-                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
             </span>
             PORVENIR
         </a>
-        <div
-            class="hidden md:flex items-center gap-10 text-xs font-bold tracking-[0.15em] uppercase text-gray-400 h-full">
-            <a href="#inicio" class="hover:text-brand-orange transition-colors">Inicio</a>
-            <a href="#servicios" class="hover:text-brand-orange transition-colors">Servicios</a>
-            <a href="#proyectos" class="hover:text-brand-orange transition-colors">Proyectos</a>
-            <a href="#agencia" class="hover:text-brand-orange transition-colors">Agencia</a>
-            <a href="#faq" class="hover:text-brand-orange transition-colors">FAQ</a>
-            <a href="#contacto"
-                rel="noopener noreferrer"
-                class="flex items-center text-white bg-brand-orange/10 px-4 py-3 rounded-3xl border border-brand-orange/50 hover:bg-brand-orange hover:text-white transition-all">
-                Contactar
-            </a>
+        <!-- Links centrados (desktop) -->
+        <div class="hidden md:flex flex-1 justify-center items-center gap-10 text-xs font-bold tracking-[0.15em] uppercase text-gray-400 h-full">
+            <div class="services-trigger relative h-full flex items-center">
+                <button class="flex items-center gap-1 hover:text-brand-orange transition-colors uppercase">
+                    <span data-i18n="nav_servicios">Servicios</span>
+                    <svg class="w-3 h-3 mt-0.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="nav-dropdown absolute left-1/2 pt-3 z-50" style="top:100%; transform:translateX(-50%); width:340px;">
+                    <div class="bg-brand-darkest border border-white/10 rounded-2xl p-3 shadow-2xl">
+                        <a href="pages/diseno-web-ciudad-real.html" class="flex items-center gap-4 px-5 py-4 rounded-xl hover:bg-white/5 hover:text-brand-orange transition-colors text-sm font-semibold tracking-normal normal-case">
+                            <i data-lucide="layout" class="w-5 h-5 flex-shrink-0 text-brand-orange" aria-hidden="true"></i><span data-i18n="s1_title">Diseño Web & UX</span>
+                        </a>
+                        <a href="pages/agencia-ia-ciudad-real.html" class="flex items-center gap-4 px-5 py-4 rounded-xl hover:bg-white/5 hover:text-brand-orange transition-colors text-sm font-semibold tracking-normal normal-case">
+                            <i data-lucide="bot" class="w-5 h-5 flex-shrink-0 text-brand-orange" aria-hidden="true"></i><span data-i18n="s2_title">IA & Automatización</span>
+                        </a>
+                        <a href="pages/apps-moviles-ciudad-real.html" class="flex items-center gap-4 px-5 py-4 rounded-xl hover:bg-white/5 hover:text-brand-orange transition-colors text-sm font-semibold tracking-normal normal-case">
+                            <i data-lucide="smartphone" class="w-5 h-5 flex-shrink-0 text-brand-orange" aria-hidden="true"></i><span data-i18n="s3_title">Apps Móviles</span>
+                        </a>
+                        <a href="pages/formacion-ia-empresas-ciudad-real.html" class="flex items-center gap-4 px-5 py-4 rounded-xl hover:bg-white/5 hover:text-brand-orange transition-colors text-sm font-semibold tracking-normal normal-case">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 flex-shrink-0 text-brand-orange" aria-hidden="true"></i><span data-i18n="s4_title">Formación IA</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="#proyectos" class="hover:text-brand-orange transition-colors" data-i18n="nav_proyectos">Proyectos</a>
+            <a href="#agencia" class="hover:text-brand-orange transition-colors" data-i18n="nav_agencia">Agencia</a>
+            <a href="#faq" class="hover:text-brand-orange transition-colors" data-i18n="nav_faq">FAQ</a>
         </div>
-        <button class="md:hidden text-white relative z-50 flex items-center" onclick="toggleMenu()"
-            aria-label="Abrir menú de navegación" aria-expanded="false" id="menu-toggle">
-            <i data-lucide="menu" class="w-8 h-8 text-brand-orange" aria-hidden="true"></i>
-        </button>
+        <!-- Controles derecha + hamburger -->
+        <div class="flex items-center gap-3" style="margin-left:auto">
+            <div class="hidden md:flex items-center gap-3">
+                <button id="lang-btn" onclick="toggleLang()" class="text-xs font-bold tracking-[0.15em] uppercase text-gray-400 hover:text-brand-orange transition-colors">EN</button>
+                <button onclick="toggleTheme()" class="flex items-center justify-center w-8 h-8 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Cambiar tema">
+                    <svg id="theme-icon-sun" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="#contacto"
+                    class="flex items-center text-xs font-bold uppercase tracking-widest text-white bg-brand-orange/10 px-4 py-3 rounded-3xl border border-brand-orange/50 hover:bg-brand-orange hover:text-white transition-all" data-i18n="nav_contact">
+                    Contactar
+                </a>
+            </div>
+            <button class="md:hidden text-white relative z-50 flex items-center" onclick="toggleMenu()"
+                aria-label="Abrir menú de navegación" aria-expanded="false" id="menu-toggle">
+                <svg class="w-8 h-8 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
     </nav>
 
     <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación"
-        class="fixed inset-0 bg-brand-darkest z-40 flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-all duration-300">
+        class="fixed inset-0 bg-brand-darkest flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-all duration-300" style="z-index:200">
         <button class="absolute top-6 right-6 text-white" onclick="toggleMenu()" aria-label="Cerrar menú">
             <i data-lucide="x" class="w-10 h-10" aria-hidden="true"></i>
         </button>
-        <a href="#inicio" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold">Inicio</a>
-        <a href="#servicios" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold">Servicios</a>
-        <a href="#proyectos" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold">Proyectos</a>
-        <a href="#agencia" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold">Agencia</a>
-        <a href="#faq" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold">FAQ</a>
-        <a href="#contacto" onclick="toggleMenu()" class="text-2xl font-bold text-brand-orange">Contactar</a>
+        <a href="#servicios" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold" data-i18n="nav_servicios">Servicios</a>
+        <a href="#proyectos" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold" data-i18n="nav_proyectos">Proyectos</a>
+        <a href="#agencia" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold" data-i18n="nav_agencia">Agencia</a>
+        <a href="#faq" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold" data-i18n="nav_faq">FAQ</a>
+        <a href="#contacto" onclick="toggleMenu()" class="text-2xl font-bold text-brand-orange" data-i18n="nav_contact">Contactar</a>
+        <div class="flex items-center gap-5 mt-4">
+            <button id="lang-btn-mobile" onclick="toggleLang()" class="text-sm font-bold tracking-widest uppercase text-gray-400 hover:text-brand-orange transition-colors">EN</button>
+            <button onclick="toggleTheme()" class="flex items-center justify-center w-10 h-10 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Cambiar tema">
+                <svg id="theme-icon-sun-m" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg id="theme-icon-moon-m" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+        </div>
     </div>
 
     <main id="main-content">
@@ -275,12 +505,11 @@
 
             <canvas id="neural-canvas" class="absolute inset-0 z-0 opacity-30 pointer-events-none"></canvas>
 
-            <div
-                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[radial-gradient(circle,#051024_35%,rgba(5,16,36,0.85)_65%,transparent_95%)] z-[1] pointer-events-none">
+            <div class="hero-radial-mask absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[radial-gradient(circle,#051024_35%,rgba(5,16,36,0.85)_65%,transparent_95%)] z-[1] pointer-events-none">
             </div>
 
             <div
-                class="hidden xl:block absolute top-[25%] left-[4%] w-72 glass-card border border-brand-orange/30 rounded-3xl p-6 shadow-2xl animate-float z-[5] bg-brand-darkest/70 backdrop-blur-xl">
+                class="hero-float-card hidden xl:block absolute top-[25%] left-[4%] w-72 glass-card border border-brand-orange/30 rounded-3xl p-6 shadow-2xl animate-float z-[5] bg-brand-darkest/70 backdrop-blur-xl">
                 <div class="flex items-center gap-3 mb-5 border-b border-white/10 pb-4">
                     <div
                         class="w-10 h-10 rounded-xl bg-brand-orange flex items-center justify-center text-brand-darkest shadow-[0_0_15px_rgba(255,122,72,0.6)]">
@@ -312,7 +541,7 @@
                 </div>
             </div>
 
-            <div class="hidden xl:block absolute bottom-[25%] right-[4%] w-72 glass-card border border-white/10 rounded-3xl p-6 shadow-2xl animate-float z-[5] bg-brand-darkest/80 backdrop-blur-xl"
+            <div class="hero-float-card hidden xl:block absolute bottom-[25%] right-[4%] w-72 glass-card border border-white/10 rounded-3xl p-6 shadow-2xl animate-float z-[5] bg-brand-darkest/80 backdrop-blur-xl"
                 style="animation-delay: 2s;">
                 <div class="flex items-center justify-between mb-5 border-b border-white/5 pb-4">
                     <div class="flex gap-1.5">
@@ -338,26 +567,24 @@
 
                     <span
                         class="block text-brand-orange/90 text-[10px] md:text-xs font-bold tracking-[0.35em] uppercase mb-8 md:mb-8 leading-[1.8] md:leading-relaxed">
-                        Agencia Digital <br class="block md:hidden" />
-                        <span class="font-medium opacity-80">Especializada en IA</span>
+                        <span data-i18n="hero_badge">Diseño Web · Desarrollo Web</span><br class="block md:hidden">
+                        <span class="font-medium opacity-80" data-i18n="hero_badge_loc">Ciudad Real · España</span>
                     </span>
 
-                    <span
-                        class="block text-[1.8rem] min-[375px]:text-[2.1rem] md:text-4xl lg:text-5xl uppercase font-bold leading-[1.15] tracking-tight text-white mb-3 md:mb-2">
+                    <span data-i18n="hero_h1"
+                        class="hero-h1-text block text-[1.8rem] min-[375px]:text-[2.1rem] md:text-4xl lg:text-5xl uppercase font-bold leading-[1.15] tracking-tight text-white mb-3 md:mb-2">
                         IA Y DISEÑO WEB
                     </span>
 
-                    <span
-                        class="block text-[1.25rem] min-[375px]:text-[1.45rem] md:text-2xl lg:text-4xl uppercase font-bold leading-[1.25] md:leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff9a76] to-[#ffd166]">
+                    <span data-i18n="hero_h1_sub"
+                        class="hero-gradient-text block text-[1.25rem] min-[375px]:text-[1.45rem] md:text-2xl lg:text-4xl uppercase font-bold leading-[1.25] md:leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff9a76] to-[#ffd166]">
                         QUE MULTIPLICAN TUS VENTAS
                     </span>
                 </h1>
 
-                <p
-                    class="text-gray-300/90 text-sm md:text-lg lg:text-xl leading-[1.8] md:leading-relaxed mb-14 font-light max-w-[90%] md:max-w-xl lg:max-w-2xl mx-auto drop-shadow-md">
-                    Unimos <strong>Ingeniería de Software</strong> y <strong>Diseño UX</strong> para que tu negocio
-                    trabaje por ti. Especialistas en <strong>diseño web</strong> y <strong>automatización con
-                        IA</strong> desde Ciudad Real para empresas de toda España.
+                <p data-i18n="hero_p"
+                    class="hero-paragraph text-gray-300/90 text-sm md:text-lg lg:text-xl leading-[1.8] md:leading-relaxed mb-14 font-light max-w-[90%] md:max-w-xl lg:max-w-2xl mx-auto drop-shadow-md">
+                    Empresa de <strong>diseño y desarrollo web en Ciudad Real</strong> especializada en páginas web que convierten visitas en clientes. Unimos Ingeniería de Software y Diseño UX para crear webs, <strong>automatizar con IA</strong> y desarrollar apps móviles para empresas de toda España.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-6 w-full sm:w-auto">
@@ -365,9 +592,8 @@
                     <a href="#contacto"
                         class="group relative inline-flex items-center justify-center gap-3 px-8 py-5 md:px-10 md:py-5 bg-gradient-to-br from-brand-orange to-[#ff9a76] text-white overflow-hidden rounded-3xl 
                         w-full sm:w-auto text-center transition-all duration-500 ease-out hover:-translate-y-1.5 hover:scale-105 shadow-[0_10px_20px_-10px_rgba(255,122,72,0.4)] hover:shadow-[0_20px_40px_-10px_rgba(255,122,72,0.6)]">
-                        <span
-                            class="relative z-10 font-bold text-[13px] md:text-sm tracking-widest uppercase">AUTOMATIZAR
-                            MI NEGOCIO</span>
+                        <span data-i18n="hero_cta"
+                            class="relative z-10 font-bold text-[13px] md:text-sm tracking-widest uppercase">AUTOMATIZAR MI NEGOCIO</span>
                         <div
                             class="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]">
                         </div>
@@ -375,7 +601,7 @@
 
                     <div class="flex items-center gap-5 mt-2 md:mt-0">
                         <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
-                            class="flex items-center justify-center w-12 h-12 md:w-12 md:h-12 rounded-3xl bg-brand-darkest/70 border border-white/10 backdrop-blur-sm text-white hover:text-brand-orange transition-all transform hover:scale-110">
+                            class="hero-social-btn flex items-center justify-center w-12 h-12 md:w-12 md:h-12 rounded-3xl bg-brand-darkest/70 border border-white/10 backdrop-blur-sm text-white hover:text-brand-orange transition-all transform hover:scale-110">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -387,7 +613,7 @@
                             </svg>
                         </a>
                         <a href="https://www.instagram.com/porvenir_agencia/" target="_blank"
-                            class="flex items-center justify-center w-12 h-12 md:w-12 md:h-12 rounded-3xl bg-brand-darkest/70 border border-white/10 backdrop-blur-sm text-white hover:text-brand-orange transition-all transform hover:scale-110">
+                            class="hero-social-btn flex items-center justify-center w-12 h-12 md:w-12 md:h-12 rounded-3xl bg-brand-darkest/70 border border-white/10 backdrop-blur-sm text-white hover:text-brand-orange transition-all transform hover:scale-110">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -401,7 +627,7 @@
             </div>
         </header>
 
-        <section aria-hidden="true"
+        <section id="ticker-section" aria-hidden="true"
             class="py-10 bg-brand-dark/80 border-y border-white/5 overflow-hidden relative z-20 group cursor-default">
             <div class="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]">
                 <div
@@ -441,49 +667,38 @@
             <section id="servicios" class="py-16 md:py-24 px-6 md:px-12 relative z-10">
                 <div class="container mx-auto">
                     <div class="mb-20 fade-in-up text-center md:text-left">
-                        <span class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Nuestros
-                            Servicios</span>
-                        <h2 class="text-3xl md:text-4xl font-bold">Diseño Web, IA & Automatización y Apps Móviles</h2>
-                        <p class="text-gray-400 mt-4 max-w-2xl text-base md:text-lg font-light">
-                            Ingeniería de Software + Diseño UX + Inteligencia Artificial. Construimos los activos
-                            digitales que escalan tu negocio: desde una app hasta un agente que atiende tus llamadas por
-                            ti.
+                        <span data-i18n="srv_eyebrow" class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Nuestros Servicios</span>
+                        <h2 data-i18n="srv_h2" class="text-3xl md:text-4xl font-bold">Diseño Web, IA, Apps Móviles y Formación IA</h2>
+                        <p data-i18n="srv_p" class="text-gray-400 mt-4 max-w-2xl text-base md:text-lg font-light">
+                            Ingeniería de Software + Diseño UX + Inteligencia Artificial. Construimos los activos digitales que escalan tu negocio: desde una app hasta un agente que atiende tus llamadas por ti.
                         </p>
                     </div>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+                    <div class="services-grid grid grid-cols-1 gap-8 lg:gap-10">
 
                         <!-- 1. DISEÑO WEB & UX -->
                         <article
                             class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full relative overflow-hidden">
                             <div class="w-14 h-14 bg-brand-blue/30 rounded-full flex items-center justify-center text-brand-orange mb-6"
                                 aria-hidden="true"><i data-lucide="layout" class="w-8 h-8"></i></div>
-                            <h3 class="text-xl font-bold mb-2">Diseño Web & UX</h3>
-                            <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Estética +
-                                Conversión + Cumplimiento</p>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Creamos <strong>páginas web a
-                                    medida</strong> que convierten visitas en clientes: ultrarrápidas, Mobile First y
-                                optimizadas para Google. El diseño UX estratégico y las auditorías de
-                                <strong>accesibilidad WCAG 2.1</strong> están incluidos, porque una web bien hecha
-                                cumple la ley y vende más.
-                            </p>
+                            <h3 data-i18n="s1_title" class="text-xl font-bold mb-2">Diseño Web & UX</h3>
+                            <p data-i18n="s1_sub" class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Estética + Conversión + Cumplimiento</p>
+                            <p data-i18n="s1_desc" class="text-gray-400 text-sm leading-relaxed mb-6">Creamos <strong>páginas web a medida</strong> que convierten visitas en clientes: ultrarrápidas, Mobile First y optimizadas para Google. El diseño UX estratégico y las auditorías de <strong>accesibilidad WCAG 2.1</strong> están incluidos, porque una web bien hecha cumple la ley y vende más.</p>
                             <ul class="text-sm text-gray-400 space-y-3 mb-8 flex-grow">
-                                <li class="flex items-start gap-2"><i data-lucide="check"
-                                        class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i> Mobile First y
-                                    SEO técnico incluido</li>
-                                <li class="flex items-start gap-2"><i data-lucide="check"
-                                        class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i> UX estratégico y
-                                    accesibilidad WCAG 2.1</li>
-                                <li class="flex items-start gap-2"><i data-lucide="check"
-                                        class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i> Diseños modernos
-                                    de alta conversión</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s1_li1">Mobile First y SEO técnico incluido</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s1_li2">UX estratégico y accesibilidad WCAG 2.1</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s1_li3">Diseños modernos de alta conversión</span></li>
                             </ul>
-                            <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group mt-auto">
-                                Quiero una web que venda <i data-lucide="arrow-right"
-                                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                                    aria-hidden="true"></i>
-                            </a>
+                            <div class="flex flex-col gap-3 mt-auto">
+                                <a href="pages/diseno-web-ciudad-real.html"
+                                    class="text-gray-400 text-xs hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
+                                    <span data-i18n="s1_link1">Ver servicio de diseño web</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group">
+                                    <span data-i18n="s1_link2">Quiero una web que venda</span> <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </article>
 
                         <!-- 2. IA & AUTOMATIZACIÓN -->
@@ -491,32 +706,25 @@
                             class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full bg-brand-orange/5 border-brand-orange/20 relative overflow-hidden">
                             <div class="w-14 h-14 bg-brand-orange/20 rounded-full flex items-center justify-center text-brand-orange mb-6"
                                 aria-hidden="true"><i data-lucide="bot" class="w-8 h-8"></i></div>
-                            <h3 class="text-xl font-bold mb-2">IA & Automatización</h3>
-                            <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Tu negocio
-                                trabajando solo, 24/7</p>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6"><strong>Chatbots inteligentes</strong>
-                                para WhatsApp y web, <strong>agentes telefónicos con IA</strong> que atienden llamadas
-                                de forma autónoma, y flujos de automatización a medida para cualquier proceso de tu
-                                empresa. La solución para cumplir la <strong>Ley 10/2025</strong> sin ampliar plantilla.
-                            </p>
+                            <h3 data-i18n="s2_title" class="text-xl font-bold mb-2">IA & Automatización</h3>
+                            <p data-i18n="s2_sub" class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Tu negocio trabajando solo, 24/7</p>
+                            <p data-i18n="s2_desc" class="text-gray-400 text-sm leading-relaxed mb-6"><strong>Chatbots inteligentes</strong> para WhatsApp y web, <strong>agentes telefónicos con IA</strong> que atienden llamadas de forma autónoma, y flujos de automatización a medida para cualquier proceso de tu empresa. La solución para cumplir la <strong>Ley 10/2025</strong> sin ampliar plantilla.</p>
                             <ul class="text-sm text-gray-400 space-y-3 mb-8 flex-grow">
-                                <li class="flex items-start gap-2"><i data-lucide="check"
-                                        class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i> Chatbots para
-                                    WhatsApp, web y redes sociales</li>
-                                <li class="flex items-start gap-2"><i data-lucide="check"
-                                        class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i> Agentes de voz
-                                    24/7 · Cumplimiento Ley 10/2025</li>
-                                <li class="flex items-start gap-2"><i data-lucide="check"
-                                        class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i> Automatizaciones
-                                    a medida para cualquier proceso</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s2_li1">Chatbots para WhatsApp, web y redes sociales</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s2_li2">Agentes de voz 24/7 · Cumplimiento Ley 10/2025</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s2_li3">Automatizaciones a medida para cualquier proceso</span></li>
                             </ul>
-                            <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group mt-auto">
-                                Ver demo de agente con IA <i data-lucide="arrow-right"
-                                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                                    aria-hidden="true"></i>
-                            </a>
+                            <div class="flex flex-col gap-3 mt-auto">
+                                <a href="pages/agencia-ia-ciudad-real.html"
+                                    class="text-gray-400 text-xs hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
+                                    <span data-i18n="s2_link1">Ver servicio de IA y automatización</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group">
+                                    <span data-i18n="s2_link2">Ver demo de agente con IA</span> <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </article>
 
                         <!-- 3. APPS MÓVILES -->
@@ -524,37 +732,56 @@
                             class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full relative overflow-hidden">
                             <div class="w-14 h-14 bg-brand-blue/30 rounded-full flex items-center justify-center text-brand-orange mb-6"
                                 aria-hidden="true"><i data-lucide="smartphone" class="w-8 h-8"></i></div>
-                            <h3 class="text-xl font-bold mb-2">Apps Móviles</h3>
-                            <p class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Ingeniería de
-                                software aplicada</p>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Diseñamos y desarrollamos
-                                <strong>aplicaciones iOS y Android</strong>, nativas e híbridas, con la solidez técnica
-                                que solo la ingeniería puede garantizar. De la arquitectura al lanzamiento: código
-                                limpio, escalable e integrado con IA y tus sistemas existentes.
-                            </p>
+                            <h3 data-i18n="s3_title" class="text-xl font-bold mb-2">Apps Móviles</h3>
+                            <p data-i18n="s3_sub" class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Ingeniería de software aplicada</p>
+                            <p data-i18n="s3_desc" class="text-gray-400 text-sm leading-relaxed mb-6">Diseñamos y desarrollamos <strong>aplicaciones iOS y Android</strong>, nativas e híbridas, con la solidez técnica que solo la ingeniería puede garantizar. De la arquitectura al lanzamiento: código limpio, escalable e integrado con IA y tus sistemas existentes.</p>
                             <ul class="text-sm text-gray-400 space-y-3 mb-8 flex-grow">
-                                <li class="flex items-start gap-2"><i data-lucide="check"
-                                        class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i> iOS y Android,
-                                    nativas e híbridas</li>
-                                <li class="flex items-start gap-2"><i data-lucide="check"
-                                        class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i> Integración con
-                                    IA, APIs y CRMs</li>
-                                <li class="flex items-start gap-2"><i data-lucide="check"
-                                        class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i> Arquitectura
-                                    sólida y mantenible</li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s3_li1">iOS y Android, nativas e híbridas</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s3_li2">Integración con IA, APIs y CRMs</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s3_li3">Arquitectura sólida y mantenible</span></li>
                             </ul>
-                            <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
-                                rel="noopener noreferrer"
-                                class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group mt-auto">
-                                Hablar sobre mi aplicación <i data-lucide="arrow-right"
-                                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                                    aria-hidden="true"></i>
-                            </a>
+                            <div class="flex flex-col gap-3 mt-auto">
+                                <a href="pages/apps-moviles-ciudad-real.html"
+                                    class="text-gray-400 text-xs hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
+                                    <span data-i18n="s3_link1">Ver servicio de apps móviles</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group">
+                                    <span data-i18n="s3_link2">Hablar sobre mi aplicación</span> <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- 4. FORMACIÓN IA PARA EMPRESAS -->
+                        <article
+                            class="glass-card p-8 md:p-10 rounded-3xl fade-in-up flex flex-col h-full relative overflow-hidden">
+                            <div class="w-14 h-14 bg-brand-blue/30 rounded-full flex items-center justify-center text-brand-orange mb-6"
+                                aria-hidden="true"><i data-lucide="graduation-cap" class="w-8 h-8"></i></div>
+                            <h3 data-i18n="s4_title" class="text-xl font-bold mb-2">Formación IA para Empresas</h3>
+                            <p data-i18n="s4_sub" class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-4">Aprende IA · In-Company · Práctico</p>
+                            <p data-i18n="s4_desc" class="text-gray-400 text-sm leading-relaxed mb-6">Formación práctica en inteligencia artificial para equipos de empresa. Tu equipo sale del taller sabiendo usar la IA en su día a día: herramientas reales, casos aplicados y <strong>cero teoría aburrida</strong>. Formamos in-company o de forma presencial, siempre a medida.</p>
+                            <ul class="text-sm text-gray-400 space-y-3 mb-8 flex-grow">
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s4_li1">Talleres adaptados a tu sector</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s4_li2">Herramientas IA listas para aplicar</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange mt-1" aria-hidden="true"></i><span data-i18n="s4_li3">In-company o presencial, a medida</span></li>
+                            </ul>
+                            <div class="flex flex-col gap-3 mt-auto">
+                                <a href="pages/formacion-ia-empresas-ciudad-real.html"
+                                    class="text-gray-400 text-xs hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
+                                    <span data-i18n="s4_link1">Ver programa de formación</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                </a>
+                                <a href="#contacto"
+                                    class="text-white text-xs font-bold uppercase tracking-widest hover:text-brand-orange transition-colors flex items-center gap-2 group">
+                                    <span data-i18n="s4_link2">Consultar disponibilidad</span> <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </article>
 
                     </div>
                 </div>
             </section>
+
 
             <section aria-labelledby="ley-heading"
                 class="py-12 md:py-16 px-6 md:px-12 relative z-10 bg-brand-orange/5 border-y border-brand-orange/20 fade-in-up">
@@ -565,23 +792,13 @@
                             <i data-lucide="alarm-clock" class="w-10 h-10 text-brand-orange"></i>
                         </div>
                         <div class="flex-1 text-center md:text-left">
-                            <p class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase mb-2">Ley 10/2025 ·
-                                Plazo de adaptación: Diciembre 2026</p>
-                            <h2 id="ley-heading" class="text-xl md:text-2xl font-bold text-white mb-3">
-                                Tu empresa tiene hasta diciembre para responder en menos de 3 minutos
-                            </h2>
-                            <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl mb-6">
-                                La <strong class="text-white">Ley de Servicios de Atención a la Clientela</strong>
-                                obliga a contestar el 95% de las llamadas en menos de 3 minutos y prohíbe que la IA sea
-                                el único canal de atención. El plazo vence en diciembre de 2026. Nuestros <strong
-                                    class="text-white">agentes telefónicos con IA</strong> atienden llamadas de forma
-                                autónoma las 24 horas, cualifican al interlocutor y derivan a tu equipo humano cuando es
-                                necesario: cumples la ley sin ampliar plantilla ni renunciar a la IA.
-                            </p>
+                            <p data-i18n="ley_badge" class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase mb-2">Ley 10/2025 · Plazo de adaptación: Diciembre 2026</p>
+                            <h2 id="ley-heading" data-i18n="ley_h2" class="text-xl md:text-2xl font-bold text-white mb-3">Tu empresa tiene hasta diciembre para responder en menos de 3 minutos</h2>
+                            <p data-i18n-html="ley_p" class="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl mb-6">La <strong class="text-white">Ley de Servicios de Atención a la Clientela</strong> obliga a contestar el 95% de las llamadas en menos de 3 minutos y prohíbe que la IA sea el único canal de atención. El plazo vence en diciembre de 2026. Nuestros <strong class="text-white">agentes telefónicos con IA</strong> atienden llamadas de forma autónoma las 24 horas, cualifican al interlocutor y derivan a tu equipo humano cuando es necesario: cumples la ley sin ampliar plantilla ni renunciar a la IA.</p>
                             <a href="#contacto"
                                 class="inline-flex items-center justify-center md:justify-start gap-2 px-7 py-4 bg-brand-orange text-white font-bold text-xs tracking-widest uppercase rounded-3xl hover:bg-brand-orange/80 transition-colors shadow-[0_8px_20px_-8px_rgba(255,122,72,0.5)] whitespace-nowrap">
                                 <i data-lucide="shield-check" class="w-4 h-4" aria-hidden="true"></i>
-                                ADAPTAR MI NEGOCIO
+                                <span data-i18n="ley_cta">ADAPTAR MI NEGOCIO</span>
                             </a>
                         </div>
                     </div>
@@ -592,12 +809,9 @@
                 class="py-16 md:py-24 px-6 md:px-12 relative z-10">
                 <div class="container mx-auto">
                     <div class="mb-14 text-center fade-in-up">
-                        <span
-                            class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Portfolio</span>
-                        <h2 id="proyectos-heading" class="text-3xl md:text-4xl font-bold">Proyectos reales, resultados
-                            medibles</h2>
-                        <p class="text-gray-400 mt-4 text-base md:text-lg font-light max-w-xl mx-auto">Cada proyecto parte de un
-                            reto concreto. Esto es lo que construimos para resolverlo.</p>
+                        <span data-i18n="proj_eyebrow" class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Portfolio</span>
+                        <h2 id="proyectos-heading" data-i18n="proj_h2" class="text-3xl md:text-4xl font-bold">Proyectos reales, resultados medibles</h2>
+                        <p data-i18n="proj_p" class="text-gray-400 mt-4 text-base md:text-lg font-light max-w-xl mx-auto">Cada proyecto parte de un reto concreto. Esto es lo que construimos para resolverlo.</p>
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 fade-in-up">
@@ -627,30 +841,22 @@
                             <div class="p-8 flex flex-col flex-grow">
                                 <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">OrientaIA ·
                                     Consultoría IA</p>
-                                <h3 class="text-xl font-bold text-white mb-3">Web inmersiva "Space-Corporate" para
-                                    consultora de IA</h3>
-                                <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Diseño a medida con
-                                    estética Dark Navy & Gold, fondo de partículas en Canvas, efectos de glassmorphism y
-                                    arquitectura de conversión pensada para convertir la complejidad de la IA en un
-                                    mensaje claro que genera contactos.</p>
+                                <h3 data-i18n="p1_h3" class="text-xl font-bold text-white mb-3">Web inmersiva "Space-Corporate" para consultora de IA</h3>
+                                <p data-i18n="p1_desc" class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Diseño a medida con estética Dark Navy &amp; Gold, fondo de partículas en Canvas, efectos de glassmorphism y arquitectura de conversión pensada para convertir la complejidad de la IA en un mensaje claro que genera contactos.</p>
                                 <div
                                     class="flex items-start gap-3 bg-brand-orange/5 border border-brand-orange/20 rounded-2xl p-4">
                                     <i data-lucide="trending-up" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5"
                                         aria-hidden="true"></i>
-                                    <p class="text-sm text-gray-300"><strong class="text-white">Resultado:</strong>
-                                        principal activo de credibilidad de OrientaIA. Desde el primer clic demuestra
-                                        que son nativos digitales.</p>
+                                    <p data-i18n-html="p1_result" class="text-sm text-gray-300"><strong class="text-white">Resultado:</strong> principal activo de credibilidad de OrientaIA. Desde el primer clic demuestra que son nativos digitales.</p>
                                 </div>
                                 <a href="#servicios"
                                     class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-brand-orange/60 hover:text-brand-orange transition-colors mt-3 self-start">
                                     <i data-lucide="layers" class="w-3.5 h-3.5" aria-hidden="true"></i>
-                                    Servicio: Diseño Web & UX
+                                    <span data-i18n="p1_svc">Servicio: Diseño Web &amp; UX</span>
                                 </a>
                                 <a href="https://www.orientaia.com/" target="_blank" rel="noopener noreferrer"
                                     class="mt-3 self-start inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 border border-white/10 px-4 py-2 rounded-2xl hover:border-brand-orange/50 hover:text-brand-orange transition-all group">
-                                    Ver proyecto en vivo <i data-lucide="arrow-up-right"
-                                        class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                                        aria-hidden="true"></i>
+                                    <span data-i18n="proj_live">Ver proyecto en vivo</span> <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </article>
@@ -680,30 +886,22 @@
                             <div class="p-8 flex flex-col flex-grow">
                                 <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Legalex ·
                                     Abogacía y Mediación</p>
-                                <h3 class="text-xl font-bold text-white mb-3">Web a medida para despacho de abogacía y
-                                    mediación</h3>
-                                <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Legalex no quería una
-                                    web de abogados más. Su filosofía de acuerdos frente a batallas merecía una
-                                    identidad propia: cálida, cercana y alejada de la frialdad del sector. Creamos una
-                                    web que transmite diálogo y confianza desde el primer vistazo.</p>
+                                <h3 data-i18n="p2_h3" class="text-xl font-bold text-white mb-3">Web a medida para despacho de abogacía y mediación</h3>
+                                <p data-i18n="p2_desc" class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Legalex no quería una web de abogados más. Su filosofía de acuerdos frente a batallas merecía una identidad propia: cálida, cercana y alejada de la frialdad del sector. Creamos una web que transmite diálogo y confianza desde el primer vistazo.</p>
                                 <div
                                     class="flex items-start gap-3 bg-brand-orange/5 border border-brand-orange/20 rounded-2xl p-4">
                                     <i data-lucide="trending-up" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5"
                                         aria-hidden="true"></i>
-                                    <p class="text-sm text-gray-300"><strong class="text-white">Resultado:</strong> "Han
-                                        hecho visible exactamente lo que somos", en palabras de María Jesús Ruidíaz,
-                                        propietaria de Legalex.</p>
+                                    <p data-i18n-html="p2_result" class="text-sm text-gray-300"><strong class="text-white">Resultado:</strong> "Han hecho visible exactamente lo que somos", en palabras de María Jesús Ruidíaz, propietaria de Legalex.</p>
                                 </div>
                                 <a href="#servicios"
                                     class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-brand-orange/60 hover:text-brand-orange transition-colors mt-3 self-start">
                                     <i data-lucide="layers" class="w-3.5 h-3.5" aria-hidden="true"></i>
-                                    Servicio: Diseño Web & UX
+                                    <span data-i18n="p2_svc">Servicio: Diseño Web &amp; UX</span>
                                 </a>
                                 <a href="https://www.legalex.es/" target="_blank" rel="noopener noreferrer"
                                     class="mt-3 self-start inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 border border-white/10 px-4 py-2 rounded-2xl hover:border-brand-orange/50 hover:text-brand-orange transition-all group">
-                                    Ver proyecto en vivo <i data-lucide="arrow-up-right"
-                                        class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                                        aria-hidden="true"></i>
+                                    <span data-i18n="proj_live">Ver proyecto en vivo</span> <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </article>
@@ -728,25 +926,17 @@
                                             class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">Alta
                                             conversión</span>
                                     </div>
-                                    <h3 class="text-xl font-bold text-white mb-3">Espera... ¿y esta web?</h3>
-                                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Exacto, la que estás navegando
-                                        ahora mismo. Cada animación, el cursor naranja que te sigue, las partículas del
-                                        fondo, cada sección y cada microcopy construidos a mano por Porvenir. Cero
-                                        plantillas, cero plugins, HTML + Tailwind + JavaScript puro. Presumir un poco
-                                        está justificado cuando trabajas lo que predicas.</p>
+                                    <h3 data-i18n="p3_h3" class="text-xl font-bold text-white mb-3">Espera... ¿y esta web?</h3>
+                                    <p data-i18n="p3_desc" class="text-gray-400 text-sm leading-relaxed mb-6">Exacto, la que estás navegando ahora mismo. Cada animación, el cursor naranja que te sigue, las partículas del fondo, cada sección y cada microcopy construidos a mano por Porvenir. Cero plantillas, cero plugins, HTML + Tailwind + JavaScript puro. Presumir un poco está justificado cuando trabajas lo que predicas.</p>
                                     <div
                                         class="flex items-start gap-3 bg-brand-orange/5 border border-brand-orange/20 rounded-2xl p-4">
                                         <i data-lucide="sparkles" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5"
                                             aria-hidden="true"></i>
-                                        <p class="text-sm text-gray-300"><strong class="text-white">Prueba de concepto
-                                                en vivo:</strong> si algo de lo que has visto te ha convencido, ya sabes
-                                            a quién llamar.</p>
+                                        <p data-i18n-html="p3_result" class="text-sm text-gray-300"><strong class="text-white">Prueba de concepto en vivo:</strong> si algo de lo que has visto te ha convencido, ya sabes a quién llamar.</p>
                                     </div>
                                     <a href="#servicios"
                                         class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-orange transition-colors mt-4 group">
-                                        Ver todos los servicios <i data-lucide="arrow-right"
-                                            class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                                            aria-hidden="true"></i>
+                                        <span data-i18n="proj_all_svc">Ver todos los servicios</span> <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div
@@ -776,26 +966,19 @@
                                         <span
                                             class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">CRM</span>
                                     </div>
-                                    <h3 class="text-xl font-bold text-white mb-3">Sistema automatizado de inscripciones
-                                        vía WhatsApp</h3>
-                                    <p class="text-gray-400 text-sm leading-relaxed mb-6">El cliente gestionaba
-                                        campamentos y matrículas con papel y correos manuales. Diseñé un flujo
-                                        conversacional inteligente en WhatsApp (ManyChat) que filtra la LOPD, segmenta
-                                        el servicio y recoge datos críticos en menos de 2 minutos, volcando todo
-                                        automáticamente en Zoho CRM a través de Make.</p>
+                                    <h3 data-i18n="p4_h3" class="text-xl font-bold text-white mb-3">Sistema automatizado de inscripciones vía WhatsApp</h3>
+                                    <p data-i18n="p4_desc" class="text-gray-400 text-sm leading-relaxed mb-6">El cliente gestionaba campamentos y matrículas con papel y correos manuales. Diseñé un flujo conversacional inteligente en WhatsApp (ManyChat) que filtra la LOPD, segmenta el servicio y recoge datos críticos en menos de 2 minutos, volcando todo automáticamente en Zoho CRM a través de Make.</p>
                                     <div
                                         class="flex items-start gap-3 bg-brand-orange/5 border border-brand-orange/20 rounded-2xl p-4">
                                         <i data-lucide="trending-up"
                                             class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5"
                                             aria-hidden="true"></i>
-                                        <p class="text-sm text-gray-300"><strong class="text-white">Resultado:</strong>
-                                            cero horas de gestión manual en confirmaciones, datos médicos y legales
-                                            centralizados y experiencia sin fricciones para las familias.</p>
+                                        <p data-i18n-html="p4_result" class="text-sm text-gray-300"><strong class="text-white">Resultado:</strong> cero horas de gestión manual en confirmaciones, datos médicos y legales centralizados y experiencia sin fricciones para las familias.</p>
                                     </div>
                                     <a href="#servicios"
                                         class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-brand-orange/60 hover:text-brand-orange transition-colors mt-3 self-start">
                                         <i data-lucide="layers" class="w-3.5 h-3.5" aria-hidden="true"></i>
-                                        Servicio: IA & Automatización
+                                        <span data-i18n="p4_svc">Servicio: IA &amp; Automatización</span>
                                     </a>
                                 </div>
                                 <div class="grid grid-cols-2 gap-4">
@@ -835,14 +1018,13 @@
                 </div>
             </section>
 
-            <section aria-labelledby="testimonios-heading"
+            <section id="testimonios" aria-labelledby="testimonios-heading"
                 class="py-16 md:py-24 px-6 md:px-12 relative z-10 bg-brand-dark/20">
                 <div class="container mx-auto">
                     <div class="mb-14 text-center fade-in-up">
-                        <span
+                        <span data-i18n="tst_eyebrow"
                             class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Clientes</span>
-                        <h2 id="testimonios-heading" class="text-3xl md:text-4xl font-bold">Lo que dicen quienes ya
-                            trabajan con nosotros</h2>
+                        <h2 id="testimonios-heading" data-i18n="tst_h2" class="text-3xl md:text-4xl font-bold">Lo que dicen quienes ya trabajan con nosotros</h2>
                         <div class="flex items-center justify-center gap-1 mt-4"
                             aria-label="5 de 5 estrellas en Google">
                             <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true">
@@ -865,7 +1047,7 @@
                                 <path
                                     d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z" />
                             </svg>
-                            <span class="ml-2 text-sm text-gray-400 font-medium">5.0 en Google</span>
+                            <span data-i18n="tst_rating" class="ml-2 text-sm text-gray-400 font-medium">5.0 en Google</span>
                         </div>
                     </div>
                     <div class="relative fade-in-up" id="reviews-carousel" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
@@ -876,7 +1058,7 @@
                                     <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full">
                                         <div class="flex gap-0.5" aria-label="5 estrellas"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
                                         <blockquote class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Teresa captó la esencia desde el minuto 1. Supo plasmar lo que estábamos buscando, adecuándose a nuestro público y mostrando nuestros servicios de la mejor manera, sin olvidar la usabilidad en todo momento. <strong>Recomendable 100%.</strong>"</blockquote>
-                                        <button class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
+                                        <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
                                         <footer class="flex items-center gap-3 pt-4 border-t border-white/5 mt-auto">
                                             <div class="w-9 h-9 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center font-bold text-sm flex-shrink-0" aria-hidden="true">T</div>
                                             <div>
@@ -891,7 +1073,7 @@
                                     <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full border-brand-orange/20 bg-brand-orange/5">
                                         <div class="flex gap-0.5" aria-label="5 estrellas"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
                                         <blockquote class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Supieron captar perfectamente la esencia de Legalex. El resultado ha superado nuestras expectativas. Destacar la cercanía, la implicación y la facilidad en todo el proceso. <strong>Han entendido nuestro proyecto casi como si fuera suyo.</strong>"</blockquote>
-                                        <button class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
+                                        <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
                                         <footer class="flex items-center gap-3 pt-4 border-t border-white/5 mt-auto">
                                             <div class="w-9 h-9 rounded-full bg-brand-blue/40 text-white flex items-center justify-center font-bold text-sm flex-shrink-0" aria-hidden="true">M</div>
                                             <div>
@@ -906,7 +1088,7 @@
                                     <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full">
                                         <div class="flex gap-0.5" aria-label="5 estrellas"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
                                         <blockquote class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Una formación muy completa, fácil de entender sobre digitalización e inteligencia artificial para empresas en Ciudad Real. Teresa consigue que conceptos complejos sean <strong>accesibles y aplicables desde el primer día.</strong>"</blockquote>
-                                        <button class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
+                                        <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
                                         <footer class="flex items-center gap-3 pt-4 border-t border-white/5 mt-auto">
                                             <div class="w-9 h-9 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center font-bold text-sm flex-shrink-0" aria-hidden="true">B</div>
                                             <div>
@@ -921,7 +1103,7 @@
                                     <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full">
                                         <div class="flex gap-0.5" aria-label="5 estrellas"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
                                         <blockquote class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Trabajar con Teresa ha sido un acierto total para mi negocio. Le encargué la creación de toda la imagen de marca y el resultado ha superado mis expectativas. Se ha encargado de todo: el logotipo, los vinilos del local, la carta y el arranque de mi Instagram. <strong>Ha sabido captar a la perfección lo que quería transmitir.</strong> 100% recomendable."</blockquote>
-                                        <button class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
+                                        <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
                                         <footer class="flex items-center gap-3 pt-4 border-t border-white/5 mt-auto">
                                             <div class="w-9 h-9 rounded-full bg-brand-blue/40 text-white flex items-center justify-center font-bold text-sm flex-shrink-0" aria-hidden="true">O</div>
                                             <div>
@@ -965,22 +1147,12 @@
                         </div>
                     </div>
                     <div class="fade-in-up order-1 lg:order-2">
-                        <span class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Sobre
-                            Porvenir</span>
-                        <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Agencia IA en Ciudad Real:
-                            Estrategia, Tecnología y Diseño</h2>
+                        <span data-i18n="ag_eyebrow" class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Sobre Porvenir</span>
+                        <h2 data-i18n="ag_h2" class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Agencia IA en Ciudad Real: Estrategia, Tecnología y Diseño</h2>
                         <div class="space-y-6 text-gray-400 text-base font-light leading-relaxed">
-                            <p>Soy <strong>Teresa Rodríguez de Dios</strong>, Ingeniera de Software con un Máster en
-                                Diseño de Experiencia de Usuario (UX). Me apasiona la tecnología, pero sólo cuando sirve
-                                para mejorar la vida de quienes la usan, no para complicarla.</p>
-                            <p>Entiendo mi trabajo como un <strong>puente entre tus objetivos de negocio y la
-                                    tecnología</strong>. Analizo qué necesita realmente tu empresa para crecer y lo
-                                construyo combinando una <strong>ingeniería sólida</strong> con una <strong>experiencia
-                                    de usuario impecable</strong>.</p>
-                            <p>Con esa visión nace <strong>Porvenir</strong>, agencia digital con sede en Ciudad Real y
-                                proyectos en toda España. Mi misión es <strong>integrar la Inteligencia Artificial y el
-                                    diseño estratégico</strong> en tu día a día para que tu empresa sea más eficiente y
-                                competitiva.</p>
+                            <p data-i18n-html="ag_p1">Soy <strong>Teresa Rodríguez de Dios</strong>, Ingeniera de Software con un Máster en Diseño de Experiencia de Usuario (UX). Me apasiona la tecnología, pero sólo cuando sirve para mejorar la vida de quienes la usan, no para complicarla.</p>
+                            <p data-i18n-html="ag_p2">Entiendo mi trabajo como un <strong>puente entre tus objetivos de negocio y la tecnología</strong>. Analizo qué necesita realmente tu empresa para crecer y lo construyo combinando una <strong>ingeniería sólida</strong> con una <strong>experiencia de usuario impecable</strong>.</p>
+                            <p data-i18n-html="ag_p3">Con esa visión nace <strong>Porvenir</strong>, agencia digital con sede en Ciudad Real y proyectos en toda España. Mi misión es <strong>integrar la Inteligencia Artificial y el diseño estratégico</strong> en tu día a día para que tu empresa sea más eficiente y competitiva.</p>
                         </div>
                     </div>
                 </div>
@@ -989,124 +1161,66 @@
             <section id="faq" class="py-16 md:py-24 px-6 md:px-12 relative z-10">
                 <div class="container mx-auto max-w-3xl">
                     <div class="mb-14 text-center fade-in-up">
-                        <span
-                            class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Preguntas
-                            frecuentes</span>
-                        <h2 class="text-3xl md:text-4xl font-bold">Todo lo que necesitas saber</h2>
-                        <p class="text-gray-400 mt-4 text-base md:text-lg font-light">Respondemos las dudas más comunes sobre
-                            nuestros servicios de IA y diseño web.</p>
+                        <span data-i18n="faq_eyebrow" class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Preguntas frecuentes</span>
+                        <h2 data-i18n="faq_h2" class="text-3xl md:text-4xl font-bold">Todo lo que necesitas saber</h2>
+                        <p data-i18n="faq_p" class="text-gray-400 mt-4 text-base md:text-lg font-light">Respondemos las dudas más comunes sobre nuestros servicios de IA y diseño web.</p>
                     </div>
                     <div class="space-y-4 fade-in-up">
                         <details class="faq-item glass-card rounded-2xl p-6 group">
                             <summary class="flex justify-between items-center gap-4">
-                                <span class="font-bold text-base md:text-lg">¿Qué hace exactamente Porvenir Agencia
-                                    Digital?</span>
-                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i
-                                        data-lucide="plus" class="w-5 h-5"></i></span>
+                                <span data-i18n="faq_q1" class="font-bold text-base md:text-lg">¿Qué hace exactamente Porvenir Agencia Digital?</span>
+                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i data-lucide="plus" class="w-5 h-5"></i></span>
                             </summary>
-                            <p class="text-gray-400 mt-4 text-sm leading-relaxed">Somos una agencia de inteligencia
-                                artificial y diseño web con sede en Ciudad Real. Ayudamos a empresas de toda España a
-                                automatizar procesos con IA, crear webs de alta conversión y cumplir la normativa de
-                                accesibilidad. Una metodología que une ingeniería de software y diseño estratégico,
-                                dirigida por Teresa Rodríguez de Dios para transformar tus retos en soluciones reales y
-                                medibles. También desarrollamos <strong>aplicaciones móviles iOS y Android</strong> con integración de IA.</p>
+                            <p data-i18n="faq_a1" class="text-gray-400 mt-4 text-sm leading-relaxed">Somos una agencia de inteligencia artificial y diseño web con sede en Ciudad Real. Ayudamos a empresas de toda España a automatizar procesos con IA, crear webs de alta conversión y cumplir la normativa de accesibilidad. Una metodología que une ingeniería de software y diseño estratégico, dirigida por Teresa Rodríguez de Dios para transformar tus retos en soluciones reales y medibles. También desarrollamos <strong>aplicaciones móviles iOS y Android</strong> con integración de IA.</p>
                         </details>
                         <details class="faq-item glass-card rounded-2xl p-6 group">
                             <summary class="flex justify-between items-center gap-4">
-                                <span class="font-bold text-base md:text-lg">¿Cuánto cuesta crear una web con
-                                    vosotros?</span>
-                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i
-                                        data-lucide="plus" class="w-5 h-5"></i></span>
+                                <span data-i18n="faq_q2" class="font-bold text-base md:text-lg">¿Cuánto cuesta crear una web con vosotros?</span>
+                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i data-lucide="plus" class="w-5 h-5"></i></span>
                             </summary>
-                            <p class="text-gray-400 mt-4 text-sm leading-relaxed">El coste depende del proyecto: tipo de
-                                web, funcionalidades necesarias y si incluye automatización con IA. Ofrecemos una
-                                <strong>consultoría gratuita de 30 minutos</strong> para entender tu caso y presentar
-                                una propuesta clara, sin letra pequeña ni compromisos.
-                            </p>
+                            <p data-i18n="faq_a2" class="text-gray-400 mt-4 text-sm leading-relaxed">El coste depende del proyecto: tipo de web, funcionalidades necesarias y si incluye automatización con IA. Ofrecemos una <strong>consultoría gratuita de 30 minutos</strong> para entender tu caso y presentar una propuesta clara, sin letra pequeña ni compromisos.</p>
                         </details>
                         <details class="faq-item glass-card rounded-2xl p-6 group">
                             <summary class="flex justify-between items-center gap-4">
-                                <span class="font-bold text-base md:text-lg">¿Qué es un chatbot con IA y en qué me
-                                    beneficia?</span>
-                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i
-                                        data-lucide="plus" class="w-5 h-5"></i></span>
+                                <span data-i18n="faq_q3" class="font-bold text-base md:text-lg">¿Qué es un chatbot con IA y en qué me beneficia?</span>
+                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i data-lucide="plus" class="w-5 h-5"></i></span>
                             </summary>
-                            <p class="text-gray-400 mt-4 text-sm leading-relaxed">Un chatbot con IA es un asistente
-                                virtual que atiende a tus clientes automáticamente las 24 horas por WhatsApp o en tu
-                                web. Puede responder preguntas frecuentes, gestionar citas, captar leads y escalar a un
-                                agente humano cuando sea necesario. Reduce costes de atención al cliente hasta un 60%.
-                            </p>
+                            <p data-i18n="faq_a3" class="text-gray-400 mt-4 text-sm leading-relaxed">Un chatbot con IA es un asistente virtual que atiende a tus clientes automáticamente las 24 horas por WhatsApp o en tu web. Puede responder preguntas frecuentes, gestionar citas, captar leads y escalar a un agente humano cuando sea necesario. Reduce costes de atención al cliente hasta un 60%.</p>
                         </details>
                         <details class="faq-item glass-card rounded-2xl p-6 group">
                             <summary class="flex justify-between items-center gap-4">
-                                <span class="font-bold text-base md:text-lg">¿Trabajáis solo en Ciudad Real o con
-                                    clientes de toda España?</span>
-                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i
-                                        data-lucide="plus" class="w-5 h-5"></i></span>
+                                <span data-i18n="faq_q4" class="font-bold text-base md:text-lg">¿Trabajáis solo en Ciudad Real o con clientes de toda España?</span>
+                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i data-lucide="plus" class="w-5 h-5"></i></span>
                             </summary>
-                            <p class="text-gray-400 mt-4 text-sm leading-relaxed">Nuestra sede está en Ciudad Real pero
-                                trabajamos con clientes de toda España, especialmente de Sevilla, Madrid, Toledo y
-                                Málaga, y también con proyectos internacionales. Todo el trabajo es 100% remoto y
-                                coordinado con la misma atención personalizada sin importar la ubicación.</p>
+                            <p data-i18n="faq_a4" class="text-gray-400 mt-4 text-sm leading-relaxed">Nuestra sede está en Ciudad Real pero trabajamos con clientes de toda España, especialmente de Sevilla, Madrid, Toledo y Málaga, y también con proyectos internacionales. Todo el trabajo es 100% remoto y coordinado con la misma atención personalizada sin importar la ubicación.</p>
                         </details>
                         <details class="faq-item glass-card rounded-2xl p-6 group">
                             <summary class="flex justify-between items-center gap-4">
-                                <span class="font-bold text-base md:text-lg">¿Qué herramientas usáis para la
-                                    automatización?</span>
-                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i
-                                        data-lucide="plus" class="w-5 h-5"></i></span>
+                                <span data-i18n="faq_q5" class="font-bold text-base md:text-lg">¿Qué herramientas usáis para la automatización?</span>
+                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i data-lucide="plus" class="w-5 h-5"></i></span>
                             </summary>
-                            <p class="text-gray-400 mt-4 text-sm leading-relaxed">Trabajamos con
-                                <strong>ManyChat</strong> para chatbots en WhatsApp y redes sociales, <strong>Make
-                                    (Integromat)</strong> para automatizar flujos y conectar sistemas entre sí, y
-                                <strong>Zoho CRM</strong> para centralizar la gestión de leads y clientes. Para el
-                                desarrollo web usamos código limpio a medida (HTML/CSS/JS) sin dependencias de plugins
-                                que penalicen el rendimiento. Siempre adaptamos el stack a las necesidades reales del
-                                proyecto.
-                            </p>
+                            <p data-i18n="faq_a5" class="text-gray-400 mt-4 text-sm leading-relaxed">Trabajamos con <strong>ManyChat</strong> para chatbots en WhatsApp y redes sociales, <strong>Make (Integromat)</strong> para automatizar flujos y conectar sistemas entre sí, y <strong>Zoho CRM</strong> para centralizar la gestión de leads y clientes. Para el desarrollo web usamos código limpio a medida (HTML/CSS/JS) sin dependencias de plugins que penalicen el rendimiento. Siempre adaptamos el stack a las necesidades reales del proyecto.</p>
                         </details>
                         <details class="faq-item glass-card rounded-2xl p-6 group">
                             <summary class="flex justify-between items-center gap-4">
-                                <span class="font-bold text-base md:text-lg">¿Mi empresa necesita cumplir la normativa
-                                    de accesibilidad web?</span>
-                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i
-                                        data-lucide="plus" class="w-5 h-5"></i></span>
+                                <span data-i18n="faq_q6" class="font-bold text-base md:text-lg">¿Mi empresa necesita cumplir la normativa de accesibilidad web?</span>
+                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i data-lucide="plus" class="w-5 h-5"></i></span>
                             </summary>
-                            <p class="text-gray-400 mt-4 text-sm leading-relaxed">En España, la Ley de Accesibilidad
-                                obliga a webs del sector público y a empresas privadas con más de 250 empleados o
-                                volumen de negocio superior a 50M€ a cumplir los estándares WCAG 2.1. Hacemos auditorías
-                                para detectar incumplimientos y te ayudamos a corregirlos antes de que supongan una
-                                sanción.</p>
+                            <p data-i18n="faq_a6" class="text-gray-400 mt-4 text-sm leading-relaxed">En España, la Ley de Accesibilidad obliga a webs del sector público y a empresas privadas con más de 250 empleados o volumen de negocio superior a 50M€ a cumplir los estándares WCAG 2.1. Hacemos auditorías para detectar incumplimientos y te ayudamos a corregirlos antes de que supongan una sanción.</p>
                         </details>
                         <details class="faq-item glass-card rounded-2xl p-6 group">
                             <summary class="flex justify-between items-center gap-4">
-                                <span class="font-bold text-base md:text-lg">¿Qué es un agente telefónico con IA y cómo
-                                    me ayuda a cumplir la Ley 10/2025?</span>
-                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i
-                                        data-lucide="plus" class="w-5 h-5"></i></span>
+                                <span data-i18n="faq_q7" class="font-bold text-base md:text-lg">¿Qué es un agente telefónico con IA y cómo me ayuda a cumplir la Ley 10/2025?</span>
+                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i data-lucide="plus" class="w-5 h-5"></i></span>
                             </summary>
-                            <p class="text-gray-400 mt-4 text-sm leading-relaxed">Un agente telefónico con IA atiende
-                                llamadas de forma completamente autónoma: entiende al interlocutor en lenguaje natural,
-                                responde en tiempo real, cualifica la consulta y, si es necesario, deriva la llamada a
-                                un agente humano. La <strong>Ley 10/2025</strong> exige contestar el 95% de las llamadas
-                                en menos de 3 minutos y prohíbe que la IA sea el único canal de atención. Nuestros
-                                agentes cumplen ambas condiciones: responden de forma instantánea y siempre dejan la
-                                puerta abierta a la intervención humana.</p>
+                            <p data-i18n="faq_a7" class="text-gray-400 mt-4 text-sm leading-relaxed">Un agente telefónico con IA atiende llamadas de forma completamente autónoma: entiende al interlocutor en lenguaje natural, responde en tiempo real, cualifica la consulta y, si es necesario, deriva la llamada a un agente humano. La <strong>Ley 10/2025</strong> exige contestar el 95% de las llamadas en menos de 3 minutos y prohíbe que la IA sea el único canal de atención. Nuestros agentes cumplen ambas condiciones: responden de forma instantánea y siempre dejan la puerta abierta a la intervención humana.</p>
                         </details>
                         <details class="faq-item glass-card rounded-2xl p-6 group">
                             <summary class="flex justify-between items-center gap-4">
-                                <span class="font-bold text-base md:text-lg">¿Podéis desarrollar una app móvil para mi
-                                    negocio desde cero?</span>
-                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i
-                                        data-lucide="plus" class="w-5 h-5"></i></span>
+                                <span data-i18n="faq_q8" class="font-bold text-base md:text-lg">¿Podéis desarrollar una app móvil para mi negocio desde cero?</span>
+                                <span class="faq-icon text-brand-orange flex-shrink-0" aria-hidden="true"><i data-lucide="plus" class="w-5 h-5"></i></span>
                             </summary>
-                            <p class="text-gray-400 mt-4 text-sm leading-relaxed">Sí. Desarrollamos <strong>aplicaciones
-                                    iOS y Android</strong>, nativas e híbridas, partiendo de cero o desde un MVP
-                                existente. Al combinar Ingeniería de Software con diseño UX estratégico entregamos apps
-                                con arquitectura sólida, código mantenible e integración con IA, APIs y sistemas de
-                                gestión. El proceso comienza con un análisis de negocio, sigue con el diseño de la
-                                experiencia de usuario y culmina con un producto técnicamente riguroso, listo para
-                                escalar.</p>
+                            <p data-i18n="faq_a8" class="text-gray-400 mt-4 text-sm leading-relaxed">Sí. Desarrollamos <strong>aplicaciones iOS y Android</strong>, nativas e híbridas, partiendo de cero o desde un MVP existente. Al combinar Ingeniería de Software con diseño UX estratégico entregamos apps con arquitectura sólida, código mantenible e integración con IA, APIs y sistemas de gestión. El proceso comienza con un análisis de negocio, sigue con el diseño de la experiencia de usuario y culmina con un producto técnicamente riguroso, listo para escalar.</p>
                         </details>
                     </div>
                 </div>
@@ -1118,11 +1232,9 @@
                     <div class="grid lg:grid-cols-2 gap-16 items-center">
                         <div class="fade-in-up">
                             <span
-                                class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Contacto</span>
-                            <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Hablamos de tu proyecto?</h2>
-                            <p class="text-gray-400 mb-10 text-base font-light leading-relaxed">Cuéntame tu reto. Analizaremos si
-                                necesitas automatizar procesos, renovar tu presencia digital o auditar tu accesibilidad.
-                                Sin compromisos, solo estrategia.</p>
+                                class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4" data-i18n="ct_badge">Contacto</span>
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="ct_h2">¿Hablamos de tu proyecto?</h2>
+                            <p class="text-gray-400 mb-10 text-base font-light leading-relaxed" data-i18n="ct_p">Cuéntame tu reto. Analizaremos si necesitas automatizar procesos, renovar tu presencia digital o auditar tu accesibilidad. Sin compromisos, solo estrategia.</p>
                             <address class="not-italic space-y-6">
                                 <a href="mailto:teresa.rodriguez@porveniragenciadigital.com"
                                     class="text-lg text-white font-bold hover:text-brand-orange transition-colors flex items-center gap-4 break-all">
@@ -1139,7 +1251,7 @@
                                 <p class="text-lg text-white font-bold flex items-center gap-4">
                                     <i data-lucide="map-pin" class="w-6 h-6 text-brand-orange flex-shrink-0"
                                         aria-hidden="true"></i>
-                                    Ciudad Real, España (Servicio global)
+                                    <span data-i18n="ct_location">Ciudad Real, España (Servicio global)</span>
                                 </p>
                             </address>
                         </div>
@@ -1147,57 +1259,56 @@
                             class="fade-in-up bg-white/5 backdrop-blur-sm p-6 md:p-10 rounded-3xl border border-white/5 relative overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-br from-brand-orange/5 to-transparent pointer-events-none"
                                 aria-hidden="true"></div>
-                            <h3 class="text-xl font-bold mb-2 relative z-10">Escríbeme directamente</h3>
-                            <p class="text-gray-400 text-sm mb-6 relative z-10">Te respondo en menos de 24h. Sin
-                                compromisos.</p>
+                            <h3 class="text-xl font-bold mb-2 relative z-10" data-i18n="ct_form_h3">Escríbeme directamente</h3>
+                            <p class="text-gray-400 text-sm mb-6 relative z-10" data-i18n="ct_form_p">Te respondo en menos de 24h. Sin compromisos.</p>
 
                             <form id="contact-form" class="space-y-4 relative z-10" novalidate>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label for="cf-name" class="sr-only">Nombre</label>
+                                        <label for="cf-name" class="sr-only" data-i18n="ct_sr_name">Nombre</label>
                                         <input id="cf-name" name="user_name" type="text" required
-                                            placeholder="Tu nombre *"
+                                            placeholder="Tu nombre *" data-i18n-placeholder="ct_name"
                                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-orange transition-colors">
                                     </div>
                                     <div>
-                                        <label for="cf-email" class="sr-only">Email</label>
+                                        <label for="cf-email" class="sr-only" data-i18n="ct_sr_email">Email</label>
                                         <input id="cf-email" name="user_email" type="email" required
-                                            placeholder="Tu email *"
+                                            placeholder="Tu email *" data-i18n-placeholder="ct_email"
                                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-orange transition-colors">
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label for="cf-phone" class="sr-only">Teléfono</label>
+                                        <label for="cf-phone" class="sr-only" data-i18n="ct_sr_phone">Teléfono</label>
                                         <input id="cf-phone" name="user_phone" type="tel"
-                                            placeholder="Teléfono (opcional)"
+                                            placeholder="Teléfono (opcional)" data-i18n-placeholder="ct_phone"
                                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-orange transition-colors">
                                     </div>
                                     <div>
                                         <label for="cf-service" class="sr-only">Servicio de interés</label>
                                         <select id="cf-service" name="user_service"
                                             class="w-full bg-brand-darkest border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-400 focus:outline-none focus:border-brand-orange transition-colors appearance-none">
-                                            <option value="" disabled selected>¿Qué necesitas?</option>
-                                            <option value="Diseño Web & UX">Diseño Web & UX</option>
-                                            <option value="IA & Automatización">IA & Automatización (chatbots, agentes de voz, flujos)</option>
-                                            <option value="App móvil">App móvil (iOS / Android)</option>
-                                            <option value="No sé, quiero asesoramiento">No sé, quiero asesoramiento</option>
+                                            <option value="" disabled selected data-i18n="ct_service">¿Qué necesitas?</option>
+                                            <option value="Diseño Web & UX" data-i18n="ct_opt1">Diseño Web & UX</option>
+                                            <option value="IA & Automatización" data-i18n="ct_opt2">IA & Automatización (chatbots, agentes de voz, flujos)</option>
+                                            <option value="App móvil" data-i18n="ct_opt3">App móvil (iOS / Android)</option>
+                                            <option value="Formación IA" data-i18n="ct_opt4">Formación IA para empresas / talleres</option>
+                                            <option value="No sé, quiero asesoramiento" data-i18n="ct_opt5">No sé, quiero asesoramiento</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div>
                                     <label for="cf-message" class="sr-only">Mensaje</label>
                                     <textarea id="cf-message" name="message" rows="3"
-                                        placeholder="Cuéntame brevemente tu proyecto..."
+                                        placeholder="Cuéntame brevemente tu proyecto..." data-i18n-placeholder="ct_message"
                                         class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-orange transition-colors resize-none"></textarea>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <input id="cf-privacy" name="privacy" type="checkbox" required
                                         class="mt-1 w-4 h-4 accent-brand-orange flex-shrink-0 cursor-pointer">
                                     <label for="cf-privacy" class="text-xs text-gray-500 leading-relaxed">
-                                        Acepto la <a href="pages/politica-privacidad.html"
-                                            class="underline hover:text-brand-orange transition-colors">política de
-                                            privacidad</a> y el tratamiento de mis datos para gestionar mi consulta.
+                                        <span data-i18n="ct_privacy_pre">Acepto la</span> <a href="pages/politica-privacidad.html"
+                                            class="underline hover:text-brand-orange transition-colors" data-i18n="ct_privacy_link">política de privacidad</a> <span data-i18n="ct_privacy_post">y el tratamiento de mis datos para gestionar mi consulta.</span>
                                     </label>
                                 </div>
 
@@ -1208,8 +1319,7 @@
                                     class="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-orange text-white rounded-3xl hover:bg-brand-orange/80 transition-colors shadow-[0_8px_20px_-8px_rgba(255,122,72,0.5)]">
                                     <i data-lucide="send" class="w-4 h-4 flex-shrink-0" aria-hidden="true"></i>
                                     <span id="cf-btn-text"
-                                        class="font-bold text-sm tracking-widest uppercase">ENVIAR
-                                        MENSAJE</span>
+                                        class="font-bold text-sm tracking-widest uppercase" data-i18n="ct_submit">ENVIAR MENSAJE</span>
                                     <svg id="cf-spinner" class="hidden w-5 h-5 animate-spin"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         aria-hidden="true">
@@ -1221,11 +1331,10 @@
                             </form>
 
                             <p class="text-center text-xs text-gray-600 mt-5 relative z-10">
-                                ¿Prefieres agendar directamente? <a
+                                <span data-i18n="ct_calendly_pre">¿Prefieres agendar directamente?</span> <a
                                     href="https://calendly.com/porveniragenciadigital/valoracion-proyecto"
                                     target="_blank" rel="noopener noreferrer"
-                                    class="text-gray-400 underline hover:text-brand-orange transition-colors">Reserva en
-                                    Calendly →</a>
+                                    class="text-gray-400 underline hover:text-brand-orange transition-colors"><span data-i18n="ct_calendly_link">Reserva en Calendly →</span></a>
                             </p>
                         </div>
                     </div>
@@ -1242,7 +1351,7 @@
         <a href="#contacto"
             class="flex-1 inline-flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-brand-orange to-[#ff9a76] text-white rounded-2xl font-bold text-xs tracking-widest uppercase shadow-[0_4px_15px_rgba(255,122,72,0.4)]">
             <i data-lucide="send" class="w-4 h-4" aria-hidden="true"></i>
-            ESCRÍBEME GRATIS
+            <span data-i18n="sticky_cta">ESCRÍBEME GRATIS</span>
         </a>
         <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
             rel="noopener noreferrer"
@@ -1294,11 +1403,9 @@
                 </div>
                 <nav aria-label="Legal"
                     class="flex flex-wrap justify-center gap-6 text-xs text-gray-500 font-bold uppercase tracking-widest">
-                    <a href="pages/aviso-legal.html" class="hover:text-brand-orange transition-colors">Aviso legal</a>
-                    <a href="pages/politica-privacidad.html" class="hover:text-brand-orange transition-colors">Política
-                        de privacidad</a>
-                    <a href="pages/politica-cookies.html" class="hover:text-brand-orange transition-colors">Política de
-                        cookies</a>
+                    <a href="pages/aviso-legal.html" data-i18n="ft_legal1" class="hover:text-brand-orange transition-colors">Aviso legal</a>
+                    <a href="pages/politica-privacidad.html" data-i18n="ft_legal2" class="hover:text-brand-orange transition-colors">Política de privacidad</a>
+                    <a href="pages/politica-cookies.html" data-i18n="ft_legal3" class="hover:text-brand-orange transition-colors">Política de cookies</a>
                 </nav>
             </div>
             <div class="border-t border-white/5 pt-3 pb-1 text-center">
@@ -1425,6 +1532,304 @@
                         spinner.classList.add('hidden');
                     });
             });
+        })();
+
+        /* ── TEMA CLARO/OSCURO ── */
+        (function () {
+            var theme = localStorage.getItem('theme') || 'dark';
+            function applyTheme() {
+                document.body.classList.toggle('light', theme === 'light');
+            }
+            window.toggleTheme = function () {
+                theme = theme === 'dark' ? 'light' : 'dark';
+                localStorage.setItem('theme', theme);
+                applyTheme();
+            };
+            applyTheme();
+        })();
+
+        /* ── IDIOMA ES/EN ── */
+        (function () {
+            var T = {
+                es: {
+                    // Nav
+                    nav_servicios: 'Servicios',
+                    nav_proyectos: 'Proyectos', nav_agencia: 'Agencia', nav_faq: 'FAQ', nav_contact: 'Contactar',
+                    // Hero
+                    hero_badge: 'Diseño Web · Desarrollo Web',
+                    hero_badge_loc: 'Ciudad Real · España',
+                    hero_h1: 'IA Y DISEÑO WEB',
+                    hero_h1_sub: 'QUE MULTIPLICAN TUS VENTAS',
+                    hero_p: 'Empresa de <strong>diseño y desarrollo web en Ciudad Real</strong> especializada en páginas web que convierten visitas en clientes. Unimos Ingeniería de Software y Diseño UX para crear webs, <strong>automatizar con IA</strong> y desarrollar apps móviles para empresas de toda España.',
+                    hero_cta: 'AUTOMATIZAR MI NEGOCIO',
+                    // Servicios
+                    srv_eyebrow: 'Nuestros Servicios',
+                    srv_h2: 'Diseño Web, IA, Apps Móviles y Formación IA',
+                    srv_p: 'Ingeniería de Software + Diseño UX + Inteligencia Artificial. Construimos los activos digitales que escalan tu negocio y formamos a tu equipo para que saque el máximo partido a la IA.',
+                    s1_title: 'Diseño Web & UX', s1_sub: 'Estética + Conversión + Cumplimiento',
+                    s1_desc: 'Creamos <strong>páginas web a medida</strong> que convierten visitas en clientes: ultrarrápidas, Mobile First y optimizadas para Google. El diseño UX estratégico y las auditorías de <strong>accesibilidad WCAG 2.1</strong> están incluidos, porque una web bien hecha cumple la ley y vende más.',
+                    s1_li1: 'Mobile First y SEO técnico incluido', s1_li2: 'UX estratégico y accesibilidad WCAG 2.1', s1_li3: 'Diseños modernos de alta conversión',
+                    s1_link1: 'Ver servicio de diseño web', s1_link2: 'Quiero una web que venda',
+                    s2_title: 'IA & Automatización', s2_sub: 'Tu negocio trabajando solo, 24/7',
+                    s2_desc: '<strong>Chatbots inteligentes</strong> para WhatsApp y web, <strong>agentes telefónicos con IA</strong> que atienden llamadas de forma autónoma, y flujos de automatización a medida para cualquier proceso de tu empresa. La solución para cumplir la <strong>Ley 10/2025</strong> sin ampliar plantilla.',
+                    s2_li1: 'Chatbots para WhatsApp, web y redes sociales', s2_li2: 'Agentes de voz 24/7 · Cumplimiento Ley 10/2025', s2_li3: 'Automatizaciones a medida para cualquier proceso',
+                    s2_link1: 'Ver servicio de IA y automatización', s2_link2: 'Ver demo de agente con IA',
+                    s3_title: 'Apps Móviles', s3_sub: 'Ingeniería de software aplicada',
+                    s3_desc: 'Diseñamos y desarrollamos <strong>aplicaciones iOS y Android</strong>, nativas e híbridas, con la solidez técnica que solo la ingeniería puede garantizar. De la arquitectura al lanzamiento: código limpio, escalable e integrado con IA y tus sistemas existentes.',
+                    s3_li1: 'iOS y Android, nativas e híbridas', s3_li2: 'Integración con IA, APIs y CRMs', s3_li3: 'Arquitectura sólida y mantenible',
+                    s3_link1: 'Ver servicio de apps móviles', s3_link2: 'Hablar sobre mi aplicación',
+                    s4_title: 'Formación IA para Empresas', s4_sub: 'Aprende IA · In-Company · Práctico',
+                    s4_desc: 'Formación práctica en inteligencia artificial para equipos de empresa. Tu equipo sale del taller sabiendo usar la IA en su día a día: herramientas reales, casos aplicados y <strong>cero teoría aburrida</strong>. Formamos in-company o de forma presencial, siempre a medida.',
+                    s4_li1: 'Talleres adaptados a tu sector', s4_li2: 'Herramientas IA listas para aplicar', s4_li3: 'In-company o presencial, a medida',
+                    s4_link1: 'Ver programa de formación', s4_link2: 'Consultar disponibilidad',
+                    // Formación (subpágina)
+                    form_eyebrow: 'Nuevo servicio · In Company', form_h2: 'Formación & Talleres IA para Empresas',
+                    form_sub: 'Lógica práctica, cero teoría aburrida. Tu equipo sale del taller sabiendo usar la IA en su día a día, no solo conociendo el concepto.',
+                    form_p1_title: 'Talleres In-Company', form_p1_a: 'A medida para tu sector', form_p1_b: 'Lógica práctica, cero teoría aburrida',
+                    form_p2_title: '100% Práctico', form_p2_a: 'Casos de uso reales y aplicados', form_p2_b: 'Herramientas listas para usar',
+                    form_p3_title: 'Foco en Resultados', form_p3_a: 'Atención al cliente 24/7 con IA', form_p3_b: 'Estrategias de venta automatizadas',
+                    form_p4_title: 'Máxima Eficiencia', form_p4_a: 'Ahorro de tiempo y recursos', form_p4_b: 'Impulsa la productividad del equipo',
+                    form_trust_eyebrow: 'Empresas y organizaciones que ya han confiado en nosotros',
+                    form_trust_desc: 'Hemos formado a equipos de distintos sectores —turismo, agroalimentario y desarrollo empresarial— en el uso práctico de la inteligencia artificial. Cada taller se adapta al nivel y al contexto de los participantes.',
+                    form_cta: 'Ver programa de formación', form_cta2: 'o escríbeme directamente →',
+                    // FAQ
+                    faq_eyebrow: 'Preguntas frecuentes', faq_h2: 'Todo lo que necesitas saber',
+                    faq_p: 'Respondemos las dudas más comunes sobre nuestros servicios de IA y diseño web.',
+                    faq_q1: '¿Qué hace exactamente Porvenir Agencia Digital?',
+                    faq_a1: 'Somos una agencia de inteligencia artificial y diseño web con sede en Ciudad Real. Ayudamos a empresas de toda España a automatizar procesos con IA, crear webs de alta conversión y cumplir la normativa de accesibilidad. Una metodología que une ingeniería de software y diseño estratégico, dirigida por Teresa Rodríguez de Dios para transformar tus retos en soluciones reales y medibles. También desarrollamos <strong>aplicaciones móviles iOS y Android</strong> con integración de IA.',
+                    faq_q2: '¿Cuánto cuesta crear una web con vosotros?',
+                    faq_a2: 'El coste depende del proyecto: tipo de web, funcionalidades necesarias y si incluye automatización con IA. Ofrecemos una <strong>consultoría gratuita de 30 minutos</strong> para entender tu caso y presentar una propuesta clara, sin letra pequeña ni compromisos.',
+                    faq_q3: '¿Qué es un chatbot con IA y en qué me beneficia?',
+                    faq_a3: 'Un chatbot con IA es un asistente virtual que atiende a tus clientes automáticamente las 24 horas por WhatsApp o en tu web. Puede responder preguntas frecuentes, gestionar citas, captar leads y escalar a un agente humano cuando sea necesario. Reduce costes de atención al cliente hasta un 60%.',
+                    faq_q4: '¿Trabajáis solo en Ciudad Real o con clientes de toda España?',
+                    faq_a4: 'Nuestra sede está en Ciudad Real pero trabajamos con clientes de toda España, especialmente de Sevilla, Madrid, Toledo y Málaga, y también con proyectos internacionales. Todo el trabajo es 100% remoto y coordinado con la misma atención personalizada sin importar la ubicación.',
+                    faq_q5: '¿Qué herramientas usáis para la automatización?',
+                    faq_a5: 'Trabajamos con <strong>ManyChat</strong> para chatbots en WhatsApp y redes sociales, <strong>Make (Integromat)</strong> para automatizar flujos y conectar sistemas entre sí, y <strong>Zoho CRM</strong> para centralizar la gestión de leads y clientes. Para el desarrollo web usamos código limpio a medida (HTML/CSS/JS) sin dependencias de plugins que penalicen el rendimiento. Siempre adaptamos el stack a las necesidades reales del proyecto.',
+                    faq_q6: '¿Mi empresa necesita cumplir la normativa de accesibilidad web?',
+                    faq_a6: 'En España, la Ley de Accesibilidad obliga a webs del sector público y a empresas privadas con más de 250 empleados o volumen de negocio superior a 50M€ a cumplir los estándares WCAG 2.1. Hacemos auditorías para detectar incumplimientos y te ayudamos a corregirlos antes de que supongan una sanción.',
+                    faq_q7: '¿Qué es un agente telefónico con IA y cómo me ayuda a cumplir la Ley 10/2025?',
+                    faq_a7: 'Un agente telefónico con IA atiende llamadas de forma completamente autónoma: entiende al interlocutor en lenguaje natural, responde en tiempo real, cualifica la consulta y, si es necesario, deriva la llamada a un agente humano. La <strong>Ley 10/2025</strong> exige contestar el 95% de las llamadas en menos de 3 minutos y prohíbe que la IA sea el único canal de atención. Nuestros agentes cumplen ambas condiciones: responden de forma instantánea y siempre dejan la puerta abierta a la intervención humana.',
+                    faq_q8: '¿Podéis desarrollar una app móvil para mi negocio desde cero?',
+                    faq_a8: 'Sí. Desarrollamos <strong>aplicaciones iOS y Android</strong>, nativas e híbridas, partiendo de cero o desde un MVP existente. Al combinar Ingeniería de Software con diseño UX estratégico entregamos apps con arquitectura sólida, código mantenible e integración con IA, APIs y sistemas de gestión. El proceso comienza con un análisis de negocio, sigue con el diseño de la experiencia de usuario y culmina con un producto técnicamente riguroso, listo para escalar.',
+                    // Contacto
+                    ct_badge: 'Contacto', ct_h2: '¿Hablamos de tu proyecto?',
+                    ct_p: 'Cuéntame tu reto. Analizaremos si necesitas automatizar procesos, renovar tu presencia digital o auditar tu accesibilidad. Sin compromisos, solo estrategia.',
+                    ct_location: 'Ciudad Real, España (Servicio global)',
+                    ct_form_h3: 'Escríbeme directamente', ct_form_p: 'Te respondo en menos de 24h. Sin compromisos.',
+                    ct_sr_name: 'Nombre', ct_name: 'Tu nombre *',
+                    ct_sr_email: 'Email', ct_email: 'Tu email *',
+                    ct_sr_phone: 'Teléfono', ct_phone: 'Teléfono (opcional)',
+                    ct_service: '¿Qué necesitas?',
+                    ct_opt1: 'Diseño Web & UX', ct_opt2: 'IA & Automatización (chatbots, agentes de voz, flujos)', ct_opt3: 'App móvil (iOS / Android)', ct_opt4: 'Formación IA para empresas / talleres', ct_opt5: 'No sé, quiero asesoramiento',
+                    ct_message: 'Cuéntame brevemente tu proyecto...',
+                    ct_privacy_pre: 'Acepto la', ct_privacy_link: 'política de privacidad', ct_privacy_post: 'y el tratamiento de mis datos para gestionar mi consulta.',
+                    ct_submit: 'ENVIAR MENSAJE',
+                    ct_calendly_pre: '¿Prefieres agendar directamente?', ct_calendly_link: 'Reserva en Calendly →',
+                    // Ley 10/2025
+                    ley_badge: 'Ley 10/2025 · Plazo de adaptación: Diciembre 2026',
+                    ley_h2: 'Tu empresa tiene hasta diciembre para responder en menos de 3 minutos',
+                    ley_p: 'La <strong class="text-white">Ley de Servicios de Atención a la Clientela</strong> obliga a contestar el <strong class="text-white">95% de las llamadas en menos de 3 minutos</strong>. El incumplimiento puede suponer sanciones de hasta 100.000 €. Nuestros <strong class="text-white">agentes telefónicos con IA</strong> responden de forma instantánea, sin ampliar plantilla y con total cumplimiento legal.',
+                    ley_cta: 'ADAPTAR MI NEGOCIO',
+                    // Proyectos
+                    proj_eyebrow: 'Portfolio',
+                    proj_h2: 'Proyectos reales, resultados medibles',
+                    proj_p: 'Cada proyecto parte de un reto concreto y termina en un resultado que se puede medir. Sin plantillas genéricas, sin promesas vacías.',
+                    proj_live: 'Ver proyecto en vivo',
+                    proj_all_svc: 'Ver todos los servicios',
+                    // Proyecto 1 — OrientaIA
+                    p1_h3: 'Web inmersiva "Space-Corporate" para consultora de IA',
+                    p1_desc: 'Diseño a medida con estética Dark Navy & Gold, fondo de partículas en Canvas, efectos de glassmorphism y arquitectura de conversión pensada para convertir la complejidad de la IA en un mensaje claro que genera contactos.',
+                    p1_result: '<strong class="text-white">Resultado:</strong> principal activo de credibilidad de OrientaIA. Desde el primer clic demuestra que son nativos digitales.',
+                    p1_svc: 'Servicio: Diseño Web & UX',
+                    // Proyecto 2 — Legalex
+                    p2_h3: 'Web a medida para despacho de abogacía y mediación',
+                    p2_desc: 'Legalex no quería una web de abogados más. Su filosofía de acuerdos frente a batallas merecía una identidad propia: cálida, cercana y alejada de la frialdad del sector. Creamos una web que transmite diálogo y confianza desde el primer vistazo.',
+                    p2_result: '<strong class="text-white">Resultado:</strong> "Han hecho visible exactamente lo que somos", en palabras de María Jesús Ruidíaz, propietaria de Legalex.',
+                    p2_svc: 'Servicio: Diseño Web & UX',
+                    // Proyecto 3 — Porvenir
+                    p3_h3: 'Espera... ¿y esta web?',
+                    p3_desc: 'Exacto, la que estás navegando ahora mismo. Cada animación, el cursor naranja que te sigue, las partículas del fondo, cada sección y cada microcopy construidos a mano por Porvenir. Cero plantillas, cero plugins, HTML + Tailwind + JavaScript puro. Presumir un poco está justificado cuando trabajas lo que predicas.',
+                    p3_result: '<strong class="text-white">Prueba de concepto en vivo:</strong> si algo de lo que has visto te ha convencido, ya sabes a quién llamar.',
+                    // Proyecto 4 — Atlas Eventos
+                    p4_h3: 'Sistema automatizado de inscripciones vía WhatsApp',
+                    p4_desc: 'El cliente gestionaba campamentos y matrículas con papel y correos manuales. Diseñé un flujo conversacional inteligente en WhatsApp (ManyChat) que filtra la LOPD, segmenta el servicio y recoge datos críticos en menos de 2 minutos, volcando todo automáticamente en Zoho CRM a través de Make.',
+                    p4_result: '<strong class="text-white">Resultado:</strong> cero horas de gestión manual en confirmaciones, datos médicos y legales centralizados y experiencia sin fricciones para las familias.',
+                    p4_svc: 'Servicio: IA & Automatización',
+                    // Testimonios
+                    tst_eyebrow: 'Clientes',
+                    tst_h2: 'Lo que dicen quienes ya trabajan con nosotros',
+                    tst_rating: '5.0 en Google',
+                    tst_read_more: 'Leer más',
+                    // Agencia
+                    ag_eyebrow: 'Sobre Porvenir',
+                    ag_h2: 'Agencia IA en Ciudad Real: Estrategia, Tecnología y Diseño',
+                    ag_p1: 'Soy <strong>Teresa Rodríguez de Dios</strong>, Ingeniera de Software con un Máster en Diseño de Experiencia de Usuario (UX). Me apasiona la tecnología, pero sólo cuando sirve para mejorar la vida de quienes la usan, no para complicarla.',
+                    ag_p2: 'Entiendo mi trabajo como un <strong>puente entre tus objetivos de negocio y la tecnología</strong>. Analizo qué necesita realmente tu empresa para crecer y lo construyo combinando una <strong>ingeniería sólida</strong> con una <strong>experiencia de usuario impecable</strong>.',
+                    ag_p3: 'Con esa visión nace <strong>Porvenir</strong>, agencia digital con sede en Ciudad Real y proyectos en toda España. Mi misión es <strong>integrar la Inteligencia Artificial y el diseño estratégico</strong> en tu día a día para que tu empresa sea más eficiente y competitiva.',
+                    // Sticky CTA
+                    sticky_cta: 'ESCRÍBEME GRATIS',
+                    // Footer legal
+                    ft_legal1: 'Aviso legal',
+                    ft_legal2: 'Política de privacidad',
+                    ft_legal3: 'Política de cookies'
+                },
+                en: {
+                    // Nav
+                    nav_servicios: 'Services',
+                    nav_proyectos: 'Projects', nav_agencia: 'Agency', nav_faq: 'FAQ', nav_contact: 'Contact',
+                    // Hero
+                    hero_badge: 'Web Design · Web Development',
+                    hero_badge_loc: 'Ciudad Real · Spain',
+                    hero_h1: 'AI & WEB DESIGN',
+                    hero_h1_sub: 'THAT MULTIPLY YOUR SALES',
+                    hero_p: 'Web design and development company in Ciudad Real specialising in websites that convert visitors into clients. We combine Software Engineering and UX Design to build websites, <strong>automate with AI</strong> and develop mobile apps for businesses across Spain.',
+                    hero_cta: 'AUTOMATE MY BUSINESS',
+                    // Services
+                    srv_eyebrow: 'Our Services',
+                    srv_h2: 'Web Design, AI, Mobile Apps and AI Training',
+                    srv_p: 'Software Engineering + UX Design + Artificial Intelligence. We build the digital assets that scale your business and train your team to get the most out of AI.',
+                    s1_title: 'Web Design & UX', s1_sub: 'Aesthetics + Conversion + Compliance',
+                    s1_desc: 'We create <strong>bespoke websites</strong> that convert visitors into clients: ultra-fast, Mobile First and optimised for Google. Strategic UX design and <strong>WCAG 2.1 accessibility</strong> audits are included, because a well-built website complies with the law and sells more.',
+                    s1_li1: 'Mobile First and technical SEO included', s1_li2: 'Strategic UX and WCAG 2.1 accessibility', s1_li3: 'Modern high-conversion designs',
+                    s1_link1: 'View web design service', s1_link2: 'I want a website that sells',
+                    s2_title: 'AI & Automation', s2_sub: 'Your business running on its own, 24/7',
+                    s2_desc: '<strong>Intelligent chatbots</strong> for WhatsApp and web, <strong>AI phone agents</strong> that handle calls autonomously, and custom automation flows for any process in your business. The solution to comply with <strong>Law 10/2025</strong> without growing your headcount.',
+                    s2_li1: 'Chatbots for WhatsApp, web and social media', s2_li2: 'Voice agents 24/7 · Law 10/2025 compliance', s2_li3: 'Custom automations for any process',
+                    s2_link1: 'View AI and automation service', s2_link2: 'See AI agent demo',
+                    s3_title: 'Mobile Apps', s3_sub: 'Applied software engineering',
+                    s3_desc: 'We design and develop <strong>iOS and Android apps</strong>, native and hybrid, with the technical rigour that only engineering can guarantee. From architecture to launch: clean, scalable code integrated with AI and your existing systems.',
+                    s3_li1: 'iOS and Android, native and hybrid', s3_li2: 'Integration with AI, APIs and CRMs', s3_li3: 'Solid and maintainable architecture',
+                    s3_link1: 'View mobile apps service', s3_link2: 'Talk about my application',
+                    s4_title: 'AI Training for Businesses', s4_sub: 'Learn AI · In-Company · Practical',
+                    s4_desc: 'Practical artificial intelligence training for business teams. Your team leaves the workshop knowing how to use AI day-to-day: real tools, applied cases and <strong>zero boring theory</strong>. We train in-company or on-site, always tailored.',
+                    s4_li1: 'Workshops tailored to your industry', s4_li2: 'Ready-to-apply AI tools', s4_li3: 'In-company or on-site, bespoke',
+                    s4_link1: 'View training programme', s4_link2: 'Check availability',
+                    // Training
+                    form_eyebrow: 'New service · In Company', form_h2: 'AI Training & Workshops for Companies',
+                    form_sub: 'Practical logic, zero boring theory. Your team leaves the workshop knowing how to use AI day-to-day, not just understanding the concept.',
+                    form_p1_title: 'In-Company Workshops', form_p1_a: 'Tailored to your industry', form_p1_b: 'Practical logic, zero boring theory',
+                    form_p2_title: '100% Practical', form_p2_a: 'Real applied use cases', form_p2_b: 'Ready-to-use tools',
+                    form_p3_title: 'Results-Focused', form_p3_a: '24/7 customer service with AI', form_p3_b: 'Automated sales strategies',
+                    form_p4_title: 'Maximum Efficiency', form_p4_a: 'Save time and resources', form_p4_b: "Boost your team's productivity",
+                    form_trust_eyebrow: 'Companies and organisations that have already trusted us',
+                    form_trust_desc: 'We have trained teams across different sectors — tourism, agri-food and business development — in the practical use of artificial intelligence. Each workshop adapts to the level and context of the participants.',
+                    form_cta: 'View training programme', form_cta2: 'or write to me directly →',
+                    // FAQ
+                    faq_eyebrow: 'Frequently asked questions', faq_h2: 'Everything you need to know',
+                    faq_p: 'We answer the most common questions about our AI and web design services.',
+                    faq_q1: 'What does Porvenir Agencia Digital actually do?',
+                    faq_a1: 'We are an artificial intelligence and web design agency based in Ciudad Real. We help businesses across Spain automate processes with AI, create high-conversion websites and comply with accessibility regulations. A methodology that combines software engineering and strategic design, led by Teresa Rodríguez de Dios, to turn your challenges into real, measurable solutions. We also develop <strong>iOS and Android mobile apps</strong> with AI integration.',
+                    faq_q2: 'How much does it cost to build a website with you?',
+                    faq_a2: 'The cost depends on the project: type of website, features required and whether it includes AI automation. We offer a <strong>free 30-minute consultation</strong> to understand your case and present a clear proposal, with no hidden costs or commitments.',
+                    faq_q3: 'What is an AI chatbot and how does it benefit me?',
+                    faq_a3: 'An AI chatbot is a virtual assistant that automatically attends your clients 24 hours a day via WhatsApp or your website. It can answer frequently asked questions, manage appointments, capture leads and escalate to a human agent when needed. It reduces customer service costs by up to 60%.',
+                    faq_q4: 'Do you only work in Ciudad Real or with clients from all over Spain?',
+                    faq_a4: 'Our headquarters is in Ciudad Real but we work with clients from all over Spain, especially from Seville, Madrid, Toledo and Malaga, and also with international projects. All work is 100% remote and coordinated with the same personalised attention regardless of location.',
+                    faq_q5: 'What tools do you use for automation?',
+                    faq_a5: 'We work with <strong>ManyChat</strong> for chatbots on WhatsApp and social media, <strong>Make (Integromat)</strong> to automate flows and connect systems, and <strong>Zoho CRM</strong> to centralise lead and client management. For web development we use clean custom code (HTML/CSS/JS) without plugin dependencies that penalise performance. We always adapt the stack to the real needs of the project.',
+                    faq_q6: 'Does my business need to comply with web accessibility regulations?',
+                    faq_a6: 'In Spain, the Accessibility Law requires public sector websites and private companies with more than 250 employees or a turnover exceeding €50M to comply with WCAG 2.1 standards. We carry out audits to identify non-compliance and help you correct them before they result in a sanction.',
+                    faq_q7: 'What is an AI phone agent and how does it help me comply with Law 10/2025?',
+                    faq_a7: 'An AI phone agent handles calls completely autonomously: it understands the caller in natural language, responds in real time, qualifies the query and, if necessary, transfers the call to a human agent. <strong>Law 10/2025</strong> requires 95% of calls to be answered within 3 minutes and prohibits AI from being the sole channel of attention. Our agents meet both conditions: they respond instantly and always leave the door open for human intervention.',
+                    faq_q8: 'Can you develop a mobile app for my business from scratch?',
+                    faq_a8: 'Yes. We develop <strong>iOS and Android apps</strong>, native and hybrid, starting from scratch or from an existing MVP. By combining Software Engineering with strategic UX design, we deliver apps with solid architecture, maintainable code and integration with AI, APIs and management systems. The process begins with a business analysis, continues with the user experience design and culminates in a technically rigorous product, ready to scale.',
+                    // Contact
+                    ct_badge: 'Contact', ct_h2: 'Shall we talk about your project?',
+                    ct_p: 'Tell me about your challenge. We will assess whether you need to automate processes, renew your digital presence or audit your accessibility. No commitment, just strategy.',
+                    ct_location: 'Ciudad Real, Spain (Global service)',
+                    ct_form_h3: 'Write to me directly', ct_form_p: 'I respond in under 24h. No strings attached.',
+                    ct_sr_name: 'Name', ct_name: 'Your name *',
+                    ct_sr_email: 'Email', ct_email: 'Your email *',
+                    ct_sr_phone: 'Phone', ct_phone: 'Phone (optional)',
+                    ct_service: 'What do you need?',
+                    ct_opt1: 'Web Design & UX', ct_opt2: 'AI & Automation (chatbots, voice agents, flows)', ct_opt3: 'Mobile app (iOS / Android)', ct_opt4: 'AI training for businesses / workshops', ct_opt5: "I'm not sure, I'd like advice",
+                    ct_message: 'Briefly describe your project...',
+                    ct_privacy_pre: 'I accept the', ct_privacy_link: 'privacy policy', ct_privacy_post: 'and the processing of my data to manage my enquiry.',
+                    ct_submit: 'SEND MESSAGE',
+                    ct_calendly_pre: 'Prefer to book directly?', ct_calendly_link: 'Book on Calendly →',
+                    // Law 10/2025
+                    ley_badge: 'Law 10/2025 · Adaptation deadline: December 2026',
+                    ley_h2: 'Your business has until December to respond in under 3 minutes',
+                    ley_p: 'The <strong class="text-white">Customer Service Act</strong> requires <strong class="text-white">95% of calls to be answered in under 3 minutes</strong>. Non-compliance can result in fines of up to €100,000. Our <strong class="text-white">AI phone agents</strong> respond instantly, without hiring more staff and with full legal compliance.',
+                    ley_cta: 'ADAPT MY BUSINESS',
+                    // Projects
+                    proj_eyebrow: 'Portfolio',
+                    proj_h2: 'Real projects, measurable results',
+                    proj_p: 'Every project starts from a concrete challenge and ends in a result that can be measured. No generic templates, no empty promises.',
+                    proj_live: 'View live project',
+                    proj_all_svc: 'View all services',
+                    // Project 1 — OrientaIA
+                    p1_h3: 'Immersive "Space-Corporate" website for an AI consultancy',
+                    p1_desc: 'Bespoke design with a Dark Navy & Gold aesthetic, Canvas particle background, glassmorphism effects and a conversion architecture built to turn the complexity of AI into a clear message that generates leads.',
+                    p1_result: '<strong class="text-white">Result:</strong> OrientaIA\'s main credibility asset. From the first click it proves they are true digital natives.',
+                    p1_svc: 'Service: Web Design & UX',
+                    // Project 2 — Legalex
+                    p2_h3: 'Bespoke website for a law and mediation firm',
+                    p2_desc: "Legalex didn't want just another law firm website. Their philosophy of agreements over battles deserved its own identity: warm, approachable and far from the coldness of the sector. We created a website that conveys dialogue and trust from the very first glance.",
+                    p2_result: '<strong class="text-white">Result:</strong> "They made visible exactly what we are", in the words of María Jesús Ruidíaz, owner of Legalex.',
+                    p2_svc: 'Service: Web Design & UX',
+                    // Project 3 — Porvenir
+                    p3_h3: 'Wait... and this website?',
+                    p3_desc: "Exactly, the one you're browsing right now. Every animation, the orange cursor that follows you, the background particles, every section and every piece of microcopy built by hand by Porvenir. Zero templates, zero plugins, pure HTML + Tailwind + JavaScript. A little bragging is justified when you practise what you preach.",
+                    p3_result: '<strong class="text-white">Live proof of concept:</strong> if anything you\'ve seen has convinced you, you already know who to call.',
+                    // Project 4 — Atlas Eventos
+                    p4_h3: 'Automated registration system via WhatsApp',
+                    p4_desc: 'The client managed camps and enrolments with paper and manual emails. I designed an intelligent conversational flow on WhatsApp (ManyChat) that filters GDPR consent, segments the service and collects critical data in under 2 minutes, automatically pushing everything into Zoho CRM via Make.',
+                    p4_result: '<strong class="text-white">Result:</strong> zero hours of manual management in confirmations, medical and legal data centralised and a friction-free experience for families.',
+                    p4_svc: 'Service: AI & Automation',
+                    // Testimonials
+                    tst_eyebrow: 'Clients',
+                    tst_h2: 'What those who already work with us say',
+                    tst_rating: '5.0 on Google',
+                    tst_read_more: 'Read more',
+                    // Agency
+                    ag_eyebrow: 'About Porvenir',
+                    ag_h2: 'AI Agency in Ciudad Real: Strategy, Technology and Design',
+                    ag_p1: 'I am <strong>Teresa Rodríguez de Dios</strong>, a Software Engineer with a Master\'s in User Experience (UX) Design. I am passionate about technology, but only when it serves to improve the lives of those who use it, not complicate them.',
+                    ag_p2: 'I see my work as a <strong>bridge between your business goals and technology</strong>. I analyse what your company really needs to grow and build it by combining <strong>solid engineering</strong> with an <strong>impeccable user experience</strong>.',
+                    ag_p3: 'From that vision <strong>Porvenir</strong> was born — a digital agency headquartered in Ciudad Real with projects across Spain. My mission is to <strong>integrate Artificial Intelligence and strategic design</strong> into your day-to-day so your business becomes more efficient and competitive.',
+                    // Sticky CTA
+                    sticky_cta: 'WRITE TO ME FREE',
+                    // Footer legal
+                    ft_legal1: 'Legal notice',
+                    ft_legal2: 'Privacy policy',
+                    ft_legal3: 'Cookie policy'
+                }
+            };
+
+            var lang = localStorage.getItem('lang') || 'es';
+
+            function applyLang() {
+                document.querySelectorAll('[data-i18n]').forEach(function (el) {
+                    var k = el.dataset.i18n;
+                    if (T[lang][k] !== undefined) {
+                        if (T[lang][k].indexOf('<') !== -1) {
+                            el.innerHTML = T[lang][k];
+                        } else {
+                            el.textContent = T[lang][k];
+                        }
+                    }
+                });
+                document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+                    var k = el.dataset.i18nHtml;
+                    if (T[lang][k] !== undefined) el.innerHTML = T[lang][k];
+                });
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+                    var k = el.dataset.i18nPlaceholder;
+                    if (T[lang][k] !== undefined) el.placeholder = T[lang][k];
+                });
+                var btns = [document.getElementById('lang-btn'), document.getElementById('lang-btn-mobile')];
+                btns.forEach(function (b) { if (b) b.textContent = lang === 'es' ? 'EN' : 'ES'; });
+                document.documentElement.lang = lang;
+            }
+
+            window.toggleLang = function () {
+                lang = lang === 'es' ? 'en' : 'es';
+                localStorage.setItem('lang', lang);
+                applyLang();
+            };
+
+            document.addEventListener('DOMContentLoaded', applyLang);
         })();
 
         /* ── STICKY MOBILE CTA ── */

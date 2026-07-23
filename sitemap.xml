@@ -2,9 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.porveniragenciadigital.com/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/diseno-web-ciudad-real.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/desarrollo-web-ciudad-real.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/agencia-ia-ciudad-real.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/apps-moviles-ciudad-real.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.porveniragenciadigital.com/pages/formacion-ia-empresas-ciudad-real.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.porveniragenciadigital.com/pages/aviso-legal.html</loc>

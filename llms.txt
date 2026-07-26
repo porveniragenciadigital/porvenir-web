@@ -1,28 +1,33 @@
 # Porvenir Agencia Digital
 
-> Software Engineering, Web Design & AI agency. We don't use slow templates — we build profitable, bespoke digital assets.
+> Software Engineering, Web Design & AI agency based in Ciudad Real, Spain. Led by Teresa Rodríguez de Dios (Software Engineer & MSc UX). Three core services: bespoke web design with UX, AI automation and chatbots, and mobile app development. Fully remote, serving clients across Spain and internationally.
 
-## Overview
-Porvenir Agencia Digital, based in Ciudad Real (Spain), bridges the gap between Software Engineering, Web Design, and Artificial Intelligence to scale businesses. Led by Teresa Rodríguez de Dios (Software Engineer & UX Expert), the agency delivers three core services: bespoke web design with UX, AI automation and chatbots, and mobile app development. Projects across Spain and internationally, fully remote.
+## Servicios
 
-## Core Services
-- **Web Design & UX (Diseño Web & UX):** Bespoke, ultra-fast, Mobile First websites with Technical SEO built with semantic HTML, Tailwind CSS, and vanilla JavaScript — no templates, no plugins, strategically designed to maximise conversions. UX strategy and WCAG 2.1 accessibility audits are included as standard, because a well-built website both converts and complies with the law. This website (porveniragenciadigital.com) is itself a product of the agency.
-- **AI & Automation (IA & Automatización):** Intelligent chatbots for WhatsApp and web, autonomous AI voice agents that answer, qualify, and route incoming calls 24/7, and bespoke automation flows for any business process. The key solution for compliance with Spain's Ley 10/2025 de Atención a la Clientela (Law 10/2025), which requires answering 95% of calls in under 3 minutes — without expanding headcount.
-- **Mobile Apps (Apps Móviles):** Native and hybrid iOS and Android applications built with software engineering rigour: clean architecture, AI integration, external APIs, and CRM connections. From business analysis and UX design through to production launch.
+- [Diseño Web & UX](https://www.porveniragenciadigital.com/#servicios): Bespoke, ultra-fast, Mobile First websites with Technical SEO. Semantic HTML, Tailwind CSS, and vanilla JavaScript — no templates, no plugins, strategically designed to maximise conversions. UX strategy and WCAG 2.1 accessibility audits included as standard.
+- [IA & Automatización](https://www.porveniragenciadigital.com/#servicios): Intelligent chatbots for WhatsApp and web, autonomous AI voice agents that answer, qualify, and route incoming calls 24/7, and bespoke automation flows. Key solution for compliance with Spain's Ley 10/2025 de Atención a la Clientela.
+- [Apps Móviles](https://www.porveniragenciadigital.com/#servicios): Native and hybrid iOS and Android applications built with software engineering rigour: clean architecture, AI integration, external APIs, and CRM connections.
+- [Formación IA para Empresas](https://www.porveniragenciadigital.com/#servicios): Practical AI training workshops tailored to each business sector, making complex AI concepts accessible and applicable from day one.
 
-## Key Technical Differentiators
-- **Engineering Foundation:** All projects are approached from a software engineering perspective — performance, scalability, and maintainable code, not just visual aesthetics.
-- **UX-First Strategy:** Every technical solution is validated through User Experience principles and conversion architecture.
-- **Legal Compliance Expertise:** Specialized in Spain's Ley 10/2025 (Atención a la Clientela), WCAG 2.1 accessibility, LOPD/GDPR, and EU AI Act alignment.
-- **Full-Stack Ownership:** Design, build, and delivery handled by the same engineer — no fragmented handoffs.
+## Sobre la agencia
 
-## Key Personnel
-- **Teresa Rodríguez de Dios:** Founder, Software Engineer & MSc in User Experience Design. 📍 Ciudad Real, España (Global service).
+- [Quiénes somos](https://www.porveniragenciadigital.com/#agencia): Teresa Rodríguez de Dios, founder, Software Engineer & MSc in User Experience Design. Engineering foundation combined with UX-first strategy and legal compliance expertise (Ley 10/2025, WCAG 2.1, LOPD/GDPR, EU AI Act).
 
-## Contact & Location
-- **Main Location:** Ciudad Real, Castilla-La Mancha, Spain.
-- **Serving:** Madrid, Seville, Toledo, Malaga, and international clients (fully remote).
-- **Website:** https://www.porveniragenciadigital.com/
+## Contacto
+
+- [Formulario de contacto](https://www.porveniragenciadigital.com/#contacto): Free 30-minute strategy consultation. No commitments.
+- [Preguntas frecuentes](https://www.porveniragenciadigital.com/#faq): Answers to the most common questions about web design, AI automation, mobile apps, and legal compliance.
+
+## Páginas legales
+
+- [Política de privacidad](https://www.porveniragenciadigital.com/pages/privacidad.html): GDPR/LOPD privacy policy.
+- [Aviso legal](https://www.porveniragenciadigital.com/pages/aviso-legal.html): Legal notice.
+- [Política de cookies](https://www.porveniragenciadigital.com/pages/cookies.html): Cookie policy.
+
+## Datos de contacto
+
 - **Email:** teresa.rodriguez@porveniragenciadigital.com
+- **Teléfono:** +34 638 03 54 68
+- **Ubicación:** Ciudad Real, Castilla-La Mancha, Spain
 - **LinkedIn:** https://www.linkedin.com/in/teresa-rodríguez-de-dios
 - **Instagram:** https://www.instagram.com/porvenir_agencia/

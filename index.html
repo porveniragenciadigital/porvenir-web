@@ -158,6 +158,9 @@
             html { cursor: auto !important; }
         }
 
+        /* iOS tap delay fix */
+        button, a { touch-action: manipulation; }
+
         #reviews-carousel .glass-card:hover {
             transform: none;
             box-shadow: none;
@@ -491,7 +494,7 @@
         <a href="#faq" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold" data-i18n="nav_faq">FAQ</a>
         <a href="#contacto" onclick="toggleMenu()" class="text-2xl font-bold text-brand-orange" data-i18n="nav_contact">Contactar</a>
         <div class="flex items-center gap-5 mt-4">
-            <button id="lang-btn-mobile" onclick="toggleLang()" class="text-sm font-bold tracking-widest uppercase text-gray-400 hover:text-brand-orange transition-colors">EN</button>
+            <button id="lang-btn-mobile" onclick="toggleLang()" class="text-sm font-bold tracking-widest uppercase text-gray-400 hover:text-brand-orange transition-colors flex items-center justify-center w-11 h-11">EN</button>
             <button onclick="toggleTheme()" class="flex items-center justify-center w-10 h-10 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Cambiar tema">
                 <svg id="theme-icon-sun-m" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
                 <svg id="theme-icon-moon-m" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -1470,7 +1473,7 @@
         });
 
         /* ── EMAILJS ── */
-        (function () {
+        try { (function () {
             // ⚠️ REEMPLAZA ESTOS VALORES con los tuyos de emailjs.com
             var EMAILJS_PUBLIC_KEY = 'yNO-RQHtbByDqXGfv';
             var EMAILJS_SERVICE_ID = 'service_mdsk2lm';
@@ -1527,17 +1530,18 @@
                         spinner.classList.add('hidden');
                     });
             });
-        })();
+        })(); } catch(e) { console.warn('EmailJS init error:', e); }
 
         /* ── TEMA CLARO/OSCURO ── */
         (function () {
-            var theme = localStorage.getItem('theme') || 'dark';
+            var theme = 'dark';
+            try { theme = localStorage.getItem('theme') || 'dark'; } catch(e) {}
             function applyTheme() {
                 document.body.classList.toggle('light', theme === 'light');
             }
             window.toggleTheme = function () {
                 theme = theme === 'dark' ? 'light' : 'dark';
-                localStorage.setItem('theme', theme);
+                try { localStorage.setItem('theme', theme); } catch(e) {}
                 applyTheme();
             };
             applyTheme();
@@ -1792,7 +1796,8 @@
                 }
             };
 
-            var lang = localStorage.getItem('lang') || 'es';
+            var lang = 'es';
+            try { lang = localStorage.getItem('lang') || 'es'; } catch(e) {}
 
             function applyLang() {
                 document.querySelectorAll('[data-i18n]').forEach(function (el) {
@@ -1820,7 +1825,7 @@
 
             window.toggleLang = function () {
                 lang = lang === 'es' ? 'en' : 'es';
-                localStorage.setItem('lang', lang);
+                try { localStorage.setItem('lang', lang); } catch(e) {}
                 applyLang();
             };
 

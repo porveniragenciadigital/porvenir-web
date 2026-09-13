@@ -340,6 +340,9 @@
         body.light footer .text-gray-400 { color: #4b5563 !important; }
         body.light footer .text-gray-500 { color: #6b7280 !important; }
         body.light footer .text-gray-600 { color: #6b7280 !important; }
+        @media (min-width: 769px) { footer .ft-col { align-items: flex-start !important; } }
+        .nav-desk { display: none; }
+        @media (min-width: 769px) { .nav-desk { display: flex !important; } .nav-mob { display: none !important; } }
         body.light footer .border-white\/10 { border-color: #d1d9e8 !important; }
         body.light footer .border-white\/5  { border-color: #dce3ef !important; }
         body.light footer .hover\:text-brand-orange:hover { color: #ff7a48 !important; }
@@ -440,7 +443,7 @@
             PORVENIR
         </a>
         <!-- Links centrados (desktop) -->
-        <div class="hidden md:flex flex-1 justify-center items-center gap-10 text-xs font-bold tracking-[0.15em] uppercase text-gray-400 h-full">
+        <div class="nav-desk flex-1 justify-center items-center gap-10 text-xs font-bold tracking-[0.15em] uppercase text-gray-400 h-full">
             <div class="services-trigger relative h-full flex items-center">
                 <button class="flex items-center gap-1 hover:text-brand-orange transition-colors uppercase">
                     <span data-i18n="nav_servicios">Servicios</span>
@@ -472,7 +475,7 @@
         </div>
         <!-- Controles derecha + hamburger -->
         <div class="flex items-center gap-3" style="margin-left:auto">
-            <div class="hidden md:flex items-center gap-3">
+            <div class="nav-desk items-center gap-3">
                 <button id="lang-btn" onclick="toggleLang()" class="text-xs font-bold tracking-[0.15em] uppercase text-gray-400 hover:text-brand-orange transition-colors">EN</button>
                 <button onclick="toggleTheme()" class="flex items-center justify-center w-8 h-8 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Cambiar tema">
                     <svg id="theme-icon-sun" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -483,7 +486,7 @@
                     Contactar
                 </a>
             </div>
-            <button class="md:hidden text-white relative z-50 flex items-center" onclick="toggleMenu()"
+            <button class="nav-mob text-white relative z-50 flex items-center" onclick="toggleMenu()"
                 aria-label="Abrir menú de navegación" aria-expanded="false" id="menu-toggle">
                 <svg class="w-8 h-8 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
@@ -495,7 +498,19 @@
         <button class="absolute top-6 right-6 text-white" onclick="toggleMenu()" aria-label="Cerrar menú">
             <i data-lucide="x" class="w-10 h-10" aria-hidden="true"></i>
         </button>
-        <a href="#servicios" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold" data-i18n="nav_servicios">Servicios</a>
+        <div class="flex flex-col items-center gap-2">
+            <button onclick="toggleMobileSrv()" class="text-2xl hover:text-brand-orange font-bold flex items-center gap-2 transition-colors" aria-expanded="false" id="mobile-srv-btn">
+                <span data-i18n="nav_servicios">Servicios</span>
+                <svg id="mobile-srv-icon" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div id="mobile-srv-list" class="flex flex-col items-center gap-3" style="display:none">
+                <a href="pages/diseno-web-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors">Diseño Web & UX</a>
+                <a href="pages/desarrollo-web-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors">Desarrollo Web</a>
+                <a href="pages/agencia-ia-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors">IA & Automatización</a>
+                <a href="pages/apps-moviles-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors">Apps Móviles</a>
+                <a href="pages/formacion-ia-empresas-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors">Formación IA</a>
+            </div>
+        </div>
         <a href="#proyectos" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold" data-i18n="nav_proyectos">Proyectos</a>
         <a href="#agencia" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold" data-i18n="nav_agencia">Agencia</a>
         <a href="#faq" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold" data-i18n="nav_faq">FAQ</a>
@@ -1379,8 +1394,8 @@
 
     <footer class="pt-8 pb-2 bg-brand-darkest relative z-10 border-t border-white/10 px-6 md:px-12">
         <div class="container mx-auto">
-            <div class="flex flex-col lg:flex-row justify-between items-start gap-8 mb-6">
-                <div class="flex flex-col items-start gap-4">
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-6">
+                <div class="ft-col flex flex-col items-center gap-4">
                     <a href="#"
                         class="text-lg font-bold tracking-widest flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity text-white"
                         aria-label="Porvenir Agencia Digital — volver al inicio">
@@ -1415,7 +1430,7 @@
                         </a>
                     </div>
                 </div>
-                <nav aria-label="Servicios" class="flex flex-col items-start gap-2">
+                <nav aria-label="Servicios" class="ft-col flex flex-col items-center gap-2">
                     <p class="text-[10px] font-bold uppercase tracking-widest text-white mb-1">Servicios</p>
                     <a href="pages/diseno-web-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Diseño Web</a>
                     <a href="pages/desarrollo-web-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Desarrollo Web</a>
@@ -1423,7 +1438,7 @@
                     <a href="pages/apps-moviles-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Apps Móviles</a>
                     <a href="pages/formacion-ia-empresas-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Formación IA</a>
                 </nav>
-                <nav aria-label="Legal" class="flex flex-col items-start gap-2">
+                <nav aria-label="Legal" class="ft-col flex flex-col items-center gap-2">
                     <p class="text-[10px] font-bold uppercase tracking-widest text-white mb-1">Legal</p>
                     <a href="pages/aviso-legal.html" data-i18n="ft_legal1" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Aviso legal</a>
                     <a href="pages/politica-privacidad.html" data-i18n="ft_legal2" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Política de privacidad</a>
@@ -1439,6 +1454,7 @@
 
     <script>
         /* ── MENÚ MÓVIL ── */
+        function toggleMobileSrv(){var l=document.getElementById('mobile-srv-list');var i=document.getElementById('mobile-srv-icon');var b=document.getElementById('mobile-srv-btn');var show=l.style.display==='none';l.style.display=show?'flex':'none';i.style.transform=show?'rotate(180deg)':'';b.setAttribute('aria-expanded',show);}
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             const toggle = document.getElementById('menu-toggle');

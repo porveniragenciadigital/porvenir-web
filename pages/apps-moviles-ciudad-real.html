@@ -103,6 +103,10 @@
                         <i data-lucide="layout" class="w-5 h-5 flex-shrink-0 text-brand-orange" aria-hidden="true"></i>
                         <span data-i18n="srv_d" class="text-sm font-semibold tracking-normal normal-case">Diseño Web & UX</span>
                     </a>
+                    <a href="desarrollo-web-ciudad-real.html" class="flex items-center gap-4 px-5 py-4 rounded-xl hover:bg-white/5 hover:text-brand-orange transition-colors">
+                        <i data-lucide="code" class="w-5 h-5 flex-shrink-0 text-brand-orange" aria-hidden="true"></i>
+                        <span data-i18n="srv_dev" class="text-sm font-semibold tracking-normal normal-case">Desarrollo Web</span>
+                    </a>
                     <a href="agencia-ia-ciudad-real.html" class="flex items-center gap-4 px-5 py-4 rounded-xl hover:bg-white/5 hover:text-brand-orange transition-colors">
                         <i data-lucide="bot" class="w-5 h-5 flex-shrink-0 text-brand-orange" aria-hidden="true"></i>
                         <span data-i18n="srv_ia" class="text-sm font-semibold tracking-normal normal-case">IA & Automatización</span>
@@ -282,7 +286,7 @@
         <!-- Other services -->
         <section class="mb-16" aria-labelledby="other-heading">
             <h2 id="other-heading" class="text-lg font-bold mb-6" data-i18n="other_h2">Otros servicios en Ciudad Real</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <a href="diseno-web-ciudad-real.html" class="glass-card rounded-2xl p-5 hover:border-brand-orange/40 transition-colors group">
                     <div class="flex items-center gap-3 mb-2">
                         <svg class="w-5 h-5 text-brand-orange flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
@@ -307,6 +311,14 @@
                     <p class="text-gray-500 text-xs leading-relaxed" data-i18n="other3_desc">Desarrollo web con código limpio y rendimiento máximo.</p>
                     <span class="text-brand-orange text-xs font-bold mt-3 flex items-center gap-1 group-hover:gap-2 transition-all" data-i18n="other_link">Ver servicio →</span>
                 </a>
+                <a href="formacion-ia-empresas-ciudad-real.html" class="glass-card rounded-2xl p-5 hover:border-brand-orange/40 transition-colors group">
+                    <div class="flex items-center gap-3 mb-2">
+                        <svg class="w-5 h-5 text-brand-orange flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        <h3 class="font-bold text-sm" data-i18n="other4_name">Formación IA Ciudad Real</h3>
+                    </div>
+                    <p class="text-gray-500 text-xs leading-relaxed" data-i18n="other4_desc">Talleres in-company de IA para equipos, presencial y online.</p>
+                    <span class="text-brand-orange text-xs font-bold mt-3 flex items-center gap-1 group-hover:gap-2 transition-all" data-i18n="other_link">Ver servicio →</span>
+                </a>
             </div>
         </section>
 
@@ -323,8 +335,8 @@
 
 <footer class="pt-8 pb-2 bg-brand-darkest border-t border-white/10">
     <div class="max-w-5xl mx-auto px-6 md:px-10">
-        <div class="flex flex-col lg:flex-row justify-between items-center gap-6 mb-6">
-            <div class="flex flex-col lg:flex-row gap-6 items-center">
+        <div class="flex flex-col lg:flex-row justify-between items-start gap-8 mb-6">
+            <div class="flex flex-col items-start gap-4">
                 <a href="../index.html" class="text-lg font-bold tracking-widest flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity text-white" aria-label="Porvenir Agencia Digital">
                     <span class="relative flex h-2 w-2 mr-2" aria-hidden="true">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
@@ -332,7 +344,7 @@
                     </span>
                     PORVENIR
                 </a>
-                <div class="flex gap-4">
+                <div class="flex gap-3">
                     <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Teresa Rodríguez de Dios" class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                     </a>
@@ -341,10 +353,19 @@
                     </a>
                 </div>
             </div>
-            <nav aria-label="Legal" class="flex flex-wrap justify-center gap-6 text-xs text-gray-500 font-bold uppercase tracking-widest">
-                <a href="aviso-legal.html" class="hover:text-brand-orange transition-colors">Aviso legal</a>
-                <a href="politica-privacidad.html" class="hover:text-brand-orange transition-colors">Política de privacidad</a>
-                <a href="politica-cookies.html" class="hover:text-brand-orange transition-colors">Política de cookies</a>
+            <nav aria-label="Servicios" class="flex flex-col items-start gap-2">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-white mb-1">Servicios</p>
+                <a href="diseno-web-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Diseño Web</a>
+                <a href="desarrollo-web-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Desarrollo Web</a>
+                <a href="agencia-ia-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">IA & Automatización</a>
+                <a href="apps-moviles-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Apps Móviles</a>
+                <a href="formacion-ia-empresas-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Formación IA</a>
+            </nav>
+            <nav aria-label="Legal" class="flex flex-col items-start gap-2">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-white mb-1">Legal</p>
+                <a href="aviso-legal.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Aviso legal</a>
+                <a href="politica-privacidad.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Política de privacidad</a>
+                <a href="politica-cookies.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Política de cookies</a>
             </nav>
         </div>
         <div class="border-t border-white/5 pt-3 pb-1 text-center">
@@ -356,7 +377,7 @@
 <script>
 const T = {
   es: {
-    nav_services:'Servicios', nav_contact:'Contactar', nav_proyectos:'Proyectos', nav_agencia:'Agencia', srv_d:'Diseño Web & UX', srv_ia:'IA & Automatización', srv_apps:'Apps Móviles', srv_form:'Formación IA',
+    nav_services:'Servicios', nav_contact:'Contactar', nav_proyectos:'Proyectos', nav_agencia:'Agencia', srv_d:'Diseño Web & UX', srv_dev:'Desarrollo Web', srv_ia:'IA & Automatización', srv_apps:'Apps Móviles', srv_form:'Formación IA',
     bc_home:'Inicio', bc_current:'Apps Móviles Ciudad Real',
     badge:'Apps Móviles · Ciudad Real',
     h1:'Desarrollo de Apps Móviles en Ciudad Real',
@@ -385,6 +406,7 @@ const T = {
     other1_name:'Diseño Web Ciudad Real', other1_desc:'Páginas web a medida, Mobile First y optimizadas para SEO y conversión.',
     other2_name:'Agencia IA Ciudad Real', other2_desc:'Chatbots, agentes telefónicos IA 24/7 y formación en IA para equipos.',
     other3_name:'Desarrollo Web Ciudad Real', other3_desc:'Desarrollo web con código limpio y rendimiento máximo.',
+    other4_name:'Formación IA Ciudad Real', other4_desc:'Talleres in-company de IA para equipos, presencial y online.',
     other_link:'Ver servicio →',
     cta_h2:'¿Tienes una idea para una app?',
     cta_p:'Cuéntanos el concepto. En 30 minutos te decimos si es viable, cuánto costaría y cuánto tardaría. Sin compromiso.',
@@ -393,7 +415,7 @@ const T = {
     footer_legal:'Aviso legal', footer_privacy:'Privacidad', footer_cookies:'Cookies'
   },
   en: {
-    nav_services:'Services', nav_contact:'Contact', nav_proyectos:'Projects', nav_agencia:'Agency', srv_d:'Web Design & UX', srv_ia:'AI & Automation', srv_apps:'Mobile Apps', srv_form:'AI Training',
+    nav_services:'Services', nav_contact:'Contact', nav_proyectos:'Projects', nav_agencia:'Agency', srv_d:'Web Design & UX', srv_dev:'Web Development', srv_ia:'AI & Automation', srv_apps:'Mobile Apps', srv_form:'AI Training',
     bc_home:'Home', bc_current:'Mobile Apps Ciudad Real',
     badge:'Mobile Apps · Ciudad Real',
     h1:'Mobile App Development in Ciudad Real',
@@ -422,6 +444,7 @@ const T = {
     other1_name:'Web Design Ciudad Real', other1_desc:'Custom websites, Mobile First, optimised for SEO and conversion.',
     other2_name:'AI Agency Ciudad Real', other2_desc:'AI chatbots, 24/7 telephone agents and AI training for teams.',
     other3_name:'Web Development Ciudad Real', other3_desc:'Technical web development with clean code and maximum performance.',
+    other4_name:'AI Training Ciudad Real', other4_desc:'In-company AI workshops for teams, face-to-face and online.',
     other_link:'View service →',
     cta_h2:'Do you have an app idea?',
     cta_p:'Tell us the concept. In 30 minutes we\'ll tell you if it\'s feasible, what it would cost and how long it would take. No obligation.',

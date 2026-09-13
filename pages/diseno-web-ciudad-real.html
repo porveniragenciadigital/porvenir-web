@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://www.porveniragenciadigital.com/pages/diseno-web-ciudad-real.html">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.porveniragenciadigital.com/"},{"@type":"ListItem","position":2,"name":"Diseño Web Ciudad Real","item":"https://www.porveniragenciadigital.com/pages/diseno-web-ciudad-real.html"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Diseño Web Ciudad Real","description":"Diseño web en Ciudad Real a medida: Mobile First, código limpio, SEO técnico, accesibilidad WCAG y arquitectura de conversión.","provider":{"@type":"LocalBusiness","name":"Porvenir Agencia Digital","url":"https://www.porveniragenciadigital.com/","telephone":"+34638035468","address":{"@type":"PostalAddress","addressLocality":"Ciudad Real","addressRegion":"Castilla-La Mancha","addressCountry":"ES"}},"areaServed":[{"@type":"City","name":"Ciudad Real"},{"@type":"AdministrativeArea","name":"Castilla-La Mancha"},{"@type":"Country","name":"España"}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto cuesta una página web en Ciudad Real?","acceptedAnswer":{"@type":"Answer","text":"Un sitio web corporativo a medida parte de 1.200 €. Incluye diseño UX, desarrollo frontend, SEO técnico, formulario de contacto y formación básica."}},{"@type":"Question","name":"¿Cuánto tiempo tarda hacer una web?","acceptedAnswer":{"@type":"Answer","text":"Un proyecto web estándar (hasta 5 páginas) tarda entre 3 y 6 semanas desde el kick-off hasta la publicación."}},{"@type":"Question","name":"¿Por qué no usáis WordPress?","acceptedAnswer":{"@type":"Answer","text":"Desarrollamos con código limpio: webs más rápidas, más seguras y con menor coste de mantenimiento a largo plazo sin plugins ni vulnerabilidades heredadas."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuánto cuesta una página web en Ciudad Real?","acceptedAnswer":{"@type":"Answer","text":"Un sitio web corporativo a medida parte de 1.200 €. Incluye diseño UX, desarrollo frontend, SEO técnico, formulario de contacto y formación básica."}},{"@type":"Question","name":"¿Cuánto tiempo tarda hacer una web?","acceptedAnswer":{"@type":"Answer","text":"Un proyecto web estándar (hasta 5 páginas) tarda entre 3 y 6 semanas desde el kick-off hasta la publicación."}},{"@type":"Question","name":"¿Por qué no usáis WordPress?","acceptedAnswer":{"@type":"Answer","text":"Desarrollamos con código limpio: webs más rápidas, más seguras y con menor coste de mantenimiento a largo plazo sin plugins ni vulnerabilidades heredadas."}},{"@type":"Question","name":"¿Necesito un diseñador web en Ciudad Real o puedo trabajar con alguien de fuera?","acceptedAnswer":{"@type":"Answer","text":"Trabajar con un diseñador web en Ciudad Real tiene ventajas claras: conocemos el tejido empresarial local, podemos hacer reuniones presenciales y entendemos el mercado en el que compites. También trabajamos con clientes de toda España de forma 100% remota sin perder calidad."}},{"@type":"Question","name":"¿Qué diferencia hay entre una página web y una landing page?","acceptedAnswer":{"@type":"Answer","text":"Una página web en Ciudad Real suele tener varias secciones y cumple múltiples objetivos. Una landing page tiene un único objetivo: que el visitante complete una acción concreta (llamar, rellenar un formulario, comprar). En Porvenir diseñamos ambas y las combinamos para maximizar la conversión."}}]}</script>
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
     <link rel="shortcut icon" href="../assets/img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +74,14 @@
         body.light footer .text-gray-600 { color:#6b7280 !important; }
         body.light .hover\:bg-brand-orange:hover { background-color:#ff7a48 !important; }
         body.light .hover\:text-white:hover { color:#ffffff !important; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
     </style>
     <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body class="antialiased font-sans">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-brand-orange focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">Saltar al contenido</a>
 
 <nav aria-label="Navegación principal" id="main-nav"
     class="fixed w-full z-50 px-6 md:px-8 bg-brand-darkest/90 backdrop-blur-md border-b border-white/5 h-20 transition-all"
@@ -129,13 +133,13 @@
             </button>
             <a href="../index.html#contacto" class="flex items-center text-xs font-bold uppercase tracking-widest text-white bg-brand-orange/10 px-4 py-3 rounded-3xl border border-brand-orange/50 hover:bg-brand-orange hover:text-white transition-all" data-i18n="nav_contact">Contactar</a>
         </div>
-        <button class="md:hidden relative z-50 flex items-center" onclick="toggleMobileMenu()" id="menu-toggle" aria-label="Abrir menú">
+        <button class="md:hidden relative z-50 flex items-center p-2 -mr-2" onclick="toggleMobileMenu()" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
             <svg class="w-7 h-7 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
     </div>
 </nav>
 <div id="mobile-menu" class="fixed inset-0 bg-brand-darkest z-[100] flex flex-col items-center justify-center gap-8 text-center" style="display:none;">
-    <button onclick="toggleMobileMenu()" class="absolute top-6 right-8 text-gray-400 hover:text-white" aria-label="Cerrar menú">
+    <button onclick="toggleMobileMenu()" class="absolute top-4 right-6 p-2 text-gray-400 hover:text-white" aria-label="Cerrar menú">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
     <a href="../index.html" onclick="toggleMobileMenu()" class="text-2xl font-bold text-white hover:text-brand-orange transition-colors">Inicio</a>
@@ -154,7 +158,7 @@
 </div>
 <script>function toggleMobileMenu(){var m=document.getElementById('mobile-menu');m.style.display=m.style.display==='none'?'flex':'none';}</script>
 
-<main class="pt-28 md:pt-32 pb-20">
+<main id="main-content" class="pt-28 md:pt-32 pb-20">
     <div class="px-6 md:px-10 mb-10 max-w-5xl mx-auto">
         <nav aria-label="breadcrumb" class="text-xs text-gray-500 flex items-center gap-2">
             <a href="../index.html" class="hover:text-brand-orange transition-colors" data-i18n="bc_home">Inicio</a>
@@ -188,6 +192,32 @@
                 <h2 class="text-xl md:text-2xl font-bold mb-5" data-i18n="s2_h2">Sin plantillas. Sin WordPress. Sin compromisos.</h2>
                 <p class="text-gray-400 leading-relaxed mb-4" data-i18n="s2_p1">Desarrollamos con código propio: HTML, CSS y JavaScript optimizados para velocidad, seguridad y mantenibilidad. Sin plugins que rompen solos, sin actualizaciones que piden permiso, sin vulnerabilidades de terceros.</p>
                 <p class="text-gray-400 leading-relaxed" data-i18n="s2_p2">El resultado es una web que carga en menos de 2 segundos, pasa el Core Web Vitals de Google y te pertenece al 100%, sin dependencias de plataformas externas.</p>
+            </div>
+        </section>
+
+        <section class="mb-16" aria-labelledby="process-heading">
+            <h2 id="process-heading" class="text-xl md:text-2xl font-bold mb-8" data-i18n="proc_h2">Cómo hacemos el diseño web en Ciudad Real</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+                <div class="glass-card rounded-2xl p-5 relative">
+                    <div class="text-brand-orange text-4xl font-black opacity-20 absolute top-4 right-5 leading-none">01</div>
+                    <h3 class="font-bold text-sm mb-2" data-i18n="proc1_title">Reunión de descubrimiento</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed" data-i18n="proc1_desc">30 minutos para entender tu negocio, tus clientes y qué tiene que hacer tu web cuando alguien llegue a ella.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-5 relative">
+                    <div class="text-brand-orange text-4xl font-black opacity-20 absolute top-4 right-5 leading-none">02</div>
+                    <h3 class="font-bold text-sm mb-2 pr-10" data-i18n="proc2_title">Estrategia y wireframe</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed" data-i18n="proc2_desc">Definimos la arquitectura de conversión: qué ve el visitante primero, qué acción queremos que tome y cómo lo guiamos.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-5 relative">
+                    <div class="text-brand-orange text-4xl font-black opacity-20 absolute top-4 right-5 leading-none">03</div>
+                    <h3 class="font-bold text-sm mb-2 pr-10" data-i18n="proc3_title">Diseño y desarrollo</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed" data-i18n="proc3_desc">Diseñamos con criterio UX y desarrollamos con código limpio: HTML, CSS y JavaScript sin WordPress ni plugins. En 3–6 semanas tienes tu web publicada.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-5 relative">
+                    <div class="text-brand-orange text-4xl font-black opacity-20 absolute top-4 right-5 leading-none">04</div>
+                    <h3 class="font-bold text-sm mb-2" data-i18n="proc4_title">Entrega y acompañamiento</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed" data-i18n="proc4_desc">Publicamos, te formamos para gestionar el contenido y queda disponible soporte técnico para que tu web siga funcionando.</p>
+                </div>
             </div>
         </section>
 
@@ -239,6 +269,45 @@
             </div>
         </section>
 
+        <section class="mb-16" aria-labelledby="clients-heading">
+            <h2 id="clients-heading" class="text-xl md:text-2xl font-bold mb-6" data-i18n="clients_h2">Empresas de Ciudad Real que trabajan con nosotras</h2>
+            <p class="text-gray-400 leading-relaxed mb-8 max-w-2xl" data-i18n-html="clients_p">Hacemos <strong>diseño web en Ciudad Real</strong> para negocios de todos los tamaños y sectores. Desde autónomos que necesitan presencia digital profesional hasta pymes que quieren escalar ventas online. Estos son los perfiles con los que más trabajamos:</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🍽️</div>
+                    <p class="text-xs font-bold" data-i18n="sec1">Hostelería y restauración</p>
+                </div>
+                <div class="glass-card rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">⚖️</div>
+                    <p class="text-xs font-bold" data-i18n="sec2">Despachos y asesorías</p>
+                </div>
+                <div class="glass-card rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🏥</div>
+                    <p class="text-xs font-bold" data-i18n="sec3">Clínicas y centros de salud</p>
+                </div>
+                <div class="glass-card rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🏗️</div>
+                    <p class="text-xs font-bold" data-i18n="sec4">Construcción e industria</p>
+                </div>
+                <div class="glass-card rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🛒</div>
+                    <p class="text-xs font-bold" data-i18n="sec5">Comercio local</p>
+                </div>
+                <div class="glass-card rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🌿</div>
+                    <p class="text-xs font-bold" data-i18n="sec6">Agroalimentario</p>
+                </div>
+                <div class="glass-card rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🎓</div>
+                    <p class="text-xs font-bold" data-i18n="sec7">Academias y formación</p>
+                </div>
+                <div class="glass-card rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">💼</div>
+                    <p class="text-xs font-bold" data-i18n="sec8">Servicios profesionales</p>
+                </div>
+            </div>
+        </section>
+
         <section class="mb-16 max-w-3xl" aria-labelledby="faq-heading">
             <h2 id="faq-heading" class="text-xl md:text-2xl font-bold mb-8" data-i18n="faq_h2">Preguntas frecuentes</h2>
             <div class="space-y-4">
@@ -262,6 +331,20 @@
                         <svg class="w-5 h-5 text-brand-orange flex-shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                     </summary>
                     <p class="px-5 pb-5 text-gray-400 text-sm leading-relaxed" data-i18n="faq3_a">WordPress añade capas de complejidad innecesarias para la mayoría de proyectos. Desarrollamos con código limpio: webs más rápidas, más seguras y con menor coste de mantenimiento a largo plazo. Si tu proyecto requiere un CMS, lo valoramos juntas.</p>
+                </details>
+                <details class="glass-card rounded-2xl overflow-hidden group">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-sm gap-4">
+                        <span data-i18n="faq4_q">¿Necesito un diseñador web en Ciudad Real o puedo trabajar con alguien de fuera?</span>
+                        <svg class="w-5 h-5 text-brand-orange flex-shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </summary>
+                    <p class="px-5 pb-5 text-gray-400 text-sm leading-relaxed" data-i18n-html="faq4_a">Trabajar con un <strong>diseñador web en Ciudad Real</strong> tiene ventajas claras: conocemos el tejido empresarial local, podemos hacer reuniones presenciales y entendemos el mercado en el que compites. Dicho eso, también trabajamos con clientes de toda España de forma 100% remota y sin perder calidad. La ventaja de la proximidad es real; la limitación geográfica, no.</p>
+                </details>
+                <details class="glass-card rounded-2xl overflow-hidden group">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-sm gap-4">
+                        <span data-i18n="faq5_q">¿Qué diferencia hay entre una página web y una landing page?</span>
+                        <svg class="w-5 h-5 text-brand-orange flex-shrink-0 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </summary>
+                    <p class="px-5 pb-5 text-gray-400 text-sm leading-relaxed" data-i18n-html="faq5_a">Una <strong>página web en Ciudad Real</strong> suele tener varias secciones (inicio, servicios, sobre nosotros, contacto) y cumple múltiples objetivos. Una landing page tiene un único objetivo: que el visitante complete una acción concreta (llamar, rellenar un formulario, comprar). En Porvenir diseñamos ambas, y la mayoría de nuestros proyectos combinan una web corporativa con landings de alta conversión para campañas específicas.</p>
                 </details>
             </div>
         </section>
@@ -303,6 +386,7 @@
                 class="inline-flex items-center gap-2 px-8 py-4 bg-brand-orange text-white font-bold text-xs tracking-widest uppercase rounded-full hover:bg-brand-orange/80 transition-colors" data-i18n="cta_btn">
                 Valoración gratuita
             </a>
+            <p class="text-gray-600 text-xs mt-6" data-i18n-html="cta_back">¿Quieres ver todos nuestros servicios? Visita la <a href="../index.html" class="text-brand-orange hover:underline">agencia de diseño web en Ciudad Real</a>.</p>
         </section>
     </div>
 </main>
@@ -376,6 +460,20 @@ const T = {
     cta_h2:'¿Tienes un proyecto web en Ciudad Real?',
     cta_p:'Hablamos 30 minutos, analizamos tus objetivos y te damos una valoración sin compromiso.',
     cta_btn:'Valoración gratuita',
+    cta_back:'¿Quieres ver todos nuestros servicios? Visita la <a href="../index.html" class="text-brand-orange hover:underline">agencia de diseño web en Ciudad Real</a>.',
+    proc_h2:'Cómo hacemos el diseño web en Ciudad Real',
+    proc1_title:'Reunión de descubrimiento', proc1_desc:'30 minutos para entender tu negocio, tus clientes y qué tiene que hacer tu web cuando alguien llegue a ella.',
+    proc2_title:'Estrategia y wireframe', proc2_desc:'Definimos la arquitectura de conversión: qué ve el visitante primero, qué acción queremos que tome y cómo lo guiamos.',
+    proc3_title:'Diseño y desarrollo', proc3_desc:'Diseñamos con criterio UX y desarrollamos con código limpio: HTML, CSS y JavaScript sin WordPress ni plugins. En 3–6 semanas tienes tu web publicada.',
+    proc4_title:'Entrega y acompañamiento', proc4_desc:'Publicamos, te formamos para gestionar el contenido y queda disponible soporte técnico para que tu web siga funcionando.',
+    clients_h2:'Empresas de Ciudad Real que trabajan con nosotras',
+    clients_p:'Hacemos <strong>diseño web en Ciudad Real</strong> para negocios de todos los tamaños y sectores. Desde autónomos que necesitan presencia digital profesional hasta pymes que quieren escalar ventas online. Estos son los perfiles con los que más trabajamos:',
+    sec1:'Hostelería y restauración', sec2:'Despachos y asesorías', sec3:'Clínicas y centros de salud', sec4:'Construcción e industria',
+    sec5:'Comercio local', sec6:'Agroalimentario', sec7:'Academias y formación', sec8:'Servicios profesionales',
+    faq4_q:'¿Necesito un diseñador web en Ciudad Real o puedo trabajar con alguien de fuera?',
+    faq4_a:'Trabajar con un <strong>diseñador web en Ciudad Real</strong> tiene ventajas claras: conocemos el tejido empresarial local, podemos hacer reuniones presenciales y entendemos el mercado en el que compites. Dicho eso, también trabajamos con clientes de toda España de forma 100% remota y sin perder calidad. La ventaja de la proximidad es real; la limitación geográfica, no.',
+    faq5_q:'¿Qué diferencia hay entre una página web y una landing page?',
+    faq5_a:'Una <strong>página web en Ciudad Real</strong> suele tener varias secciones (inicio, servicios, sobre nosotros, contacto) y cumple múltiples objetivos. Una landing page tiene un único objetivo: que el visitante complete una acción concreta (llamar, rellenar un formulario, comprar). En Porvenir diseñamos ambas, y la mayoría de nuestros proyectos combinan una web corporativa con landings de alta conversión para campañas específicas.',
     footer_tagline:'Diseño Web · Ciudad Real · Castilla-La Mancha, España',
     footer_legal:'Aviso legal', footer_privacy:'Privacidad', footer_cookies:'Cookies'
   },
@@ -414,6 +512,20 @@ const T = {
     cta_h2:'Do you have a web project in Ciudad Real?',
     cta_p:'We talk for 30 minutes, analyse your goals and give you a no-obligation assessment.',
     cta_btn:'Free assessment',
+    cta_back:'Want to see all our services? Visit the <a href="../index.html" class="text-brand-orange hover:underline">web design agency in Ciudad Real</a>.',
+    proc_h2:'How we do web design in Ciudad Real',
+    proc1_title:'Discovery meeting', proc1_desc:'30 minutes to understand your business, your customers and what your website needs to do when someone arrives.',
+    proc2_title:'Strategy and wireframe', proc2_desc:'We define the conversion architecture: what the visitor sees first, what action we want them to take and how we guide them.',
+    proc3_title:'Design and development', proc3_desc:'We design with UX criteria and develop with clean code: HTML, CSS and JavaScript — no WordPress, no plugins. In 3–6 weeks your website is live.',
+    proc4_title:'Delivery and support', proc4_desc:'We publish, we train you to manage your content and technical support is available to keep your website running.',
+    clients_h2:'Ciudad Real businesses that work with us',
+    clients_p:'We do <strong>web design in Ciudad Real</strong> for businesses of all sizes and sectors. From sole traders who need a professional online presence to SMEs looking to scale online sales. These are the profiles we work with most:',
+    sec1:'Hospitality & restaurants', sec2:'Law firms & advisories', sec3:'Clinics & health centres', sec4:'Construction & industry',
+    sec5:'Local retail', sec6:'Agri-food', sec7:'Academies & training', sec8:'Professional services',
+    faq4_q:'Do I need a web designer in Ciudad Real or can I work with someone from elsewhere?',
+    faq4_a:'Working with a <strong>web designer in Ciudad Real</strong> has clear advantages: we know the local business landscape, we can meet in person and we understand the market you compete in. That said, we also work with clients from across Spain fully remotely without losing quality. The proximity advantage is real; the geographic limitation is not.',
+    faq5_q:'What is the difference between a website and a landing page?',
+    faq5_a:'A <strong>website</strong> typically has multiple sections (home, services, about us, contact) and serves several goals. A landing page has a single objective: getting the visitor to complete a specific action (call, fill in a form, buy). At Porvenir we design both, and most of our projects combine a corporate website with high-conversion landing pages for specific campaigns.',
     footer_tagline:'Web Design · Ciudad Real · Castilla-La Mancha, Spain',
     footer_legal:'Legal notice', footer_privacy:'Privacy', footer_cookies:'Cookies'
   }
@@ -441,6 +553,33 @@ function toggleLang() { lang = lang==='es'?'en':'es'; localStorage.setItem('lang
 function toggleTheme() { theme = theme==='dark'?'light':'dark'; localStorage.setItem('theme',theme); applyTheme(); }
 document.addEventListener('DOMContentLoaded', () => { applyTranslations(); applyTheme(); if(typeof lucide!=='undefined') lucide.createIcons(); else window.addEventListener('load',()=>{if(typeof lucide!=='undefined')lucide.createIcons();}); });
     function toggleMobileMenu() { const m=document.getElementById('mobile-menu'); m.style.display=m.style.display==='none'?'flex':'none'; }
+</script>
+<script>
+(function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-97DY09F2P2', { send_page_view: true });
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-97DY09F2P2';
+    document.head.appendChild(s);
+    document.addEventListener('click', function(e) {
+        var el = e.target.closest('a[href]');
+        if (!el) return;
+        var href = el.getAttribute('href') || '';
+        if (href.indexOf('calendly.com') !== -1) {
+            gtag('event', 'calendly_click', { event_category: 'lead', event_label: 'calendly' });
+        } else if (href.indexOf('wa.me') !== -1) {
+            gtag('event', 'whatsapp_click', { event_category: 'lead', event_label: 'whatsapp' });
+        } else if (href.indexOf('tel:') === 0) {
+            gtag('event', 'phone_click', { event_category: 'lead', event_label: 'telefono' });
+        } else if (href.indexOf('mailto:') === 0) {
+            gtag('event', 'email_click', { event_category: 'lead', event_label: 'email' });
+        }
+    });
+})();
 </script>
 <!-- WhatsApp flotante -->
 <a href="https://wa.me/34638035468?text=Hola%20Teresa%20%F0%9F%91%8B%20Busco%20dise%C3%B1o%20web%20profesional%20para%20mi%20negocio%20en%20Ciudad%20Real.%20%C2%BFPodemos%20hablar%3F" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"

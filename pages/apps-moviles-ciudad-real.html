@@ -73,11 +73,14 @@
         body.light footer .text-gray-600 { color:#6b7280 !important; }
         body.light .hover\:bg-brand-orange:hover { background-color:#ff7a48 !important; }
         body.light .hover\:text-white:hover { color:#ffffff !important; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
     </style>
     <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body class="antialiased font-sans">
-
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-brand-orange focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">Saltar al contenido</a>
 <nav aria-label="Navegación principal" id="main-nav"
     class="fixed w-full z-50 px-6 md:px-8 bg-brand-darkest/90 backdrop-blur-md border-b border-white/5 h-20 transition-all"
     style="display:grid; grid-template-columns: auto 1fr auto; align-items: center;">
@@ -128,13 +131,13 @@
             </button>
             <a href="../index.html#contacto" class="flex items-center text-xs font-bold uppercase tracking-widest text-white bg-brand-orange/10 px-4 py-3 rounded-3xl border border-brand-orange/50 hover:bg-brand-orange hover:text-white transition-all" data-i18n="nav_contact">Contactar</a>
         </div>
-        <button class="md:hidden relative z-50 flex items-center" onclick="toggleMobileMenu()" id="menu-toggle" aria-label="Abrir menú">
+        <button class="md:hidden relative z-50 flex items-center p-2 -mr-2" onclick="toggleMobileMenu()" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
             <svg class="w-7 h-7 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
     </div>
 </nav>
 <div id="mobile-menu" class="fixed inset-0 bg-brand-darkest z-[100] flex flex-col items-center justify-center gap-8 text-center" style="display:none;">
-    <button onclick="toggleMobileMenu()" class="absolute top-6 right-8 text-gray-400 hover:text-white" aria-label="Cerrar menú">
+    <button onclick="toggleMobileMenu()" class="absolute top-4 right-6 p-2 text-gray-400 hover:text-white" aria-label="Cerrar menú">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
     <a href="../index.html" onclick="toggleMobileMenu()" class="text-2xl font-bold text-white hover:text-brand-orange transition-colors">Inicio</a>
@@ -153,7 +156,7 @@
 </div>
 <script>function toggleMobileMenu(){var m=document.getElementById('mobile-menu');m.style.display=m.style.display==='none'?'flex':'none';}</script>
 
-<main class="pt-28 md:pt-32 pb-20">
+<main id="main-content" class="pt-28 md:pt-32 pb-20">
     <div class="px-6 md:px-10 mb-10 max-w-5xl mx-auto">
         <nav aria-label="breadcrumb" class="text-xs text-gray-500 flex items-center gap-2">
             <a href="../index.html" class="hover:text-brand-orange transition-colors" data-i18n="bc_home">Inicio</a>
@@ -450,6 +453,33 @@ function toggleLang() { lang = lang==='es'?'en':'es'; localStorage.setItem('lang
 function toggleTheme() { theme = theme==='dark'?'light':'dark'; localStorage.setItem('theme',theme); applyTheme(); }
 document.addEventListener('DOMContentLoaded', () => { applyTranslations(); applyTheme(); if(typeof lucide!=='undefined') lucide.createIcons(); else window.addEventListener('load',()=>{if(typeof lucide!=='undefined')lucide.createIcons();}); });
     function toggleMobileMenu() { const m=document.getElementById('mobile-menu'); m.style.display=m.style.display==='none'?'flex':'none'; }
+</script>
+<script>
+(function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-97DY09F2P2', { send_page_view: true });
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-97DY09F2P2';
+    document.head.appendChild(s);
+    document.addEventListener('click', function(e) {
+        var el = e.target.closest('a[href]');
+        if (!el) return;
+        var href = el.getAttribute('href') || '';
+        if (href.indexOf('calendly.com') !== -1) {
+            gtag('event', 'calendly_click', { event_category: 'lead', event_label: 'calendly' });
+        } else if (href.indexOf('wa.me') !== -1) {
+            gtag('event', 'whatsapp_click', { event_category: 'lead', event_label: 'whatsapp' });
+        } else if (href.indexOf('tel:') === 0) {
+            gtag('event', 'phone_click', { event_category: 'lead', event_label: 'telefono' });
+        } else if (href.indexOf('mailto:') === 0) {
+            gtag('event', 'email_click', { event_category: 'lead', event_label: 'email' });
+        }
+    });
+})();
 </script>
 <!-- WhatsApp flotante -->
 <a href="https://wa.me/34638035468?text=Hola%20Teresa%20%F0%9F%91%8B%20Quiero%20desarrollar%20una%20app%20para%20mi%20negocio.%20%C2%BFMe%20cuentas%20m%C3%A1s%3F" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"

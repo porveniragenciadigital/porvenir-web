@@ -6,6 +6,6 @@ Web oficial corporativa de **Porvenir Agencia Digital**. Unimos Ingeniería de S
 * **🤖 IA & Automatización:** Chatbots inteligentes para WhatsApp y web, agentes telefónicos con IA que atienden llamadas 24/7, y flujos de automatización a medida para cualquier proceso de negocio. Solución para cumplir la Ley 10/2025 sin ampliar plantilla.
 * **📱 Apps Móviles:** Aplicaciones iOS y Android, nativas e híbridas, con integración de IA, APIs y CRMs. Arquitectura sólida y mantenible desde el primer día.
 
-## 👩‍💻 Autora & Fundadora
+## 👩🏻‍💻 Autora & Fundadora
 **Teresa Rodríguez de Dios**. *Ingeniera de Software & Máster en UX* 📍 Ciudad Real, España (Servicio Global)  
 🔗 [Perfil de LinkedIn](https://www.linkedin.com/in/teresa-rodríguez-de-dios) | 🌐 [Web Oficial](https://www.porveniragenciadigital.com/)

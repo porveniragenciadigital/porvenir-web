@@ -7,7 +7,7 @@
     <title>Diseño Web Ciudad Real · IA y Apps Móviles | Porvenir</title>
     <meta name="google-site-verification" content="HW2_04Sd6fpEU8F_lsHFuPmZsWkm0PLn8t2_IIEwe10" />
     <meta name="description"
-        content="Ingeniera de Software especializada en diseño web, IA y apps móviles en Ciudad Real. Páginas que convierten, automatización 24/7 y código limpio. Consulta gratuita.">
+        content="Diseño web en Ciudad Real sin WordPress: páginas rápidas, Mobile First, SEO y WCAG que convierten visitas en clientes. Ingeniería de Software + IA. Valoración gratuita.">
     <meta name="keywords"
         content="agencia IA Ciudad Real, diseño web Ciudad Real, automatización con inteligencia artificial, landing pages alta conversión, chatbot IA WhatsApp empresas, agente telefónico IA, centralita inteligente IA, agente voz empresa, voice agent IA, Ley 10/2025 atención clientela, desarrollo aplicaciones móviles Ciudad Real, app móvil iOS Android empresa, aplicación móvil con IA, chatbot ManyChat, automatización Make Integromat, Zoho CRM integración, agencia digital Castilla La Mancha, diseño web Sevilla, ingeniería de software, UX UI España, accesibilidad WCAG España, formación IA empresas">
     <meta name="author" content="Teresa Rodríguez de Dios">
@@ -411,6 +411,10 @@
         body.light #testimonios footer { background-color: transparent !important; border-color: #e8ecf2 !important; }
         body.light #testimonios footer .text-white { color: #051024 !important; }
         body.light #testimonios footer .text-gray-400 { color: #4b5563 !important; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+            #neural-canvas { display: none; }
+        }
     </style>
 </head>
 
@@ -577,12 +581,12 @@
 
                     <span data-i18n="hero_h1"
                         class="hero-h1-text block text-[1.8rem] min-[375px]:text-[2.1rem] md:text-4xl lg:text-5xl uppercase font-bold leading-[1.15] tracking-tight text-white mb-3 md:mb-2">
-                        IA Y DISEÑO WEB
+                        DISEÑO WEB EN CIUDAD REAL
                     </span>
 
                     <span data-i18n="hero_h1_sub"
                         class="hero-gradient-text block text-[1.25rem] min-[375px]:text-[1.45rem] md:text-2xl lg:text-4xl uppercase font-bold leading-[1.25] md:leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff9a76] to-[#ffd166]">
-                        QUE MULTIPLICAN TUS VENTAS
+                        CON IA QUE MULTIPLICA TUS VENTAS
                     </span>
                 </h1>
 
@@ -695,7 +699,7 @@
                             <div class="flex flex-col gap-3 mt-auto">
                                 <a href="pages/diseno-web-ciudad-real.html"
                                     class="text-gray-400 text-xs hover:text-brand-orange transition-colors flex items-center gap-1.5 group">
-                                    <span data-i18n="s1_link1">Ver servicio de diseño web</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                                    <span data-i18n="s1_link1">Diseño web en Ciudad Real</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                                 </a>
                                 <a href="https://calendly.com/porveniragenciadigital/valoracion-proyecto" target="_blank"
                                     rel="noopener noreferrer"
@@ -1470,6 +1474,22 @@
             window.gtag = gtag;
             gtag('js', new Date());
             gtag('config', GA_ID, { send_page_view: true });
+
+            // Tracking de conversiones: Calendly, WhatsApp, teléfono, email
+            document.addEventListener('click', function (e) {
+                var el = e.target.closest('a[href]');
+                if (!el) return;
+                var href = el.getAttribute('href') || '';
+                if (href.indexOf('calendly.com') !== -1) {
+                    gtag('event', 'calendly_click', { event_category: 'lead', event_label: 'calendly' });
+                } else if (href.indexOf('wa.me') !== -1) {
+                    gtag('event', 'whatsapp_click', { event_category: 'lead', event_label: 'whatsapp' });
+                } else if (href.indexOf('tel:') === 0) {
+                    gtag('event', 'phone_click', { event_category: 'lead', event_label: 'telefono' });
+                } else if (href.indexOf('mailto:') === 0) {
+                    gtag('event', 'email_click', { event_category: 'lead', event_label: 'email' });
+                }
+            });
         });
 
         /* ── EMAILJS ── */
@@ -1518,7 +1538,7 @@
                         setFeedback('¡Mensaje enviado! Te respondo en menos de 24h.', false);
                         form.reset();
                         if (typeof gtag === 'function') {
-                            gtag('event', 'lead_form_submit', { event_category: 'lead', event_label: 'contacto' });
+                            gtag('event', 'generate_lead', { event_category: 'lead', event_label: 'formulario_contacto' });
                         }
                     })
                     .catch(function () {
@@ -1557,8 +1577,8 @@
                     // Hero
                     hero_badge: 'Diseño Web · Desarrollo Web',
                     hero_badge_loc: 'Ciudad Real · España',
-                    hero_h1: 'IA Y DISEÑO WEB',
-                    hero_h1_sub: 'QUE MULTIPLICAN TUS VENTAS',
+                    hero_h1: 'DISEÑO WEB EN CIUDAD REAL',
+                    hero_h1_sub: 'CON IA QUE MULTIPLICA TUS VENTAS',
                     hero_p: 'Empresa de <strong>diseño y desarrollo web en Ciudad Real</strong> especializada en páginas web que convierten visitas en clientes. Unimos Ingeniería de Software y Diseño UX para crear webs, <strong>automatizar con IA</strong> y desarrollar apps móviles para empresas de toda España.',
                     hero_cta: 'AUTOMATIZAR MI NEGOCIO',
                     // Servicios
@@ -1568,7 +1588,7 @@
                     s1_title: 'Diseño Web & UX', s1_sub: 'Estética + Conversión + Cumplimiento',
                     s1_desc: 'Creamos <strong>páginas web a medida</strong> que convierten visitas en clientes: ultrarrápidas, Mobile First y optimizadas para Google. El diseño UX estratégico y las auditorías de <strong>accesibilidad WCAG 2.1</strong> están incluidos, porque una web bien hecha cumple la ley y vende más.',
                     s1_li1: 'Mobile First y SEO técnico incluido', s1_li2: 'UX estratégico y accesibilidad WCAG 2.1', s1_li3: 'Diseños modernos de alta conversión',
-                    s1_link1: 'Ver servicio de diseño web', s1_link2: 'Quiero una web que venda',
+                    s1_link1: 'Diseño web en Ciudad Real', s1_link2: 'Quiero una web que venda',
                     s2_title: 'IA & Automatización', s2_sub: 'Tu negocio trabajando solo, 24/7',
                     s2_desc: '<strong>Chatbots inteligentes</strong> para WhatsApp y web, <strong>agentes telefónicos con IA</strong> que atienden llamadas de forma autónoma, y flujos de automatización a medida para cualquier proceso de tu empresa. La solución para cumplir la <strong>Ley 10/2025</strong> sin ampliar plantilla.',
                     s2_li1: 'Chatbots para WhatsApp, web y redes sociales', s2_li2: 'Agentes de voz 24/7 · Cumplimiento Ley 10/2025', s2_li3: 'Automatizaciones a medida para cualquier proceso',
@@ -1679,8 +1699,8 @@
                     // Hero
                     hero_badge: 'Web Design · Web Development',
                     hero_badge_loc: 'Ciudad Real · Spain',
-                    hero_h1: 'AI & WEB DESIGN',
-                    hero_h1_sub: 'THAT MULTIPLY YOUR SALES',
+                    hero_h1: 'WEB DESIGN IN CIUDAD REAL',
+                    hero_h1_sub: 'WITH AI THAT MULTIPLIES YOUR SALES',
                     hero_p: 'Web design and development company in Ciudad Real specialising in websites that convert visitors into clients. We combine Software Engineering and UX Design to build websites, <strong>automate with AI</strong> and develop mobile apps for businesses across Spain.',
                     hero_cta: 'AUTOMATE MY BUSINESS',
                     // Services
@@ -1690,7 +1710,7 @@
                     s1_title: 'Web Design & UX', s1_sub: 'Aesthetics + Conversion + Compliance',
                     s1_desc: 'We create <strong>bespoke websites</strong> that convert visitors into clients: ultra-fast, Mobile First and optimised for Google. Strategic UX design and <strong>WCAG 2.1 accessibility</strong> audits are included, because a well-built website complies with the law and sells more.',
                     s1_li1: 'Mobile First and technical SEO included', s1_li2: 'Strategic UX and WCAG 2.1 accessibility', s1_li3: 'Modern high-conversion designs',
-                    s1_link1: 'View web design service', s1_link2: 'I want a website that sells',
+                    s1_link1: 'Web design in Ciudad Real', s1_link2: 'I want a website that sells',
                     s2_title: 'AI & Automation', s2_sub: 'Your business running on its own, 24/7',
                     s2_desc: '<strong>Intelligent chatbots</strong> for WhatsApp and web, <strong>AI phone agents</strong> that handle calls autonomously, and custom automation flows for any process in your business. The solution to comply with <strong>Law 10/2025</strong> without growing your headcount.',
                     s2_li1: 'Chatbots for WhatsApp, web and social media', s2_li2: 'Voice agents 24/7 · Law 10/2025 compliance', s2_li3: 'Custom automations for any process',

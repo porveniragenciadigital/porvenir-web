@@ -1,13 +1,14 @@
 # Porvenir Agencia Digital
 
-> Software Engineering, Web Design & AI agency based in Ciudad Real, Spain. Led by Teresa Rodríguez de Dios (Software Engineer & MSc UX). Three core services: bespoke web design with UX, AI automation and chatbots, and mobile app development. Fully remote, serving clients across Spain and internationally.
+> Software Engineering, Web Design & AI agency based in Ciudad Real, Spain. Led by Teresa Rodríguez de Dios (Software Engineer & MSc UX). Five core services: bespoke web design with UX, custom web development, AI automation and chatbots, mobile app development, and AI training for businesses. Fully remote, serving clients across Spain and internationally.
 
 ## Servicios
 
-- [Diseño Web & UX](https://www.porveniragenciadigital.com/#servicios): Bespoke, ultra-fast, Mobile First websites with Technical SEO. Semantic HTML, Tailwind CSS, and vanilla JavaScript — no templates, no plugins, strategically designed to maximise conversions. UX strategy and WCAG 2.1 accessibility audits included as standard.
-- [IA & Automatización](https://www.porveniragenciadigital.com/#servicios): Intelligent chatbots for WhatsApp and web, autonomous AI voice agents that answer, qualify, and route incoming calls 24/7, and bespoke automation flows. Key solution for compliance with Spain's Ley 10/2025 de Atención a la Clientela.
-- [Apps Móviles](https://www.porveniragenciadigital.com/#servicios): Native and hybrid iOS and Android applications built with software engineering rigour: clean architecture, AI integration, external APIs, and CRM connections.
-- [Formación IA para Empresas](https://www.porveniragenciadigital.com/#servicios): Practical AI training workshops tailored to each business sector, making complex AI concepts accessible and applicable from day one.
+- [Diseño Web & UX](https://www.porveniragenciadigital.com/pages/diseno-web-ciudad-real.html): Bespoke, ultra-fast, Mobile First websites with Technical SEO. Semantic HTML, Tailwind CSS, and vanilla JavaScript — no templates, no plugins, strategically designed to maximise conversions. UX strategy and WCAG 2.1 accessibility audits included as standard.
+- [Desarrollo Web](https://www.porveniragenciadigital.com/pages/desarrollo-web-ciudad-real.html): Custom web development with clean code, no WordPress or page builders. Maximum performance, real security, and scalable architecture. Core Web Vitals > 90 and technical SEO built in from the ground up.
+- [IA & Automatización](https://www.porveniragenciadigital.com/pages/agencia-ia-ciudad-real.html): Intelligent chatbots for WhatsApp and web, autonomous AI voice agents that answer, qualify, and route incoming calls 24/7, and bespoke automation flows. Key solution for compliance with Spain's Ley 10/2025 de Atención a la Clientela.
+- [Apps Móviles](https://www.porveniragenciadigital.com/pages/apps-moviles-ciudad-real.html): Native and hybrid iOS and Android applications built with software engineering rigour: clean architecture, AI integration, external APIs, and CRM connections.
+- [Formación IA para Empresas](https://www.porveniragenciadigital.com/pages/formacion-ia-empresas-ciudad-real.html): Practical in-company AI training workshops tailored to each business sector, delivered live and adapted to real use cases. Accredited trainer at EOI (Escuela de Organización Industrial).
 
 ## Sobre la agencia
 
@@ -16,13 +17,13 @@
 ## Contacto
 
 - [Formulario de contacto](https://www.porveniragenciadigital.com/#contacto): Free 30-minute strategy consultation. No commitments.
-- [Preguntas frecuentes](https://www.porveniragenciadigital.com/#faq): Answers to the most common questions about web design, AI automation, mobile apps, and legal compliance.
+- [Preguntas frecuentes](https://www.porveniragenciadigital.com/#faq): Answers to the most common questions about web design, web development, AI automation, mobile apps, UX design, and legal compliance.
 
 ## Páginas legales
 
-- [Política de privacidad](https://www.porveniragenciadigital.com/pages/privacidad.html): GDPR/LOPD privacy policy.
+- [Política de privacidad](https://www.porveniragenciadigital.com/pages/politica-privacidad.html): GDPR/LOPD privacy policy.
 - [Aviso legal](https://www.porveniragenciadigital.com/pages/aviso-legal.html): Legal notice.
-- [Política de cookies](https://www.porveniragenciadigital.com/pages/cookies.html): Cookie policy.
+- [Política de cookies](https://www.porveniragenciadigital.com/pages/politica-cookies.html): Cookie policy.
 
 ## Datos de contacto
 

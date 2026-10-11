@@ -240,7 +240,7 @@
         }
 
         /* ── Navegación ── */
-        body.light nav[aria-label="Navegación principal" data-i18n-aria="a_nav"],
+        body.light nav[aria-label="Navegación principal"],
         body.light #mobile-menu {
             background-color: rgba(255,255,255,.97) !important;
             border-color: #e8ecf2 !important;
@@ -953,11 +953,14 @@
         @media (max-width: 424px) { .metrics-grid { grid-template-columns: minmax(0, 1fr) !important; } }
 
         /* WhatsApp flotante en móvil: ya no hay barra inferior, así que baja y respeta la zona segura del iPhone */
-        @media (max-width: 767px) { a[aria-label="Contactar por WhatsApp" data-i18n-aria="a_wa"] { bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important; right: 18px !important; } }
+        @media (max-width: 767px) { a[aria-label="Contactar por WhatsApp"] { bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important; right: 18px !important; } }
+
+        /* Portfolio: <picture> ocupa todo el marco para que la imagen rellene */
+        #proyectos picture { display: block; width: 100%; height: 100%; }
 
         /* Rendimiento: ningún backdrop-filter sobre la escena en movimiento */
-        nav[aria-label="Navegación principal" data-i18n-aria="a_nav"] { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
-        body:not(.light) nav[aria-label="Navegación principal" data-i18n-aria="a_nav"] { background-color: rgba(5, 16, 36, .94) !important; }
+        nav[aria-label="Navegación principal"] { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+        body:not(.light) nav[aria-label="Navegación principal"] { background-color: rgba(5, 16, 36, .94) !important; }
 
         /* Rendimiento: pausar animaciones cuando no se ven + modo ligero */
         .h3d-paused, .h3d-paused *, .h3d-paused *::before, .h3d-paused *::after { animation-play-state: paused !important; }
@@ -1500,11 +1503,15 @@
                         <article class="glass-card rounded-3xl flex flex-col group">
                             <div
                                 class="relative h-52 bg-gradient-to-br from-[#0a0f1e] to-[#1a1040] flex-shrink-0 [clip-path:inset(0_round_24px_24px_0_0)]">
-                                <img src="assets/img/proyecto-orientaia.png"
+                                <picture>
+                                    <source media="(max-width: 640px)" srcset="assets/img/proyecto-orientaia-m.webp?v=2" type="image/webp">
+                                    <source srcset="assets/img/proyecto-orientaia.webp?v=2" type="image/webp">
+                                    <img src="assets/img/proyecto-orientaia.png?v=2"
                                     alt="Web de OrientaIA: consultoría de inteligencia artificial con diseño oscuro editorial, titular serif y objeto 3D" data-i18n-alt="al_oi"
                                     width="900" height="208" decoding="async"
                                     class="w-full h-full object-cover object-top transition-[filter] duration-700 group-hover:brightness-110"
                                     onerror="this.style.display='none'">
+                                </picture>
                                 <div class="absolute inset-0 bg-gradient-to-t from-brand-darkest/40 to-transparent">
                                 </div></div>
                             <div class="p-8 flex flex-col flex-grow">
@@ -1534,11 +1541,15 @@
                         <article class="glass-card rounded-3xl flex flex-col group">
                             <div
                                 class="relative h-52 bg-gradient-to-br from-[#1a150f] to-[#2a2015] flex-shrink-0 [clip-path:inset(0_round_24px_24px_0_0)]">
-                                <img src="assets/img/proyecto-legalex.png"
+                                <picture>
+                                    <source media="(max-width: 640px)" srcset="assets/img/proyecto-legalex-m.webp?v=2" type="image/webp">
+                                    <source srcset="assets/img/proyecto-legalex.webp?v=2" type="image/webp">
+                                    <img src="assets/img/proyecto-legalex.png?v=2"
                                     alt="Web de Legalex: diseño cálido con tonos beige y turquesa para despacho de abogacía" data-i18n-alt="al_lg"
                                     width="900" height="208" decoding="async"
                                     class="w-full h-full object-cover object-top transition-[filter] duration-700 group-hover:brightness-110"
                                     onerror="this.style.display='none'">
+                                </picture>
                                 <div class="absolute inset-0 bg-gradient-to-t from-brand-darkest/40 to-transparent">
                                 </div></div>
                             <div class="p-8 flex flex-col flex-grow">
@@ -3049,7 +3060,7 @@
         if (bar) bar.style.setProperty('--sp', max > 0 ? (window.scrollY / max).toFixed(4) : 0);
         var vh = window.innerHeight;
         par.forEach(function (img) {
-            var r = img.parentElement.getBoundingClientRect();
+            var r = img.closest('div').getBoundingClientRect();
             if (r.bottom < -100 || r.top > vh + 100) return;
             var t = (r.top + r.height / 2 - vh / 2) / vh; /* -1..1 */
             img.style.transform = 'translate3d(0,' + (t * -8).toFixed(1) + 'px,0) scale(1.06)';

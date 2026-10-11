@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Web Ciudad Real · IA y Apps Móviles | Porvenir</title>
+    <title>Diseño y Desarrollo Web en Ciudad Real | Páginas Web &amp; IA</title>
     <meta name="google-site-verification" content="HW2_04Sd6fpEU8F_lsHFuPmZsWkm0PLn8t2_IIEwe10" />
     <meta name="description"
         content="Diseño web en Ciudad Real sin WordPress: páginas rápidas, Mobile First, SEO y WCAG que convierten visitas en clientes. Ingeniería de Software + IA. Valoración gratuita.">
@@ -19,14 +19,14 @@
 
     <meta property="og:locale" content="es_ES">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Diseño Web Ciudad Real · IA y Apps Móviles | Porvenir">
+    <meta property="og:title" content="Diseño y Desarrollo Web en Ciudad Real | Páginas Web &amp; IA">
     <meta property="og:description"
         content="Ingeniera de Software especializada en diseño web, IA y apps móviles en Ciudad Real. Páginas que convierten, automatización 24/7 y código limpio. Consulta gratuita.">
     <meta property="og:url" content="https://www.porveniragenciadigital.com/">
     <meta property="og:site_name" content="Porvenir Agencia Digital">
     <meta property="og:image" content="https://www.porveniragenciadigital.com/assets/img/og-social-share.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Diseño Web Ciudad Real · IA y Apps Móviles | Porvenir">
+    <meta name="twitter:title" content="Diseño y Desarrollo Web en Ciudad Real | Páginas Web &amp; IA">
     <meta name="twitter:description"
         content="Ingeniera de Software especializada en diseño web, IA y apps móviles en Ciudad Real. Páginas que convierten, automatización 24/7 y código limpio. Consulta gratuita.">
     <meta name="twitter:image" content="https://www.porveniragenciadigital.com/assets/img/og-social-share.jpg">
@@ -52,6 +52,8 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@700;800&display=swap"></noscript>
 
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://unpkg.com/lucide@latest" defer></script>
@@ -177,10 +179,8 @@
         /* CARDS */
         .glass-card {
             background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all .4s ease;
-            will-change: transform;
         }
 
         .glass-card:hover {
@@ -240,7 +240,7 @@
         }
 
         /* ── Navegación ── */
-        body.light nav[aria-label="Navegación principal"],
+        body.light nav[aria-label="Navegación principal" data-i18n-aria="a_nav"],
         body.light #mobile-menu {
             background-color: rgba(255,255,255,.97) !important;
             border-color: #e8ecf2 !important;
@@ -414,6 +414,630 @@
         body.light #testimonios footer { background-color: transparent !important; border-color: #e8ecf2 !important; }
         body.light #testimonios footer .text-white { color: #051024 !important; }
         body.light #testimonios footer .text-gray-400 { color: #4b5563 !important; }
+:root { --brand-darkest: #051024; --brand-dark: #0a1d3d; --brand-blue: #103778; --brand-orange: #ff7a48; }
+/* ================================================================
+           HERO 3D · INICIO
+           ================================================================ */
+        .h3d {
+            --p: 0;        /* progreso de scroll 0..1 */
+            --mx: 0;       /* ratón X -1..1 */
+            --my: 0;       /* ratón Y -1..1 */
+            position: relative;
+            background:
+                radial-gradient(60% 50% at 78% 45%, rgba(16, 55, 120, .55), transparent 70%),
+                radial-gradient(40% 40% at 85% 70%, rgba(255, 122, 72, .12), transparent 70%);
+        }
+
+        /* Desktop: la escena queda fijada mientras se hace scroll */
+        .h3d-sticky {
+            position: relative;
+            display: flex; flex-direction: column; align-items: center;
+            padding: 112px 24px 56px;
+            overflow: hidden;
+        }
+        @media (min-width: 1024px) {
+            .h3d { height: 230vh; }
+            .h3d-sticky {
+                position: sticky; top: 0; height: 100vh; min-height: 640px;
+                flex-direction: row; justify-content: center; padding: 72px 4vw 0;
+            }
+        }
+
+        /* ── Fondo: suelo en perspectiva + partículas ── */
+        .h3d-floor {
+            position: absolute; left: -30%; right: -30%; bottom: -8%; height: 62%;
+            transform: perspective(520px) rotateX(68deg);
+            transform-origin: 50% 100%;
+            -webkit-mask-image: radial-gradient(60% 80% at 50% 100%, #000 10%, transparent 72%);
+            mask-image: radial-gradient(60% 80% at 50% 100%, #000 10%, transparent 72%);
+            overflow: hidden; pointer-events: none;
+        }
+        .h3d-floor::before { /* la rejilla se desplaza con transform (compositor), no con background-position */
+            content: ''; position: absolute; inset: -64px 0 0 0;
+            background-image:
+                linear-gradient(rgba(255, 122, 72, .38) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(120, 160, 255, .22) 1px, transparent 1px);
+            background-size: 64px 64px;
+            animation: h3dFloor 5s linear infinite;
+        }
+        @keyframes h3dFloor { to { transform: translate3d(0, 64px, 0); } }
+
+        .h3d-glow {
+            position: absolute; width: 56vmin; height: 56vmin; border-radius: 50%;
+            right: 8%; top: 50%; margin-top: -28vmin; pointer-events: none;
+            background: radial-gradient(circle, rgba(255, 122, 72, .28), transparent 65%);
+            filter: blur(30px);
+            transform: scale(calc(.8 + var(--p) * .5));
+        }
+
+        .h3d-dust { position: absolute; inset: 0; pointer-events: none; }
+        .h3d-dust i {
+            position: absolute; border-radius: 50%; background: var(--brand-orange);
+            width: var(--s); height: var(--s); left: var(--x); top: var(--y);
+            opacity: var(--o);
+            box-shadow: 0 0 calc(var(--s) * 4) rgba(255, 122, 72, .8);
+            transform: translate3d(
+                calc(var(--mx) * var(--d) * -26px),
+                calc(var(--my) * var(--d) * -26px + var(--p) * var(--d) * -220px),
+                0);
+            will-change: transform;
+        }
+
+        /* ── Texto ── */
+        .h3d-copy {
+            position: relative; z-index: 20; width: 100%; max-width: 640px;
+            text-align: center; display: flex; flex-direction: column; align-items: center;
+        }
+        @media (min-width: 1024px) {
+            .h3d-copy { text-align: left; align-items: flex-start; flex: 0 0 46%; max-width: 620px; padding-right: 2vw; }
+        }
+
+        .h3d-badge {
+            font-size: 11px; font-weight: 700; letter-spacing: .35em; text-transform: uppercase;
+            color: rgba(255, 122, 72, .92); line-height: 1.9; margin: 0 0 28px;
+        }
+        .h3d-badge span { font-weight: 500; opacity: .8; }
+
+        .h3d-h1 { margin: 0 0 30px; font-family: 'Geist', 'Montserrat', system-ui, sans-serif; font-weight: 800; }
+        .h3d-h1 .l1 { display: block; font-size: clamp(2.4rem, 3.4vw + 1rem, 4.4rem); line-height: 1.02; letter-spacing: -.045em; color: #fff; margin-bottom: .22em; text-wrap: balance; }
+        .h3d-h1 .l2 {
+            display: block; font-weight: 700; font-size: clamp(1.5rem, 1.9vw + .7rem, 2.5rem); line-height: 1.1; letter-spacing: -.035em; text-wrap: balance;
+            background: linear-gradient(90deg, #ff7a48, #ff9a76 50%, #ffd166);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
+
+        .h3d-p {
+            margin: 0 0 36px; font-size: clamp(.95rem, .4vw + .85rem, 1.12rem); line-height: 1.75;
+            font-weight: 400; color: rgba(209, 213, 219, .92); max-width: 34em;
+        }
+        .h3d-p strong { color: #fff; font-weight: 700; }
+
+        .h3d-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; }
+        @media (min-width: 1024px) { .h3d-actions { justify-content: flex-start; } }
+
+        .h3d-cta {
+            position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 12px;
+            padding: 20px 36px; border-radius: 24px; text-decoration: none; color: #fff;
+            font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+            background: linear-gradient(135deg, #ff7a48, #ff9a76);
+            box-shadow: 0 10px 20px -10px rgba(255, 122, 72, .5);
+            transition: transform .45s cubic-bezier(.2, .8, .2, 1), box-shadow .45s;
+        }
+        .h3d-cta::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .28), transparent);
+            transform: translateX(-120%);
+        }
+        .h3d-cta:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 22px 40px -12px rgba(255, 122, 72, .65); }
+        .h3d-cta:hover::after { transform: translateX(120%); transition: transform .9s ease; }
+        .h3d-cta:focus-visible, .h3d-social:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+        .h3d-cta svg { transition: transform .3s; }
+        .h3d-cta:hover svg { transform: translateX(4px); }
+
+        .h3d-social {
+            display: grid; place-items: center; width: 48px; height: 48px; border-radius: 20px; color: #fff;
+            background: rgba(5, 16, 36, .7); border: 1px solid rgba(255, 255, 255, .12);
+            transition: color .3s, transform .3s, border-color .3s;
+        }
+        .h3d-social:hover { color: var(--brand-orange); transform: scale(1.1); border-color: rgba(255, 122, 72, .5); }
+
+        .h3d-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 32px 0 0; padding: 0; list-style: none; }
+        @media (min-width: 1024px) { .h3d-tags { justify-content: flex-start; } }
+        .h3d-tags li {
+            font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; letter-spacing: .06em;
+            padding: 6px 12px; border-radius: 999px; color: #b8c4dc;
+            border: 1px solid rgba(255, 255, 255, .1); background: rgba(255, 255, 255, .03);
+        }
+        .h3d-tags li::before { content: '/'; color: var(--brand-orange); margin-right: 6px; }
+
+        /* ── Escena 3D ── */
+        .h3d-stage {
+            position: relative; z-index: 10; width: 100%; height: 540px; margin-top: 16px;
+            perspective: 1400px; perspective-origin: 50% 40%;
+            --sc: .79; --sd: .147; --tx0: -4px; --tx: -1.6px; --ty0: -116px; --ty: 89px;
+        }
+        @media (min-width: 560px) { .h3d-stage { height: 700px; --sc: .9; --tx: 0px; --ty0: -12px; --ty: 185px; } }
+        @media (min-width: 1024px) { .h3d-stage { flex: 1 1 54%; height: 100%; margin-top: 0; --sc: 1.05; --ty0: 10px; --ty: 50px; } }
+        @media (min-width: 1440px) { .h3d-stage { --sc: 1.2; } }
+
+        .h3d-scene {
+            --rxd: calc(62 - var(--p) * 20 + var(--my) * -5);
+            --rzd: calc(-38 + var(--p) * 18 + var(--mx) * 9 + var(--spin, 0));
+            --ztop: calc(84 + var(--p) * 320);
+            position: absolute; left: 50%; top: 50%; width: 0; height: 0;
+            transform-style: preserve-3d;
+            transform:
+                translate3d(calc(var(--tx0, 0px) + var(--p) * var(--tx)), calc(var(--ty0) + var(--p) * var(--ty)), 0)
+                scale(calc(var(--sc) * (1 - var(--p) * .12) * (1 - (1 - var(--p)) * var(--sd, 0))))
+                rotateX(calc(var(--rxd) * 1deg))
+                rotateZ(calc(var(--rzd) * 1deg))
+                translateZ(-150px);
+            will-change: transform;
+        }
+
+        .h3d-layer {
+            --w: 340px; --h: 230px; --z0: 0; --dz: 0; --ox: 0; --oy: 0; --hot: 0;
+            position: absolute; left: 50%; top: 50%;
+            width: var(--w); height: var(--h);
+            margin: calc(var(--h) / -2) 0 0 calc(var(--w) / -2);
+            transform-style: preserve-3d;
+            transform: translate3d(calc(var(--ox) * 1px), calc(var(--oy) * 1px), calc((var(--z0) + var(--p) * var(--dz) + var(--hot) * (var(--ztop) - var(--z0) - var(--p) * var(--dz) + 60)) * 1px)) scale(calc(1 + var(--hot) * .08));
+        }
+
+        .h3d-card {
+            position: absolute; inset: 0; border-radius: 22px; overflow: hidden;
+            background: linear-gradient(145deg, rgba(20, 44, 92, .94), rgba(8, 22, 48, .94));
+            border: 1px solid rgba(255, 255, 255, .16);
+            border-color: color-mix(in srgb, #ff7a48 calc(var(--hot) * 100%), rgba(255, 255, 255, .16));
+            box-shadow:
+                0 0 0 1px rgba(255, 122, 72, .08),
+                0 30px 60px -20px rgba(0, 0, 0, .7),
+                0 0 calc(50px + var(--hot) * 50px) -10px rgba(255, 122, 72, calc(.12 + var(--p) * .25 + var(--hot) * .5));
+            animation: h3dIn 1.1s cubic-bezier(.2, .9, .2, 1) both, h3dBob 6s ease-in-out infinite;
+            animation-delay: var(--delay, 0s), calc(var(--delay, 0s) + 1.1s);
+        }
+        @keyframes h3dIn { from { transform: translateZ(320px); opacity: 0; } to { transform: translateZ(0); opacity: 1; } }
+        @keyframes h3dBob { 50% { transform: translateZ(10px); } }
+
+        .h3d-card::before { /* reflejo diagonal */
+            content: ''; position: absolute; inset: 0; pointer-events: none;
+            background: linear-gradient(115deg, rgba(255, 255, 255, .11) 0%, transparent 38%);
+        }
+
+        /* ── Efectos comunes de capa ── */
+        @keyframes h3dSheen { 0%, 62% { transform: translateX(0) skewX(-20deg); } 100% { transform: translateX(780%) skewX(-20deg); } }
+        @keyframes h3dRot { to { transform: rotate(360deg); } }
+        @keyframes h3dRotR { to { transform: rotate(-360deg); } }
+
+        .h3d-layer::before { /* luz de suelo bajo cada placa */
+            content: ''; position: absolute; inset: 6%; border-radius: 28px;
+            background: rgba(255, 122, 72, calc(.22 + var(--hot) * .35)); filter: blur(22px);
+            transform: translateZ(-10px); pointer-events: none;
+        }
+        .h3d-card::after { /* atenuación de capas no activas (sin filter, más estable en 3D) */
+            content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 3;
+            background: #02060f; opacity: calc(var(--focus, 0) * (1 - var(--hot)) * .55);
+        }
+        .h3d-card::before { /* destello que barre la placa */
+            content: ''; position: absolute; top: -10%; bottom: -10%; left: -45%; width: 28%; pointer-events: none;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .16), transparent);
+            animation: h3dSheen 7s ease-in-out infinite; animation-delay: calc(var(--delay, 0s) * 4);
+        }
+        .h3d-holo { /* borde holográfico: máscara estática + degradado que gira con transform */
+            position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none; overflow: hidden;
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+            mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+            opacity: calc(.55 + var(--hot) * .45);
+        }
+        .h3d-holo b { position: absolute; left: 50%; top: 50%; width: max(170%, 560px); aspect-ratio: 1; transform: translate(-50%, -50%) rotate(0deg);
+            background: conic-gradient(transparent 0 62%, rgba(255, 154, 118, .95) 80%, #ffd166 88%, transparent 100%);
+            animation: h3dHolo 6s linear infinite; }
+        @keyframes h3dHolo { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        /* ── Capa base: núcleo Porvenir ── */
+        .l-base { --w: 400px; --h: 400px; --z0: 0; --dz: 0; }
+        .l-base .h3d-card {
+            border-radius: 28px;
+            background:
+                linear-gradient(rgba(120, 160, 255, .12) 1px, transparent 1px) 0 0 / 26px 26px,
+                linear-gradient(90deg, rgba(120, 160, 255, .12) 1px, transparent 1px) 0 0 / 26px 26px,
+                linear-gradient(145deg, rgba(14, 36, 80, .96), rgba(5, 16, 36, .96));
+        }
+        .l-base svg.traces { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .l-base .rings circle { fill: none; transform-origin: 200px 200px; }
+        .l-base .ring-a { stroke: rgba(255, 122, 72, .5); stroke-width: 1.4; stroke-dasharray: 2 9; animation: h3dRot 40s linear infinite; }
+        .l-base .ring-b { stroke: rgba(120, 160, 255, .45); stroke-width: 1; stroke-dasharray: 40 14 6 14; animation: h3dRotR 28s linear infinite; }
+        .l-base .ring-c { stroke: rgba(255, 154, 118, .7); stroke-width: 2; stroke-dasharray: 90 30; animation: h3dRot 16s linear infinite; }
+        .l-base .tr path { fill: none; stroke: rgba(255, 122, 72, .28); stroke-width: 1.6; }
+        .l-base .pulse path { fill: none; stroke: #ffb48f; stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 22 340; animation: h3dRun 2.6s linear infinite; }
+        .l-base .pulse path:nth-child(2n) { animation-delay: -.9s; }
+        .l-base .pulse path:nth-child(3n) { animation-delay: -1.7s; }
+        @keyframes h3dRun { from { stroke-dashoffset: 362; } to { stroke-dashoffset: 0; } }
+        .l-base .nodes circle { fill: #ff7a48; animation: h3dPulse 1.8s infinite; }
+        .l-base .nodes circle:nth-child(2n) { animation-delay: -.6s; }
+        .l-base .br { position: absolute; width: 22px; height: 22px; border: 0 solid rgba(255, 122, 72, .9); }
+        .l-base .br.tl { top: 14px; left: 14px; border-width: 2px 0 0 2px; border-top-left-radius: 8px; }
+        .l-base .br.tr { top: 14px; right: 14px; border-width: 2px 2px 0 0; border-top-right-radius: 8px; }
+        .l-base .br.bl { bottom: 14px; left: 14px; border-width: 0 0 2px 2px; border-bottom-left-radius: 8px; }
+        .l-base .br.brr { bottom: 14px; right: 14px; border-width: 0 2px 2px 0; border-bottom-right-radius: 8px; }
+        .l-base .tag { position: absolute; left: 44px; top: 17px; font: 600 9px/1 ui-monospace, Menlo, monospace; letter-spacing: .18em; color: rgba(255, 190, 160, .8); }
+        .l-base .leds { position: absolute; right: 44px; top: 16px; display: flex; gap: 5px; }
+        .l-base .leds i { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 8px #4ade80; animation: h3dPulse 1.4s infinite; }
+        .l-base .leds i:nth-child(2) { background: #ff7a48; box-shadow: 0 0 8px #ff7a48; animation-delay: -.4s; }
+        .l-base .leds i:nth-child(3) { background: #7aa7ff; box-shadow: 0 0 8px #7aa7ff; animation-delay: -.8s; }
+        .l-base .core {
+            position: absolute; left: 50%; top: 50%; width: 96px; height: 96px; margin: -48px 0 0 -48px; border-radius: 24px;
+            display: grid; place-items: center; font-weight: 800; font-size: 40px; color: #fff;
+            background: linear-gradient(145deg, #ff7a48, #c9471a);
+            box-shadow: 0 0 60px rgba(255, 122, 72, .75), inset 0 0 24px rgba(255, 255, 255, .3), inset 0 2px 0 rgba(255, 255, 255, .45);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, .4);
+        }
+        .l-base .core::before { content: ''; position: absolute; inset: -9px; border-radius: 30px; border: 1.5px dashed rgba(255, 190, 160, .8); animation: h3dRot 12s linear infinite; }
+
+        /* ── Capa 1: web ── */
+        .l-web { --z0: 28; --dz: 105; --ox: -34; --oy: 8; --w: 360px; --h: 250px; }
+        .l-web .bar { height: 30px; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-bottom: 1px solid rgba(255, 255, 255, .1); background: rgba(255, 255, 255, .03); }
+        .l-web .bar > i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, .25); }
+        .l-web .bar > i:first-child { background: #ff7a48; }
+        .l-web .bar u { margin-left: 8px; flex: 1; max-width: 150px; display: flex; align-items: center; gap: 6px; text-decoration: none; padding: 0 9px; height: 16px; border-radius: 8px; background: rgba(255, 255, 255, .08); font: 500 8.5px/1 ui-monospace, Menlo, monospace; color: #b8c4dc; }
+        .l-web .bar em { margin-left: auto; display: flex; gap: 8px; }
+        .l-web .bar s { width: 22px; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, .2); }
+        .l-web .body { padding: 12px 14px; display: grid; gap: 10px; }
+        .l-web .cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 12px; }
+        .l-web .txt { display: grid; gap: 7px; align-content: start; }
+        .sk { display: block; height: 8px; border-radius: 5px; background: rgba(255, 255, 255, .14); }
+        .sk.big { height: 14px; width: 92%; background: rgba(255, 255, 255, .88); }
+        .sk.big.short { width: 62%; background: linear-gradient(90deg, #ff7a48, #ffd166); }
+        .l-web .btns { display: flex; gap: 8px; margin-top: 3px; }
+        .sk.or { height: 20px; width: 56px; border-radius: 7px; background: linear-gradient(135deg, #ff7a48, #ff9a76); box-shadow: 0 8px 20px rgba(255, 122, 72, .6); animation: h3dBtn 3.2s ease-in-out infinite; }
+        .sk.ghost { height: 20px; width: 44px; border-radius: 7px; background: transparent; border: 1px solid rgba(255, 255, 255, .25); }
+        @keyframes h3dBtn { 50% { transform: scale(1.1); } }
+        .l-web .vis { position: relative; border-radius: 12px; overflow: hidden; min-height: 86px; background: linear-gradient(135deg, #1d4f9e, #ff7a48); }
+        .l-web .vis b { position: absolute; width: 70px; height: 70px; right: -14px; top: -18px; border-radius: 50%; background: rgba(255, 255, 255, .25); filter: blur(2px); }
+        .l-web .vis i { position: absolute; left: 12px; bottom: 12px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 6px rgba(255, 255, 255, .25); animation: h3dOrbit 4s ease-in-out infinite; }
+        @keyframes h3dOrbit { 50% { transform: translate(60px, -34px) scale(.7); } }
+        .l-web .gauges { display: grid; grid-template-columns: repeat(3, 38px) 1fr; gap: 10px; align-items: center; }
+        .l-web .g { position: relative; width: 38px; height: 38px; display: grid; place-items: center; }
+        .l-web .g svg { position: absolute; inset: 0; transform: rotate(-90deg); }
+        .l-web .g circle { fill: none; stroke-width: 3.2; }
+        .l-web .g .t { stroke: rgba(255, 255, 255, .12); }
+        .l-web .g .v { stroke: #4ade80; stroke-linecap: round; stroke-dasharray: 94.2; stroke-dashoffset: 94.2; animation: h3dGauge 3s ease-out infinite; }
+        .l-web .g:nth-child(2) .v { animation-delay: .2s; } .l-web .g:nth-child(3) .v { animation-delay: .4s; }
+        @keyframes h3dGauge { 0% { stroke-dashoffset: 94.2; } 35%, 90% { stroke-dashoffset: 6; } 100% { stroke-dashoffset: 94.2; } }
+        .l-web .g span { font: 700 9px/1 ui-monospace, Menlo, monospace; color: #fff; margin-top: -2px; }
+        .l-web .g small { position: absolute; bottom: -9px; font: 600 6.5px/1 ui-monospace, Menlo, monospace; letter-spacing: .1em; color: #8b98b5; }
+        .l-web .spark { width: 100%; height: 34px; overflow: visible; }
+        .l-web .spark path { fill: none; stroke: #ff7a48; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 130; stroke-dashoffset: 130; animation: h3dSpark 3.6s ease-in-out infinite; }
+        @keyframes h3dSpark { 0% { stroke-dashoffset: 130; } 45%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -130; } }
+        .l-web .cursor { position: absolute; left: 30px; top: 80px; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .5)); animation: h3dCursor 5s ease-in-out infinite; }
+        @keyframes h3dCursor { 0%, 100% { transform: translate(0, 0); } 40% { transform: translate(40px, 14px); } 55% { transform: translate(40px, 14px) scale(.85); } 70% { transform: translate(70px, -8px); } }
+
+        /* ── Capa 2: IA ── */
+        .l-ai { --z0: 56; --dz: 210; --ox: 34; --oy: -6; --w: 340px; --h: 244px; }
+        .l-ai .body { padding: 14px 16px; display: grid; gap: 8px; align-content: start; }
+        .l-ai .head { display: flex; align-items: center; gap: 9px; padding-bottom: 9px; border-bottom: 1px solid rgba(255, 255, 255, .1); font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .l-ai .head em { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px #4ade80; animation: h3dPulse 1.6s infinite; }
+        .l-ai .head s { text-decoration: none; margin-left: auto; font: 600 8px/1 ui-monospace, Menlo, monospace; letter-spacing: .06em; padding: 4px 7px; border-radius: 6px; background: rgba(255, 255, 255, .08); color: #b8c4dc; text-transform: none; }
+        .l-ai .head s + s { margin-left: 0; background: rgba(255, 122, 72, .2); color: #ffb48f; }
+        @keyframes h3dPulse { 50% { opacity: .35; } }
+        .bub { font-size: 10.5px; line-height: 1.4; padding: 7px 11px; border-radius: 13px; max-width: 80%; color: #e5e7eb; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .06); }
+        .bub.me { justify-self: end; border-top-right-radius: 4px; background: rgba(255, 122, 72, .24); border-color: rgba(255, 122, 72, .3); color: #fff; }
+        .bub.ai { border-top-left-radius: 4px; }
+        .bub.typing { display: flex; gap: 4px; width: 46px; padding: 9px 12px; }
+        .bub.typing i { width: 5px; height: 5px; border-radius: 50%; background: #b8c4dc; animation: h3dType 1.2s infinite; }
+        .bub.typing i:nth-child(2) { animation-delay: .15s; } .bub.typing i:nth-child(3) { animation-delay: .3s; }
+        @keyframes h3dType { 0%, 60%, 100% { transform: translateY(0); opacity: .5; } 30% { transform: translateY(-4px); opacity: 1; } }
+        .l-ai .flow { display: flex; align-items: center; gap: 0; margin: 2px 0; }
+        .l-ai .flow .n { flex: none; min-width: 46px; padding: 6px 9px; text-align: center; border-radius: 9px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .14); font: 700 8.5px/1 ui-monospace, Menlo, monospace; color: #dbe4f7; }
+        .l-ai .flow .n.hot { background: rgba(255, 122, 72, .25); border-color: rgba(255, 122, 72, .7); color: #fff; box-shadow: 0 0 16px rgba(255, 122, 72, .6); }
+        .l-ai .flow .ln { flex: 1; height: 2px; position: relative; background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .3) 0 4px, transparent 4px 8px); overflow: visible; }
+        .l-ai .flow .ln::after { content: ''; position: absolute; top: -2px; left: 0; width: 6px; height: 6px; border-radius: 50%; background: #ff7a48; box-shadow: 0 0 8px #ff7a48; animation: h3dDot 1.8s linear infinite; }
+        .l-ai .flow .ln + .n + .ln::after { animation-delay: -.9s; }
+        @keyframes h3dDot { from { transform: translateX(0); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } to { transform: translateX(46px); opacity: 0; } }
+        .l-ai .callrow { display: flex; align-items: center; gap: 10px; }
+        .l-ai .callrow code { font: 700 10px/1 ui-monospace, Menlo, monospace; color: #ffb48f; }
+        .wave { flex: 1; display: flex; align-items: center; gap: 3px; height: 24px; }
+        .wave i { width: 3px; border-radius: 2px; background: linear-gradient(#ffd166, #ff7a48); height: 22px; transform: scaleY(.36); animation: h3dWave 1.1s ease-in-out infinite; animation-delay: calc(var(--i) * -.09s); }
+        @keyframes h3dWave { 50% { transform: scaleY(1); } }
+
+        /* ── Capa 3: app ── */
+        .l-app { --z0: 84; --dz: 320; --ox: -6; --oy: 4; --w: 184px; --h: 300px; }
+        .l-app .h3d-card { border-radius: 32px; border-width: 2px; }
+        .l-app .island { width: 54px; height: 14px; border-radius: 8px; background: #02060f; margin: 10px auto 12px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .08); }
+        .l-app .body { padding: 0 14px; display: grid; gap: 9px; }
+        .l-app .hello { display: flex; align-items: center; gap: 8px; }
+        .l-app .hello .av { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, #ff7a48, #ffd166); }
+        .l-app .ring { width: 70px; height: 70px; border-radius: 50%; margin: 0 auto; position: relative; display: grid; place-items: center;
+            background: conic-gradient(#ff7a48 calc(var(--p) * 280deg + 70deg), rgba(255, 255, 255, .1) 0); -webkit-mask: radial-gradient(circle, transparent 55%, #000 57%); mask: radial-gradient(circle, transparent 55%, #000 57%); }
+        .l-app .bars { height: 46px; display: flex; align-items: flex-end; gap: 6px; padding: 0 2px; }
+        .l-app .bars i { flex: 1; height: var(--h); border-radius: 4px 4px 2px 2px; background: linear-gradient(#ffb48f, #ff7a48); transform-origin: bottom; animation: h3dBar 3.4s ease-in-out infinite; animation-delay: calc(var(--n, 0) * .12s); }
+        .l-app .bars i:nth-child(2) { --n: 1; } .l-app .bars i:nth-child(3) { --n: 2; } .l-app .bars i:nth-child(4) { --n: 3; } .l-app .bars i:nth-child(5) { --n: 4; } .l-app .bars i:nth-child(6) { --n: 5; }
+        @keyframes h3dBar { 0%, 100% { transform: scaleY(.25); } 35%, 80% { transform: scaleY(1); } }
+        .l-app .row { height: 24px; border-radius: 9px; background: rgba(255, 255, 255, .08); display: flex; align-items: center; gap: 8px; padding: 0 9px; }
+        .l-app .row::before { content: ''; width: 12px; height: 12px; border-radius: 4px; background: rgba(255, 122, 72, .8); }
+        .l-app .row b { flex: 1; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, .22); }
+        .l-app .toast { position: absolute; left: 12px; right: 12px; top: 40px; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 14px; background: rgba(255, 255, 255, .94); box-shadow: 0 10px 24px rgba(0, 0, 0, .5); animation: h3dToast 6s cubic-bezier(.23, 1, .32, 1) infinite; }
+        .l-app .toast i { width: 18px; height: 18px; border-radius: 6px; background: linear-gradient(135deg, #ff7a48, #ff9a76); flex: none; }
+        .l-app .toast span { flex: 1; display: grid; gap: 4px; }
+        .l-app .toast b { height: 5px; border-radius: 3px; background: #c4ccdc; } .l-app .toast b + b { width: 60%; }
+        @keyframes h3dToast { 0%, 12% { transform: translateY(-70px); opacity: 0; } 20%, 62% { transform: translateY(0); opacity: 1; } 72%, 100% { transform: translateY(-70px); opacity: 0; } }
+        .l-app .tabs { position: absolute; left: 14px; right: 14px; bottom: 12px; height: 28px; border-radius: 14px; display: flex; justify-content: space-around; align-items: center; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .08); }
+        .l-app .tabs i { width: 10px; height: 10px; border-radius: 4px; background: rgba(255, 255, 255, .28); }
+        .l-app .tabs i.on { background: #ff7a48; box-shadow: 0 0 10px #ff7a48; }
+
+        /* Etiquetas: siempre de cara a la cámara */
+        .h3d-label {
+            position: absolute; left: 100%; top: 50%; white-space: nowrap; pointer-events: none;
+            transform-origin: 0 50%;
+            transform: translateZ(1px) rotateZ(calc(var(--rzd) * -1deg)) rotateX(calc(var(--rxd) * -1deg));
+            opacity: calc(clamp(0, (var(--p) - var(--at)) * 5, 1) * (1 - var(--focus, 0) * (1 - var(--hot, 0))));
+            display: flex; align-items: center; gap: 10px;
+        }
+        .h3d-label::before { content: ''; width: calc(18px + var(--p) * 26px); height: 1px; background: linear-gradient(90deg, var(--brand-orange), transparent); }
+        .h3d-label b { font-size: 10px; letter-spacing: .25em; color: var(--brand-orange); font-weight: 700; }
+        .h3d-label span { display: block; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: .02em; text-shadow: 0 2px 12px rgba(0, 0, 0, .8); }
+
+        /* Haz vertical que atraviesa las capas */
+        .h3d-beam {
+            position: absolute; left: 50%; top: 50%; width: 2px; margin-left: -1px;
+            height: calc(60px + var(--p) * 380px);
+            transform-origin: 50% 100%;
+            transform: translateY(-100%) rotateX(-90deg);
+            background: linear-gradient(to top, rgba(255, 122, 72, .9), rgba(255, 122, 72, 0));
+            box-shadow: 0 0 14px rgba(255, 122, 72, .7);
+        }
+
+        /* Chips que flotan a distintas profundidades (parallax) */
+        .h3d-chips { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+        .h3d-chip {
+            position: absolute; left: var(--x); top: var(--y);
+            font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; letter-spacing: .05em;
+            padding: 7px 12px; border-radius: 12px; color: #dbe4f7; white-space: nowrap;
+            background: rgba(10, 29, 61, .9); border: 1px solid rgba(255, 255, 255, .14);
+            box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .6);
+            transform: translate3d(
+                calc(var(--mx) * var(--d) * -34px),
+                calc(var(--my) * var(--d) * -34px + var(--p) * var(--d) * -45px),
+                0);
+            animation: h3dChipIn .9s cubic-bezier(.2, .9, .2, 1) both; animation-delay: var(--delay);
+        }
+        .h3d-chip i { color: var(--brand-orange); font-style: normal; margin-right: 6px; }
+        @keyframes h3dChipIn { from { opacity: 0; margin-top: 30px; } to { opacity: 1; margin-top: 0; } }
+        @media (max-width: 559px) { .h3d-chip { display: none; } }
+
+        /* Indicador de scroll */
+        .h3d-hint {
+            position: absolute; left: 50%; bottom: 22px; z-index: 30; transform: translateX(-50%);
+            display: none; flex-direction: column; align-items: center; gap: 8px;
+            font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: #8b98b5;
+            opacity: calc(1 - var(--p) * 4);
+        }
+        @media (min-width: 1024px) { .h3d-hint { display: flex; } }
+        .h3d-hint span { width: 20px; height: 32px; border: 1.5px solid #8b98b5; border-radius: 12px; position: relative; }
+        .h3d-hint span::after { content: ''; position: absolute; left: 50%; top: 6px; width: 3px; height: 6px; margin-left: -1.5px; border-radius: 2px; background: var(--brand-orange); animation: h3dWheel 1.6s infinite; }
+        @keyframes h3dWheel { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(12px); } }
+
+        .h3d-progress { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; z-index: 30; transform-origin: 0 50%; transform: scaleX(var(--p)); background: linear-gradient(90deg, var(--brand-orange), #ffd166); display: none; }
+        @media (min-width: 1024px) { .h3d-progress { display: block; } }
+
+        /* Entrada del texto */
+        .h3d-in { animation: h3dUp .9s cubic-bezier(.2, .8, .2, 1) both; animation-delay: var(--delay, 0s); }
+        @keyframes h3dUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+        /* ── Tema claro (compatible con body.light de la web) ── */
+                body.light .h3d { background: linear-gradient(160deg, #f8f9fc 0%, #fff8f5 55%, #f0f7f8 100%); }
+        body.light .h3d-h1 .l1 { color: #051024; }
+        body.light .h3d-p { color: #374151; }
+        body.light .h3d-p strong { color: #051024; }
+        body.light .h3d-social { background: #fff; color: #051024; border-color: #e2e8f0; }
+        body.light .h3d-tags li { color: #4b5563; border-color: #e2e8f0; background: #fff; }
+        body.light .h3d-floor::before { background-image: linear-gradient(rgba(255, 122, 72, .35) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 55, 120, .18) 1px, transparent 1px); }
+        body.light .h3d-label span { color: #051024; text-shadow: none; }
+        body.light .h3d-chip { background: rgba(255, 255, 255, .85); color: #051024; border-color: #e2e8f0; }
+        body.light .h3d-hint { color: #6b7280; }
+        body.light .h3d-hint span { border-color: #6b7280; }
+
+        /* ── Movimiento reducido: composición estática "desplegada" ── */
+        @media (prefers-reduced-motion: reduce) {
+            .h3d { height: auto; }
+            .h3d-sticky { position: relative; height: auto; }
+            .h3d-card, .h3d-chip, .h3d-in, .h3d-floor, .h3d-hint span::after,
+            .l-base .traces path, .wave i, .l-ai .head em { animation: none !important; }
+            .h3d-stage *, .h3d-stage *::before, .h3d-stage *::after, .h3d-floor::before { animation: none !important; }
+            .h3d-hint, .h3d-progress { display: none; }
+        }
+    
+
+        /* ── Actor global: la escena vive fija y viaja por la web (solo escritorio) ── */
+        #h3d-actor { position: fixed; left: 50%; top: 50%; width: 0; height: 0; z-index: 0; pointer-events: none;
+            --p: 0; --mx: 0; --my: 0; --focus: 0; --spin: 0; --chipo: 1;
+            transform: translate3d(calc(var(--gx, 23) * 1vw), calc(var(--gy, 0) * 1px), 0) scale(var(--gs, 1));
+            opacity: var(--go, 1); }
+        #h3d-actor .h3d-stage { position: absolute; left: -400px; top: -400px; width: 800px; height: 800px; margin: 0; flex: none; --sc: 1.05; --tx: -50px; --ty0: 10px; --ty: 50px; }
+        @media (min-width: 1440px) { #h3d-actor .h3d-stage { --sc: 1.2; } }
+        #h3d-actor .h3d-chips { opacity: var(--chipo); inset: 0 0 0 24%; }
+        #h3d-actor .h3d-glow { left: -28vmin; right: auto; top: 0; margin-top: -28vmin; }
+        .h3d-global .h3d-sticky::after { content: ''; flex: 1 1 54%; }
+        body.light .h3d-global.h3d { background: radial-gradient(60% 50% at 78% 45%, rgba(16, 55, 120, .10), transparent 70%) !important; }
+        body.light header#inicio.h3d { background: transparent !important; }
+
+        #contacto .fade-in-up:first-child { text-shadow: 0 2px 16px rgba(5, 16, 36, .95), 0 0 2px rgba(5, 16, 36, .9); }
+
+
+        /* ══ Tema claro: la escena pasa a blanco, turquesa suave y naranja suave ══ */
+        body.light .h3d-card {
+            background: linear-gradient(145deg, #ffffff, #eef8fa);
+            border-color: color-mix(in srgb, #ff7a48 calc(var(--hot) * 100%), rgba(5, 147, 162, .3));
+            box-shadow: 0 0 0 1px rgba(5, 147, 162, .06), 0 28px 50px -24px rgba(5, 147, 162, .45),
+                0 0 calc(40px + var(--hot) * 40px) -12px rgba(255, 122, 72, calc(.12 + var(--p) * .12 + var(--hot) * .45));
+        }
+        body.light .h3d-card::before { background: linear-gradient(90deg, transparent, rgba(5, 147, 162, .14), transparent); }
+        body.light .h3d-card::after { background: #ffffff; }
+        body.light .h3d-holo b { background: conic-gradient(transparent 0 62%, rgba(5, 147, 162, .9) 80%, #ff9a76 90%, transparent 100%); }
+        body.light .h3d-layer::before { background: rgba(5, 147, 162, calc(.16 + var(--hot) * .2)); }
+        body.light .h3d-glow { background: radial-gradient(circle, rgba(5, 147, 162, .22), rgba(255, 176, 143, .16) 45%, transparent 68%); }
+        body.light .h3d-beam { background: linear-gradient(to top, rgba(5, 147, 162, .85), rgba(255, 154, 118, 0)); box-shadow: 0 0 12px rgba(5, 147, 162, .45); }
+        body.light .h3d-dust i { background: #0593a2; box-shadow: 0 0 8px rgba(5, 147, 162, .5); }
+        body.light .h3d-dust i:nth-child(3n) { background: #ff9a76; box-shadow: 0 0 8px rgba(255, 154, 118, .6); }
+
+        /* Base */
+        body.light .l-base .h3d-card {
+            background:
+                linear-gradient(rgba(5, 147, 162, .12) 1px, transparent 1px) 0 0 / 26px 26px,
+                linear-gradient(90deg, rgba(5, 147, 162, .12) 1px, transparent 1px) 0 0 / 26px 26px,
+                linear-gradient(145deg, #ffffff, #e8f6f8);
+        }
+        body.light .l-base .ring-a { stroke: rgba(255, 154, 118, .8); }
+        body.light .l-base .ring-b { stroke: rgba(5, 147, 162, .55); }
+        body.light .l-base .ring-c { stroke: rgba(5, 147, 162, .85); }
+        body.light .l-base .tr path { stroke: rgba(5, 147, 162, .35); }
+        body.light .l-base .pulse path { stroke: #ff9a76; }
+        body.light .l-base .nodes circle { fill: #0593a2; }
+        body.light .l-base .br { border-color: rgba(5, 147, 162, .85); }
+        body.light .l-base .tag { color: rgba(5, 120, 134, .9); }
+        body.light .l-base .core { background: linear-gradient(145deg, #ffb08f, #ff7a48); box-shadow: 0 0 46px rgba(255, 154, 118, .7), inset 0 0 20px rgba(255, 255, 255, .45), inset 0 2px 0 rgba(255, 255, 255, .6); }
+        body.light .l-base .core::before { border-color: rgba(5, 147, 162, .7); }
+
+        /* Web */
+        body.light .l-web .bar { background: rgba(5, 147, 162, .06); border-bottom-color: rgba(5, 147, 162, .18); }
+        body.light .l-web .bar > i { background: rgba(5, 16, 36, .2); }
+        body.light .l-web .bar u { background: rgba(5, 16, 36, .07); color: #475569; }
+        body.light .l-web .bar s { background: rgba(5, 16, 36, .18); }
+        body.light .sk { background: rgba(5, 16, 36, .12); }
+        body.light .sk.big { background: rgba(5, 16, 36, .82); }
+        body.light .sk.big.short { background: linear-gradient(90deg, #ff7a48, #ffb08f); }
+        body.light .sk.ghost { background: transparent; border-color: rgba(5, 147, 162, .5); }
+        body.light .l-web .vis { background: linear-gradient(135deg, #7fd3dc, #ffb08f); }
+        body.light .l-web .g .t { stroke: rgba(5, 16, 36, .1); }
+        body.light .l-web .g .v { stroke: #0593a2; }
+        body.light .l-web .g span { color: #051024; }
+        body.light .l-web .g small { color: #64748b; }
+        body.light .l-web .spark path { stroke: #ff7a48; }
+
+        /* IA */
+        body.light .l-ai .head { border-bottom-color: rgba(5, 147, 162, .2); color: #051024; }
+        body.light .l-ai .head s { background: rgba(5, 147, 162, .1); color: #0b6b78; }
+        body.light .l-ai .head s + s { background: rgba(255, 122, 72, .16); color: #b8420f; }
+        body.light .bub { color: #1f2937; background: rgba(5, 16, 36, .06); border-color: rgba(5, 16, 36, .06); }
+        body.light .bub.me { background: rgba(255, 154, 118, .28); border-color: rgba(255, 122, 72, .4); color: #6b2a0c; }
+        body.light .bub.typing i { background: #64748b; }
+        body.light .l-ai .flow .n { background: #fff; border-color: rgba(5, 147, 162, .45); color: #0b4a52; }
+        body.light .l-ai .flow .n.hot { background: #ffe6dc; border-color: #ff9a76; color: #8a3410; box-shadow: 0 0 14px rgba(255, 154, 118, .6); }
+        body.light .l-ai .flow .ln { background: repeating-linear-gradient(90deg, rgba(5, 147, 162, .5) 0 4px, transparent 4px 8px); }
+        body.light .l-ai .callrow code { color: #d9531e; }
+        body.light .wave i { background: linear-gradient(#ffb08f, #ff7a48); }
+
+        /* App */
+        body.light .l-app .h3d-card { border-color: color-mix(in srgb, #ff7a48 calc(var(--hot) * 100%), rgba(5, 147, 162, .45)); }
+        body.light .l-app .ring { background: conic-gradient(#ff7a48 calc(var(--p) * 280deg + 70deg), rgba(5, 16, 36, .1) 0); }
+        body.light .l-app .bars i { background: linear-gradient(#7fd3dc, #0593a2); }
+        body.light .l-app .row { background: rgba(5, 16, 36, .06); }
+        body.light .l-app .row::before { background: #0593a2; }
+        body.light .l-app .row b { background: rgba(5, 16, 36, .16); }
+        body.light .l-app .tabs { background: rgba(5, 147, 162, .08); border-color: rgba(5, 147, 162, .2); }
+        body.light .l-app .tabs i { background: rgba(5, 16, 36, .22); }
+        body.light .l-app .toast { box-shadow: 0 10px 24px rgba(5, 147, 162, .35); }
+
+        /* Chips y etiquetas */
+        body.light .h3d-chip { background: rgba(255, 255, 255, .96); color: #0b4a52; border-color: rgba(5, 147, 162, .35); box-shadow: 0 12px 26px -14px rgba(5, 147, 162, .55); }
+        body.light .h3d-tag2d { border-color: rgba(5, 147, 162, .45); box-shadow: 0 10px 24px -12px rgba(5, 147, 162, .5), 0 0 16px -6px rgba(255, 122, 72, .4); }
+        body.light .h3d-tag2d b { color: #d9531e; }
+        body.light #h3d-link path { stroke: #0593a2; }
+        body.light #h3d-link circle { fill: #ff7a48; }
+        body.light .h3d-floor::before { background-image: linear-gradient(rgba(5, 147, 162, .3) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 154, 118, .3) 1px, transparent 1px); }
+
+        /* Contacto en claro: texto nítido, sin sombra oscura que lo emborrone */
+        body.light #contacto .fade-in-up:first-child { text-shadow: none; }
+
+        /* Métricas del proyecto: una sola columna en pantallas menores de 425 px */
+        @media (max-width: 424px) { .metrics-grid { grid-template-columns: minmax(0, 1fr) !important; } }
+
+        /* WhatsApp flotante en móvil: ya no hay barra inferior, así que baja y respeta la zona segura del iPhone */
+        @media (max-width: 767px) { a[aria-label="Contactar por WhatsApp" data-i18n-aria="a_wa"] { bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important; right: 18px !important; } }
+
+        /* Rendimiento: ningún backdrop-filter sobre la escena en movimiento */
+        nav[aria-label="Navegación principal" data-i18n-aria="a_nav"] { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+        body:not(.light) nav[aria-label="Navegación principal" data-i18n-aria="a_nav"] { background-color: rgba(5, 16, 36, .94) !important; }
+
+        /* Rendimiento: pausar animaciones cuando no se ven + modo ligero */
+        .h3d-paused, .h3d-paused *, .h3d-paused *::before, .h3d-paused *::after { animation-play-state: paused !important; }
+        .h3d-lite .h3d-holo, .h3d-lite .h3d-card::before, .h3d-lite .h3d-layer::before, .h3d-lite .h3d-glow, .h3d-lite .h3d-dust { display: none; }
+        .h3d-lite .h3d-chip, .h3d-lite .h3d-tag2d { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(5, 16, 36, .92); }
+
+        /* Etiquetas de portfolio: fuera de la imagen, con contraste AA */
+        .pf-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; padding: 0; list-style: none; }
+        .pf-tag { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; line-height: 1;
+            padding: 7px 12px; border-radius: 999px; color: #e5e7eb; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .2); }
+        .pf-tag--accent { color: #ffb08f; background: rgba(255, 122, 72, .16); border-color: rgba(255, 122, 72, .55); }
+        body.light .pf-tag { color: #1f2937; background: #f1f5f9; border-color: #cbd5e1; }
+        body.light .pf-tag--accent { color: #a63a0c; background: #fff1ea; border-color: #f0b49a; }
+
+
+
+        @media (min-width: 1024px) {
+            .h3d-h1 .l1 { font-size: min(clamp(2.4rem, 3.4vw + 1rem, 4.4rem), 9vh); }
+            .h3d-h1 .l2 { font-size: min(clamp(1.5rem, 1.9vw + .7rem, 2.5rem), 5.4vh); }
+        }
+        @media (min-width: 1024px) and (max-height: 860px) {
+            .h3d-sticky { padding-top: 88px; }
+            .h3d-badge { margin-bottom: 18px; }
+            .h3d-h1 { margin-bottom: 20px; }
+            .h3d-p { margin-bottom: 24px; line-height: 1.6; }
+            .h3d-tags { margin-top: 22px; }
+        }
+        @media (max-width: 1279px) { .h3d-cta { padding: 17px 24px; } .h3d-actions { gap: 12px; } }
+
+        /* Móvil y tablet: la parte alta de la escena se difumina bajo el texto */
+        @media (max-width: 1023px) {
+            .h3d-stage { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 36px); mask-image: linear-gradient(to bottom, transparent 0, #000 36px); }
+        }
+
+        /* Leyenda de capas: sustituye a las etiquetas 3D (nunca se cortan) */
+        .h3d-label { display: none !important; }
+        .h3d-legend { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0 12px;
+            opacity: clamp(0, calc((var(--p) - .45) * 3), 1); pointer-events: none; }
+        .h3d-legend .h3d-tag2d { position: static; opacity: 1; transform: none; padding: 6px 11px 6px 9px; }
+        .h3d-legend .h3d-tag2d span { font-size: 11.5px; }
+        @media (min-width: 1024px) { .h3d-legend { display: none; } }
+        @media (prefers-reduced-motion: reduce) { .h3d-legend { display: flex; opacity: 1; } }
+
+        /* Etiquetas 2D (siempre por encima de las capas 3D) */
+        #h3d-labels { position: fixed; inset: 0; z-index: 16; pointer-events: none; display: none; }
+        @media (min-width: 1024px) { #h3d-labels { display: block; } }
+        .h3d-tag2d { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 9px; white-space: nowrap;
+            padding: 7px 14px 7px 11px; border-radius: 12px; background: rgba(5, 16, 36, .94); border: 1px solid rgba(255, 122, 72, .5);
+            box-shadow: 0 10px 28px -10px rgba(0, 0, 0, .7), 0 0 18px -6px rgba(255, 122, 72, .5);
+            will-change: transform, opacity; opacity: 0; }
+        .h3d-tag2d b { font: 700 10px/1 ui-monospace, Menlo, monospace; letter-spacing: .2em; color: #ff7a48; }
+        .h3d-tag2d span { font: 700 12.5px/1 Montserrat, sans-serif; color: #fff; letter-spacing: .01em; }
+        body.light .h3d-tag2d { background: rgba(255, 255, 255, .92); }
+        body.light .h3d-tag2d span { color: #051024; }
+        @media (prefers-reduced-motion: reduce) { #h3d-labels { display: none; } }
+
+        /* Conector tarjeta -> capa */
+        #h3d-link { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 15; pointer-events: none; display: none; }
+        @media (min-width: 1024px) { #h3d-link { display: block; } }
+        #h3d-link path { fill: none; stroke: #ff7a48; stroke-width: 1.5; stroke-dasharray: 5 7; animation: h3dDash 2.4s linear infinite; }
+        #h3d-link circle { fill: #ff7a48; }
+
+        /* Servicios: escena a la izquierda, tarjetas a la derecha */
+        @media (min-width: 1024px) {
+            #servicios .container { padding-left: 46%; }
+            #servicios .mb-20 { text-align: left; margin-bottom: 4rem; }
+            #servicios .services-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 2.5rem; }
+            .fade-in-up.rv-side { transform: perspective(1400px) translate3d(-120px, 0, 0) rotateY(26deg) scale(.94); transform-origin: 0 50%; }
+            .fade-in-up.rv-side.visible { transform: none; }
+            #servicios .fade-in-up.visible.glass-card { transition: opacity .8s ease-out, transform .8s ease-out, border-color .45s ease, background-color .45s ease, box-shadow .45s ease; }
+            #servicios .glass-card.svc-active { border-color: rgba(255, 122, 72, .6); background: rgba(255, 122, 72, .06); box-shadow: 0 0 60px -16px rgba(255, 122, 72, .45); }
+        }
+
+        /* ── Continuidad del scroll: barra de progreso + entradas 3D ── */
+        #scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 300; pointer-events: none;
+            transform-origin: 0 50%; transform: scaleX(var(--sp, 0)); background: linear-gradient(90deg, #ff7a48, #ffd166); }
+        .fade-in-up.rv3d { transform: perspective(1000px) translateY(70px) rotateX(16deg) scale(.95); transform-origin: 50% 100%; }
+        .fade-in-up.rv3d.visible { transform: none; }
+        @media (max-width: 1023px) { .fade-in-up.rv3d-m { transform: perspective(1000px) translateY(70px) rotateX(16deg) scale(.95); transform-origin: 50% 100%; } .fade-in-up.rv3d-m.visible { transform: none; } }
+        @media (prefers-reduced-motion: reduce) { .fade-in-up.rv3d { transform: none; } #scroll-progress { display: none; } .fade-in-up.rv-side, .fade-in-up.rv3d-m { transform: none; } #h3d-link { display: none; } }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
             #neural-canvas { display: none; }
@@ -427,15 +1051,15 @@
     <div class="cursor-outline" id="cursor-outline" aria-hidden="true"></div>
 
     <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-brand-orange focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold">
+        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-brand-orange focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold" data-i18n="a_skip">
         Saltar al contenido principal
     </a>
 
-    <nav aria-label="Navegación principal"
+    <nav aria-label="Navegación principal" data-i18n-aria="a_nav"
         class="fixed w-full z-50 px-6 md:px-8 bg-brand-darkest/80 backdrop-blur-md border-b border-white/5 h-20 md:h-24 flex items-center transition-all">
         <!-- Logo -->
         <a href="#" class="text-xl font-bold tracking-widest flex items-center gap-1 relative z-50"
-            aria-label="Porvenir Agencia Digital — Ir al inicio">
+            aria-label="Porvenir Agencia Digital, ir al inicio" data-i18n-aria="a_home">
             <span class="relative flex h-3 w-3 mr-2" aria-hidden="true">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
@@ -464,7 +1088,7 @@
                             <i data-lucide="smartphone" class="w-5 h-5 flex-shrink-0 text-brand-orange" aria-hidden="true"></i><span data-i18n="s3_title">Apps Móviles</span>
                         </a>
                         <a href="pages/formacion-ia-empresas-ciudad-real.html" class="flex items-center gap-4 px-5 py-4 rounded-xl hover:bg-white/5 hover:text-brand-orange transition-colors text-sm font-semibold tracking-normal normal-case">
-                            <i data-lucide="graduation-cap" class="w-5 h-5 flex-shrink-0 text-brand-orange" aria-hidden="true"></i><span data-i18n="s4_title">Formación IA</span>
+                            <i data-lucide="graduation-cap" class="w-5 h-5 flex-shrink-0 text-brand-orange" aria-hidden="true"></i><span data-i18n="nav_s4">Formación IA</span>
                         </a>
                     </div>
                 </div>
@@ -477,7 +1101,7 @@
         <div class="flex items-center gap-3" style="margin-left:auto">
             <div class="nav-desk items-center gap-3">
                 <button id="lang-btn" onclick="toggleLang()" class="text-xs font-bold tracking-[0.15em] uppercase text-gray-400 hover:text-brand-orange transition-colors">EN</button>
-                <button onclick="toggleTheme()" class="flex items-center justify-center w-8 h-8 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Cambiar tema">
+                <button onclick="toggleTheme()" class="flex items-center justify-center w-8 h-8 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Cambiar tema" data-i18n-aria="a_theme">
                     <svg id="theme-icon-sun" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
                     <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
@@ -487,15 +1111,15 @@
                 </a>
             </div>
             <button class="nav-mob text-white relative z-50 flex items-center" onclick="toggleMenu()"
-                aria-label="Abrir menú de navegación" aria-expanded="false" id="menu-toggle">
+                aria-label="Abrir menú de navegación" data-i18n-aria="a_menu_open" aria-expanded="false" id="menu-toggle">
                 <svg class="w-8 h-8 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
     </nav>
 
-    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación"
+    <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación" data-i18n-aria="a_menu"
         class="fixed inset-0 bg-brand-darkest flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-all duration-300" style="z-index:200">
-        <button class="absolute top-6 right-6 text-white" onclick="toggleMenu()" aria-label="Cerrar menú">
+        <button class="absolute top-6 right-6 text-white" onclick="toggleMenu()" aria-label="Cerrar menú" data-i18n-aria="a_menu_close">
             <i data-lucide="x" class="w-10 h-10" aria-hidden="true"></i>
         </button>
         <div class="flex flex-col items-center gap-2">
@@ -504,11 +1128,11 @@
                 <svg id="mobile-srv-icon" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </button>
             <div id="mobile-srv-list" class="flex flex-col items-center gap-3" style="display:none">
-                <a href="pages/diseno-web-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors">Diseño Web & UX</a>
-                <a href="pages/desarrollo-web-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors">Desarrollo Web</a>
-                <a href="pages/agencia-ia-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors">IA & Automatización</a>
-                <a href="pages/apps-moviles-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors">Apps Móviles</a>
-                <a href="pages/formacion-ia-empresas-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors">Formación IA</a>
+                <a href="pages/diseno-web-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors" data-i18n="s1_title">Diseño Web & UX</a>
+                <a href="pages/desarrollo-web-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors" data-i18n="s5_title">Desarrollo Web</a>
+                <a href="pages/agencia-ia-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors" data-i18n="s2_title">IA & Automatización</a>
+                <a href="pages/apps-moviles-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors" data-i18n="s3_title">Apps Móviles</a>
+                <a href="pages/formacion-ia-empresas-ciudad-real.html" onclick="toggleMenu()" class="text-lg text-gray-300 hover:text-brand-orange transition-colors" data-i18n="nav_s4">Formación IA</a>
             </div>
         </div>
         <a href="#proyectos" onclick="toggleMenu()" class="text-2xl hover:text-brand-orange font-bold" data-i18n="nav_proyectos">Proyectos</a>
@@ -517,7 +1141,7 @@
         <a href="#contacto" onclick="toggleMenu()" class="text-2xl font-bold text-brand-orange" data-i18n="nav_contact">Contactar</a>
         <div class="flex items-center gap-5 mt-4">
             <button id="lang-btn-mobile" onclick="toggleLang()" class="text-sm font-bold tracking-widest uppercase text-gray-400 hover:text-brand-orange transition-colors flex items-center justify-center w-11 h-11">EN</button>
-            <button onclick="toggleTheme()" class="flex items-center justify-center w-10 h-10 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Cambiar tema">
+            <button onclick="toggleTheme()" class="flex items-center justify-center w-10 h-10 text-gray-400 hover:text-brand-orange transition-colors" aria-label="Cambiar tema" data-i18n-aria="a_theme">
                 <svg id="theme-icon-sun-m" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
                 <svg id="theme-icon-moon-m" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             </button>
@@ -526,130 +1150,156 @@
 
     <main id="main-content">
 
-        <header id="inicio"
-            class="relative bg-brand-darkest min-h-[85vh] md:min-h-screen flex items-center justify-center pt-28 pb-6 md:pt-24 md:pb-0 overflow-hidden">
+        <header id="inicio" class="h3d">
+            <div class="h3d-sticky">
 
-            <canvas id="neural-canvas" class="absolute inset-0 z-0 opacity-30 pointer-events-none"></canvas>
+                <div class="h3d-glow" aria-hidden="true"></div>
+                <div class="h3d-floor" aria-hidden="true"></div>
+                <div class="h3d-dust" id="h3d-dust" aria-hidden="true"></div>
 
-            <div class="hero-radial-mask absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-[radial-gradient(circle,#051024_35%,rgba(5,16,36,0.85)_65%,transparent_95%)] z-[1] pointer-events-none">
-            </div>
+                <div class="h3d-copy">
+                    <p class="h3d-badge h3d-in" style="--delay:.05s">
+                        <span style="font-weight:700;opacity:1" data-i18n="hero_badge">Diseño Web · Desarrollo Web</span><br>
+                        <span data-i18n="hero_badge_loc">Ciudad Real · España</span>
+                    </p>
 
-            <div
-                class="hero-float-card hidden xl:block absolute top-[25%] left-[4%] w-72 glass-card border border-brand-orange/30 rounded-3xl p-6 shadow-2xl animate-float z-[5] bg-brand-darkest/70 backdrop-blur-xl">
-                <div class="flex items-center gap-3 mb-5 border-b border-white/10 pb-4">
-                    <div
-                        class="w-10 h-10 rounded-xl bg-brand-orange flex items-center justify-center text-brand-darkest shadow-[0_0_15px_rgba(255,122,72,0.6)]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 8V4H8" />
-                            <rect width="16" height="12" x="4" y="8" rx="2" />
-                            <path d="M2 14h2" />
-                            <path d="M20 14h2" />
-                            <path d="M15 13v2" />
-                            <path d="M9 13v2" />
-                        </svg>
+                    <h1 class="h3d-h1 h3d-in" style="--delay:.15s">
+                        <span class="l1" data-i18n="hero_h1">Diseño web en Ciudad Real</span>
+                        <span class="l2" data-i18n="hero_h1_sub">con IA que multiplica tus ventas</span>
+                    </h1>
+
+                    <p class="h3d-p h3d-in" style="--delay:.28s" data-i18n="hero_p">
+                        Empresa de <strong>diseño y desarrollo web en Ciudad Real</strong> especializada en páginas web que convierten visitas en clientes. Unimos Ingeniería de Software y Diseño UX para crear webs, <strong>automatizar con IA</strong> y desarrollar apps móviles para empresas de toda España.
+                    </p>
+
+                    <div class="h3d-actions h3d-in" style="--delay:.4s">
+                        <a href="#contacto" class="h3d-cta">
+                            <span data-i18n="hero_cta">AUTOMATIZAR MI NEGOCIO</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank" rel="noopener" class="h3d-social" aria-label="LinkedIn" data-i18n-aria="a_li">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+                        </a>
+                        <a href="https://www.instagram.com/porvenir_agencia/" target="_blank" rel="noopener" class="h3d-social" aria-label="Instagram" data-i18n-aria="a_ig">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+                        </a>
                     </div>
-                    <div>
-                        <p class="text-xs font-bold text-white uppercase tracking-tight">Asistente IA</p>
-                        <p class="text-[10px] text-green-400 uppercase tracking-widest flex items-center gap-1.5"><span
-                                class="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span> Online</p>
-                    </div>
+
+                    <ul class="h3d-tags h3d-in" style="--delay:.5s" aria-label="Características" data-i18n-aria="a_feat">
+                        <li data-i18n="h3d_tag1">Sin WordPress</li>
+                        <li data-i18n="h3d_tag2">Mobile First</li>
+                        <li data-i18n="h3d_tag3">WCAG</li>
+                        <li data-i18n="h3d_tag4">SEO técnico</li>
+                    </ul>
                 </div>
-                <div class="flex flex-col gap-3">
-                    <div
-                        class="bg-white/10 rounded-2xl rounded-tl-none p-3 text-[11px] text-gray-200 max-w-[85%] self-start border border-white/5 shadow-sm">
-                        Hola Teresa, ¿qué proceso quieres automatizar hoy?
+
+                <!-- Escena decorativa -->
+                <div class="h3d-stage" id="h3d-stage" aria-hidden="true">
+                    <div class="h3d-chips">
+                        <span class="h3d-chip" style="--x:4%;--y:20%;--d:1.4;--delay:.9s"><i>AI</i><span data-i18n="h3d_c2">Agente 24/7</span></span>
+                        <span class="h3d-chip hide-sm" style="--x:50%;--y:17%;--d:.8;--delay:1.05s"><i>&lt;/&gt;</i><span data-i18n="h3d_c1">HTML semántico</span></span>
+                        <span class="h3d-chip" style="--x:60%;--y:88%;--d:1.8;--delay:1.2s"><i>iOS</i>Android</span>
+                        <span class="h3d-chip hide-sm" style="--x:0%;--y:72%;--d:.6;--delay:1.35s"><i>A11y</i>WCAG 2.2</span>
                     </div>
-                    <div
-                        class="bg-brand-orange/20 rounded-2xl rounded-tr-none p-3 text-[11px] text-white max-w-[85%] self-end text-right border border-brand-orange/20 shadow-sm">
-                        Quiero escalar mis ventas con inteligencia artificial.
-                    </div>
-                </div>
-            </div>
 
-            <div class="hero-float-card hidden xl:block absolute bottom-[25%] right-[4%] w-72 glass-card border border-white/10 rounded-3xl p-6 shadow-2xl animate-float z-[5] bg-brand-darkest/80 backdrop-blur-xl"
-                style="animation-delay: 2s;">
-                <div class="flex items-center justify-between mb-5 border-b border-white/5 pb-4">
-                    <div class="flex gap-1.5">
-                        <div class="w-2.5 h-2.5 rounded-full bg-red-400/60"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-400/60"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-green-400/60"></div>
-                    </div>
-                    <p class="text-[10px] uppercase tracking-widest text-gray-500 font-mono">engine.v3</p>
-                </div>
-                <div class="space-y-2 font-mono text-[11px] leading-relaxed">
-                    <p class="text-brand-orange">async function <span class="text-blue-300">optimize</span>() {</p>
-                    <p class="text-gray-400 pl-4">await <span class="text-yellow-300">UX</span>.design();</p>
-                    <p class="text-gray-400 pl-4">await <span class="text-yellow-300">AI</span>.deploy();</p>
-                    <p class="text-green-400 pl-4 font-bold animate-pulse">> return "Growth_Success";</p>
-                    <p class="text-brand-orange">}</p>
-                </div>
-            </div>
-
-            <div
-                class="container mx-auto flex flex-col items-center text-center px-6 relative z-20 fade-in-up mt-4 md:mt-0">
-
-                <h1 class="mb-10 md:mb-12 relative text-center max-w-4xl mx-auto flex flex-col items-center">
-
-                    <span
-                        class="block text-brand-orange/90 text-[10px] md:text-xs font-bold tracking-[0.35em] uppercase mb-8 md:mb-8 leading-[1.8] md:leading-relaxed">
-                        <span data-i18n="hero_badge">Diseño Web · Desarrollo Web</span><br class="block md:hidden">
-                        <span class="font-medium opacity-80" data-i18n="hero_badge_loc">Ciudad Real · España</span>
-                    </span>
-
-                    <span data-i18n="hero_h1"
-                        class="hero-h1-text block text-[1.8rem] min-[375px]:text-[2.1rem] md:text-4xl lg:text-5xl uppercase font-bold leading-[1.15] tracking-tight text-white mb-3 md:mb-2">
-                        DISEÑO WEB EN CIUDAD REAL
-                    </span>
-
-                    <span data-i18n="hero_h1_sub"
-                        class="hero-gradient-text block text-[1.25rem] min-[375px]:text-[1.45rem] md:text-2xl lg:text-4xl uppercase font-bold leading-[1.25] md:leading-[1.15] text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff9a76] to-[#ffd166]">
-                        CON IA QUE MULTIPLICA TUS VENTAS
-                    </span>
-                </h1>
-
-                <p data-i18n="hero_p"
-                    class="hero-paragraph text-gray-300/90 text-sm md:text-lg lg:text-xl leading-[1.8] md:leading-relaxed mb-14 font-light max-w-[90%] md:max-w-xl lg:max-w-2xl mx-auto drop-shadow-md">
-                    Empresa de <strong>diseño y desarrollo web en Ciudad Real</strong> especializada en páginas web que convierten visitas en clientes. Unimos Ingeniería de Software y Diseño UX para crear webs, <strong>automatizar con IA</strong> y desarrollar apps móviles para empresas de toda España.
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-6 w-full sm:w-auto">
-
-                    <a href="#contacto"
-                        class="group relative inline-flex items-center justify-center gap-3 px-8 py-5 md:px-10 md:py-5 bg-gradient-to-br from-brand-orange to-[#ff9a76] text-white overflow-hidden rounded-3xl 
-                        w-full sm:w-auto text-center transition-all duration-500 ease-out hover:-translate-y-1.5 hover:scale-105 shadow-[0_10px_20px_-10px_rgba(255,122,72,0.4)] hover:shadow-[0_20px_40px_-10px_rgba(255,122,72,0.6)]">
-                        <span data-i18n="hero_cta"
-                            class="relative z-10 font-bold text-[13px] md:text-sm tracking-widest uppercase">AUTOMATIZAR MI NEGOCIO</span>
-                        <div
-                            class="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]">
+                    <div class="h3d-scene">
+                        <div class="h3d-layer l-base">
+                            <div class="h3d-card" style="--delay:.1s">
+                                <svg class="traces" viewBox="0 0 400 400" aria-hidden="true">
+                                    <defs>
+                                        <radialGradient id="h3dCore" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff7a48" stop-opacity=".55" /><stop offset="1" stop-color="#ff7a48" stop-opacity="0" /></radialGradient>
+                                    </defs>
+                                    <circle cx="200" cy="200" r="190" fill="url(#h3dCore)" />
+                                    <g class="rings">
+                                        <circle class="ring-a" cx="200" cy="200" r="158" />
+                                        <circle class="ring-b" cx="200" cy="200" r="122" />
+                                        <circle class="ring-c" cx="200" cy="200" r="84" />
+                                    </g>
+                                    <g class="tr">
+                                        <path d="M200 150V92H110V48" /><path d="M200 250v58h92v44" /><path d="M150 200H92v-70H48" /><path d="M250 200h58v70h44" />
+                                        <path d="M176 168L120 112H70" /><path d="M224 168l56-56h50" /><path d="M176 232l-56 56H70" /><path d="M224 232l56 56h50" />
+                                    </g>
+                                    <g class="pulse">
+                                        <path d="M200 150V92H110V48" /><path d="M200 250v58h92v44" /><path d="M150 200H92v-70H48" /><path d="M250 200h58v70h44" />
+                                        <path d="M176 168L120 112H70" /><path d="M224 168l56-56h50" /><path d="M176 232l-56 56H70" /><path d="M224 232l56 56h50" />
+                                    </g>
+                                    <g class="nodes"><circle cx="110" cy="48" r="4" /><circle cx="292" cy="352" r="4" /><circle cx="48" cy="130" r="4" /><circle cx="352" cy="270" r="4" /><circle cx="70" cy="112" r="4" /><circle cx="330" cy="112" r="4" /><circle cx="70" cy="288" r="4" /><circle cx="330" cy="288" r="4" /></g>
+                                </svg>
+                                <i class="br tl"></i><i class="br tr"></i><i class="br bl"></i><i class="br brr"></i>
+                                <span class="tag">PORVENIR · CORE v3</span>
+                                <span class="leds"><i></i><i></i><i></i></span>
+                                <div class="core"><span>P</span></div>
+                            </div>
+                            <div class="h3d-label" style="--at:.85"><b>04</b><span data-i18n="h3d_l4">Formación IA</span></div>
                         </div>
-                    </a>
 
-                    <div class="flex items-center gap-5 mt-2 md:mt-0">
-                        <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
-                            class="hero-social-btn flex items-center justify-center w-12 h-12 md:w-12 md:h-12 rounded-3xl bg-brand-darkest/70 border border-white/10 backdrop-blur-sm text-white hover:text-brand-orange transition-all transform hover:scale-110">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path
-                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                                </path>
-                                <rect x="2" y="9" width="4" height="12"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/porvenir_agencia/" target="_blank"
-                            class="hero-social-btn flex items-center justify-center w-12 h-12 md:w-12 md:h-12 rounded-3xl bg-brand-darkest/70 border border-white/10 backdrop-blur-sm text-white hover:text-brand-orange transition-all transform hover:scale-110">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                        </a>
+                        <div class="h3d-beam"></div>
+
+                        <div class="h3d-layer l-web">
+                            <div class="h3d-card" style="--delay:.3s">
+                                <div class="bar"><i></i><i></i><i></i><u><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg><span data-i18n="h3d_url">tuweb.es</span></u><em><s></s><s></s><s></s></em></div>
+                                <div class="body">
+                                    <div class="cols">
+                                        <div class="txt">
+                                            <span class="sk big"></span>
+                                            <span class="sk big short"></span>
+                                            <span class="sk" style="width:92%"></span>
+                                            <span class="sk" style="width:70%"></span>
+                                            <div class="btns"><span class="sk or"></span><span class="sk ghost"></span></div>
+                                        </div>
+                                        <div class="vis"><b></b><i></i></div>
+                                    </div>
+                                    <div class="gauges">
+                                        <div class="g"><svg viewBox="0 0 36 36"><circle class="t" cx="18" cy="18" r="15" /><circle class="v" cx="18" cy="18" r="15" /></svg><span>90+</span><small>SEO</small></div>
+                                        <div class="g"><svg viewBox="0 0 36 36"><circle class="t" cx="18" cy="18" r="15" /><circle class="v" cx="18" cy="18" r="15" /></svg><span>90+</span><small>A11Y</small></div>
+                                        <div class="g"><svg viewBox="0 0 36 36"><circle class="t" cx="18" cy="18" r="15" /><circle class="v" cx="18" cy="18" r="15" /></svg><span>90+</span><small>CWV</small></div>
+                                        <svg class="spark" viewBox="0 0 90 36" preserveAspectRatio="none"><path d="M0 30 L12 24 L24 27 L36 16 L48 19 L60 8 L74 11 L90 2" /></svg>
+                                    </div>
+                                </div>
+                                <svg class="cursor" width="16" height="16" viewBox="0 0 24 24"><path d="M4 2l16 9-7 2-3 7z" fill="#fff" stroke="#051024" stroke-width="1.5" stroke-linejoin="round" /></svg>
+                            </div>
+                            <div class="h3d-label" style="--at:.3"><b>01</b><span data-i18n="h3d_l1">Diseño web</span></div>
+                        </div>
+
+                        <div class="h3d-layer l-ai">
+                            <div class="h3d-card" style="--delay:.5s">
+                                <div class="body">
+                                    <div class="head"><em></em><span data-i18n="h3d_ai">Asistente IA</span><s>WhatsApp</s><s data-i18n="h3d_voice">Voz</s></div>
+                                    <div class="bub ai"><span data-i18n="h3d_b1">¿Qué proceso quieres automatizar hoy?</span></div>
+                                    <div class="bub me"><span data-i18n="h3d_b2">Escalar mis ventas con IA.</span></div>
+                                    <div class="bub ai typing"><i></i><i></i><i></i></div>
+                                    <div class="flow">
+                                        <span class="n"><b>Lead</b></span><span class="ln"></span><span class="n hot"><b>IA</b></span><span class="ln"></span><span class="n"><b>CRM</b></span>
+                                    </div>
+                                    <div class="callrow">
+                                        <div class="wave" aria-hidden="true"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i><i style="--i:12"></i><i style="--i:13"></i><i style="--i:14"></i></div>
+                                        <code>00:24</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="h3d-label" style="--at:.55"><b>02</b><span data-i18n="h3d_l2">IA y automatización</span></div>
+                        </div>
+
+                        <div class="h3d-layer l-app">
+                            <div class="h3d-card" style="--delay:.7s">
+                                <div class="island"></div>
+                                <div class="body">
+                                    <div class="hello"><span class="av"></span><span class="sk" style="width:46%"></span></div>
+                                    <div class="ring"><b></b></div>
+                                    <div class="bars"><i style="--h:40%"></i><i style="--h:62%"></i><i style="--h:48%"></i><i style="--h:78%"></i><i style="--h:58%"></i><i style="--h:92%"></i></div>
+                                    <div class="row"><b></b></div>
+                                    <div class="row"><b></b></div>
+                                </div>
+                                <div class="toast"><i></i><span><b></b><b></b></span></div>
+                                <div class="tabs"><i class="on"></i><i></i><i></i><i></i></div>
+                            </div>
+                            <div class="h3d-label" style="--at:.78"><b>03</b><span data-i18n="h3d_l3">Apps móviles</span></div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="h3d-hint" aria-hidden="true"><span></span>Scroll</div>
+                <div class="h3d-progress" aria-hidden="true"></div>
             </div>
         </header>
 
@@ -659,17 +1309,17 @@
                 <div
                     class="flex gap-20 items-center text-gray-400 font-bold text-lg md:text-xl uppercase tracking-[0.2em] px-8">
                     <span class="flex items-center gap-3"><i data-lucide="check-circle"
-                            class="w-10 h-10 text-brand-orange" aria-hidden="true"></i> + Eficiencia Operativa</span>
+                            class="w-10 h-10 text-brand-orange" aria-hidden="true"></i> <span data-i18n="tk1">+ Eficiencia Operativa</span></span>
                     <span class="flex items-center gap-3"><i data-lucide="zap" class="w-10 h-10 text-brand-orange"
-                            aria-hidden="true"></i> + Conversión Web</span>
+                            aria-hidden="true"></i> <span data-i18n="tk2">+ Conversión Web</span></span>
                     <span class="flex items-center gap-3"><i data-lucide="shield-check"
-                            class="w-10 h-10 text-brand-orange" aria-hidden="true"></i> 100% Cumplimiento Legal</span>
+                            class="w-10 h-10 text-brand-orange" aria-hidden="true"></i> <span data-i18n="tk3">100% Cumplimiento Legal</span></span>
                     <span class="flex items-center gap-3"><i data-lucide="check-circle"
-                            class="w-10 h-10 text-brand-orange" aria-hidden="true"></i> + Eficiencia Operativa</span>
+                            class="w-10 h-10 text-brand-orange" aria-hidden="true"></i> <span data-i18n="tk1">+ Eficiencia Operativa</span></span>
                     <span class="flex items-center gap-3"><i data-lucide="zap" class="w-10 h-10 text-brand-orange"
-                            aria-hidden="true"></i> + Conversión Web</span>
+                            aria-hidden="true"></i> <span data-i18n="tk2">+ Conversión Web</span></span>
                     <span class="flex items-center gap-3"><i data-lucide="shield-check"
-                            class="w-10 h-10 text-brand-orange" aria-hidden="true"></i> 100% Cumplimiento Legal</span>
+                            class="w-10 h-10 text-brand-orange" aria-hidden="true"></i> <span data-i18n="tk3">100% Cumplimiento Legal</span></span>
                 </div>
             </div>
         </section>
@@ -851,28 +1501,17 @@
                             <div
                                 class="relative h-52 bg-gradient-to-br from-[#0a0f1e] to-[#1a1040] flex-shrink-0 [clip-path:inset(0_round_24px_24px_0_0)]">
                                 <img src="assets/img/proyecto-orientaia.png"
-                                    alt="Web de OrientaIA — diseño oscuro estilo space-corporate con animaciones de partículas"
-                                    width="900" height="208" loading="lazy"
+                                    alt="Web de OrientaIA: consultoría de inteligencia artificial con diseño oscuro editorial, titular serif y objeto 3D" data-i18n-alt="al_oi"
+                                    width="900" height="208" decoding="async"
                                     class="w-full h-full object-cover object-top transition-[filter] duration-700 group-hover:brightness-110"
                                     onerror="this.style.display='none'">
-                                <div class="absolute inset-0 bg-gradient-to-t from-brand-darkest/80 to-transparent">
-                                </div>
-                                <div class="absolute bottom-4 left-6 flex gap-2 flex-wrap">
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-widest bg-brand-orange/20 text-brand-orange border border-brand-orange/30 px-3 py-1 rounded-full">UI/UX</span>
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-widest bg-brand-darkest/75 text-gray-200 border border-white/20 px-3 py-1 rounded-full">Diseño
-                                        web</span>
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-widest bg-brand-darkest/75 text-gray-200 border border-white/20 px-3 py-1 rounded-full">Alta
-                                        conversión</span>
-                                </div>
-                            </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-brand-darkest/40 to-transparent">
+                                </div></div>
                             <div class="p-8 flex flex-col flex-grow">
-                                <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">OrientaIA ·
-                                    Consultoría IA</p>
-                                <h3 data-i18n="p1_h3" class="text-xl font-bold text-white mb-3">Web inmersiva "Space-Corporate" para consultora de IA</h3>
-                                <p data-i18n="p1_desc" class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Diseño a medida con estética Dark Navy &amp; Gold, fondo de partículas en Canvas, efectos de glassmorphism y arquitectura de conversión pensada para convertir la complejidad de la IA en un mensaje claro que genera contactos.</p>
+                                <ul class="pf-tags" aria-label="Etiquetas del proyecto" data-i18n-aria="a_ptags"><li class="pf-tag pf-tag--accent" data-i18n="pf_uiux">UI/UX</li><li class="pf-tag" data-i18n="pf_web">Diseño web</li><li class="pf-tag" data-i18n="pf_conv">Alta conversión</li></ul>
+                                <p data-i18n="pf_e1" class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">OrientaIA · Consultoría IA</p>
+                                <h3 data-i18n="p1_h3" class="text-xl font-bold text-white mb-3">Web editorial con objeto 3D para una consultora de IA</h3>
+                                <p data-i18n="p1_desc" class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Diseño a medida con titulares serif en cursiva, un objeto 3D como protagonista del hero, partículas y tarjetas de cristal flotantes. La página explica la alianza entre Porvenir y Extern Sales, muestra los sectores y lleva a un único contacto directo por WhatsApp.</p>
                                 <div
                                     class="flex items-start gap-3 bg-brand-orange/5 border border-brand-orange/20 rounded-2xl p-4">
                                     <i data-lucide="trending-up" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5"
@@ -896,26 +1535,15 @@
                             <div
                                 class="relative h-52 bg-gradient-to-br from-[#1a150f] to-[#2a2015] flex-shrink-0 [clip-path:inset(0_round_24px_24px_0_0)]">
                                 <img src="assets/img/proyecto-legalex.png"
-                                    alt="Web de Legalex — diseño cálido con tonos beige y turquesa para despacho de abogacía"
-                                    width="900" height="208" loading="lazy"
+                                    alt="Web de Legalex: diseño cálido con tonos beige y turquesa para despacho de abogacía" data-i18n-alt="al_lg"
+                                    width="900" height="208" decoding="async"
                                     class="w-full h-full object-cover object-top transition-[filter] duration-700 group-hover:brightness-110"
                                     onerror="this.style.display='none'">
-                                <div class="absolute inset-0 bg-gradient-to-t from-brand-darkest/80 to-transparent">
-                                </div>
-                                <div class="absolute bottom-4 left-6 flex gap-2 flex-wrap">
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-widest bg-brand-orange/20 text-brand-orange border border-brand-orange/30 px-3 py-1 rounded-full">UI/UX</span>
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-widest bg-brand-darkest/75 text-gray-200 border border-white/20 px-3 py-1 rounded-full">Diseño
-                                        web</span>
-                                    <span
-                                        class="text-[10px] font-bold uppercase tracking-widest bg-brand-darkest/75 text-gray-200 border border-white/20 px-3 py-1 rounded-full">SEO
-                                        técnico</span>
-                                </div>
-                            </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-brand-darkest/40 to-transparent">
+                                </div></div>
                             <div class="p-8 flex flex-col flex-grow">
-                                <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Legalex ·
-                                    Abogacía y Mediación</p>
+                                <ul class="pf-tags" aria-label="Etiquetas del proyecto" data-i18n-aria="a_ptags"><li class="pf-tag pf-tag--accent" data-i18n="pf_uiux">UI/UX</li><li class="pf-tag" data-i18n="pf_web">Diseño web</li><li class="pf-tag" data-i18n="pf_seo">SEO técnico</li></ul>
+                                <p data-i18n="pf_e2" class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Legalex · Abogacía y Mediación</p>
                                 <h3 data-i18n="p2_h3" class="text-xl font-bold text-white mb-3">Web a medida para despacho de abogacía y mediación</h3>
                                 <p data-i18n="p2_desc" class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Legalex no quería una web de abogados más. Su filosofía de acuerdos frente a batallas merecía una identidad propia: cálida, cercana y alejada de la frialdad del sector. Creamos una web que transmite diálogo y confianza desde el primer vistazo.</p>
                                 <div
@@ -944,17 +1572,10 @@
                                     <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Porvenir
                                         Agencia Digital</p>
                                     <div class="flex gap-2 flex-wrap mb-4 mt-3">
-                                        <span
-                                            class="text-[10px] font-bold uppercase tracking-widest bg-brand-orange/20 text-brand-orange border border-brand-orange/30 px-3 py-1 rounded-full">UI/UX</span>
-                                        <span
-                                            class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">Desarrollo
-                                            web</span>
-                                        <span
-                                            class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">SEO
-                                            técnico</span>
-                                        <span
-                                            class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">Alta
-                                            conversión</span>
+                                        <span                                            data-i18n="pf_uiux" class="text-[10px] font-bold uppercase tracking-widest bg-brand-orange/20 text-brand-orange border border-brand-orange/30 px-3 py-1 rounded-full">UI/UX</span>
+                                        <span                                            data-i18n="pf_dev" class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">Desarrollo web</span>
+                                        <span                                            data-i18n="pf_seo" class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">SEO técnico</span>
+                                        <span                                            data-i18n="pf_conv" class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">Alta conversión</span>
                                     </div>
                                     <h3 data-i18n="p3_h3" class="text-xl font-bold text-white mb-3">Espera... ¿y esta web?</h3>
                                     <p data-i18n="p3_desc" class="text-gray-400 text-sm leading-relaxed mb-6">Exacto, la que estás navegando ahora mismo. Cada animación, el cursor naranja que te sigue, las partículas del fondo, cada sección y cada microcopy construidos a mano por Porvenir. Cero plantillas, cero plugins, HTML + Tailwind + JavaScript puro. Presumir un poco está justificado cuando trabajas lo que predicas.</p>
@@ -972,8 +1593,7 @@
                                 <div
                                     class="hidden md:flex flex-col items-center justify-center w-44 h-44 rounded-3xl bg-brand-darkest border border-brand-orange/20 flex-shrink-0 text-center p-6 gap-3">
                                     <i data-lucide="code-2" class="w-10 h-10 text-brand-orange" aria-hidden="true"></i>
-                                    <p class="text-[10px] text-gray-500 uppercase tracking-widest leading-snug">Hecho
-                                        por nosotros</p>
+                                    <p data-i18n="p3_made" class="text-[10px] text-gray-500 uppercase tracking-widest leading-snug">Hecho por nosotros</p>
                                     <p class="text-[11px] text-brand-orange/60 font-mono leading-snug">
                                         build.by<br>porvenir()</p>
                                 </div>
@@ -984,15 +1604,10 @@
                         <article class="glass-card rounded-3xl overflow-hidden flex flex-col lg:col-span-2 group">
                             <div class="p-8 md:p-10 grid md:grid-cols-2 gap-10 items-center">
                                 <div class="flex flex-col">
-                                    <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Atlas
-                                        Eventos · Escuela Infantil "Risas y Candilejas"</p>
+                                    <p data-i18n="pf_e4" class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Atlas Eventos · Escuela Infantil "Risas y Candilejas"</p>
                                     <div class="flex gap-2 flex-wrap mb-4 mt-3">
-                                        <span
-                                            class="text-[10px] font-bold uppercase tracking-widest bg-brand-orange/20 text-brand-orange border border-brand-orange/30 px-3 py-1 rounded-full">Automatización
-                                            IA</span>
-                                        <span
-                                            class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">WhatsApp
-                                            API</span>
+                                        <span                                            data-i18n="pf_ai" class="text-[10px] font-bold uppercase tracking-widest bg-brand-orange/20 text-brand-orange border border-brand-orange/30 px-3 py-1 rounded-full">Automatización IA</span>
+                                        <span                                            data-i18n="pf_wa" class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">WhatsApp API</span>
                                         <span
                                             class="text-[10px] font-bold uppercase tracking-widest bg-white/10 text-gray-300 border border-white/10 px-3 py-1 rounded-full">CRM</span>
                                     </div>
@@ -1011,34 +1626,30 @@
                                         <span data-i18n="p4_svc">Servicio: IA &amp; Automatización</span>
                                     </a>
                                 </div>
-                                <div class="grid grid-cols-2 gap-4">
+                                <div class="grid grid-cols-2 gap-4 metrics-grid">
                                     <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-1">
                                         <i data-lucide="clock" class="w-6 h-6 text-brand-orange mb-2"
                                             aria-hidden="true"></i>
                                         <p class="text-2xl font-bold text-white">&lt; 2 min</p>
-                                        <p class="text-xs text-gray-500 leading-snug">Proceso de inscripción completo
-                                            vía WhatsApp</p>
+                                        <p data-i18n="p4_m1" class="text-xs text-gray-500 leading-snug">Proceso de inscripción completo vía WhatsApp</p>
                                     </div>
                                     <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-1">
                                         <i data-lucide="mail-check" class="w-6 h-6 text-brand-orange mb-2"
                                             aria-hidden="true"></i>
                                         <p class="text-2xl font-bold text-white">0 h</p>
-                                        <p class="text-xs text-gray-500 leading-snug">Gestión manual en confirmaciones
-                                            de plaza</p>
+                                        <p data-i18n="p4_m2" class="text-xs text-gray-500 leading-snug">Gestión manual en confirmaciones de plaza</p>
                                     </div>
                                     <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-1">
                                         <i data-lucide="layers" class="w-6 h-6 text-brand-orange mb-2"
                                             aria-hidden="true"></i>
                                         <p class="text-2xl font-bold text-white">3</p>
-                                        <p class="text-xs text-gray-500 leading-snug">Sistemas integrados sin coste
-                                            adicional de software</p>
+                                        <p data-i18n="p4_m3" class="text-xs text-gray-500 leading-snug">Sistemas integrados sin coste adicional de software</p>
                                     </div>
                                     <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-1">
                                         <i data-lucide="shield" class="w-6 h-6 text-brand-orange mb-2"
                                             aria-hidden="true"></i>
                                         <p class="text-2xl font-bold text-white">100%</p>
-                                        <p class="text-xs text-gray-500 leading-snug">Cumplimiento LOPD desde el primer
-                                            mensaje</p>
+                                        <p data-i18n="p4_m4" class="text-xs text-gray-500 leading-snug">Cumplimiento LOPD desde el primer mensaje</p>
                                     </div>
                                 </div>
                             </div>
@@ -1056,7 +1667,7 @@
                             class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase block mb-4">Clientes</span>
                         <h2 id="testimonios-heading" data-i18n="tst_h2" class="text-3xl md:text-4xl font-bold">Lo que dicen quienes ya trabajan con nosotros</h2>
                         <div class="flex items-center justify-center gap-1 mt-4"
-                            aria-label="5 de 5 estrellas en Google">
+                            aria-label="5 de 5 estrellas en Google" data-i18n-aria="a_5of5">
                             <svg class="w-5 h-5 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true">
                                 <path
                                     d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z" />
@@ -1080,65 +1691,65 @@
                             <span data-i18n="tst_rating" class="ml-2 text-sm text-gray-400 font-medium">5.0 en Google</span>
                         </div>
                     </div>
-                    <div class="relative fade-in-up" id="reviews-carousel" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
+                    <div class="relative fade-in-up" id="reviews-carousel" aria-roledescription="carrusel" aria-label="Reseñas de clientes" data-i18n-aria="a_reviews">
                         <div class="overflow-hidden pb-px">
                             <div id="reviews-track" class="flex" style="transition:transform .5s ease-in-out;">
 
-                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 1 de 4">
+                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 1 de 4" data-i18n-aria="a_r1of4">
                                     <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full">
-                                        <div class="flex gap-0.5" aria-label="5 estrellas"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
-                                        <blockquote class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Teresa captó la esencia desde el minuto 1. Supo plasmar lo que estábamos buscando, adecuándose a nuestro público y mostrando nuestros servicios de la mejor manera, sin olvidar la usabilidad en todo momento. <strong>Recomendable 100%.</strong>"</blockquote>
+                                        <div class="flex gap-0.5" aria-label="5 estrellas" data-i18n-aria="a_5stars"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
+                                        <blockquote data-i18n="tq1" class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Teresa captó la esencia desde el minuto 1. Supo plasmar lo que estábamos buscando, adecuándose a nuestro público y mostrando nuestros servicios de la mejor manera, sin olvidar la usabilidad en todo momento. <strong>Recomendable 100%.</strong>"</blockquote>
                                         <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
                                         <footer class="flex items-center gap-3 pt-4 border-t border-white/5 mt-auto">
                                             <div class="w-9 h-9 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center font-bold text-sm flex-shrink-0" aria-hidden="true">T</div>
                                             <div>
                                                 <p class="text-white text-sm font-bold">Tuete Agencia</p>
-                                                <p class="text-gray-500 text-xs">Diseño web</p>
+                                                <p data-i18n="tr1" class="text-gray-500 text-xs">Diseño web</p>
                                             </div>
                                         </footer>
                                     </article>
                                 </div>
 
-                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 2 de 4">
+                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 2 de 4" data-i18n-aria="a_r2of4">
                                     <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full border-brand-orange/20 bg-brand-orange/5">
-                                        <div class="flex gap-0.5" aria-label="5 estrellas"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
-                                        <blockquote class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Supieron captar perfectamente la esencia de Legalex. El resultado ha superado nuestras expectativas. Destacar la cercanía, la implicación y la facilidad en todo el proceso. <strong>Han entendido nuestro proyecto casi como si fuera suyo.</strong>"</blockquote>
+                                        <div class="flex gap-0.5" aria-label="5 estrellas" data-i18n-aria="a_5stars"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
+                                        <blockquote data-i18n="tq2" class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Supieron captar perfectamente la esencia de Legalex. El resultado ha superado nuestras expectativas. Destacar la cercanía, la implicación y la facilidad en todo el proceso. <strong>Han entendido nuestro proyecto casi como si fuera suyo.</strong>"</blockquote>
                                         <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
                                         <footer class="flex items-center gap-3 pt-4 border-t border-white/5 mt-auto">
                                             <div class="w-9 h-9 rounded-full bg-brand-blue/40 text-white flex items-center justify-center font-bold text-sm flex-shrink-0" aria-hidden="true">M</div>
                                             <div>
                                                 <p class="text-white text-sm font-bold">Maria Jesus Ruidiaz</p>
-                                                <p class="text-gray-500 text-xs">Legalex · Diseño web</p>
+                                                <p data-i18n="tr2" class="text-gray-500 text-xs">Legalex · Diseño web</p>
                                             </div>
                                         </footer>
                                     </article>
                                 </div>
 
-                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 3 de 4">
+                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 3 de 4" data-i18n-aria="a_r3of4">
                                     <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full">
-                                        <div class="flex gap-0.5" aria-label="5 estrellas"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
-                                        <blockquote class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Una formación muy completa, fácil de entender sobre digitalización e inteligencia artificial para empresas en Ciudad Real. Teresa consigue que conceptos complejos sean <strong>accesibles y aplicables desde el primer día.</strong>"</blockquote>
+                                        <div class="flex gap-0.5" aria-label="5 estrellas" data-i18n-aria="a_5stars"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
+                                        <blockquote data-i18n="tq3" class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Una formación muy completa, fácil de entender sobre digitalización e inteligencia artificial para empresas en Ciudad Real. Teresa consigue que conceptos complejos sean <strong>accesibles y aplicables desde el primer día.</strong>"</blockquote>
                                         <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
                                         <footer class="flex items-center gap-3 pt-4 border-t border-white/5 mt-auto">
                                             <div class="w-9 h-9 rounded-full bg-brand-orange/20 text-brand-orange flex items-center justify-center font-bold text-sm flex-shrink-0" aria-hidden="true">B</div>
                                             <div>
                                                 <p class="text-white text-sm font-bold">Bárbara Picazo</p>
-                                                <p class="text-gray-500 text-xs">Formación en IA</p>
+                                                <p data-i18n="tr3" class="text-gray-500 text-xs">Formación en IA</p>
                                             </div>
                                         </footer>
                                     </article>
                                 </div>
 
-                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 4 de 4">
+                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 4 de 4" data-i18n-aria="a_r4of4">
                                     <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full">
-                                        <div class="flex gap-0.5" aria-label="5 estrellas"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
-                                        <blockquote class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Trabajar con Teresa ha sido un acierto total para mi negocio. Le encargué la creación de toda la imagen de marca y el resultado ha superado mis expectativas. Se ha encargado de todo: el logotipo, los vinilos del local, la carta y el arranque de mi Instagram. <strong>Ha sabido captar a la perfección lo que quería transmitir.</strong> 100% recomendable."</blockquote>
+                                        <div class="flex gap-0.5" aria-label="5 estrellas" data-i18n-aria="a_5stars"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
+                                        <blockquote data-i18n="tq4" class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Trabajar con Teresa ha sido un acierto total para mi negocio. Le encargué la creación de toda la imagen de marca y el resultado ha superado mis expectativas. Se ha encargado de todo: el logotipo, los vinilos del local, la carta y el arranque de mi Instagram. <strong>Ha sabido captar a la perfección lo que quería transmitir.</strong> 100% recomendable."</blockquote>
                                         <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
                                         <footer class="flex items-center gap-3 pt-4 border-t border-white/5 mt-auto">
                                             <div class="w-9 h-9 rounded-full bg-brand-blue/40 text-white flex items-center justify-center font-bold text-sm flex-shrink-0" aria-hidden="true">O</div>
                                             <div>
                                                 <p class="text-white text-sm font-bold">Olimpo Shisha Lounge</p>
-                                                <p class="text-gray-500 text-xs">Imagen de marca · Ciudad Real</p>
+                                                <p data-i18n="tr4" class="text-gray-500 text-xs">Imagen de marca · Ciudad Real</p>
                                             </div>
                                         </footer>
                                     </article>
@@ -1147,16 +1758,16 @@
                             </div>
                         </div>
                         <div class="flex items-center justify-center gap-6 mt-8">
-                            <button id="reviews-prev" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all" aria-label="Reseña anterior">
+                            <button id="reviews-prev" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all" aria-label="Reseña anterior" data-i18n-aria="a_prev">
                                 <i data-lucide="chevron-left" class="w-5 h-5" aria-hidden="true"></i>
                             </button>
-                            <div id="reviews-dots" class="flex gap-2" role="tablist" aria-label="Seleccionar reseña">
-                                <button class="h-2 rounded-full bg-brand-orange w-4 transition-all duration-300" role="tab" aria-selected="true" aria-label="Reseña 1"></button>
-                                <button class="h-2 rounded-full bg-white/20 w-2 transition-all duration-300" role="tab" aria-selected="false" aria-label="Reseña 2"></button>
-                                <button class="h-2 rounded-full bg-white/20 w-2 transition-all duration-300" role="tab" aria-selected="false" aria-label="Reseña 3"></button>
-                                <button class="h-2 rounded-full bg-white/20 w-2 transition-all duration-300" role="tab" aria-selected="false" aria-label="Reseña 4"></button>
+                            <div id="reviews-dots" class="flex gap-2" role="tablist" aria-label="Seleccionar reseña" data-i18n-aria="a_select">
+                                <button class="h-2 rounded-full bg-brand-orange w-4 transition-all duration-300" role="tab" aria-selected="true" aria-label="Reseña 1" data-i18n-aria="a_r1"></button>
+                                <button class="h-2 rounded-full bg-white/20 w-2 transition-all duration-300" role="tab" aria-selected="false" aria-label="Reseña 2" data-i18n-aria="a_r2"></button>
+                                <button class="h-2 rounded-full bg-white/20 w-2 transition-all duration-300" role="tab" aria-selected="false" aria-label="Reseña 3" data-i18n-aria="a_r3"></button>
+                                <button class="h-2 rounded-full bg-white/20 w-2 transition-all duration-300" role="tab" aria-selected="false" aria-label="Reseña 4" data-i18n-aria="a_r4"></button>
                             </div>
-                            <button id="reviews-next" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all" aria-label="Reseña siguiente">
+                            <button id="reviews-next" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all" aria-label="Reseña siguiente" data-i18n-aria="a_next">
                                 <i data-lucide="chevron-right" class="w-5 h-5" aria-hidden="true"></i>
                             </button>
                         </div>
@@ -1171,7 +1782,7 @@
                                 <img src="assets/img/inteligencia_artificial_teresa_rodriguez_de_dios.jpg"
                                     loading="lazy" fetchpriority="low" width="500" height="500"
                                     class="w-full h-full object-cover transition-all duration-700"
-                                    alt="Teresa Rodríguez de Dios, fundadora de Porvenir Agencia Digital en Ciudad Real, ingeniera de software especializada en IA y diseño web"
+                                    alt="Teresa Rodríguez de Dios, fundadora de Porvenir Agencia Digital en Ciudad Real, ingeniera de software especializada en IA y diseño web" data-i18n-alt="al_tr"
                                     onerror="this.src='https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800'">
                             </div>
                         </div>
@@ -1293,7 +1904,7 @@
                             </address>
                         </div>
                         <div
-                            class="fade-in-up bg-white/5 backdrop-blur-sm p-6 md:p-10 rounded-3xl border border-white/5 relative overflow-hidden">
+                            class="fade-in-up bg-white/5 p-6 md:p-10 rounded-3xl border border-white/5 relative overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-br from-brand-orange/5 to-transparent pointer-events-none"
                                 aria-hidden="true"></div>
                             <h3 class="text-xl font-bold mb-2 relative z-10" data-i18n="ct_form_h3">Escríbeme directamente</h3>
@@ -1322,7 +1933,7 @@
                                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-orange transition-colors">
                                     </div>
                                     <div>
-                                        <label for="cf-service" class="sr-only">Servicio de interés</label>
+                                        <label for="cf-service" class="sr-only" data-i18n="ct_sr_service">Servicio de interés</label>
                                         <select id="cf-service" name="user_service"
                                             class="w-full bg-brand-darkest border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-400 focus:outline-none focus:border-brand-orange transition-colors appearance-none">
                                             <option value="" disabled selected data-i18n="ct_service">¿Qué necesitas?</option>
@@ -1335,7 +1946,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="cf-message" class="sr-only">Mensaje</label>
+                                    <label for="cf-message" class="sr-only" data-i18n="ct_sr_message">Mensaje</label>
                                     <textarea id="cf-message" name="message" rows="3"
                                         placeholder="Cuéntame brevemente tu proyecto..." data-i18n-placeholder="ct_message"
                                         class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-orange transition-colors resize-none"></textarea>
@@ -1386,7 +1997,7 @@
         target="_blank" rel="noopener noreferrer"
         class="fixed bottom-24 right-5 md:bottom-8 md:right-8 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 active:scale-95 transition-transform"
         style="background-color:#25D366"
-        aria-label="Contactar por WhatsApp">
+        aria-label="Contactar por WhatsApp" data-i18n-aria="a_wa">
         <svg viewBox="0 0 32 32" class="w-7 h-7" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M16 2C8.268 2 2 8.268 2 16c0 2.463.643 4.775 1.77 6.783L2 30l7.42-1.744A13.914 13.914 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5c-2.197 0-4.26-.59-6.034-1.62l-.432-.258-4.405 1.035 1.055-4.3-.28-.44A11.472 11.472 0 014.5 16C4.5 9.596 9.596 4.5 16 4.5S27.5 9.596 27.5 16 22.404 27.5 16 27.5zm6.41-8.574c-.35-.175-2.073-1.022-2.394-1.138-.32-.116-.553-.175-.785.175-.233.35-.9 1.138-1.103 1.371-.203.233-.406.262-.757.087-.35-.175-1.477-.544-2.813-1.735-1.04-.927-1.742-2.072-1.945-2.422-.204-.35-.022-.54.153-.714.157-.157.35-.408.524-.612.175-.204.233-.35.35-.583.116-.233.058-.437-.029-.612-.088-.175-.785-1.893-1.076-2.593-.283-.68-.57-.588-.785-.599l-.668-.012c-.233 0-.612.087-.932.437-.32.35-1.223 1.196-1.223 2.916s1.252 3.382 1.427 3.615c.175.233 2.465 3.763 5.974 5.28.835.36 1.486.576 1.994.737.838.267 1.601.229 2.204.139.672-.1 2.073-.847 2.364-1.666.29-.82.29-1.522.203-1.666-.086-.145-.32-.233-.669-.408z"/>
         </svg>
@@ -1398,7 +2009,7 @@
                 <div class="ft-col flex flex-col items-center gap-4">
                     <a href="#"
                         class="text-lg font-bold tracking-widest flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity text-white"
-                        aria-label="Porvenir Agencia Digital — volver al inicio">
+                        aria-label="Porvenir Agencia Digital, volver al inicio" data-i18n-aria="a_home2">
                         <span class="relative flex h-2 w-2 mr-2" aria-hidden="true">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
@@ -1407,7 +2018,7 @@
                     </a>
                     <div class="flex gap-3">
                         <a href="https://www.linkedin.com/in/teresa-rodríguez-de-dios" target="_blank"
-                            rel="noopener noreferrer" aria-label="LinkedIn de Teresa Rodríguez de Dios"
+                            rel="noopener noreferrer" aria-label="LinkedIn de Teresa Rodríguez de Dios" data-i18n-aria="a_li2"
                             class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -1418,7 +2029,7 @@
                             </svg>
                         </a>
                         <a href="https://www.instagram.com/porvenir_agencia/" target="_blank" rel="noopener noreferrer"
-                            aria-label="Instagram de Porvenir Agencia Digital"
+                            aria-label="Instagram de Porvenir Agencia Digital" data-i18n-aria="a_ig2"
                             class="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-brand-orange hover:border-brand-orange transition-all">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -1430,15 +2041,15 @@
                         </a>
                     </div>
                 </div>
-                <nav aria-label="Servicios" class="ft-col flex flex-col items-center gap-2">
-                    <p class="text-[10px] font-bold uppercase tracking-widest text-white mb-1">Servicios</p>
-                    <a href="pages/diseno-web-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Diseño Web</a>
-                    <a href="pages/desarrollo-web-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Desarrollo Web</a>
-                    <a href="pages/agencia-ia-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">IA & Automatización</a>
-                    <a href="pages/apps-moviles-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Apps Móviles</a>
-                    <a href="pages/formacion-ia-empresas-ciudad-real.html" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Formación IA</a>
+                <nav aria-label="Servicios" data-i18n-aria="a_srv" class="ft-col flex flex-col items-center gap-2">
+                    <p data-i18n="nav_servicios" class="text-[10px] font-bold uppercase tracking-widest text-white mb-1">Servicios</p>
+                    <a href="pages/diseno-web-ciudad-real.html" data-i18n="ft_s1" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Diseño Web</a>
+                    <a href="pages/desarrollo-web-ciudad-real.html" data-i18n="s5_title" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Desarrollo Web</a>
+                    <a href="pages/agencia-ia-ciudad-real.html" data-i18n="s2_title" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">IA & Automatización</a>
+                    <a href="pages/apps-moviles-ciudad-real.html" data-i18n="s3_title" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Apps Móviles</a>
+                    <a href="pages/formacion-ia-empresas-ciudad-real.html" data-i18n="nav_s4" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Formación IA</a>
                 </nav>
-                <nav aria-label="Legal" class="ft-col flex flex-col items-center gap-2">
+                <nav aria-label="Legal" data-i18n-aria="a_legal" class="ft-col flex flex-col items-center gap-2">
                     <p class="text-[10px] font-bold uppercase tracking-widest text-white mb-1">Legal</p>
                     <a href="pages/aviso-legal.html" data-i18n="ft_legal1" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Aviso legal</a>
                     <a href="pages/politica-privacidad.html" data-i18n="ft_legal2" class="text-xs text-gray-500 hover:text-brand-orange transition-colors">Política de privacidad</a>
@@ -1446,8 +2057,7 @@
                 </nav>
             </div>
             <div class="border-t border-white/5 pt-3 pb-1 text-center">
-                <p class="text-gray-600 text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Porvenir Agencia
-                    Digital · Ciudad Real, España. Todos los derechos reservados.</p>
+                <p data-i18n="ft_copy" class="text-gray-600 text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Porvenir Agencia Digital · Ciudad Real, España. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -1543,6 +2153,7 @@
             var spinner = document.getElementById('cf-spinner');
             var submitBtn = document.getElementById('cf-submit');
 
+            function L(es, en) { return document.documentElement.lang === 'en' ? en : es; }
             function setFeedback(msg, isError) {
                 feedback.textContent = msg;
                 feedback.className = 'text-sm font-bold py-3 px-4 rounded-xl text-center ' +
@@ -1557,32 +2168,32 @@
                 var privacy = document.getElementById('cf-privacy').checked;
 
                 if (!name || !email) {
-                    setFeedback('Por favor, rellena tu nombre y email.', true);
+                    setFeedback(L('Por favor, rellena tu nombre y email.', 'Please fill in your name and email.'), true);
                     return;
                 }
                 if (!privacy) {
-                    setFeedback('Debes aceptar la política de privacidad.', true);
+                    setFeedback(L('Debes aceptar la política de privacidad.', 'You must accept the privacy policy.'), true);
                     return;
                 }
 
                 submitBtn.disabled = true;
-                btnText.textContent = 'ENVIANDO...';
+                btnText.textContent = L('ENVIANDO...', 'SENDING...');
                 spinner.classList.remove('hidden');
 
                 emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
                     .then(function () {
-                        setFeedback('¡Mensaje enviado! Te respondo en menos de 24h.', false);
+                        setFeedback(L('¡Mensaje enviado! Te respondo en menos de 24h.', 'Message sent! I will reply within 24h.'), false);
                         form.reset();
                         if (typeof gtag === 'function') {
                             gtag('event', 'generate_lead', { event_category: 'lead', event_label: 'formulario_contacto' });
                         }
                     })
                     .catch(function () {
-                        setFeedback('Error al enviar. Escríbeme a teresa.rodriguez@porveniragenciadigital.com', true);
+                        setFeedback(L('Error al enviar. Escríbeme a ', 'Sending failed. Please write to me at ') + 'teresa.rodriguez@porveniragenciadigital.com', true);
                     })
                     .finally(function () {
                         submitBtn.disabled = false;
-                        btnText.textContent = 'ENVIAR MENSAJE';
+                        btnText.textContent = L('ENVIAR MENSAJE', 'SEND MESSAGE');
                         spinner.classList.add('hidden');
                     });
             });
@@ -1613,10 +2224,91 @@
                     // Hero
                     hero_badge: 'Diseño Web · Desarrollo Web',
                     hero_badge_loc: 'Ciudad Real · España',
-                    hero_h1: 'DISEÑO WEB EN CIUDAD REAL',
-                    hero_h1_sub: 'CON IA QUE MULTIPLICA TUS VENTAS',
+                    hero_h1: 'Diseño web en Ciudad Real',
+                    hero_h1_sub: 'con IA que multiplica tus ventas',
                     hero_p: 'Empresa de <strong>diseño y desarrollo web en Ciudad Real</strong> especializada en páginas web que convierten visitas en clientes. Unimos Ingeniería de Software y Diseño UX para crear webs, <strong>automatizar con IA</strong> y desarrollar apps móviles para empresas de toda España.',
                     hero_cta: 'AUTOMATIZAR MI NEGOCIO',
+                    h3d_tag1: 'Sin WordPress',
+                    h3d_tag2: 'Mobile First',
+                    h3d_tag3: 'WCAG',
+                    h3d_tag4: 'SEO técnico',
+                    h3d_l1: 'Diseño web',
+                    h3d_l2: 'IA y automatización',
+                    h3d_l3: 'Apps móviles',
+                    h3d_c1: 'HTML semántico',
+                    h3d_c2: 'Agente 24/7',
+                    h3d_ai: 'Asistente IA',
+                    h3d_b1: '¿Qué proceso quieres automatizar hoy?',
+                    h3d_b2: 'Escalar mis ventas con IA.',
+                    h3d_l4: 'Formación IA',
+                    a_skip: 'Saltar al contenido principal',
+                    nav_s4: 'Formación IA',
+                    ft_s1: 'Diseño Web',
+                    ft_copy: '© 2026 Porvenir Agencia Digital · Ciudad Real, España. Todos los derechos reservados.',
+                    tk1: '+ Eficiencia Operativa',
+                    tk2: '+ Conversión Web',
+                    tk3: '100% Cumplimiento Legal',
+                    pf_dev: 'Desarrollo web',
+                    pf_ai: 'Automatización IA',
+                    pf_wa: 'WhatsApp API',
+                    p3_made: 'Hecho por nosotros',
+                    p4_m1: 'Proceso de inscripción completo vía WhatsApp',
+                    p4_m2: 'Gestión manual en confirmaciones de plaza',
+                    p4_m3: 'Sistemas integrados sin coste adicional de software',
+                    p4_m4: 'Cumplimiento LOPD desde el primer mensaje',
+                    tq1: '"Teresa captó la esencia desde el minuto 1. Supo plasmar lo que estábamos buscando, adecuándose a nuestro público y mostrando nuestros servicios de la mejor manera, sin olvidar la usabilidad en todo momento. <strong>Recomendable 100%.</strong>"',
+                    tq2: '"Supieron captar perfectamente la esencia de Legalex. El resultado ha superado nuestras expectativas. Destacar la cercanía, la implicación y la facilidad en todo el proceso. <strong>Han entendido nuestro proyecto casi como si fuera suyo.</strong>"',
+                    tq3: '"Una formación muy completa, fácil de entender sobre digitalización e inteligencia artificial para empresas en Ciudad Real. Teresa consigue que conceptos complejos sean <strong>accesibles y aplicables desde el primer día.</strong>"',
+                    tq4: '"Trabajar con Teresa ha sido un acierto total para mi negocio. Le encargué la creación de toda la imagen de marca y el resultado ha superado mis expectativas. Se ha encargado de todo: el logotipo, los vinilos del local, la carta y el arranque de mi Instagram. <strong>Ha sabido captar a la perfección lo que quería transmitir.</strong> 100% recomendable."',
+                    tr1: 'Diseño web',
+                    tr2: 'Legalex · Diseño web',
+                    tr3: 'Formación en IA',
+                    tr4: 'Imagen de marca · Ciudad Real',
+                    ct_sr_service: 'Servicio de interés',
+                    ct_sr_message: 'Mensaje',
+                    h3d_voice: 'Voz',
+                    h3d_url: 'tuweb.es',
+                    a_nav: 'Navegación principal',
+                    a_home: 'Porvenir Agencia Digital, ir al inicio',
+                    a_theme: 'Cambiar tema',
+                    a_menu_open: 'Abrir menú de navegación',
+                    a_menu: 'Menú de navegación',
+                    a_menu_close: 'Cerrar menú',
+                    a_li: 'LinkedIn',
+                    a_ig: 'Instagram',
+                    a_feat: 'Características',
+                    a_ptags: 'Etiquetas del proyecto',
+                    a_5of5: '5 de 5 estrellas en Google',
+                    a_reviews: 'Reseñas de clientes',
+                    a_5stars: '5 estrellas',
+                    a_prev: 'Reseña anterior',
+                    a_next: 'Reseña siguiente',
+                    a_select: 'Seleccionar reseña',
+                    a_wa: 'Contactar por WhatsApp',
+                    a_home2: 'Porvenir Agencia Digital, volver al inicio',
+                    a_li2: 'LinkedIn de Teresa Rodríguez de Dios',
+                    a_ig2: 'Instagram de Porvenir Agencia Digital',
+                    a_srv: 'Servicios',
+                    a_legal: 'Legal',
+                    a_r1of4: 'Reseña 1 de 4',
+                    a_r1: 'Reseña 1',
+                    a_r2of4: 'Reseña 2 de 4',
+                    a_r2: 'Reseña 2',
+                    a_r3of4: 'Reseña 3 de 4',
+                    a_r3: 'Reseña 3',
+                    a_r4of4: 'Reseña 4 de 4',
+                    a_r4: 'Reseña 4',
+                    al_oi: 'Web de OrientaIA: consultoría de inteligencia artificial con diseño oscuro editorial, titular serif y objeto 3D',
+                    al_lg: 'Web de Legalex: diseño cálido con tonos beige y turquesa para despacho de abogacía',
+                    al_tr: 'Teresa Rodríguez de Dios, fundadora de Porvenir Agencia Digital en Ciudad Real, ingeniera de software especializada en IA y diseño web',
+                    doc_title: 'Diseño y Desarrollo Web en Ciudad Real | Páginas Web & IA',
+                    pf_uiux: 'UI/UX',
+                    pf_web: 'Diseño web',
+                    pf_conv: 'Alta conversión',
+                    pf_seo: 'SEO técnico',
+                    pf_e1: 'OrientaIA · Consultoría IA',
+                    pf_e2: 'Legalex · Abogacía y Mediación',
+                    pf_e4: 'Atlas Eventos · Escuela Infantil "Risas y Candilejas"',
                     // Servicios
                     srv_eyebrow: 'Nuestros Servicios',
                     srv_h2: 'Diseño Web, IA, Apps Móviles y Formación IA',
@@ -1646,7 +2338,7 @@
                     form_p3_title: 'Foco en Resultados', form_p3_a: 'Atención al cliente 24/7 con IA', form_p3_b: 'Estrategias de venta automatizadas',
                     form_p4_title: 'Máxima Eficiencia', form_p4_a: 'Ahorro de tiempo y recursos', form_p4_b: 'Impulsa la productividad del equipo',
                     form_trust_eyebrow: 'Empresas y organizaciones que ya han confiado en nosotros',
-                    form_trust_desc: 'Hemos formado a equipos de distintos sectores —turismo, agroalimentario y desarrollo empresarial— en el uso práctico de la inteligencia artificial. Cada taller se adapta al nivel y al contexto de los participantes.',
+                    form_trust_desc: 'Hemos formado a equipos de distintos sectores (turismo, agroalimentario y desarrollo empresarial) en el uso práctico de la inteligencia artificial. Cada taller se adapta al nivel y al contexto de los participantes.',
                     form_cta: 'Ver programa de formación', form_cta2: 'o escríbeme directamente →',
                     // FAQ
                     faq_eyebrow: 'Preguntas frecuentes', faq_h2: 'Todo lo que necesitas saber',
@@ -1695,8 +2387,8 @@
                     proj_live: 'Ver proyecto en vivo',
                     proj_all_svc: 'Ver todos los servicios',
                     // Proyecto 1 — OrientaIA
-                    p1_h3: 'Web inmersiva "Space-Corporate" para consultora de IA',
-                    p1_desc: 'Diseño a medida con estética Dark Navy & Gold, fondo de partículas en Canvas, efectos de glassmorphism y arquitectura de conversión pensada para convertir la complejidad de la IA en un mensaje claro que genera contactos.',
+                    p1_h3: 'Web editorial con objeto 3D para una consultora de IA',
+                    p1_desc: 'Diseño a medida con titulares serif en cursiva, un objeto 3D como protagonista del hero, partículas y tarjetas de cristal flotantes. La página explica la alianza entre Porvenir y Extern Sales, muestra los sectores y lleva a un único contacto directo por WhatsApp.',
                     p1_result: '<strong class="text-white">Resultado:</strong> principal activo de credibilidad de OrientaIA. Desde el primer clic demuestra que son nativos digitales.',
                     p1_svc: 'Servicio: Diseño Web & UX',
                     // Proyecto 2 — Legalex
@@ -1738,10 +2430,91 @@
                     // Hero
                     hero_badge: 'Web Design · Web Development',
                     hero_badge_loc: 'Ciudad Real · Spain',
-                    hero_h1: 'WEB DESIGN IN CIUDAD REAL',
-                    hero_h1_sub: 'WITH AI THAT MULTIPLIES YOUR SALES',
+                    hero_h1: 'Web design in Ciudad Real',
+                    hero_h1_sub: 'with AI that multiplies your sales',
                     hero_p: 'Web design and development company in Ciudad Real specialising in websites that convert visitors into clients. We combine Software Engineering and UX Design to build websites, <strong>automate with AI</strong> and develop mobile apps for businesses across Spain.',
                     hero_cta: 'AUTOMATE MY BUSINESS',
+                    h3d_tag1: 'No WordPress',
+                    h3d_tag2: 'Mobile First',
+                    h3d_tag3: 'WCAG',
+                    h3d_tag4: 'Technical SEO',
+                    h3d_l1: 'Web design',
+                    h3d_l2: 'AI & automation',
+                    h3d_l3: 'Mobile apps',
+                    h3d_c1: 'Semantic HTML',
+                    h3d_c2: '24/7 agent',
+                    h3d_ai: 'AI assistant',
+                    h3d_b1: 'Which process do you want to automate today?',
+                    h3d_b2: 'Scale my sales with AI.',
+                    h3d_l4: 'AI training',
+                    a_skip: 'Skip to main content',
+                    nav_s4: 'AI Training',
+                    ft_s1: 'Web Design',
+                    ft_copy: '© 2026 Porvenir Agencia Digital · Ciudad Real, Spain. All rights reserved.',
+                    tk1: '+ Operational Efficiency',
+                    tk2: '+ Web Conversion',
+                    tk3: '100% Legal Compliance',
+                    pf_dev: 'Web development',
+                    pf_ai: 'AI automation',
+                    pf_wa: 'WhatsApp API',
+                    p3_made: 'Made by us',
+                    p4_m1: 'Complete registration process via WhatsApp',
+                    p4_m2: 'Manual work on place confirmations',
+                    p4_m3: 'Integrated systems at no extra software cost',
+                    p4_m4: 'Data-protection (LOPD) compliance from the first message',
+                    tq1: '"Teresa grasped the essence from minute one. She captured exactly what we were looking for, adapting to our audience and showcasing our services in the best possible way, without ever losing sight of usability. <strong>100% recommended.</strong>"',
+                    tq2: '"They perfectly captured the essence of Legalex. The result has exceeded our expectations. I would highlight their closeness, involvement and how easy the whole process was. <strong>They understood our project almost as if it were their own.</strong>"',
+                    tq3: '"A very complete, easy-to-follow training on digitalisation and artificial intelligence for businesses in Ciudad Real. Teresa makes complex concepts <strong>accessible and applicable from day one.</strong>"',
+                    tq4: '"Working with Teresa has been a total success for my business. I commissioned her to create my whole brand identity and the result has exceeded my expectations. She took care of everything: the logo, the vinyls for the premises, the menu and the launch of my Instagram. <strong>She perfectly captured what I wanted to convey.</strong> 100% recommended."',
+                    tr1: 'Web design',
+                    tr2: 'Legalex · Web design',
+                    tr3: 'AI training',
+                    tr4: 'Brand identity · Ciudad Real',
+                    ct_sr_service: 'Service of interest',
+                    ct_sr_message: 'Message',
+                    h3d_voice: 'Voice',
+                    h3d_url: 'yourweb.com',
+                    a_nav: 'Main navigation',
+                    a_home: 'Porvenir Agencia Digital, go to home',
+                    a_theme: 'Toggle theme',
+                    a_menu_open: 'Open navigation menu',
+                    a_menu: 'Navigation menu',
+                    a_menu_close: 'Close menu',
+                    a_li: 'LinkedIn',
+                    a_ig: 'Instagram',
+                    a_feat: 'Features',
+                    a_ptags: 'Project tags',
+                    a_5of5: '5 out of 5 stars on Google',
+                    a_reviews: 'Customer reviews',
+                    a_5stars: '5 stars',
+                    a_prev: 'Previous review',
+                    a_next: 'Next review',
+                    a_select: 'Select review',
+                    a_wa: 'Contact via WhatsApp',
+                    a_home2: 'Porvenir Agencia Digital, back to top',
+                    a_li2: 'Teresa Rodríguez de Dios on LinkedIn',
+                    a_ig2: 'Porvenir Agencia Digital on Instagram',
+                    a_srv: 'Services',
+                    a_legal: 'Legal',
+                    a_r1of4: 'Review 1 of 4',
+                    a_r1: 'Review 1',
+                    a_r2of4: 'Review 2 of 4',
+                    a_r2: 'Review 2',
+                    a_r3of4: 'Review 3 of 4',
+                    a_r3: 'Review 3',
+                    a_r4of4: 'Review 4 of 4',
+                    a_r4: 'Review 4',
+                    al_oi: 'OrientaIA website: artificial intelligence consultancy with a dark editorial design, serif headline and 3D object',
+                    al_lg: 'Legalex website: warm design in beige and turquoise tones for a law firm',
+                    al_tr: 'Teresa Rodríguez de Dios, founder of Porvenir Agencia Digital in Ciudad Real, software engineer and UX designer',
+                    doc_title: 'Web Design & Development in Ciudad Real | Websites & AI',
+                    pf_uiux: 'UI/UX',
+                    pf_web: 'Web design',
+                    pf_conv: 'High conversion',
+                    pf_seo: 'Technical SEO',
+                    pf_e1: 'OrientaIA · AI consultancy',
+                    pf_e2: 'Legalex · Law and mediation',
+                    pf_e4: 'Atlas Eventos · "Risas y Candilejas" nursery school',
                     // Services
                     srv_eyebrow: 'Our Services',
                     srv_h2: 'Web Design, AI, Mobile Apps and AI Training',
@@ -1771,7 +2544,7 @@
                     form_p3_title: 'Results-Focused', form_p3_a: '24/7 customer service with AI', form_p3_b: 'Automated sales strategies',
                     form_p4_title: 'Maximum Efficiency', form_p4_a: 'Save time and resources', form_p4_b: "Boost your team's productivity",
                     form_trust_eyebrow: 'Companies and organisations that have already trusted us',
-                    form_trust_desc: 'We have trained teams across different sectors — tourism, agri-food and business development — in the practical use of artificial intelligence. Each workshop adapts to the level and context of the participants.',
+                    form_trust_desc: 'We have trained teams across different sectors (tourism, agri-food and business development) in the practical use of artificial intelligence. Each workshop adapts to the level and context of the participants.',
                     form_cta: 'View training programme', form_cta2: 'or write to me directly →',
                     // FAQ
                     faq_eyebrow: 'Frequently asked questions', faq_h2: 'Everything you need to know',
@@ -1820,8 +2593,8 @@
                     proj_live: 'View live project',
                     proj_all_svc: 'View all services',
                     // Project 1 — OrientaIA
-                    p1_h3: 'Immersive "Space-Corporate" website for an AI consultancy',
-                    p1_desc: 'Bespoke design with a Dark Navy & Gold aesthetic, Canvas particle background, glassmorphism effects and a conversion architecture built to turn the complexity of AI into a clear message that generates leads.',
+                    p1_h3: 'Editorial website with a 3D object for an AI consultancy',
+                    p1_desc: 'Bespoke design with italic serif headlines, a 3D object as the hero centrepiece, particles and floating glass cards. The page explains the Porvenir and Extern Sales partnership, showcases the sectors and leads to a single direct contact via WhatsApp.',
                     p1_result: '<strong class="text-white">Result:</strong> OrientaIA\'s main credibility asset. From the first click it proves they are true digital natives.',
                     p1_svc: 'Service: Web Design & UX',
                     // Project 2 — Legalex
@@ -1848,7 +2621,7 @@
                     ag_h2: 'AI Agency in Ciudad Real: Strategy, Technology and Design',
                     ag_p1: 'I am <strong>Teresa Rodríguez de Dios</strong>, a Software Engineer with a Master\'s in User Experience (UX) Design. I am passionate about technology, but only when it serves to improve the lives of those who use it, not complicate them.',
                     ag_p2: 'I see my work as a <strong>bridge between your business goals and technology</strong>. I analyse what your company really needs to grow and build it by combining <strong>solid engineering</strong> with an <strong>impeccable user experience</strong>.',
-                    ag_p3: 'From that vision <strong>Porvenir</strong> was born — a digital agency headquartered in Ciudad Real with projects across Spain. My mission is to <strong>integrate Artificial Intelligence and strategic design</strong> into your day-to-day so your business becomes more efficient and competitive.',
+                    ag_p3: 'From that vision <strong>Porvenir</strong> was born, a digital agency headquartered in Ciudad Real with projects across Spain. My mission is to <strong>integrate Artificial Intelligence and strategic design</strong> into your day-to-day so your business becomes more efficient and competitive.',
                     // Sticky CTA
                     sticky_cta: 'WRITE TO ME FREE',
                     // Footer legal
@@ -1876,6 +2649,15 @@
                     var k = el.dataset.i18nHtml;
                     if (T[lang][k] !== undefined) el.innerHTML = T[lang][k];
                 });
+                document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+                    var k = el.dataset.i18nAria;
+                    if (T[lang][k] !== undefined) el.setAttribute('aria-label', T[lang][k]);
+                });
+                document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+                    var k = el.dataset.i18nAlt;
+                    if (T[lang][k] !== undefined) el.setAttribute('alt', T[lang][k]);
+                });
+                if (T[lang].doc_title) document.title = T[lang].doc_title;
                 document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
                     var k = el.dataset.i18nPlaceholder;
                     if (T[lang][k] !== undefined) el.placeholder = T[lang][k];
@@ -1894,105 +2676,6 @@
             document.addEventListener('DOMContentLoaded', applyLang);
         })();
 
-        /* ── RED NEURONAL ── */
-        window.addEventListener('load', function () {
-
-            // FIX: Usamos matchMedia para sincronizar perfectamente con el breakpoint de 768px de Tailwind.
-            // Si la pantalla es MENOR de 768px reales, cortamos la ejecución.
-            if (!window.matchMedia("(min-width: 768px)").matches) return;
-
-            function startCanvas() {
-                const canvas = document.getElementById('neural-canvas');
-                if (!canvas) return;
-                const ctx = canvas.getContext('2d');
-                let particles = [];
-                let mX = window.innerWidth / 2;
-                let mY = window.innerHeight / 2;
-
-                function resize() {
-                    const header = document.getElementById('inicio');
-                    canvas.width = header.offsetWidth;
-                    canvas.height = header.offsetHeight;
-                }
-                resize();
-                window.addEventListener('resize', resize, { passive: true });
-                window.addEventListener('mousemove', e => { mX = e.clientX; mY = e.clientY; }, { passive: true });
-
-                class Particle {
-                    constructor(x, y, dx, dy, size) {
-                        this.x = x; this.y = y;
-                        this.dx = dx; this.dy = dy;
-                        this.size = size;
-                    }
-                    draw() {
-                        ctx.beginPath();
-                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                        ctx.fillStyle = '#ff7a48';
-                        ctx.fill();
-                    }
-                    update() {
-                        if (this.x > canvas.width || this.x < 0) this.dx = -this.dx;
-                        if (this.y > canvas.height || this.y < 0) this.dy = -this.dy;
-                        const distX = mX - this.x;
-                        const distY = mY - this.y;
-                        if (Math.sqrt(distX * distX + distY * distY) < 100) {
-                            this.x -= distX * 0.01;
-                            this.y -= distY * 0.01;
-                        }
-                        this.x += this.dx;
-                        this.y += this.dy;
-                        this.draw();
-                    }
-                }
-
-                // Densidad equilibrada para Tablets y Escritorio
-                const density = 12000;
-                const n = Math.floor((canvas.width * canvas.height) / density);
-                for (let i = 0; i < n; i++) {
-                    const size = (Math.random() * 2) + 1;
-                    particles.push(new Particle(
-                        Math.random() * (canvas.width - size * 4) + size * 2,
-                        Math.random() * (canvas.height - size * 4) + size * 2,
-                        (Math.random() * 0.4) - 0.2,
-                        (Math.random() * 0.4) - 0.2,
-                        size
-                    ));
-                }
-
-                function connectParticles() {
-                    const threshold = (canvas.width / 7) * (canvas.height / 7);
-                    for (let a = 0; a < particles.length; a++) {
-                        for (let b = a + 1; b < particles.length; b++) {
-                            const d = ((particles[a].x - particles[b].x) ** 2)
-                                + ((particles[a].y - particles[b].y) ** 2);
-                            if (d < threshold) {
-                                ctx.strokeStyle = `rgba(255,122,72,${1 - d / 20000})`;
-                                ctx.lineWidth = 1;
-                                ctx.beginPath();
-                                ctx.moveTo(particles[a].x, particles[a].y);
-                                ctx.lineTo(particles[b].x, particles[b].y);
-                                ctx.stroke();
-                            }
-                        }
-                    }
-                }
-
-                function animate() {
-                    requestAnimationFrame(animate);
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    for (const p of particles) p.update();
-                    connectParticles();
-                }
-                animate();
-            }
-
-            if ('requestIdleCallback' in window) {
-                requestIdleCallback(startCanvas, { timeout: 2000 });
-            } else {
-                setTimeout(startCanvas, 200);
-            }
-        });
-    
         /* ── CARRUSEL RESEÑAS ── */
         (function () {
             var track = document.getElementById('reviews-track');
@@ -2056,14 +2739,327 @@
         })();
     </script>
 
-    <!-- WhatsApp flotante -->
-    <style>#wa-btn{bottom:24px}</style>
-    <a id="wa-btn" href="https://wa.me/34638035468?text=Hola%20Teresa%20%F0%9F%91%8B%20He%20visto%20tu%20web%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20mi%20proyecto.%20%C2%BFTienes%20un%20momento%3F" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"
-       style="position:fixed;right:24px;z-index:60;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s"
-       onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(37,211,102,.6)'"
-       onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(37,211,102,.4)'">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
+    <script>
+/* ===================== HERO 3D · MOTOR (actor global) ===================== */
+(function () {
+    var hero = document.getElementById('inicio');
+    var sticky = hero && hero.querySelector('.h3d-sticky');
+    var stage = document.getElementById('h3d-stage');
+    var glow = hero && hero.querySelector('.h3d-glow');
+    var dust = document.getElementById('h3d-dust');
+    if (!hero || !stage) return;
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var desktop = window.matchMedia('(min-width: 1024px)');
+    var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
+    var $ = function (id) { return document.getElementById(id); };
+
+    /* Partículas con profundidad (parallax) */
+    var nav = window.navigator, conn = nav.connection || {};
+    var lite = (nav.hardwareConcurrency && nav.hardwareConcurrency <= 4) || (nav.deviceMemory && nav.deviceMemory <= 2) || conn.saveData === true;
+    if (lite) document.documentElement.classList.add('h3d-lite');
+    var n = lite ? 8 : (desktop.matches ? 26 : 12), html = '';
+    for (var i = 0; i < n; i++) {
+        html += '<i style="--x:' + (Math.random() * 100).toFixed(1) + '%;--y:' + (Math.random() * 100).toFixed(1) +
+            '%;--s:' + (Math.random() * 3 + 1.5).toFixed(1) + 'px;--o:' + (Math.random() * .5 + .25).toFixed(2) +
+            ';--d:' + (Math.random() * 1.8 + .3).toFixed(2) + '"></i>';
+    }
+    dust.innerHTML = html;
+
+    /* Leyenda 01-04 (móvil, tablet y movimiento reducido) */
+    var legend = document.createElement('div');
+    legend.className = 'h3d-legend';
+    Array.prototype.slice.call(stage.querySelectorAll('.h3d-label')).sort(function (a, b) {
+        return a.querySelector('b').textContent.localeCompare(b.querySelector('b').textContent);
+    }).forEach(function (src) {
+        var el = document.createElement('div'); el.className = 'h3d-tag2d'; el.innerHTML = src.innerHTML; legend.appendChild(el);
+    });
+    stage.appendChild(legend);
+
+    /* Movimiento reducido: composición estática desplegada, sin actor global */
+    if (reduce) { hero.style.setProperty('--p', '1'); return; }
+
+    Array.prototype.forEach.call(stage.querySelectorAll('.h3d-card'), function (card) {
+        var h = document.createElement('i'); h.className = 'h3d-holo'; h.innerHTML = '<b></b>'; card.appendChild(h);
+    });
+
+    /* ── Actor: contenedor fijo donde vive la escena en escritorio ── */
+    var actor = document.createElement('div');
+    actor.id = 'h3d-actor';
+    actor.setAttribute('aria-hidden', 'true');
+    document.body.insertBefore(actor, $('main-content'));
+
+    var svgNS = 'http://www.w3.org/2000/svg';
+    var link = document.createElementNS(svgNS, 'svg');
+    link.id = 'h3d-link'; link.setAttribute('aria-hidden', 'true');
+    var linkPath = document.createElementNS(svgNS, 'path');
+    var dotA = document.createElementNS(svgNS, 'circle'), dotB = document.createElementNS(svgNS, 'circle');
+    dotA.setAttribute('r', '3.5'); dotB.setAttribute('r', '5');
+    link.appendChild(linkPath); link.appendChild(dotA); link.appendChild(dotB);
+    link.style.opacity = '0';
+    document.body.appendChild(link);
+
+    var labelBox = document.createElement('div');
+    labelBox.id = 'h3d-labels'; labelBox.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(labelBox);
+
+    var scene = stage.querySelector('.h3d-scene');
+    var layers = ['.l-web', '.l-ai', '.l-app', '.l-base'].map(function (q) { return stage.querySelector(q); });
+    var cards = Array.prototype.slice.call(document.querySelectorAll('#servicios .services-grid > article'));
+    var tags = layers.map(function (layer) {
+        var src = layer.querySelector('.h3d-label');
+        var el = document.createElement('div');
+        el.className = 'h3d-tag2d';
+        el.innerHTML = src.innerHTML;
+        el.at = parseFloat(src.style.getPropertyValue('--at')) || 0;
+        labelBox.appendChild(el);
+        return el;
+    });
+
+    function mount() {
+        if (desktop.matches) {
+            actor.appendChild(glow); actor.appendChild(stage);
+            hero.classList.add('h3d-global');
+        } else {
+            sticky.insertBefore(glow, sticky.firstChild);
+            sticky.insertBefore(stage, sticky.querySelector('.h3d-hint'));
+            hero.classList.remove('h3d-global');
+            link.style.opacity = '0';
+            cards.forEach(function (c) { c.classList.remove('svc-active'); });
+        }
+        kick();
+    }
+
+    /* ── Poses: dónde está la escena según el scroll ── */
+    var anchors = [], anchorsDirty = true;
+    function ensureAnchors() { if (anchorsDirty || !anchors.length) { buildAnchors(); anchorsDirty = false; } }
+    function top(el) { return el.getBoundingClientRect().top + window.pageYOffset; }
+    function buildAnchors() {
+        var vh = window.innerHeight;
+        var svc = $('servicios'), pro = $('proyectos'), con = $('contacto');
+        var ley = document.querySelector('section[aria-labelledby="ley-heading"]');
+        var heroEnd = Math.max(1, hero.offsetHeight - vh);
+        var narrow = window.innerWidth < 1280;
+        var hero1 = { gx: narrow ? 26 : 23, gy: 0, gs: narrow ? .82 : 1, go: 1, gp: 1 };
+        var svcPose = { gx: -20, gy: 0, gs: .9, go: 1, gp: 1 };
+        var a = [
+            { y: 0, gx: narrow ? 26 : 23, gy: 0, gs: narrow ? .82 : 1, go: 1, gp: 0 },
+            Object.assign({ y: heroEnd }, hero1)
+        ];
+        if (svc) {
+            a.push(Object.assign({ y: top(svc) - vh * .1 }, svcPose));
+            a.push(Object.assign({ y: top(svc) + svc.offsetHeight - vh * .9 }, svcPose));
+        }
+        if (ley) a.push({ y: top(ley) - vh * .3, gx: 0, gy: 0, gs: 1.25, go: .13, gp: .6 });
+        if (pro) a.push({ y: top(pro) - vh * .35, gx: 0, gy: 0, gs: 1.3, go: 0, gp: .4 });
+        if (con) {
+            a.push({ y: top(con) - vh * .95, gx: -22, gy: 0, gs: 1.05, go: 0, gp: .5 });
+            a.push({ y: top(con) - vh * .15, gx: -25, gy: 30, gs: .85, go: .55, gp: 1, gf: 1 });
+        }
+        a.sort(function (p, q) { return p.y - q.y; });
+        anchors = a; anchors.heroEnd = heroEnd;
+    }
+    function poseAt(y) {
+        var A = anchors, k;
+        if (y <= A[0].y) return A[0];
+        for (k = 1; k < A.length; k++) {
+            if (y <= A[k].y) {
+                var p = A[k - 1], q = A[k], t = clamp((y - p.y) / Math.max(1, q.y - p.y), 0, 1);
+                t = t * t * (3 - 2 * t);
+                return {
+                    gx: p.gx + (q.gx - p.gx) * t, gy: p.gy + (q.gy - p.gy) * t, gs: p.gs + (q.gs - p.gs) * t,
+                    go: p.go + (q.go - p.go) * t, gp: p.gp + (q.gp - p.gp) * t,
+                    gf: (p.gf || 0) + ((q.gf || 0) - (p.gf || 0)) * t
+                };
+            }
+        }
+        return A[A.length - 1];
+    }
+
+    /* ── Estado suavizado (muelle ligero: persigue el objetivo con inercia) ── */
+    var S = { gx: 23, gy: 0, gs: 1, go: 1, gp: 0, hp: 0, mx: 0, my: 0, focus: 0 };
+    var T = { mx: 0, my: 0 };
+    var hot = [0, 0, 0, 0], activeIdx = -1;
+    var L = { sx: 0, sy: 0, ex: 0, ey: 0, init: false };
+    var corr = 0, navH = 96;
+    var visible = true, raf = 0, paused = false;
+
+    function set(el, k, v) { el.style.setProperty(k, typeof v === 'number' ? v.toFixed(4) : v); }
+
+    function frame() {
+        raf = 0;
+        var vh = window.innerHeight, y = window.pageYOffset, moving = false;
+        var desk = desktop.matches;
+        if (!desk && !visible) return;
+
+        function ease(key, target, k, eps) {
+            var d = target - S[key];
+            if (Math.abs(d) > eps) { S[key] += d * k; moving = true; } else S[key] = target;
+        }
+
+        if (desk) {
+            ensureAnchors();
+            var P = poseAt(y);
+            var navEl = document.querySelector('nav[aria-label]'); if (navEl) navH = navEl.offsetHeight || navH;
+
+            /* 1) LECTURAS (antes de escribir estilos para evitar reflujos forzados) */
+            var best = -1, bd = 1e9, rect = null, prevRect = null, prevD = 1e9;
+            cards.forEach(function (c, i) {
+                var r = c.getBoundingClientRect();
+                var d = Math.abs(r.top + r.height / 2 - vh * .5);
+                if (i === activeIdx) { prevRect = r; prevD = d; }
+                if (r.bottom > vh * .12 && r.top < vh * .88 && d < bd) { bd = d; best = i; rect = r; }
+            });
+            /* Histéresis: la tarjeta activa solo cambia si otra gana con claridad (evita parpadeos en los bordes) */
+            if (activeIdx >= 0 && best !== activeIdx && prevRect && prevRect.bottom > vh * .04 && prevRect.top < vh * .96 && prevD < bd + 90) {
+                best = activeIdx; rect = prevRect;
+            }
+            var lrs = layers.map(function (el) { return el.querySelector('.h3d-card').getBoundingClientRect(); });
+
+            /* Centrado vertical de la escena mientras se ilumina un servicio (lazo cerrado: se adapta a cualquier pantalla) */
+            if (best >= 0 && lrs[best]) {
+                var cT = Infinity, cB = -Infinity;
+                lrs.forEach(function (r) { if (r.top < cT) cT = r.top; if (r.bottom > cB) cB = r.bottom; });
+                cT = Math.min(cT, lrs[best].top - 46);
+                if (S.focus > .5) { corr += clamp(((navH + vh) / 2 - (cT + cB) / 2) * .2, -30, 30); moving = true; }
+            } else if (Math.abs(corr) > .5) { corr *= .88; moving = true; } else { corr = 0; }
+
+            /* 2) ESCRITURAS */
+            ease('gx', P.gx, .1, .01); ease('gy', P.gy, .1, .1); ease('gs', P.gs, .1, .001);
+            ease('go', P.go, .1, .002); ease('gp', P.gp, .09, .0005);
+            ease('hp', clamp(y / anchors.heroEnd, 0, 1), .09, .0005);
+            ease('mx', T.mx, .07, .001); ease('my', T.my, .07, .001);
+
+            /* Actor */
+            set(actor, '--gx', S.gx); set(actor, '--gy', S.gy + corr); set(actor, '--gs', S.gs); set(actor, '--go', S.go);
+            actor.style.visibility = S.go < .01 ? 'hidden' : 'visible';
+            set(actor, '--p', S.gp); set(actor, '--mx', S.mx); set(actor, '--my', S.my);
+            set(actor, '--spin', 14 * Math.sin(Math.max(0, y - anchors.heroEnd) / 900));
+            set(actor, '--chipo', clamp(1 - (y - anchors.heroEnd) / (vh * .35), 0, 1));
+            /* Héroe (hint, barra, polvo) */
+            set(hero, '--p', S.hp); set(hero, '--mx', S.mx); set(hero, '--my', S.my);
+
+            /* Tarjeta activa de servicios -> capa que se ilumina */
+            if (best !== activeIdx) {
+                cards.forEach(function (c, i) { c.classList.toggle('svc-active', i === best); });
+                activeIdx = best;
+            }
+            var focusT = Math.max(best >= 0 ? 1 : 0, P.gf || 0);
+            ease('focus', focusT, .12, .003);
+            set(actor, '--focus', S.focus);
+            layers.forEach(function (el, i) {
+                var tgt = i === best ? 1 : 0;
+                if (Math.abs(tgt - hot[i]) > .004) { hot[i] += (tgt - hot[i]) * .14; moving = true; } else hot[i] = tgt;
+                set(el, '--hot', hot[i]);
+            });
+
+            /* Etiquetas 2D: a la derecha de cada capa en el hero; sobre la capa activa en servicios */
+            tags.forEach(function (tag, i) {
+                var r = lrs[i], f = S.focus, w = tag.offsetWidth || 150;
+                var xr = r.right + 16; if (xr + w > window.innerWidth - 12) xr = r.left - w - 16;
+                var x = clamp(xr + (r.left - 4 - xr) * f, 12, window.innerWidth - w - 12);
+                var yy = clamp((r.top + r.height / 2 - 15) + (r.top - 46 - (r.top + r.height / 2 - 15)) * f, navH + 8, vh - 56);
+                var op = clamp((S.gp - tag.at) * 5, 0, 1) * (1 - f * (1 - hot[i])) * clamp(S.go * 2.5, 0, 1);
+                if (window.innerWidth < 1280) op *= clamp((f - .2) * 3, 0, 1);
+                tag.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + yy.toFixed(1) + 'px,0)';
+                tag.style.opacity = op.toFixed(3);
+            });
+
+            /* Conector */
+            if (best >= 0 && layers[best]) {
+                var lr = lrs[best];
+                var sx = rect.left, sy = clamp(rect.top + rect.height * .35, 110, vh - 110);
+                var ex = lr.left + lr.width / 2, ey = lr.top + lr.height / 2;
+                if (!L.init) { L.sx = sx; L.sy = sy; L.ex = ex; L.ey = ey; L.init = true; }
+                L.sx += (sx - L.sx) * .25; L.sy += (sy - L.sy) * .25; L.ex += (ex - L.ex) * .25; L.ey += (ey - L.ey) * .25;
+                linkPath.setAttribute('d', 'M' + L.sx.toFixed(1) + ' ' + L.sy.toFixed(1) + ' C' + (L.sx - 140).toFixed(1) + ' ' + L.sy.toFixed(1) + ' ' + (L.ex + 170).toFixed(1) + ' ' + L.ey.toFixed(1) + ' ' + L.ex.toFixed(1) + ' ' + L.ey.toFixed(1));
+                dotA.setAttribute('cx', L.sx.toFixed(1)); dotA.setAttribute('cy', L.sy.toFixed(1));
+                dotB.setAttribute('cx', L.ex.toFixed(1)); dotB.setAttribute('cy', L.ey.toFixed(1));
+                link.style.opacity = String(clamp(S.focus, 0, 1));
+                moving = true;
+            } else {
+                link.style.opacity = '0';
+                if (S.focus === 0) L.init = false;
+            }
+        } else {
+            /* Móvil / tablet: la escena vive dentro del héroe y se despliega al entrar */
+            var s = stage.getBoundingClientRect();
+            var from = vh * .95, to = vh * .5 - s.height / 2;
+            var tp = clamp((from - s.top) / (from - to), 0, 1);
+            var dp = tp - S.hp;
+            if (Math.abs(dp) > .0004) { S.hp += dp * .09; moving = true; } else S.hp = tp;
+            set(hero, '--p', S.hp);
+        }
+        var pause = document.hidden || (desk ? S.go < .2 : !visible);
+        if (pause !== paused) { paused = pause; stage.classList.toggle('h3d-paused', pause); }
+        if (moving) kick();
+    }
+    function kick() { if (!raf) raf = requestAnimationFrame(frame); }
+
+    window.addEventListener('scroll', kick, { passive: true });
+    function dirty() { anchorsDirty = true; kick(); }
+    window.addEventListener('resize', dirty, { passive: true });
+    window.addEventListener('load', dirty);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(dirty);
+    if ('ResizeObserver' in window) new ResizeObserver(dirty).observe(document.body);
+    document.addEventListener('visibilitychange', function () { if (document.hidden) { stage.classList.add('h3d-paused'); paused = true; } else kick(); });
+    if (finePointer) {
+        window.addEventListener('pointermove', function (e) {
+            T.mx = (e.clientX / window.innerWidth - .5) * 2;
+            T.my = (e.clientY / window.innerHeight - .5) * 2;
+            kick();
+        }, { passive: true });
+    }
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (en) { visible = en[0].isIntersecting; if (visible) kick(); else if (!desktop.matches) { paused = true; stage.classList.add('h3d-paused'); } }).observe(hero);
+    }
+    desktop.addEventListener ? desktop.addEventListener('change', mount) : desktop.addListener(mount);
+    mount();
+})();
+    </script>
+<div id="scroll-progress" aria-hidden="true"></div>
+<script>
+/* ── CONTINUIDAD DEL SCROLL ── */
+(function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var bar = document.getElementById('scroll-progress');
+    var root = document.documentElement;
+
+    /* Entradas 3D escalonadas en tarjetas de servicios y proyectos */
+    document.querySelectorAll('#servicios .glass-card, #proyectos .glass-card').forEach(function (el, i) {
+        el.classList.add(el.closest('#servicios') ? 'rv-side' : 'rv3d');
+        if (el.closest('#servicios')) el.classList.add('rv3d-m');
+        el.style.transitionDelay = (el.closest('#servicios') ? 0 : (i % 4) * 0.08) + 's';
+        el.addEventListener('transitionend', function once(e) {
+            if (e.propertyName === 'transform') { el.style.transitionDelay = '0s'; el.removeEventListener('transitionend', once); }
+        });
+    });
+
+    if (reduce) return;
+
+    /* Parallax suave en imágenes de proyectos */
+    var par = Array.prototype.slice.call(document.querySelectorAll('#proyectos img'));
+    par.forEach(function (img) { img.setAttribute('data-parallax', ''); });
+
+    var ticking = false;
+    function update() {
+        ticking = false;
+        var max = root.scrollHeight - window.innerHeight;
+        if (bar) bar.style.setProperty('--sp', max > 0 ? (window.scrollY / max).toFixed(4) : 0);
+        var vh = window.innerHeight;
+        par.forEach(function (img) {
+            var r = img.parentElement.getBoundingClientRect();
+            if (r.bottom < -100 || r.top > vh + 100) return;
+            var t = (r.top + r.height / 2 - vh / 2) / vh; /* -1..1 */
+            img.style.transform = 'translate3d(0,' + (t * -8).toFixed(1) + 'px,0) scale(1.06)';
+        });
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+})();
+</script>
 </body>
 
 </html>

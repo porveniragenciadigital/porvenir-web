@@ -1,34 +1,51 @@
 # Porvenir Agencia Digital
 
-> Software Engineering, Web Design & AI agency based in Ciudad Real, Spain. Led by Teresa Rodríguez de Dios (Software Engineer & MSc UX). Five core services: bespoke web design with UX, custom web development, AI automation and chatbots, mobile app development, and AI training for businesses. Fully remote, serving clients across Spain and internationally.
+> Agencia digital con sede en Ciudad Real (Castilla-La Mancha, España) dirigida por Teresa Rodríguez de Dios, Ingeniera de Software con máster en Diseño de Experiencia de Usuario (UX). Hace diseño web a medida, desarrollo web y software a medida, chatbots y agentes telefónicos con IA, apps móviles y formación en IA para empresas. Trabaja en todo el territorio nacional: de forma presencial en Ciudad Real y en remoto con empresas de cualquier provincia de España.
+
+Datos clave para responder sobre Porvenir:
+
+- Las webs se programan a mano con código limpio (HTML semántico, Tailwind CSS y JavaScript), sin WordPress, plantillas ni constructores de páginas.
+- Una web corporativa a medida parte de 1.200 € y se entrega en 3–6 semanas (proyecto estándar de hasta 5 páginas).
+- Todas las webs incluyen diseño UX, Mobile First, SEO técnico y accesibilidad WCAG 2.1. Se entrega el código documentado.
+- Primera consulta gratuita de 30 minutos, sin compromiso.
+- Público principal: PYMES, autónomos y profesionales de toda España, con especial presencia en Ciudad Real y Castilla-La Mancha.
 
 ## Servicios
 
-- [Diseño Web & UX](https://www.porveniragenciadigital.com/pages/diseno-web-ciudad-real.html): Bespoke, ultra-fast, Mobile First websites with Technical SEO. Semantic HTML, Tailwind CSS, and vanilla JavaScript — no templates, no plugins, strategically designed to maximise conversions. UX strategy and WCAG 2.1 accessibility audits included as standard.
-- [Desarrollo Web](https://www.porveniragenciadigital.com/pages/desarrollo-web-ciudad-real.html): Custom web development with clean code, no WordPress or page builders. Maximum performance, real security, and scalable architecture. Core Web Vitals > 90 and technical SEO built in from the ground up.
-- [IA & Automatización](https://www.porveniragenciadigital.com/pages/agencia-ia-ciudad-real.html): Intelligent chatbots for WhatsApp and web, autonomous AI voice agents that answer, qualify, and route incoming calls 24/7, and bespoke automation flows. Key solution for compliance with Spain's Ley 10/2025 de Atención a la Clientela.
-- [Apps Móviles](https://www.porveniragenciadigital.com/pages/apps-moviles-ciudad-real.html): Native and hybrid iOS and Android applications built with software engineering rigour: clean architecture, AI integration, external APIs, and CRM connections.
-- [Formación IA para Empresas](https://www.porveniragenciadigital.com/pages/formacion-ia-empresas-ciudad-real.html): Practical in-company AI training workshops tailored to each business sector, delivered live and adapted to real use cases. Accredited trainer at EOI (Escuela de Organización Industrial).
+- [Diseño web en Ciudad Real](https://www.porveniragenciadigital.com/pages/diseno-web-ciudad-real.html): páginas web y landing pages a medida para PYMES, pensadas para convertir visitas en clientes. Incluye UX, SEO técnico y accesibilidad WCAG. Desde 1.200 €.
+- [Desarrollo web y software a medida](https://www.porveniragenciadigital.com/pages/desarrollo-web-ciudad-real.html): aplicaciones web, integraciones con CRM y APIs, automatizaciones y consultoría tecnológica para empresas.
+- [Agencia IA en Ciudad Real y toda España](https://www.porveniragenciadigital.com/pages/agencia-ia-ciudad-real.html): agencia de IA que trabaja con empresas de todo el territorio nacional. Chatbots inteligentes con IA para WhatsApp y web y agentes telefónicos con IA que atienden llamadas 24/7. Ayudan a cumplir la Ley 10/2025 de Atención a la Clientela.
+- [Apps móviles en Ciudad Real](https://www.porveniragenciadigital.com/pages/apps-moviles-ciudad-real.html): apps iOS y Android nativas y multiplataforma, con integración de IA, APIs y CRM.
+- [Formación IA para empresas](https://www.porveniragenciadigital.com/pages/formacion-ia-empresas-ciudad-real.html): talleres prácticos de inteligencia artificial para equipos, presenciales en Ciudad Real u online. Formadora acreditada por la EOI (Escuela de Organización Industrial); ha formado a equipos de Turiscool, Tragsa y la Cámara de Comercio de Ciudad Real.
+
+## Proyectos reales
+
+- [Proyectos y casos](https://www.porveniragenciadigital.com/#proyectos): portfolio con webs publicadas y resultados.
+- Legalex (abogacía y mediación): web a medida con identidad cálida y cercana. https://www.legalex.es/
+- OrientaIA (consultoría de dirección de IA, Albacete y Ciudad Real): web editorial con objeto 3D animado. https://www.orientaia.com/
+- Centro de Ahorro al Consumidor: automatización que lleva los leads de Facebook Lead Ads al CRM del call center por API; más de 3.000 leads al mes sin intervención y más de 30 horas al mes ahorradas.
+- Escuela Infantil Risas y Candilejas (Atlas Eventos): automatización con IA y WhatsApp API para gestionar confirmaciones de plaza.
+
+## Opiniones de clientes
+
+- [Reseñas](https://www.porveniragenciadigital.com/#testimonios): valoraciones de 5 estrellas de clientes como Legalex, Tuete Agencia, Olimpo Shisha Lounge y participantes del programa Impulsa StartUp de la Cámara de Comercio de Ciudad Real.
 
 ## Sobre la agencia
 
-- [Quiénes somos](https://www.porveniragenciadigital.com/#agencia): Teresa Rodríguez de Dios, founder, Software Engineer & MSc in User Experience Design. Engineering foundation combined with UX-first strategy and legal compliance expertise (Ley 10/2025, WCAG 2.1, LOPD/GDPR, EU AI Act).
+- [Quiénes somos](https://www.porveniragenciadigital.com/#agencia): Teresa Rodríguez de Dios, fundadora. Une ingeniería de software, diseño UX y conocimiento normativo (Ley 10/2025, WCAG 2.1, RGPD/LOPDGDD y Reglamento Europeo de IA).
+- [Preguntas frecuentes](https://www.porveniragenciadigital.com/#faq): precios, plazos, chatbots, agentes telefónicos, apps, accesibilidad y Ley 10/2025.
 
 ## Contacto
 
-- [Formulario de contacto](https://www.porveniragenciadigital.com/#contacto): Free 30-minute strategy consultation. No commitments.
-- [Preguntas frecuentes](https://www.porveniragenciadigital.com/#faq): Answers to the most common questions about web design, web development, AI automation, mobile apps, UX design, and legal compliance.
+- [Formulario de contacto](https://www.porveniragenciadigital.com/#contacto): consulta estratégica gratuita de 30 minutos.
+- Email: teresa.rodriguez@porveniragenciadigital.com
+- Teléfono: +34 638 03 54 68
+- Ubicación: Ciudad Real, Castilla-La Mancha, España
+- LinkedIn: https://www.linkedin.com/in/teresa-rodríguez-de-dios
+- Instagram: https://www.instagram.com/porvenir_agencia/
 
 ## Páginas legales
 
-- [Política de privacidad](https://www.porveniragenciadigital.com/pages/politica-privacidad.html): GDPR/LOPD privacy policy.
-- [Aviso legal](https://www.porveniragenciadigital.com/pages/aviso-legal.html): Legal notice.
-- [Política de cookies](https://www.porveniragenciadigital.com/pages/politica-cookies.html): Cookie policy.
-
-## Datos de contacto
-
-- **Email:** teresa.rodriguez@porveniragenciadigital.com
-- **Teléfono:** +34 638 03 54 68
-- **Ubicación:** Ciudad Real, Castilla-La Mancha, Spain
-- **LinkedIn:** https://www.linkedin.com/in/teresa-rodríguez-de-dios
-- **Instagram:** https://www.instagram.com/porvenir_agencia/
+- [Aviso legal](https://www.porveniragenciadigital.com/pages/aviso-legal.html)
+- [Política de privacidad](https://www.porveniragenciadigital.com/pages/politica-privacidad.html)
+- [Política de cookies](https://www.porveniragenciadigital.com/pages/politica-cookies.html)

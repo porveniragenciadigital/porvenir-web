@@ -956,6 +956,11 @@
         @media (max-width: 767px) { a[aria-label="Contactar por WhatsApp"] { bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important; right: 18px !important; } }
 
         /* Caso de estudio desplegable (portfolio) */
+        .case-details .case-body { display: grid; gap: 28px; }
+        @media (min-width: 1024px) { .case-details .case-body { grid-template-columns: 1fr 1fr; gap: 56px; } }
+        .case-details { width: 100%; }
+        @media (min-width: 768px) { .case-details { grid-column: 1 / -1; } }
+
         .case-details summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #ff7a48; padding: 8px 0; }
         .case-details summary::-webkit-details-marker { display: none; }
         .case-details summary:focus-visible { outline: 2px solid #ff7a48; outline-offset: 4px; border-radius: 6px; }
@@ -1008,6 +1013,24 @@
             .h3d-tags { margin-top: 22px; }
         }
         @media (max-width: 1279px) { .h3d-cta { padding: 17px 24px; } .h3d-actions { gap: 12px; } }
+
+
+        /* Reseñas: carrusel de 3 en 3, la central más grande */
+        .rv-viewport { overflow: hidden; padding: 34px 0 18px; }
+        .rv-track { display: grid; }
+        .rv-slide { grid-area: 1 / 1; width: 100%; justify-self: center; padding: 0 8px; opacity: 0; pointer-events: none;
+            transform: translate3d(calc(var(--o, 0) * 100%), 0, 0) scale(var(--sc, 1));
+            transition: transform .65s cubic-bezier(.23, 1, .32, 1), opacity .5s ease; }
+        .rv-slide[data-pos="0"] { opacity: 1; pointer-events: auto; z-index: 3; }
+        .rv-slide article { height: 100%; max-width: 640px; margin: 0 auto; }
+        @media (min-width: 1024px) {
+            .rv-slide { width: 33.3333%; }
+            .rv-slide[data-pos="0"] { --sc: 1.07; }
+            .rv-slide[data-pos="-1"], .rv-slide[data-pos="1"] { --sc: .92; opacity: .55; pointer-events: auto; cursor: pointer; z-index: 2; }
+            .rv-slide[data-pos="-1"] article, .rv-slide[data-pos="1"] article { max-width: none; }
+            .rv-slide[data-pos="0"] article { box-shadow: 0 24px 60px -24px rgba(255, 122, 72, .35); border-color: rgba(255, 122, 72, .35); }
+        }
+        @media (prefers-reduced-motion: reduce) { .rv-slide { transition: opacity .2s ease; } }
 
         /* Móvil y tablet: la parte alta de la escena se difumina bajo el texto */
         @media (max-width: 1023px) {
@@ -1523,10 +1546,10 @@
                             <div
                                 class="relative h-52 bg-gradient-to-br from-[#0a0f1e] to-[#1a1040] flex-shrink-0 [clip-path:inset(0_round_24px_24px_0_0)]">
                                 <picture>
-                                    <source media="(max-width: 640px)" srcset="assets/img/proyecto-orientaia-m.webp?v=3" type="image/webp">
-                                    <source srcset="assets/img/proyecto-orientaia.webp?v=3" type="image/webp">
-                                    <img src="assets/img/proyecto-orientaia.png?v=3"
-                                    alt="Web de OrientaIA: consultoría de dirección de IA con diseño oscuro editorial, titular serif y órbita animada" data-i18n-alt="al_oi"
+                                    <source media="(max-width: 640px)" srcset="assets/img/proyecto-orientaia-m.webp?v=4" type="image/webp">
+                                    <source srcset="assets/img/proyecto-orientaia.webp?v=4" type="image/webp">
+                                    <img src="assets/img/proyecto-orientaia.png?v=4"
+                                    alt="Web de OrientaIA: consultoría de dirección de IA con diseño oscuro editorial, titular serif y objeto 3D animado" data-i18n-alt="al_oi"
                                     width="900" height="208" decoding="async"
                                     class="w-full h-full object-cover object-top transition-[filter] duration-700 group-hover:brightness-110"
                                     onerror="this.style.display='none'">
@@ -1537,7 +1560,7 @@
                                 <ul class="pf-tags" aria-label="Etiquetas del proyecto" data-i18n-aria="a_ptags"><li class="pf-tag pf-tag--accent" data-i18n="pf_uiux">UI/UX</li><li class="pf-tag" data-i18n="pf_web">Diseño web</li><li class="pf-tag" data-i18n="pf_conv">Alta conversión</li></ul>
                                 <p data-i18n="pf_e1" class="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">OrientaIA · Consultoría IA</p>
                                 <h3 data-i18n="p1_h3" class="text-xl font-bold text-white mb-3">Web editorial para una consultora de dirección de IA</h3>
-                                <p data-i18n="p1_desc" class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Diseño a medida con titulares serif en cursiva, una órbita animada como protagonista del hero y tarjetas de cristal flotantes. La página presenta su servicio de dirección de IA por proyectos (CAIO as a Service), sus sedes en Albacete y Ciudad Real y lleva a un contacto directo.</p>
+                                <p data-i18n="p1_desc" class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Diseño a medida con titulares serif en cursiva, un objeto 3D animado como protagonista del hero y tarjetas de cristal flotantes. La página presenta su servicio de dirección de IA por proyectos (CAIO as a Service), sus sedes en Albacete y Ciudad Real y lleva a un contacto directo.</p>
                                 <div
                                     class="flex items-start gap-3 bg-brand-orange/5 border border-brand-orange/20 rounded-2xl p-4">
                                     <i data-lucide="trending-up" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5"
@@ -1700,35 +1723,9 @@
                                     <p data-i18n="p5_desc" class="text-gray-400 text-sm leading-relaxed mb-6">Cada lead que llega de un anuncio de Facebook se limpia y entra solo en el CRM del call center, sin que nadie copie ni pegue nada. Más de 3.000 leads al mes, más de 30 horas de trabajo manual ahorradas y cero limpieza de datos a mano.</p>
                                     <div class="flex items-start gap-3 bg-brand-orange/5 border border-brand-orange/20 rounded-2xl p-4">
                                         <i data-lucide="trending-up" class="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" aria-hidden="true"></i>
-                                        <p data-i18n-html="p5_result" class="text-sm text-gray-300"><strong class="text-white">Resultado:</strong> 119 de 119 leads conciliados entre Facebook, el historial y el CRM. Ningún lead perdido y ninguna cadena limpiada a mano.</p>
+                                        <p data-i18n-html="p5_result" class="text-sm text-gray-300"><strong class="text-white">Resultado:</strong> el 100% de los leads conciliados entre Facebook, el historial y el CRM en la validación de salida. Ningún lead perdido y ninguna cadena limpiada a mano.</p>
                                     </div>
-                                    <details class="case-details mt-5">
-                                        <summary><span data-i18n="p5_more">Ver el caso completo</span><i data-lucide="chevron-down" class="w-4 h-4" aria-hidden="true"></i></summary>
-                                        <div class="case-body">
-                                            <h4 data-i18n="p5_ch_h">El reto</h4>
-                                            <p data-i18n="p5_ch">El equipo captaba leads con formularios de Facebook Lead Ads. Cada mañana, una persona descargaba los contactos, limpiaba a mano las cadenas de texto (nombres con símbolos, emails mal escritos, teléfonos con prefijos y formatos distintos) y los volcaba al CRM del call center. Era un trabajo repetitivo y lento, y un solo error al copiar significaba un lead mal registrado o perdido. Además, los leads llegaban a los comerciales horas después de que el usuario rellenara el formulario.</p>
-                                            <h4 data-i18n="p5_so_h">La solución</h4>
-                                            <p data-i18n="p5_so">Diseñé e implementé desde cero un flujo automático que se ejecuta cada día a las 08:45:</p>
-                                            <ol>
-                                                <li data-i18n="p5_s1">Lee los nuevos leads de los formularios de Facebook y recuerda por dónde se quedó, para no duplicar ni saltarse ninguno.</li>
-                                                <li data-i18n="p5_s2">Limpia y normaliza cada dato: nombre sin caracteres extraños, email validado, teléfono sin prefijos ni símbolos y fecha en hora de Madrid.</li>
-                                                <li data-i18n="p5_s3">Carga el lead en el CRM del call center a través de su API, ya listo para que lo llamen.</li>
-                                                <li data-i18n="p5_s4">Registra cada lead en un historial en Google Sheets, con su identificador en el CRM y su estado.</li>
-                                                <li data-i18n="p5_s5">Avisa por email al equipo si algo falla, indicando qué lead y por qué, para que nada se quede en silencio.</li>
-                                            </ol>
-                                            <p data-i18n="p5_so2">También entregué un manual en PDF para que el equipo del cliente pueda mantenerlo y conectar formularios nuevos sin depender de mí.</p>
-                                            <h4 data-i18n="p5_rs_h">Resultados</h4>
-                                            <ul>
-                                                <li data-i18n-html="p5_r1"><strong>Tiempo ahorrado:</strong> más de 30 horas al mes (unas 400 al año) de trabajo manual del equipo comercial, que ahora se dedican a llamar leads en lugar de prepararlos. Estimación sobre ~120 leads diarios.</li>
-                                                <li data-i18n-html="p5_r2"><strong>Limpieza de datos automática:</strong> antes, cada lead se limpiaba a mano cadena a cadena: nombres con símbolos o emojis, emails mal escritos, teléfonos con prefijos como “p:”, “+34” o “0034” y formatos distintos. Ahora esas reglas se aplican automáticamente y siempre igual a cada lead, así que los errores de teclear, copiar o pegar desaparecen.</li>
-                                                <li data-i18n-html="p5_r3"><strong>Ningún lead perdido:</strong> en la validación de salida se conciliaron 119 de 119 leads entre Facebook, el historial y el CRM.</li>
-                                                <li data-i18n-html="p5_r4"><strong>Velocidad:</strong> el lead entra en el CRM a primera hora, listo para llamar, sin depender de cuándo alguien tuviera tiempo de volcarlo.</li>
-                                                <li data-i18n-html="p5_r5"><strong>Fiabilidad:</strong> funciona sin supervisión y avisa por email a tres personas si cualquier paso falla.</li>
-                                                <li data-i18n-html="p5_r6"><strong>Coste de infraestructura:</strong> unos 19 $/mes.</li>
-                                            </ul>
-                                            <p data-i18n-html="p5_stack" class="case-stack"><strong>Stack:</strong> Make · Facebook Lead Ads API · API REST del CRM (OCM) · Google Sheets · Gmail</p>
-                                        </div>
-                                    </details>
+                                    
                                     <a href="#servicios" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-brand-orange/60 hover:text-brand-orange transition-colors mt-4 self-start">
                                         <i data-lucide="layers" class="w-3.5 h-3.5" aria-hidden="true"></i>
                                         <span data-i18n="p4_svc">Servicio: IA &amp; Automatización</span>
@@ -1747,8 +1744,8 @@
                                     </div>
                                     <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-1">
                                         <i data-lucide="list-checks" class="w-6 h-6 text-brand-orange mb-2" aria-hidden="true"></i>
-                                        <p data-i18n="p5_m3n" class="text-2xl font-bold text-white">119/119</p>
-                                        <p data-i18n="p5_m3" class="text-xs text-gray-500 leading-snug">Leads conciliados entre Facebook, historial y CRM</p>
+                                        <p data-i18n="p5_m3n" class="text-2xl font-bold text-white">100%</p>
+                                        <p data-i18n="p5_m3" class="text-xs text-gray-500 leading-snug">Leads conciliados entre Facebook, historial y CRM en la validación</p>
                                     </div>
                                     <div class="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col gap-1">
                                         <i data-lucide="wallet" class="w-6 h-6 text-brand-orange mb-2" aria-hidden="true"></i>
@@ -1756,6 +1753,33 @@
                                         <p data-i18n="p5_m4" class="text-xs text-gray-500 leading-snug">Al mes de coste de infraestructura</p>
                                     </div>
                                 </div>
+                                <details class="case-details md:col-span-2 w-full">
+                                        <summary><span data-i18n="p5_more">Ver el caso completo</span><i data-lucide="chevron-down" class="w-4 h-4" aria-hidden="true"></i></summary>
+                                        <div class="case-body"><div class="case-col">
+                                            <h4 data-i18n="p5_ch_h">El reto</h4>
+                                            <p data-i18n="p5_ch">El equipo captaba leads con formularios de Facebook Lead Ads. Cada mañana, una persona descargaba los contactos, limpiaba a mano las cadenas de texto (nombres con símbolos, emails mal escritos, teléfonos con prefijos y formatos distintos) y los volcaba al CRM del call center. Era un trabajo repetitivo y lento, y un solo error al copiar significaba un lead mal registrado o perdido. Además, los leads llegaban a los comerciales horas después de que el usuario rellenara el formulario.</p>
+                                            <h4 data-i18n="p5_so_h">La solución</h4>
+                                            <p data-i18n="p5_so">Diseñé e implementé desde cero un flujo automático que se ejecuta cada día a las 08:45:</p>
+                                            <ol>
+                                                <li data-i18n="p5_s1">Lee los nuevos leads de los formularios de Facebook y recuerda por dónde se quedó, para no duplicar ni saltarse ninguno.</li>
+                                                <li data-i18n="p5_s2">Limpia y normaliza cada dato: nombre sin caracteres extraños, email validado, teléfono sin prefijos ni símbolos y fecha en hora de Madrid.</li>
+                                                <li data-i18n="p5_s3">Carga el lead en el CRM del call center a través de su API, ya listo para que lo llamen.</li>
+                                                <li data-i18n="p5_s4">Registra cada lead en un historial en Google Sheets, con su identificador en el CRM y su estado.</li>
+                                                <li data-i18n="p5_s5">Avisa por email al equipo si algo falla, indicando qué lead y por qué, para que nada se quede en silencio.</li>
+                                            </ol>
+                                            <p data-i18n="p5_so2">También entregué un manual en PDF para que el equipo del cliente pueda mantenerlo y conectar formularios nuevos sin depender de mí.</p>
+                                            </div><div class="case-col"><h4 data-i18n="p5_rs_h">Resultados</h4>
+                                            <ul>
+                                                <li data-i18n-html="p5_r1"><strong>Tiempo ahorrado:</strong> más de 30 horas al mes (unas 400 al año) de trabajo manual del equipo comercial, que ahora se dedican a llamar leads en lugar de prepararlos. Estimación sobre ~120 leads diarios.</li>
+                                                <li data-i18n-html="p5_r2"><strong>Limpieza de datos automática:</strong> antes, cada lead se limpiaba a mano cadena a cadena: nombres con símbolos o emojis, emails mal escritos, teléfonos con prefijos como “p:”, “+34” o “0034” y formatos distintos. Ahora esas reglas se aplican automáticamente y siempre igual a cada lead, así que los errores de teclear, copiar o pegar desaparecen.</li>
+                                                <li data-i18n-html="p5_r3"><strong>Ningún lead perdido:</strong> en la validación de salida, con los leads de una jornada completa (119), se conciliaron todos entre Facebook, el historial y el CRM.</li>
+                                                <li data-i18n-html="p5_r4"><strong>Velocidad:</strong> el lead entra en el CRM a primera hora, listo para llamar, sin depender de cuándo alguien tuviera tiempo de volcarlo.</li>
+                                                <li data-i18n-html="p5_r5"><strong>Fiabilidad:</strong> funciona sin supervisión y avisa por email a tres personas si cualquier paso falla.</li>
+                                                <li data-i18n-html="p5_r6"><strong>Coste de infraestructura:</strong> unos 19 $/mes.</li>
+                                            </ul>
+                                            <p data-i18n-html="p5_stack" class="case-stack"><strong>Stack:</strong> Make · Facebook Lead Ads API · API REST del CRM (OCM) · Google Sheets · Gmail</p>
+                                        </div></div>
+                                </details>
                             </div>
                         </article>
 
@@ -1796,11 +1820,11 @@
                         </div>
                     </div>
                     <div class="relative fade-in-up" id="reviews-carousel" aria-roledescription="carrusel" aria-label="Reseñas de clientes" data-i18n-aria="a_reviews">
-                        <div class="overflow-hidden pb-px">
-                            <div id="reviews-track" class="flex" style="transition:transform .5s ease-in-out;">
+                        <div class="rv-viewport">
+                            <div id="reviews-track" class="rv-track">
 
-                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 1 de 5" data-i18n-aria="a_s1">
-                                    <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full">
+                                <div class="rv-slide" role="tabpanel" aria-label="Reseña 1 de 5" data-i18n-aria="a_s1">
+                                    <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 h-full">
                                         <div class="flex gap-0.5" aria-label="5 estrellas" data-i18n-aria="a_5stars"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
                                         <blockquote data-i18n="tq5" class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Teresa impartió una sesión de 3 horas para los emprendedores del programa Impulsa StartUp de la Cámara de Comercio de Ciudad Real y fue un acierto. Muy práctica y nada teórica: en directo y sobre el proyecto real de una de las participantes, montó una web con Lovable, un chatbot con Chatbase y un prototipo de app con Stitch. Los emprendedores salieron con herramientas que pueden aplicar desde el primer día. <strong>Explica con mucha claridad, conecta con el grupo y se nota que sabe de lo que habla.</strong>"</blockquote>
                                         <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
@@ -1814,8 +1838,8 @@
                                     </article>
                                 </div>
 
-                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 2 de 5" data-i18n-aria="a_s2">
-                                    <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full">
+                                <div class="rv-slide" role="tabpanel" aria-label="Reseña 2 de 5" data-i18n-aria="a_s2">
+                                    <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 h-full">
                                         <div class="flex gap-0.5" aria-label="5 estrellas" data-i18n-aria="a_5stars"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
                                         <blockquote data-i18n="tq1" class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Teresa es una gran profesional. Ella diseñó nuestra página web y captó la esencia desde el minuto 1. Supo plasmar lo que estábamos buscando, adecuándose a nuestro público, mostrando de la mejor manera nuestros servicios, sin olvidar la usabilidad de la web en todo momento. <strong>Recomendable 100%.</strong>"</blockquote>
                                         <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
@@ -1829,8 +1853,8 @@
                                     </article>
                                 </div>
 
-                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 3 de 5" data-i18n-aria="a_s3">
-                                    <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full border-brand-orange/20 bg-brand-orange/5">
+                                <div class="rv-slide" role="tabpanel" aria-label="Reseña 3 de 5" data-i18n-aria="a_s3">
+                                    <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 h-full border-brand-orange/20 bg-brand-orange/5">
                                         <div class="flex gap-0.5" aria-label="5 estrellas" data-i18n-aria="a_5stars"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
                                         <blockquote data-i18n="tq2" class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Desde el primer momento supieron captar perfectamente la esencia de LEGALEX y transformar exactamente lo que queríamos transmitir en una página web cuidada, elegante y con muchísima personalidad. Destacar no solo el resultado final, que ha superado nuestras expectativas, sino también la cercanía, la implicación y la facilidad en todo el proceso. <strong>Han entendido nuestro proyecto casi como si fuera suyo.</strong>"</blockquote>
                                         <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
@@ -1844,8 +1868,8 @@
                                     </article>
                                 </div>
 
-                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 4 de 5" data-i18n-aria="a_s4">
-                                    <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full">
+                                <div class="rv-slide" role="tabpanel" aria-label="Reseña 4 de 5" data-i18n-aria="a_s4">
+                                    <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 h-full">
                                         <div class="flex gap-0.5" aria-label="5 estrellas" data-i18n-aria="a_5stars"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
                                         <blockquote data-i18n="tq3" class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Quiero agradecerte Teresa la maravillosa formación que nos ofreciste hace unos días para un programa sobre digitalización y sostenibilidad para empresas en Ciudad Real. <strong>Una formación muy completa, fácil de entender gracias a tus explicaciones y muy detallada de principio a fin.</strong>"</blockquote>
                                         <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
@@ -1859,8 +1883,8 @@
                                     </article>
                                 </div>
 
-                                <div class="w-full flex-shrink-0 px-2" role="tabpanel" aria-label="Reseña 5 de 5" data-i18n-aria="a_s5">
-                                    <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 max-w-2xl mx-auto h-full">
+                                <div class="rv-slide" role="tabpanel" aria-label="Reseña 5 de 5" data-i18n-aria="a_s5">
+                                    <article class="glass-card p-8 md:p-10 rounded-3xl flex flex-col gap-5 h-full">
                                         <div class="flex gap-0.5" aria-label="5 estrellas" data-i18n-aria="a_5stars"><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg><svg class="w-4 h-4 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"/></svg></div>
                                         <blockquote data-i18n="tq4" class="text-gray-300 text-sm leading-relaxed line-clamp-4 md:line-clamp-none">"Trabajar con Teresa ha sido un acierto total para mi negocio. Le encargué la creación de toda la imagen de marca para Olimpo Shisha Lounge y el resultado ha superado mis expectativas. Se ha encargado de todo, el diseño del logotipo, los vinilos del local, la carta y el arranque de mi Instagram. <strong>Ha sabido captar a la perfección lo que quería transmitir.</strong> Es súper detallista, profesional y te lo pone todo muy fácil."</blockquote>
                                         <button data-i18n="tst_read_more" class="text-brand-orange/70 text-xs font-semibold hover:text-brand-orange transition-colors text-left md:hidden" data-read-more>Leer más</button>
@@ -2373,7 +2397,7 @@
                     pf_aut: 'Automatización',
                     p5_h3: 'Automatización de leads de Facebook a CRM para un centro de ahorro energético',
                     p5_desc: 'Cada lead que llega de un anuncio de Facebook se limpia y entra solo en el CRM del call center, sin que nadie copie ni pegue nada. Más de 3.000 leads al mes, más de 30 horas de trabajo manual ahorradas y cero limpieza de datos a mano.',
-                    p5_result: '<strong class="text-white">Resultado:</strong> 119 de 119 leads conciliados entre Facebook, el historial y el CRM. Ningún lead perdido y ninguna cadena limpiada a mano.',
+                    p5_result: '<strong class="text-white">Resultado:</strong> el 100% de los leads conciliados entre Facebook, el historial y el CRM en la validación de salida. Ningún lead perdido y ninguna cadena limpiada a mano.',
                     p5_more: 'Ver el caso completo',
                     p5_ch_h: 'El reto',
                     p5_ch: 'El equipo captaba leads con formularios de Facebook Lead Ads. Cada mañana, una persona descargaba los contactos, limpiaba a mano las cadenas de texto (nombres con símbolos, emails mal escritos, teléfonos con prefijos y formatos distintos) y los volcaba al CRM del call center. Era un trabajo repetitivo y lento, y un solo error al copiar significaba un lead mal registrado o perdido. Además, los leads llegaban a los comerciales horas después de que el usuario rellenara el formulario.',
@@ -2388,7 +2412,7 @@
                     p5_rs_h: 'Resultados',
                     p5_r1: '<strong>Tiempo ahorrado:</strong> más de 30 horas al mes (unas 400 al año) de trabajo manual del equipo comercial, que ahora se dedican a llamar leads en lugar de prepararlos. Estimación sobre ~120 leads diarios.',
                     p5_r2: '<strong>Limpieza de datos automática:</strong> antes, cada lead se limpiaba a mano cadena a cadena: nombres con símbolos o emojis, emails mal escritos, teléfonos con prefijos como “p:”, “+34” o “0034” y formatos distintos. Ahora esas reglas se aplican automáticamente y siempre igual a cada lead, así que los errores de teclear, copiar o pegar desaparecen.',
-                    p5_r3: '<strong>Ningún lead perdido:</strong> en la validación de salida se conciliaron 119 de 119 leads entre Facebook, el historial y el CRM.',
+                    p5_r3: '<strong>Ningún lead perdido:</strong> en la validación de salida, con los leads de una jornada completa (119), se conciliaron todos entre Facebook, el historial y el CRM.',
                     p5_r4: '<strong>Velocidad:</strong> el lead entra en el CRM a primera hora, listo para llamar, sin depender de cuándo alguien tuviera tiempo de volcarlo.',
                     p5_r5: '<strong>Fiabilidad:</strong> funciona sin supervisión y avisa por email a tres personas si cualquier paso falla.',
                     p5_r6: '<strong>Coste de infraestructura:</strong> unos 19 $/mes.',
@@ -2397,8 +2421,8 @@
                     p5_m1: 'Leads al mes procesados sin intervención',
                     p5_m2n: '+30 h',
                     p5_m2: 'Ahorradas al mes en trabajo manual (unas 400 al año)',
-                    p5_m3n: '119/119',
-                    p5_m3: 'Leads conciliados entre Facebook, historial y CRM',
+                    p5_m3n: '100%',
+                    p5_m3: 'Leads conciliados entre Facebook, historial y CRM en la validación',
                     p5_m4n: '~19 $',
                     p5_m4: 'Al mes de coste de infraestructura',
                     a_skip: 'Saltar al contenido principal',
@@ -2458,7 +2482,7 @@
                     a_r3: 'Reseña 3',
                     a_r4of4: 'Reseña 4 de 4',
                     a_r4: 'Reseña 4',
-                    al_oi: 'Web de OrientaIA: consultoría de dirección de IA con diseño oscuro editorial, titular serif y órbita animada',
+                    al_oi: 'Web de OrientaIA: consultoría de dirección de IA con diseño oscuro editorial, titular serif y objeto 3D animado',
                     al_lg: 'Web de Legalex: diseño cálido con tonos beige y turquesa para despacho de abogacía',
                     al_tr: 'Teresa Rodríguez de Dios, fundadora de Porvenir Agencia Digital en Ciudad Real, ingeniera de software especializada en IA y diseño web',
                     doc_title: 'Diseño y Desarrollo Web en Ciudad Real | Páginas Web & IA',
@@ -2548,7 +2572,7 @@
                     proj_all_svc: 'Ver todos los servicios',
                     // Proyecto 1 — OrientaIA
                     p1_h3: 'Web editorial para una consultora de dirección de IA',
-                    p1_desc: 'Diseño a medida con titulares serif en cursiva, una órbita animada como protagonista del hero y tarjetas de cristal flotantes. La página presenta su servicio de dirección de IA por proyectos (CAIO as a Service), sus sedes en Albacete y Ciudad Real y lleva a un contacto directo.',
+                    p1_desc: 'Diseño a medida con titulares serif en cursiva, un objeto 3D animado como protagonista del hero y tarjetas de cristal flotantes. La página presenta su servicio de dirección de IA por proyectos (CAIO as a Service), sus sedes en Albacete y Ciudad Real y lleva a un contacto directo.',
                     p1_result: '<strong class="text-white">Resultado:</strong> principal activo de credibilidad de OrientaIA. Desde el primer clic demuestra que son nativos digitales.',
                     p1_svc: 'Servicio: Diseño Web & UX',
                     // Proyecto 2 — Legalex
@@ -2619,7 +2643,7 @@
                     pf_aut: 'Automation',
                     p5_h3: 'Facebook-to-CRM lead automation for an energy-saving centre',
                     p5_desc: 'Every lead coming from a Facebook ad is cleaned and enters the call centre CRM on its own, without anyone copying or pasting anything. More than 3,000 leads a month, more than 30 hours of manual work saved and zero manual data cleaning.',
-                    p5_result: '<strong class="text-white">Result:</strong> 119 out of 119 leads reconciled across Facebook, the history log and the CRM. No lost leads and no string cleaned by hand.',
+                    p5_result: '<strong class="text-white">Result:</strong> 100% of leads reconciled across Facebook, the history log and the CRM in the go-live validation. No lost leads and no string cleaned by hand.',
                     p5_more: 'See the full case study',
                     p5_ch_h: 'The challenge',
                     p5_ch: 'The team captured leads with Facebook Lead Ads forms. Every morning, someone downloaded the contacts, cleaned the text strings by hand (names with symbols, misspelt emails, phone numbers with prefixes and inconsistent formats) and entered them into the call centre CRM. It was slow, repetitive work, and a single copy error meant a lead was recorded wrongly or lost. On top of that, leads reached the sales team hours after the user had filled in the form.',
@@ -2634,7 +2658,7 @@
                     p5_rs_h: 'Results',
                     p5_r1: '<strong>Time saved:</strong> more than 30 hours a month (around 400 a year) of manual work by the sales team, now spent calling leads instead of preparing them. Estimate based on ~120 leads a day.',
                     p5_r2: '<strong>Automatic data cleaning:</strong> previously every lead was cleaned by hand, string by string: names with symbols or emojis, misspelt emails, phone numbers with prefixes such as “p:”, “+34” or “0034” and inconsistent formats. Now those rules are applied automatically and identically to every lead, so typing and copy-paste errors disappear.',
-                    p5_r3: '<strong>No lost leads:</strong> the go-live validation reconciled 119 out of 119 leads across Facebook, the history log and the CRM.',
+                    p5_r3: '<strong>No lost leads:</strong> in the go-live validation, with a full day of leads (119), every one was reconciled across Facebook, the history log and the CRM.',
                     p5_r4: '<strong>Speed:</strong> leads reach the CRM first thing in the morning, ready to call, without depending on when someone had time to enter them.',
                     p5_r5: '<strong>Reliability:</strong> it runs unsupervised and emails three people if any step fails.',
                     p5_r6: '<strong>Infrastructure cost:</strong> around $19 a month.',
@@ -2643,8 +2667,8 @@
                     p5_m1: 'Leads a month processed hands-free',
                     p5_m2n: '+30 h',
                     p5_m2: 'Saved each month in manual work (around 400 a year)',
-                    p5_m3n: '119/119',
-                    p5_m3: 'Leads reconciled across Facebook, history log and CRM',
+                    p5_m3n: '100%',
+                    p5_m3: 'Leads reconciled across Facebook, history log and CRM in the validation',
                     p5_m4n: '~$19',
                     p5_m4: 'A month in infrastructure costs',
                     a_skip: 'Skip to main content',
@@ -2704,7 +2728,7 @@
                     a_r3: 'Review 3',
                     a_r4of4: 'Review 4 of 4',
                     a_r4: 'Review 4',
-                    al_oi: 'OrientaIA website: AI leadership consultancy with a dark editorial design, serif headline and animated orbit',
+                    al_oi: 'OrientaIA website: AI leadership consultancy with a dark editorial design, serif headline and animated 3D object',
                     al_lg: 'Legalex website: warm design in beige and turquoise tones for a law firm',
                     al_tr: 'Teresa Rodríguez de Dios, founder of Porvenir Agencia Digital in Ciudad Real, software engineer and UX designer',
                     doc_title: 'Web Design & Development in Ciudad Real | Websites & AI',
@@ -2794,7 +2818,7 @@
                     proj_all_svc: 'View all services',
                     // Project 1 — OrientaIA
                     p1_h3: 'Editorial website for an AI leadership consultancy',
-                    p1_desc: 'Bespoke design with italic serif headlines, an animated orbit as the hero centrepiece and floating glass cards. The page presents their project-based AI leadership service (CAIO as a Service), their offices in Albacete and Ciudad Real and leads to a direct contact.',
+                    p1_desc: 'Bespoke design with italic serif headlines, an animated 3D object as the hero centrepiece and floating glass cards. The page presents their project-based AI leadership service (CAIO as a Service), their offices in Albacete and Ciudad Real and leads to a direct contact.',
                     p1_result: '<strong class="text-white">Result:</strong> OrientaIA\'s main credibility asset. From the first click it proves they are true digital natives.',
                     p1_svc: 'Service: Web Design & UX',
                     // Project 2 — Legalex
@@ -2880,25 +2904,29 @@
         (function () {
             var track = document.getElementById('reviews-track');
             if (!track) return;
+            var slides = Array.prototype.slice.call(track.querySelectorAll('.rv-slide'));
             var dots = document.querySelectorAll('#reviews-dots button');
-            var total = dots.length, current = 0, timer;
+            var total = slides.length, current = 0, timer;
+            var half = Math.floor(total / 2);
 
             function collapseAll() {
-                track.querySelectorAll('article').forEach(function(article) {
+                track.querySelectorAll('article').forEach(function (article) {
                     var bq = article.querySelector('blockquote');
                     if (!bq) return;
                     bq.classList.add('line-clamp-4');
-                    article.classList.add('h-full');
                     var btn = article.querySelector('[data-read-more]');
                     if (btn) btn.style.display = '';
                 });
             }
 
-            function goTo(n) {
-                collapseAll();
-                current = (n + total) % total;
-                track.style.transform = 'translateX(-' + (current * 100) + '%)';
-                dots.forEach(function(d, i) {
+            function render() {
+                slides.forEach(function (sl, i) {
+                    var off = ((i - current + total + half) % total) - half;
+                    sl.style.setProperty('--o', Math.max(-2, Math.min(2, off)));
+                    sl.setAttribute('data-pos', String(off));
+                    sl.setAttribute('aria-hidden', Math.abs(off) > 1 ? 'true' : 'false');
+                });
+                dots.forEach(function (d, i) {
                     var active = i === current;
                     d.classList.toggle('bg-brand-orange', active);
                     d.classList.toggle('w-4', active);
@@ -2907,34 +2935,41 @@
                     d.setAttribute('aria-selected', active ? 'true' : 'false');
                 });
             }
+            function goTo(n) { collapseAll(); current = (n + total) % total; render(); }
 
-            function start() { timer = setInterval(function() { goTo(current + 1); }, 5500); }
+            function start() { stop(); timer = setInterval(function () { goTo(current + 1); }, 6000); }
             function stop() { clearInterval(timer); }
-            document.getElementById('reviews-prev').addEventListener('click', function() { stop(); goTo(current - 1); start(); });
-            document.getElementById('reviews-next').addEventListener('click', function() { stop(); goTo(current + 1); start(); });
-            dots.forEach(function(d, i) { d.addEventListener('click', function() { stop(); goTo(i); start(); }); });
+            document.getElementById('reviews-prev').addEventListener('click', function () { stop(); goTo(current - 1); start(); });
+            document.getElementById('reviews-next').addEventListener('click', function () { stop(); goTo(current + 1); start(); });
+            dots.forEach(function (d, i) { d.addEventListener('click', function () { stop(); goTo(i); start(); }); });
+            /* clic en una tarjeta lateral la trae al centro */
+            slides.forEach(function (sl, i) {
+                sl.addEventListener('click', function () {
+                    if (sl.getAttribute('data-pos') !== '0' && window.innerWidth >= 1024) { stop(); goTo(i); start(); }
+                });
+            });
             var carousel = document.getElementById('reviews-carousel');
             carousel.addEventListener('mouseenter', stop);
             carousel.addEventListener('mouseleave', start);
+            carousel.addEventListener('focusin', stop);
             var startX = 0;
-            track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
-            track.addEventListener('touchend', function(e) {
+            carousel.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+            carousel.addEventListener('touchend', function (e) {
                 var diff = startX - e.changedTouches[0].clientX;
                 if (Math.abs(diff) > 50) { stop(); goTo(current + (diff > 0 ? 1 : -1)); start(); }
             }, { passive: true });
-
-            /* "Leer más" — botones en HTML, solo activos en móvil (md:hidden los oculta en desktop) */
-            track.querySelectorAll('[data-read-more]').forEach(function(btn) {
-                var article = btn.closest('article');
-                var bq = article.querySelector('blockquote');
-                btn.addEventListener('click', function() {
-                    stop();
-                    bq.classList.remove('line-clamp-4');
-                    article.classList.remove('h-full');
-                    btn.style.display = 'none';
-                });
+            carousel.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') { stop(); goTo(current - 1); start(); }
+                if (e.key === 'ArrowRight') { stop(); goTo(current + 1); start(); }
             });
 
+            /* "Leer más" — solo activo en móvil (md:hidden lo oculta en escritorio) */
+            track.querySelectorAll('[data-read-more]').forEach(function (btn) {
+                var bq = btn.closest('article').querySelector('blockquote');
+                btn.addEventListener('click', function () { stop(); bq.classList.remove('line-clamp-4'); btn.style.display = 'none'; });
+            });
+
+            render();
             start();
         })();
     </script>

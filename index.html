@@ -1018,7 +1018,9 @@
 
 
         /* Reseñas: carrusel de 3 en 3, la central más grande */
-        .rv-viewport { overflow: hidden; padding: 34px 0 18px; }
+        .rv-viewport { overflow: hidden; padding: 48px 0 72px; }
+        @media (min-width: 1280px) { #reviews-carousel { margin-left: -7%; margin-right: -7%; } }
+        @media (min-width: 1024px) { .rv-slide[data-pos="0"] { --sc: 1.05 !important; } }
         .rv-track { display: grid; }
         .rv-slide { grid-area: 1 / 1; width: 100%; justify-self: center; padding: 0 8px; opacity: 0; pointer-events: none;
             transform: translate3d(calc(var(--o, 0) * 100%), 0, 0) scale(var(--sc, 1));

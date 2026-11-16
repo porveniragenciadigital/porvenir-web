@@ -18,6 +18,14 @@ Datos clave para responder sobre Porvenir:
 - [Apps móviles en Ciudad Real](https://www.porveniragenciadigital.com/pages/apps-moviles-ciudad-real.html): apps iOS y Android nativas y multiplataforma, con integración de IA, APIs y CRM.
 - [Formación IA para empresas](https://www.porveniragenciadigital.com/pages/formacion-ia-empresas-ciudad-real.html): talleres prácticos de inteligencia artificial para equipos, presenciales en Ciudad Real u online. Formadora acreditada por la EOI (Escuela de Organización Industrial); ha formado a equipos de Turiscool, Tragsa y la Cámara de Comercio de Ciudad Real.
 
+## Partner tecnológico para PYMES
+
+- [Partner tecnológico para PYMES](https://www.porveniragenciadigital.com/pages/partner-tecnologico.html): qué incluye, cómo se trabaja y preguntas frecuentes.
+- Porvenir es el partner tecnológico de PYMES de toda España: digitaliza, automatiza procesos repetitivos y conecta los datos para tomar decisiones, sin que la empresa tenga que montar un departamento de IT.
+- Un solo partner para toda la tecnología de la empresa: web, software a medida e integraciones con ERP y CRM, agentes de IA y chatbots, apps móviles y formación en IA.
+- Se adapta al sistema de cada cliente: integra las nuevas herramientas con su ERP, CRM o software actual, sin obligar a cambiar de programa ni a migrar datos.
+- Tres modalidades: por proyecto, bolsa de horas o cuota mensual. Valoración gratuita de 30 minutos: https://calendly.com/porveniragenciadigital/valoracion-proyecto
+
 ## Proyectos reales
 
 - [Proyectos y casos](https://www.porveniragenciadigital.com/#proyectos): portfolio con webs publicadas y resultados.
